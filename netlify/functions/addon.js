@@ -63,7 +63,11 @@ function buildManifest(genreCodes) {
 
 async function getCatalogData() {
   try {
-    const store = getStore('tmdb-catalog');
+    const store = getStore({
+      name: 'tmdb-catalog',
+      siteID: process.env.NETLIFY_SITE_ID,
+      token: process.env.NETLIFY_ACCESS_TOKEN
+    });
     return await store.get('catalog', { type: 'json' });
   } catch (error) {
     console.error('Failed to get catalog data:', error);

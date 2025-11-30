@@ -19,7 +19,11 @@ exports.handler = async function(request, context) {
   }
   
   try {
-    const store = getStore('tmdb-catalog');
+    const store = getStore({
+      name: 'tmdb-catalog',
+      siteID: process.env.NETLIFY_SITE_ID,
+      token: process.env.NETLIFY_ACCESS_TOKEN
+    });
     const metadata = await store.get('metadata', { type: 'json' });
 
     if (!metadata) {
