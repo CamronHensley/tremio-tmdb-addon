@@ -31,25 +31,27 @@ const cacheHeaders = {
 
 // JSON response helper
 function jsonResponse(data, status = 200) {
-  return new Response(JSON.stringify(data), {
-    status,
+  return {
+    statusCode: status,
     headers: {
       'Content-Type': 'application/json',
       ...corsHeaders,
       ...cacheHeaders
-    }
-  });
+    },
+    body: JSON.stringify(data)
+  };
 }
 
 // Error response helper  
 function errorResponse(message, status = 500) {
-  return new Response(JSON.stringify({ error: message }), {
-    status,
+  return {
+    statusCode: status,
     headers: {
       'Content-Type': 'application/json',
       ...corsHeaders
-    }
-  });
+    },
+    body: JSON.stringify({ error: message })
+  };
 }
 
 // Parse configuration string (e.g., "ACTION.COMEDY.HORROR")
@@ -157,10 +159,13 @@ async function handleMeta(movieId) {
 
 // Main handler
 exports.handler = async function(request, context) {
-  console.log('Addon function handler invoked');
   // Handle CORS preflight
   if (request.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
+    return {
+      statusCode: 204,
+      headers: corsHeaders,
+      body: ''
+    };
   }
 
   // Parse URL parameters
