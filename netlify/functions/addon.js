@@ -158,55 +158,121 @@ async function handleMeta(movieId) {
 }
 
 // Main handler
+
 exports.handler = async function(request, context) {
-  // --- START DEBUG LOGGING ---
-  console.log("--- ADDON HANDLER INVOCATION ---");
-  console.log("Node.js Version:", process.version);
-  console.log("Request.url:", request.url);
-  console.log("Request.path:", request.path);
-  console.log("Request.queryStringParameters:", request.queryStringParameters);
-  console.log("Request.rawUrl:", request.rawUrl);
-  // --- END DEBUG LOGGING ---
 
   // Handle CORS preflight
+
   if (request.method === 'OPTIONS') {
+
     return {
+
       statusCode: 204,
+
       headers: corsHeaders,
+
       body: ''
+
     };
+
   }
 
-  // Parse URL parameters
-  const params = request.queryStringParameters;
-  
-  const resource = params.resource;
-  const config = params.config || 'default';
-  const type = params.type;
-  const id = params.id;
+
+
+  // --- Path-based routing ---
+
+  const path = request.path;
+
+  let resource, config = 'default', type, id;
+
+
+
+  const manifestMatch = path.match(/^\/([^\/]+)?\/manifest\.json$/);
+
+  const catalogMatch = path.match(/^\/([^\/]+)?\/catalog\/([^\/]+)\/([^\/]+)\.json$/);
+
+  const metaMatch = path.match(/^\/([^\/]+)?\/meta\/([^\/]+)\/([^\/]+)\.json$/);
+
+
+
+  if (manifestMatch) {
+
+    resource = 'manifest';
+
+    config = manifestMatch[1] || 'default';
+
+  } else if (catalogMatch) {
+
+    resource = 'catalog';
+
+    config = catalogMatch[1] || 'default';
+
+    type = catalogMatch[2];
+
+    id = catalogMatch[3];
+
+  } else if (metaMatch) {
+
+    resource = 'meta';
+
+    config = metaMatch[1] || 'default';
+
+    type = metaMatch[2];
+
+    id = metaMatch[3];
+
+  }
+
+  // --- End Path-based routing ---
+
+
 
   try {
+
     switch (resource) {
+
       case 'manifest':
+
         return await handleManifest(config);
+
         
+
       case 'catalog':
+
         if (type !== 'movie') {
+
           return errorResponse('Only movie catalogs supported', 400);
+
         }
+
         return await handleCatalog(config, id);
+
         
+
       case 'meta':
+
         if (type !== 'movie') {
+
           return errorResponse('Only movie metadata supported', 400);
+
         }
+
         return await handleMeta(id);
+
         
+
       default:
+
         return errorResponse('Unknown resource type', 400);
+
     }
+
   } catch (error) {
+
     console.error('Handler error:', error);
+
     return errorResponse('Internal server error', 500);
+
   }
+
 }
