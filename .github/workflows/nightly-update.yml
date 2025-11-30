@@ -1,0 +1,44 @@
+name: Nightly TMDB Update
+
+on:
+  # Run at midnight UTC every day
+  schedule:
+    - cron: '0 0 * * *'
+  
+  # Allow manual trigger for testing
+  workflow_dispatch:
+
+jobs:
+  update-catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run nightly update
+        run: node scripts/nightly-update.js
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      
+      - name: Report status
+        if: always()
+        run: |
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "✅ Nightly update completed successfully"
+          else
+            echo "❌ Nightly update failed"
+            exit 1
+          fi

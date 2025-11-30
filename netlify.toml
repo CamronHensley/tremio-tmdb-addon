@@ -1,0 +1,55 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Redirect root to config page
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+# Handle addon manifest requests
+[[redirects]]
+  from = "/manifest.json"
+  to = "/.netlify/functions/addon?resource=manifest"
+  status = 200
+
+# Handle configured manifest requests (with genres)
+[[redirects]]
+  from = "/:config/manifest.json"
+  to = "/.netlify/functions/addon?config=:config&resource=manifest"
+  status = 200
+
+# Handle catalog requests
+[[redirects]]
+  from = "/:config/catalog/:type/:id.json"
+  to = "/.netlify/functions/addon?config=:config&resource=catalog&type=:type&id=:id"
+  status = 200
+
+# Handle catalog requests without config
+[[redirects]]
+  from = "/catalog/:type/:id.json"
+  to = "/.netlify/functions/addon?resource=catalog&type=:type&id=:id"
+  status = 200
+
+# Handle meta requests
+[[redirects]]
+  from = "/:config/meta/:type/:id.json"
+  to = "/.netlify/functions/addon?config=:config&resource=meta&type=:type&id=:id"
+  status = 200
+
+# Health check endpoint
+[[redirects]]
+  from = "/health"
+  to = "/.netlify/functions/health"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"

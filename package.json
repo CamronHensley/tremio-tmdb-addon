@@ -1,0 +1,31 @@
+{
+  "name": "stremio-tmdb-genre-addon",
+  "version": "1.0.0",
+  "description": "Stremio addon displaying movies by genre from TMDB with intelligent daily rotation",
+  "main": "netlify/functions/addon.js",
+  "scripts": {
+    "update": "node scripts/nightly-update.js",
+    "dev": "netlify dev",
+    "test": "node scripts/test-local.js"
+  },
+  "keywords": [
+    "stremio",
+    "addon",
+    "tmdb",
+    "movies",
+    "genres"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
