@@ -1,9 +1,6 @@
 /**
  * Health Check Endpoint
- * 
- * Returns cache status and metadata for monitoring
  */
-
 const { getStore } = require('@netlify/blobs');
 
 const corsHeaders = {
@@ -13,14 +10,14 @@ const corsHeaders = {
 };
 
 exports.handler = async function(request, context) {
-  if (request.method === 'OPTIONS') {
+  if (request.httpMethod === 'OPTIONS') {
     return {
       statusCode: 204,
       headers: corsHeaders,
       body: ''
     };
   }
-
+  
   try {
     const store = getStore('tmdb-catalog');
     const metadata = await store.get('metadata', { type: 'json' });
@@ -29,54 +26,37 @@ exports.handler = async function(request, context) {
       return {
         statusCode: 503,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
-        body: JSON.stringify({
-          status: 'degraded',
-          message: 'No catalog data available',
-          timestamp: new Date().toISOString()
-        })
+        body: JSON.stringify({ status: 'degraded', message: 'No catalog data available' })
       };
     }
 
-    // Calculate cache age
     const updatedAt = new Date(metadata.updatedAt);
     const now = new Date();
-    const ageMs = now - updatedAt;
-    const ageHours = Math.round(ageMs / (1000 * 60 * 60) * 10) / 10;
-
-    const isHealthy = ageHours < 26; // Allow 2 hour buffer past 24h
+    const ageHours = Math.round((now - updatedAt) / 3600000 * 10) / 10;
+    const isHealthy = ageHours < 26;
 
     return {
-      statusCode: isHealthy ? 200 : 200, // Still 200 for stale, just flagged
+      statusCode: 200,
       headers: {
         'Content-Type': 'application/json',
         ...corsHeaders,
-        'Cache-Control': 'no-cache' // Don't cache health checks
+        'Cache-Control': 'no-cache'
       },
       body: JSON.stringify({
         status: isHealthy ? 'healthy' : 'stale',
         cache: {
           updatedAt: metadata.updatedAt,
           ageHours,
-          strategy: metadata.strategy,
-          genreCount: metadata.genreCount,
-          totalMovies: metadata.totalMovies,
-          apiRequests: metadata.apiRequests
-        },
-        timestamp: new Date().toISOString()
+          ...metadata
+        }
       })
     };
-
   } catch (error) {
     console.error('Health check error:', error);
-    
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json', ...corsHeaders },
-      body: JSON.stringify({
-        status: 'error',
-        message: error.message,
-        timestamp: new Date().toISOString()
-      })
+      body: JSON.stringify({ status: 'error', message: error.message })
     };
   }
-}
+};
