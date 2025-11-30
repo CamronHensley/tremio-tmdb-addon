@@ -158,7 +158,7 @@ async function handleMeta(movieId) {
 }
 
 // Main handler
-exports.handler = async function(request, context) {
+export default async function handler(request, context) {
   // Handle CORS preflight
   if (request.method === 'OPTIONS') {
     return {
