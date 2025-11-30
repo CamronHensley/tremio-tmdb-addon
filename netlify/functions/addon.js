@@ -157,6 +157,19 @@ async function handleMeta(movieId) {
 
 // Main handler
 export default async function handler(request, context) {
+  // --- START DEBUG LOGGING ---
+  try {
+    console.log("--- ADDON HANDLER INVOCATION ---");
+    console.log("Request URL:", request.url);
+    const url = new URL(request.url);
+    const params = url.searchParams;
+    console.log("Query Parameters (resource):", params.get('resource'));
+    console.log("All Query Parameters:", Object.fromEntries(params.entries()));
+  } catch (e) {
+    console.error("Error during logging:", e);
+  }
+  // --- END DEBUG LOGGING ---
+
   // Handle CORS preflight
   if (request.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
