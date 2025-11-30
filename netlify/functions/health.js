@@ -10,7 +10,7 @@ const corsHeaders = {
 };
 
 exports.handler = async function(request, context) {
-  if (request.httpMethod === 'OPTIONS') {
+  if (request.method === 'OPTIONS') {
     return {
       statusCode: 204,
       headers: corsHeaders,
