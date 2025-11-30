@@ -169,13 +169,12 @@ exports.handler = async function(request, context) {
   }
 
   // Parse URL parameters
-  const url = new URL(request.url);
-  const params = url.searchParams;
+  const params = request.queryStringParameters;
   
-  const resource = params.get('resource');
-  const config = params.get('config') || 'default';
-  const type = params.get('type');
-  const id = params.get('id');
+  const resource = params.resource;
+  const config = params.config || 'default';
+  const type = params.type;
+  const id = params.id;
 
   try {
     switch (resource) {
