@@ -160,8 +160,12 @@ async function handleMeta(movieId) {
 // Main handler
 exports.handler = async function(request, context) {
   // --- START DEBUG LOGGING ---
-  console.log("--- ADDON HANDLER ---");
-  console.log("Received queryStringParameters:", request.queryStringParameters);
+  console.log("--- ADDON HANDLER INVOCATION ---");
+  console.log("Node.js Version:", process.version);
+  console.log("Request.url:", request.url);
+  console.log("Request.path:", request.path);
+  console.log("Request.queryStringParameters:", request.queryStringParameters);
+  console.log("Request.rawUrl:", request.rawUrl);
   // --- END DEBUG LOGGING ---
 
   // Handle CORS preflight
