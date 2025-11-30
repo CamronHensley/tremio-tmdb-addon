@@ -179,51 +179,155 @@ exports.handler = async function(request, context) {
 
 
 
-  // --- Path-based routing ---
-
-  const path = request.path;
-
-  let resource, config = 'default', type, id;
+    // --- Path-based routing ---
 
 
 
-  const manifestMatch = path.match(/^\/([^\/]+)?\/manifest\.json$/);
-
-  const catalogMatch = path.match(/^\/([^\/]+)?\/catalog\/([^\/]+)\/([^\/]+)\.json$/);
-
-  const metaMatch = path.match(/^\/([^\/]+)?\/meta\/([^\/]+)\/([^\/]+)\.json$/);
+    const path = request.path;
 
 
 
-  if (manifestMatch) {
+    let resource, config = 'default', type, id;
 
-    resource = 'manifest';
 
-    config = manifestMatch[1] || 'default';
 
-  } else if (catalogMatch) {
+  
 
-    resource = 'catalog';
 
-    config = catalogMatch[1] || 'default';
 
-    type = catalogMatch[2];
+    // Case 1: Manifest
 
-    id = catalogMatch[3];
 
-  } else if (metaMatch) {
 
-    resource = 'meta';
+    let match = path.match(/\/manifest\.json$/);
 
-    config = metaMatch[1] || 'default';
 
-    type = metaMatch[2];
 
-    id = metaMatch[3];
+    if (match) {
 
-  }
 
-  // --- End Path-based routing ---
+
+        resource = 'manifest';
+
+
+
+        const configPart = path.replace('/manifest.json', '');
+
+
+
+        if (configPart) {
+
+
+
+            config = configPart.substring(1); // remove leading '/'
+
+
+
+        }
+
+
+
+    }
+
+
+
+  
+
+
+
+    // Case 2: Catalog
+
+
+
+    match = path.match(/\/catalog\/([^\/]+)\/([^\/]+)\.json$/);
+
+
+
+    if (match && !resource) { // only if not already matched
+
+
+
+        resource = 'catalog';
+
+
+
+        type = match[1];
+
+
+
+        id = match[2];
+
+
+
+        const configPart = path.replace(`/catalog/${type}/${id}.json`, '');
+
+
+
+        if (configPart) {
+
+
+
+            config = configPart.substring(1); // remove leading '/'
+
+
+
+        }
+
+
+
+    }
+
+
+
+  
+
+
+
+    // Case 3: Meta
+
+
+
+    match = path.match(/\/meta\/([^\/]+)\/([^\/]+)\.json$/);
+
+
+
+    if (match && !resource) { // only if not already matched
+
+
+
+        resource = 'meta';
+
+
+
+        type = match[1];
+
+
+
+        id = match[2];
+
+
+
+        const configPart = path.replace(`/meta/${type}/${id}.json`, '');
+
+
+
+        if (configPart) {
+
+
+
+            config = configPart.substring(1);
+
+
+
+        }
+
+
+
+    }
+
+
+
+    // --- End Path-based routing ---
 
 
 
