@@ -31,25 +31,27 @@ const cacheHeaders = {
 
 // JSON response helper
 function jsonResponse(data, status = 200) {
-  return new Response(JSON.stringify(data), {
-    status,
+  return {
+    statusCode: status,
     headers: {
       'Content-Type': 'application/json',
       ...corsHeaders,
       ...cacheHeaders
-    }
-  });
+    },
+    body: JSON.stringify(data)
+  };
 }
 
 // Error response helper  
 function errorResponse(message, status = 500) {
-  return new Response(JSON.stringify({ error: message }), {
-    status,
+  return {
+    statusCode: status,
     headers: {
       'Content-Type': 'application/json',
       ...corsHeaders
-    }
-  });
+    },
+    body: JSON.stringify({ error: message })
+  };
 }
 
 // Parse configuration string (e.g., "ACTION.COMEDY.HORROR")
@@ -156,23 +158,14 @@ async function handleMeta(movieId) {
 }
 
 // Main handler
-export default async function handler(request, context) {
-  // --- START DEBUG LOGGING ---
-  try {
-    console.log("--- ADDON HANDLER INVOCATION ---");
-    console.log("Request URL:", request.url);
-    const url = new URL(request.url);
-    const params = url.searchParams;
-    console.log("Query Parameters (resource):", params.get('resource'));
-    console.log("All Query Parameters:", Object.fromEntries(params.entries()));
-  } catch (e) {
-    console.error("Error during logging:", e);
-  }
-  // --- END DEBUG LOGGING ---
-
+exports.handler = async function(request, context) {
   // Handle CORS preflight
   if (request.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
+    return {
+      statusCode: 204,
+      headers: corsHeaders,
+      body: ''
+    };
   }
 
   // Parse URL parameters
