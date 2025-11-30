@@ -12,7 +12,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'Content-Type'
 };
 
-export default async function handler(request, context) {
+exports.handler = async function(request, context) {
   if (request.method === 'OPTIONS') {
     return {
       statusCode: 204,
@@ -81,6 +81,4 @@ export default async function handler(request, context) {
   }
 }
 
-export const config = {
-  path: '/health'
-};
+
