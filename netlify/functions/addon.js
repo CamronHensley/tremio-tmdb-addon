@@ -103,8 +103,12 @@ async function handleCatalog(config, catalogId) {
 async function handleMeta(movieId) {
   console.log('handleMeta called with:', movieId);
 
-  if (!movieId.startsWith('tmdb:')) {
-    console.log('ERROR: Invalid movie ID format:', movieId);
+  // Decode URL-encoded movie ID (Stremio encodes the colon as %3A)
+  const decodedId = decodeURIComponent(movieId);
+  console.log('Decoded ID:', decodedId);
+
+  if (!decodedId.startsWith('tmdb:')) {
+    console.log('ERROR: Invalid movie ID format:', decodedId);
     return errorResponse('Invalid movie ID format', 400);
   }
 
@@ -121,7 +125,7 @@ async function handleMeta(movieId) {
   }
 
   for (const genreCode of Object.keys(catalogData.genres)) {
-    const movie = catalogData.genres[genreCode].find(m => m.id === movieId);
+    const movie = catalogData.genres[genreCode].find(m => m.id === decodedId);
     if (movie) {
       console.log('Movie found in genre:', genreCode, 'Movie:', movie.name);
       const response = jsonResponse({ meta: movie });
@@ -130,7 +134,7 @@ async function handleMeta(movieId) {
     }
   }
 
-  console.log('ERROR: Movie not found:', movieId);
+  console.log('ERROR: Movie not found:', decodedId);
   console.log('Available movies:', Object.keys(catalogData.genres).map(code =>
     catalogData.genres[code].slice(0, 2).map(m => m.id)
   ));
