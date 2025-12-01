@@ -127,31 +127,46 @@ exports.handler = async function(request, context) {
     };
   }
 
-  const path = request.path.replace('/.netlify/functions/addon', '');
-  let resource, config = 'default', type, id;
+  // Parse URL to get query parameters (from netlify.toml redirects)
+  const url = new URL(request.url || `https://dummy${request.path}`);
+  const queryParams = Object.fromEntries(url.searchParams);
 
-  let match = path.match(/^\/([A-Z\.]*)\/?manifest.json$/);
-  if (match) {
-    resource = 'manifest';
-    config = match[1] || 'default';
+  // Support both query params (from redirects) and path parsing (direct access)
+  let resource, config, type, id;
+
+  if (queryParams.resource) {
+    // Using query parameters from netlify.toml redirects
+    resource = queryParams.resource;
+    config = queryParams.config || 'default';
+    type = queryParams.type;
+    id = queryParams.id;
+  } else {
+    // Fallback to path parsing for direct access
+    const path = request.path.replace('/.netlify/functions/addon', '');
+
+    let match = path.match(/^\/([A-Z\.]*)\/?manifest.json$/);
+    if (match) {
+      resource = 'manifest';
+      config = match[1] || 'default';
+    }
+
+    match = path.match(/^\/([A-Z\.]*)\/?catalog\/movie\/([^\/]+)\.json$/);
+    if (match && !resource) {
+      resource = 'catalog';
+      config = match[1] || 'default';
+      type = 'movie';
+      id = match[2];
+    }
+
+    match = path.match(/^\/([A-Z\.]*)\/?meta\/movie\/([^\/]+)\.json$/);
+    if (match && !resource) {
+      resource = 'meta';
+      config = match[1] || 'default';
+      type = 'movie';
+      id = match[2];
+    }
   }
 
-  match = path.match(/^\/([A-Z\.]*)\/?catalog\/movie\/([^\/]+)\.json$/);
-  if (match && !resource) {
-    resource = 'catalog';
-    config = match[1] || 'default';
-    type = 'movie';
-    id = match[2];
-  }
-
-  match = path.match(/^\/([A-Z\.]*)\/?meta\/movie\/([^\/]+)\.json$/);
-  if (match && !resource) {
-    resource = 'meta';
-    config = match[1] || 'default';
-    type = 'movie';
-    id = match[2];
-  }
-  
   try {
     switch (resource) {
       case 'manifest':
