@@ -133,7 +133,11 @@ async function handleMeta(movieId) {
   const decodedId = decodeURIComponent(movieId);
   console.log('Decoded ID:', decodedId);
 
-  if (!decodedId.startsWith('tmdb:')) {
+  // Accept both IMDB IDs (tt1234567) and TMDB IDs (tmdb:123)
+  const isIMDB = decodedId.startsWith('tt');
+  const isTMDB = decodedId.startsWith('tmdb:');
+
+  if (!isIMDB && !isTMDB) {
     console.log('ERROR: Invalid movie ID format:', decodedId);
     return errorResponse('Invalid movie ID format', 400);
   }
