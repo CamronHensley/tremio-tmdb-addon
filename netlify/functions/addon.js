@@ -27,11 +27,11 @@ const corsHeaders = {
 
 // Cache settings optimized for daily catalog updates at midnight UTC
 const catalogCacheHeaders = {
-  'Cache-Control': 'public, max-age=21600, must-revalidate'  // 6 hours - fresh within 6h of nightly update
+  'Cache-Control': 'public, max-age=300, must-revalidate'  // 5 minutes - allows quick refresh
 };
 
 const metaCacheHeaders = {
-  'Cache-Control': 'public, max-age=3600, must-revalidate'  // 1 hour for metadata
+  'Cache-Control': 'public, max-age=300, must-revalidate'  // 5 minutes for metadata
 };
 
 function jsonResponse(data, status = 200, useMetaCache = false) {
