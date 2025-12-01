@@ -47,6 +47,12 @@
   to = "/.netlify/functions/addon?config=:config&resource=meta&type=:type&id=:id"
   status = 200
 
+# Handle meta requests without config
+[[redirects]]
+  from = "/meta/:type/:id.json"
+  to = "/.netlify/functions/addon?resource=meta&type=:type&id=:id"
+  status = 200
+
 # Health check endpoint
 [[redirects]]
   from = "/health"

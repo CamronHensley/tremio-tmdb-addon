@@ -131,6 +131,13 @@ exports.handler = async function(request, context) {
   const url = new URL(request.url || `https://dummy${request.path}`);
   const queryParams = Object.fromEntries(url.searchParams);
 
+  // Log incoming request for debugging
+  console.log('Request:', {
+    path: request.path,
+    url: request.url,
+    queryParams
+  });
+
   // Support both query params (from redirects) and path parsing (direct access)
   let resource, config, type, id;
 
@@ -140,6 +147,7 @@ exports.handler = async function(request, context) {
     config = queryParams.config || 'default';
     type = queryParams.type;
     id = queryParams.id;
+    console.log('Using query params:', { resource, config, type, id });
   } else {
     // Fallback to path parsing for direct access
     const path = request.path.replace('/.netlify/functions/addon', '');
@@ -165,7 +173,10 @@ exports.handler = async function(request, context) {
       type = 'movie';
       id = match[2];
     }
+    console.log('Using path parsing:', { resource, config, type, id });
   }
+
+  console.log('Final params:', { resource, config, type, id });
 
   try {
     switch (resource) {
@@ -174,6 +185,7 @@ exports.handler = async function(request, context) {
       case 'catalog':
         return await handleCatalog(config, id);
       case 'meta':
+        console.log('Handling meta request for:', id);
         return await handleMeta(id);
       default:
         return errorResponse('Unknown resource', 404);
