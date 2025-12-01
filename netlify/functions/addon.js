@@ -16,11 +16,11 @@ const corsHeaders = {
 
 // Cache settings optimized for daily catalog updates
 const catalogCacheHeaders = {
-  'Cache-Control': 'public, max-age=3600, must-revalidate'  // 1 hour for catalogs
+  'Cache-Control': 'public, max-age=60, must-revalidate'  // 1 minute for testing, will increase later
 };
 
 const metaCacheHeaders = {
-  'Cache-Control': 'public, max-age=1800, must-revalidate'  // 30 minutes for metadata
+  'Cache-Control': 'public, max-age=900, must-revalidate'  // 15 minutes for metadata
 };
 
 function jsonResponse(data, status = 200, useMetaCache = false) {
@@ -105,8 +105,13 @@ async function handleCatalog(config, catalogId) {
 
   // Add cache-busting headers based on catalog update time
   const catalogAge = catalogData.updatedAt ? new Date(catalogData.updatedAt).getTime() : Date.now();
+
+  // Generate ETag from catalog version and genre - forces Stremio to recognize changes
+  const etag = `"${catalogAge}-${genreCode}"`;
+
   const customHeaders = {
     ...catalogCacheHeaders,
+    'ETag': etag,
     'X-Catalog-Version': catalogAge.toString()
   };
 
