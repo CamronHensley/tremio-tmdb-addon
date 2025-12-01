@@ -51,17 +51,25 @@ A Stremio addon that displays movies organized by genre, pulling data from The M
    - Select your forked repository
    - Deploy (no build settings needed)
 
-3. Add environment variables in Netlify:
-   - Site Settings -> Environment Variables
-   - Add `TMDB_API_KEY` = your TMDB key
+3. **Add ALL THREE environment variables in Netlify:**
+   - Go to: Site Settings → Environment Variables
+   - Add `TMDB_API_KEY` = your TMDB API key
+   - Add `NETLIFY_ACCESS_TOKEN` = (get from Netlify User Settings → Applications → Personal access tokens)
+   - Add `NETLIFY_SITE_ID` = (found in Site Settings → General → Site ID)
 
 ### 3. Setup GitHub Actions
 
-1. In your GitHub repository, go to Settings -> Secrets and variables -> Actions
+**Add THE SAME THREE secrets in GitHub** (yes, both places need them):
+
+1. In your GitHub repository, go to Settings → Secrets and variables → Actions
 2. Add these repository secrets:
-   - `TMDB_API_KEY` - Your TMDB API key
-   - `NETLIFY_ACCESS_TOKEN` - Get from Netlify User Settings -> Applications -> Personal access tokens
-   - `NETLIFY_SITE_ID` - Found in Netlify Site Settings -> General -> Site ID
+   - `TMDB_API_KEY` - Your TMDB API key (same as Netlify)
+   - `NETLIFY_ACCESS_TOKEN` - Your Netlify personal access token (same as Netlify)
+   - `NETLIFY_SITE_ID` - Your Netlify site ID (same as Netlify)
+
+**Why both?**
+- **Netlify**: Addon functions need these to read cached data from Blobs
+- **GitHub Actions**: Nightly update script needs these to fetch from TMDB and write to Blobs
 
 ### 4. Run Initial Update
 
@@ -84,23 +92,32 @@ stremio-tmdb-addon/
 │   └── workflows/
 │       └── nightly-update.yml    # Scheduled update job
 ├── lib/
+│   ├── __tests__/                # Test suites
+│   │   ├── scoring-engine.test.js
+│   │   └── deduplication.test.js
 │   ├── constants.js              # Genre definitions, settings
 │   ├── tmdb-client.js            # TMDB API wrapper
 │   ├── scoring-engine.js         # Movie ranking algorithms
 │   ├── deduplication.js          # Cross-genre deduplication
-│   └── cache-manager.js          # Netlify Blobs wrapper
+│   ├── cache-manager.js          # Netlify Blobs wrapper
+│   ├── logger.js                 # Structured logging utility
+│   └── rate-limiter.js           # Rate limiting protection
 ├── netlify/
 │   └── functions/
-│       ├── addon.js              # Main Stremio endpoint
+│       ├── addon.js              # Main Stremio endpoint (with rate limiting)
 │       └── health.js             # Health check endpoint
 ├── public/
-│   └── index.html                # Configuration page
+│   └── index.html                # Configuration page (with error handling)
 ├── scripts/
 │   ├── nightly-update.js         # Update script for GitHub Actions
 │   └── test-local.js             # Local testing
+├── .nvmrc                        # Node version lock (v20)
+├── jest.config.js                # Jest test configuration
 ├── netlify.toml                  # Netlify configuration
-├── package.json
-└── README.md
+├── package.json                  # Dependencies and scripts
+├── LICENSE                       # MIT License
+├── CHANGES.md                    # Changelog of improvements
+└── README.md                     # This file
 ```
 
 ## Configuration
