@@ -14,17 +14,22 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'Content-Type'
 };
 
-const cacheHeaders = {
-  'Cache-Control': 'public, max-age=300, must-revalidate'  // 5 minutes, force revalidation
+// Cache settings optimized for daily catalog updates
+const catalogCacheHeaders = {
+  'Cache-Control': 'public, max-age=3600, must-revalidate'  // 1 hour for catalogs
 };
 
-function jsonResponse(data, status = 200) {
+const metaCacheHeaders = {
+  'Cache-Control': 'public, max-age=1800, must-revalidate'  // 30 minutes for metadata
+};
+
+function jsonResponse(data, status = 200, useMetaCache = false) {
   return {
     statusCode: status,
     headers: {
       'Content-Type': 'application/json',
       ...corsHeaders,
-      ...cacheHeaders
+      ...(useMetaCache ? metaCacheHeaders : catalogCacheHeaders)
     },
     body: JSON.stringify(data)
   };
@@ -101,7 +106,7 @@ async function handleCatalog(config, catalogId) {
   // Add cache-busting headers based on catalog update time
   const catalogAge = catalogData.updatedAt ? new Date(catalogData.updatedAt).getTime() : Date.now();
   const customHeaders = {
-    ...cacheHeaders,
+    ...catalogCacheHeaders,
     'X-Catalog-Version': catalogAge.toString()
   };
 
@@ -144,7 +149,7 @@ async function handleMeta(movieId) {
     const movie = catalogData.genres[genreCode].find(m => m.id === decodedId);
     if (movie) {
       console.log('Movie found in genre:', genreCode, 'Movie:', movie.name);
-      const response = jsonResponse({ meta: movie });
+      const response = jsonResponse({ meta: movie }, 200, true);  // Use meta cache headers
       console.log('Returning response:', JSON.stringify(response).substring(0, 200));
       return response;
     }
