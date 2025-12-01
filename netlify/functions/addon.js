@@ -15,7 +15,7 @@ const corsHeaders = {
 };
 
 const cacheHeaders = {
-  'Cache-Control': 'public, max-age=3600, stale-while-revalidate=3600'  // Reduced to 1 hour
+  'Cache-Control': 'public, max-age=300, must-revalidate'  // 5 minutes, force revalidation
 };
 
 function jsonResponse(data, status = 200) {
