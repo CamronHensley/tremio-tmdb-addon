@@ -101,20 +101,39 @@ async function handleCatalog(config, catalogId) {
 }
 
 async function handleMeta(movieId) {
+  console.log('handleMeta called with:', movieId);
+
   if (!movieId.startsWith('tmdb:')) {
+    console.log('ERROR: Invalid movie ID format:', movieId);
     return errorResponse('Invalid movie ID format', 400);
   }
 
   const catalogData = await getCatalogData();
+  console.log('Catalog data loaded:', {
+    hasData: !!catalogData,
+    hasGenres: !!catalogData?.genres,
+    genreCount: catalogData?.genres ? Object.keys(catalogData.genres).length : 0
+  });
+
   if (!catalogData || !catalogData.genres) {
+    console.log('ERROR: Catalog data not available');
     return errorResponse('Catalog data not available', 503);
   }
 
   for (const genreCode of Object.keys(catalogData.genres)) {
     const movie = catalogData.genres[genreCode].find(m => m.id === movieId);
-    if (movie) return jsonResponse({ meta: movie });
+    if (movie) {
+      console.log('Movie found in genre:', genreCode, 'Movie:', movie.name);
+      const response = jsonResponse({ meta: movie });
+      console.log('Returning response:', JSON.stringify(response).substring(0, 200));
+      return response;
+    }
   }
 
+  console.log('ERROR: Movie not found:', movieId);
+  console.log('Available movies:', Object.keys(catalogData.genres).map(code =>
+    catalogData.genres[code].slice(0, 2).map(m => m.id)
+  ));
   return errorResponse('Movie not found', 404);
 }
 
