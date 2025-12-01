@@ -11,6 +11,7 @@ const { getStore } = require('@netlify/blobs');
 const TMDBClient = require('../lib/tmdb-client');
 const ScoringEngine = require('../lib/scoring-engine');
 const DeduplicationProcessor = require('../lib/deduplication');
+const HybridCache = require('../lib/hybrid-cache');
 const { GENRES, MOVIES_PER_GENRE } = require('../lib/constants');
 
 // Validate environment variables
@@ -43,6 +44,19 @@ async function runUpdate() {
     siteID: process.env.NETLIFY_SITE_ID,
     token: process.env.NETLIFY_ACCESS_TOKEN
   });
+
+  // Get previous catalog for hybrid caching
+  let previousCatalog = null;
+  try {
+    previousCatalog = await store.get('catalog-previous', { type: 'json' });
+    if (previousCatalog && previousCatalog.genres) {
+      const prevMovieCount = Object.values(previousCatalog.genres)
+        .reduce((sum, movies) => sum + movies.length, 0);
+      console.log(`📦 Loaded previous catalog (${prevMovieCount} movies for hybrid merge)`);
+    }
+  } catch (e) {
+    console.log('📦 No previous catalog found (first run or error)');
+  }
 
   // Get recent movie IDs for historical penalty
   let recentMovieIds = [];
@@ -90,9 +104,20 @@ async function runUpdate() {
   // Process and deduplicate
   console.log('\n🔄 Processing and deduplicating movies...');
   const deduplicatedMovies = deduplicator.processAllGenres(moviesByGenre, recentMovieIds);
-  
+
   const stats = deduplicator.getStats();
   console.log(`  ✓ Assigned ${stats.totalUniqueMovies} unique movies`);
+
+  // Merge with previous catalog (hybrid caching)
+  console.log('\n🔀 Merging with previous catalog (hybrid cache)...');
+  const mergedMovies = HybridCache.mergeWithPrevious(
+    deduplicatedMovies,
+    previousCatalog,
+    30  // Top 30 movies are fresh, rest from cache
+  );
+
+  const mergeStats = HybridCache.getMergeStats(mergedMovies, deduplicatedMovies);
+  console.log(`  ✓ Merged: ${mergeStats.freshMovies} fresh (${mergeStats.freshPercentage}%) + ${mergeStats.cachedMovies} cached (${mergeStats.cachedPercentage}%)`);
 
   // Fetch detailed info for selected movies
   console.log('\n📥 Fetching movie details...');
@@ -100,21 +125,21 @@ async function runUpdate() {
   const genresWithDetails = {};
 
   for (const genreCode of allGenreCodes) {
-    const movies = deduplicatedMovies[genreCode] || [];
+    const movies = mergedMovies[genreCode] || [];
     const movieIds = movies.map(m => m.id);
     allSelectedIds.push(...movieIds);
-    
+
     console.log(`  → ${GENRES[genreCode].name}: ${movies.length} movies`);
-    
+
     // Fetch details in batches
     const details = await tmdb.fetchMovieDetailsBatch(movieIds);
-    
+
     // Convert to Stremio format
     genresWithDetails[genreCode] = details
       .map(movie => TMDBClient.toStremioMeta(movie))
       .filter(meta => meta !== null)
       .slice(0, MOVIES_PER_GENRE);
-    
+
     console.log(`    ✓ Got details for ${genresWithDetails[genreCode].length} movies`);
   }
 
@@ -150,10 +175,14 @@ async function runUpdate() {
   await store.setJSON('metadata', metadata);
   console.log('  ✓ Metadata saved');
 
+  // Store current catalog as previous for next run (hybrid caching)
+  await store.setJSON('catalog-previous', catalogData);
+  console.log('  ✓ Saved current catalog for tomorrow\'s hybrid merge');
+
   // Update recent movie IDs for next run
   const uniqueSelectedIds = [...new Set(allSelectedIds)];
   const updatedRecentIds = [...new Set([...uniqueSelectedIds, ...recentMovieIds])].slice(0, 4000);
-  
+
   await store.setJSON('recent-movies', {
     ids: updatedRecentIds,
     updatedAt: new Date().toISOString()
