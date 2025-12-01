@@ -543,11 +543,24 @@
     let selectedGenres = new Set(GENRES.map(g => g.code));
     const baseUrl = window.location.origin;
 
+    function showError(message) {
+      const errorDiv = document.createElement('div');
+      errorDiv.style.cssText = 'position:fixed;top:20px;right:20px;background:#e50914;color:#fff;padding:16px 24px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.5);z-index:9999;max-width:400px;';
+      errorDiv.textContent = message;
+      document.body.appendChild(errorDiv);
+      setTimeout(() => errorDiv.remove(), 5000);
+    }
+
     function init() {
-      renderGenres();
-      updateUrl();
-      updateStrategy();
-      setupPresets();
+      try {
+        renderGenres();
+        updateUrl();
+        updateStrategy();
+        setupPresets();
+      } catch (error) {
+        console.error('Initialization error:', error);
+        showError('Failed to initialize addon. Please refresh the page.');
+      }
     }
 
     function renderGenres() {
@@ -619,30 +632,48 @@
     }
 
     function copyUrl() {
-      var url = document.getElementById('installUrl').textContent;
-      var btn = document.getElementById('copyBtn');
-      
-      navigator.clipboard.writeText(url).then(function() {
-        btn.textContent = 'Copied!';
-        btn.classList.add('copied');
-        setTimeout(function() {
-          btn.textContent = 'Copy';
-          btn.classList.remove('copied');
-        }, 2000);
-      }).catch(function() {
-        var textarea = document.createElement('textarea');
-        textarea.value = url;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        btn.textContent = 'Copied!';
-        btn.classList.add('copied');
-        setTimeout(function() {
-          btn.textContent = 'Copy';
-          btn.classList.remove('copied');
-        }, 2000);
-      });
+      try {
+        var url = document.getElementById('installUrl').textContent;
+        var btn = document.getElementById('copyBtn');
+
+        navigator.clipboard.writeText(url).then(function() {
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(function() {
+            btn.textContent = 'Copy';
+            btn.classList.remove('copied');
+          }, 2000);
+        }).catch(function(clipboardError) {
+          console.warn('Clipboard API failed, using fallback:', clipboardError);
+          try {
+            var textarea = document.createElement('textarea');
+            textarea.value = url;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            var success = document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            if (success) {
+              btn.textContent = 'Copied!';
+              btn.classList.add('copied');
+              setTimeout(function() {
+                btn.textContent = 'Copy';
+                btn.classList.remove('copied');
+              }, 2000);
+            } else {
+              throw new Error('Copy command failed');
+            }
+          } catch (fallbackError) {
+            console.error('Fallback copy failed:', fallbackError);
+            showError('Failed to copy URL. Please copy it manually.');
+          }
+        });
+      } catch (error) {
+        console.error('Copy function error:', error);
+        showError('Failed to copy URL. Please copy it manually.');
+      }
     }
 
     init();

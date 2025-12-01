@@ -2,11 +2,22 @@
  * Main Stremio Addon Function
  */
 const { getStore } = require('@netlify/blobs');
-const { 
-  GENRE_BY_CODE, 
-  ALL_GENRE_CODES, 
+const {
+  GENRE_BY_CODE,
+  ALL_GENRE_CODES,
   ADDON_META
 } = require('../../lib/constants');
+const {
+  RateLimiter,
+  getClientIdentifier,
+  createRateLimitResponse
+} = require('../../lib/rate-limiter');
+
+// Rate limiter: 120 requests per minute per IP
+const rateLimiter = new RateLimiter({
+  windowMs: 60000,
+  maxRequests: 120
+});
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -180,6 +191,15 @@ exports.handler = async function(request, context) {
     };
   }
 
+  // Apply rate limiting
+  const clientId = getClientIdentifier(request);
+  const rateLimit = rateLimiter.isAllowed(clientId);
+
+  if (!rateLimit.allowed) {
+    console.warn('Rate limit exceeded for:', clientId);
+    return createRateLimitResponse(rateLimit);
+  }
+
   // Parse URL to get query parameters (from netlify.toml redirects)
   const url = new URL(request.url || `https://dummy${request.path}`);
   const queryParams = Object.fromEntries(url.searchParams);
@@ -188,7 +208,9 @@ exports.handler = async function(request, context) {
   console.log('Request:', {
     path: request.path,
     url: request.url,
-    queryParams
+    queryParams,
+    clientId,
+    rateLimitRemaining: rateLimit.remaining
   });
 
   // Support both query params (from redirects) and path parsing (direct access)

@@ -9,6 +9,8 @@ A Stremio addon that displays movies organized by genre, pulling data from The M
 - **Smart Deduplication** - Each movie appears in only one genre
 - **Quality Filtering** - Only shows well-rated, popular movies
 - **Customizable** - Choose which genres to display
+- **IMDB ID Priority** - Uses IMDB IDs for maximum compatibility with streaming addons
+- **Rate Limiting** - Built-in protection against abuse (120 req/min per IP)
 - **Zero Cost** - Runs entirely on free tiers
 
 ## Daily Themes
@@ -105,11 +107,13 @@ stremio-tmdb-addon/
 
 ### Environment Variables
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `TMDB_API_KEY` | Yes | Your TMDB API key |
-| `NETLIFY_ACCESS_TOKEN` | Yes* | For GitHub Actions to update Blobs |
-| `NETLIFY_SITE_ID` | Yes* | Your Netlify site ID |
+| Variable | Required | Description | Default |
+|----------|----------|-------------|---------|
+| `TMDB_API_KEY` | Yes | Your TMDB API key | - |
+| `NETLIFY_ACCESS_TOKEN` | Yes* | For GitHub Actions to update Blobs | - |
+| `NETLIFY_SITE_ID` | Yes* | Your Netlify site ID | - |
+| `MOVIES_PER_GENRE` | No | Number of movies per genre | 30 |
+| `LOG_LEVEL` | No | Logging verbosity (ERROR/WARN/INFO/DEBUG) | INFO |
 
 *Required for automated updates
 
@@ -119,6 +123,32 @@ Users can customize their addon by selecting genres on the configuration page. T
 
 - All genres: `/manifest.json`
 - Selected genres: `/ACTION.COMEDY.HORROR/manifest.json`
+
+## Free Tier Limits & Usage
+
+This addon is designed to run entirely on free tiers:
+
+### TMDB API (Free)
+- **Limit**: No daily limit, ~40 requests/second
+- **Usage**: ~627 API calls per nightly update
+- **Cost**: $0/month
+- **Notes**: Very generous free tier, no credit card required
+
+### Netlify (Free Tier)
+- **Limit**: 100 GB bandwidth/month, 300 build minutes/month
+- **Usage**: ~1-2 GB bandwidth/month (estimate), ~30 build minutes/month
+- **Cost**: $0/month
+- **Notes**: Plenty of headroom for typical usage
+
+### GitHub Actions (Free Tier)
+- **Limit**: 2000 minutes/month for private repos (unlimited for public)
+- **Usage**: ~300 minutes/month (10 min/day × 30 days)
+- **Cost**: $0/month
+- **Notes**: Use public repo for unlimited minutes
+
+**Total Monthly Cost**: $0
+
+**Estimated capacity**: Can serve thousands of users on free tier
 
 ## Local Development
 
@@ -133,8 +163,17 @@ cp .env.example .env
 # Run tests
 npm test
 
+# Run tests with coverage
+npm run test:coverage
+
+# Watch mode for development
+npm run test:watch
+
 # Run local update (requires all env vars)
 npm run update
+
+# Start local dev server
+npm run dev
 ```
 
 ## API Usage
@@ -181,9 +220,50 @@ Each genre has unique scoring characteristics:
 - **Sci-Fi**: Franchise and effects bonus
 - **Romance**: Valentine's and Christmas boost
 
+## Testing
+
+The project includes comprehensive test coverage:
+
+```bash
+# Run all tests
+npm test
+
+# Run with coverage report
+npm run test:coverage
+
+# Watch mode for development
+npm run test:watch
+
+# Run integration tests
+npm run test:local
+```
+
+Test suites cover:
+- **Scoring Engine**: All scoring strategies, modifiers, and edge cases
+- **Deduplication Logic**: Multi-genre handling, quality thresholds
+- **Rate Limiting**: Request throttling and IP tracking
+- **Error Handling**: Graceful degradation and user feedback
+
+## Recent Improvements
+
+### v1.1.0 (Latest)
+- ✅ Added comprehensive test suite with Jest
+- ✅ Implemented rate limiting (120 req/min per IP)
+- ✅ Added structured logging utility
+- ✅ Made `MOVIES_PER_GENRE` configurable via environment variable
+- ✅ Improved error handling in configuration UI
+- ✅ Prioritize IMDB IDs for better streaming addon compatibility
+- ✅ Added `.nvmrc` for Node version locking
+- ✅ Added MIT LICENSE file
+
+### v1.0.0
+- Initial release with daily rotation system
+- 19 genres with smart deduplication
+- Genre-specific personalities and scoring
+
 ## License
 
-MIT License
+MIT License - See [LICENSE](LICENSE) file for details
 
 ## Attribution
 
