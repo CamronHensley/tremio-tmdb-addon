@@ -15,7 +15,7 @@ const corsHeaders = {
 };
 
 const cacheHeaders = {
-  'Cache-Control': 'public, max-age=86400, stale-while-revalidate=3600'
+  'Cache-Control': 'public, max-age=3600, stale-while-revalidate=3600'  // Reduced to 1 hour
 };
 
 function jsonResponse(data, status = 200) {
@@ -97,7 +97,23 @@ async function handleCatalog(config, catalogId) {
   }
 
   const movies = catalogData.genres[genreCode] || [];
-  return jsonResponse({ metas: movies });
+
+  // Add cache-busting headers based on catalog update time
+  const catalogAge = catalogData.updatedAt ? new Date(catalogData.updatedAt).getTime() : Date.now();
+  const customHeaders = {
+    ...cacheHeaders,
+    'X-Catalog-Version': catalogAge.toString()
+  };
+
+  return {
+    statusCode: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      ...corsHeaders,
+      ...customHeaders
+    },
+    body: JSON.stringify({ metas: movies })
+  };
 }
 
 async function handleMeta(movieId) {
