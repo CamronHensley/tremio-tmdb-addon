@@ -14,13 +14,13 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'Content-Type'
 };
 
-// Cache settings optimized for daily catalog updates
+// Cache settings optimized for daily catalog updates at midnight UTC
 const catalogCacheHeaders = {
-  'Cache-Control': 'public, max-age=60, must-revalidate'  // 1 minute for testing, will increase later
+  'Cache-Control': 'public, max-age=21600, must-revalidate'  // 6 hours - fresh within 6h of nightly update
 };
 
 const metaCacheHeaders = {
-  'Cache-Control': 'public, max-age=900, must-revalidate'  // 15 minutes for metadata
+  'Cache-Control': 'public, max-age=3600, must-revalidate'  // 1 hour for metadata
 };
 
 function jsonResponse(data, status = 200, useMetaCache = false) {
