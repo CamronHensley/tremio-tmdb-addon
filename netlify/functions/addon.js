@@ -71,7 +71,14 @@ function buildManifest(genreCodes) {
     return {
       type: 'movie',
       id: `tmdb-${code.toLowerCase()}`,
-      name: `${genre.name} Movies`
+      name: `${genre.name} Movies`,
+      extra: [
+        {
+          name: 'skip',
+          isRequired: false,
+          options: []
+        }
+      ]
     };
   });
   return { ...ADDON_META, catalogs };
