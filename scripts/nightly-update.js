@@ -77,12 +77,12 @@ async function runUpdate() {
   const sortBy = scoringEngine.getSortParameter();
   const strategyParams = scoringEngine.getStrategyParams();
   const TARGET_NEW_MOVIES = 30; // Minimum new movies we want per genre
-  const MAX_PAGES = 5;
+  const MAX_PAGES = 10;  // Increased to get enough unique movies for deduplication
 
-  // TEMPORARILY: Fetch all 5 pages to build up catalog to 100 per genre
-  // Once catalog is full, can revert to adaptive 2-page fetching
-  currentPages = [1, 2, 3, 4, 5];
-  console.log('🚀 Full catalog build mode: fetching all 5 pages to reach 100 per genre');
+  // TEMPORARILY: Fetch all 10 pages to build up catalog to 100 per genre
+  // With strict deduplication, need more pages to get enough unique movies
+  currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  console.log('🚀 Full catalog build mode: fetching all 10 pages to reach 100 per genre');
 
   console.log('\n🔍 Fetching from TMDB...');
   console.log(`📄 Pages: ${currentPages.join(', ')}`);
