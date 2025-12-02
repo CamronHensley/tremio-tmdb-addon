@@ -4,15 +4,16 @@ If something breaks your addon, follow these steps to quickly revert to a workin
 
 ## Current Production State (Latest)
 
-**Commit:** `2290d6d` - Reduce cache time to 5 minutes for faster refresh
+**Commit:** `bc740e5` - Pagination support with skip parameter
 **Features:**
-- ✅ 100 movies per genre target
+- ✅ 100 movies per genre (1,431+ total, growing to 1,900)
+- ✅ Full pagination in Discover tab (unlimited scrolling)
 - ✅ Adaptive page fetching (2-5 pages based on freshness)
 - ✅ Hybrid caching (30% fresh, 70% from cache)
 - ✅ 5-minute cache headers
 - ✅ ~800 API calls per day
 
-**Status:** ✅ TESTED & WORKING (766 movies, growing to 1900)
+**Status:** ✅ TESTED & WORKING (Discover tab: ∞ items, Board tab: ~48 items)
 
 ## Quick Revert Options
 
@@ -21,11 +22,11 @@ If something breaks your addon, follow these steps to quickly revert to a workin
 cd "c:\Users\olnys\Downloads\stremio-tmdb-addon\stremio-tmdb-addon"
 
 # Stay on current version (if already there)
-git reset --hard 2290d6d
+git reset --hard bc740e5
 git push --force
 ```
 
-**This keeps:** Hybrid caching, adaptive fetching, 5-min cache
+**This keeps:** Pagination, hybrid caching, adaptive fetching, 5-min cache
 
 ### Option 2: Revert to Hybrid Cache with 6-hour Cache
 ```bash
@@ -50,12 +51,12 @@ git push --force
 
 | Commit | Description | API Calls/Day | Status |
 |--------|-------------|---------------|--------|
-| `2290d6d` | 5-min cache + hybrid + adaptive | ~800 | ✅ CURRENT PRODUCTION |
+| `bc740e5` | Pagination + skip in manifest | ~800 | ✅ CURRENT PRODUCTION |
+| `9495275` | Skip parameter implementation | ~800 | ✅ TESTED |
+| `f815f9a` | Version 1.1.0 + 5-min cache | ~800 | ✅ TESTED |
+| `2290d6d` | 5-min cache + hybrid + adaptive | ~800 | ✅ TESTED |
 | `d44c6ce` | Adaptive fetching + hybrid cache | ~800 | ✅ TESTED |
-| `74bc240` | Hybrid caching activated | ~800 | ✅ TESTED |
-| `1571b09` | Hybrid cache infrastructure (inactive) | ~1,945 | ✅ STABLE |
 | `1027c9c` | 100 movies, 5 pages, no cache | ~1,945 | ✅ STABLE |
-| `4b4f5c9` | 5 pages fetching | ~1,945 | ✅ STABLE |
 
 ## Partial Revert (Fix Without Going Back)
 
@@ -70,17 +71,17 @@ git revert <commit-hash>
 git push
 ```
 
-**Example:** To undo just the 5-minute cache change but keep everything else:
+**Example:** To undo just the pagination changes but keep everything else:
 ```bash
-git revert 2290d6d
+git revert bc740e5 9495275
 git push
 ```
 
 ## If Addon Stops Working Completely
 
-1. **Quick Fix**: Revert to `2290d6d` (current working state)
+1. **Quick Fix**: Revert to `bc740e5` (current working state)
    ```bash
-   git reset --hard 2290d6d
+   git reset --hard bc740e5
    git push --force
    ```
 
@@ -119,7 +120,7 @@ git push
 If you lose context with Claude and need help:
 1. Check commit messages: `git log --oneline -10`
 2. See what changed: `git show <commit-hash>`
-3. Revert to `2290d6d` for current production state
+3. Revert to `bc740e5` for current production state
 4. Revert to `1027c9c` for simplest stable state
 
 ## What Each System Does
@@ -134,6 +135,13 @@ If you lose context with Claude and need help:
 - Checks if enough NEW movies vs cached
 - Fetches more pages (up to 5) if needed
 - Self-adjusts to TMDB's content freshness
+
+**Pagination (Skip Parameter):**
+- Declares `skip` support in manifest
+- Enables unlimited scrolling in Discover tab
+- Returns movies in chunks of 100
+- Discover tab: Full access to all movies
+- Board tab: Limited to ~48 items (Stremio limitation)
 
 **5-Minute Cache:**
 - Stremio refreshes catalog every 5 minutes
