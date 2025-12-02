@@ -10,16 +10,39 @@ const { GENRES } = require('./lib/constants');
 
 // Mock TMDB movies for testing
 const mockMovies = {
-  // Test 1: Animation blocking
+  // Test 1: Animation blocking (Japanese anime vs Western animation)
   ANIMATION_KIDS: [
     {
       id: 1,
       title: 'Toy Story',
+      original_language: 'en',  // Western animation - KEEP
       genre_ids: [16, 10751, 35],  // Animation, Family, Comedy
       release_date: '1995-11-22',
       vote_average: 8.3,
       vote_count: 15000,
       popularity: 85
+    },
+    {
+      id: 100,
+      title: 'Spirited Away',
+      original_language: 'ja',  // Japanese anime - BLOCK
+      genre_ids: [16, 14],  // Animation, Fantasy
+      release_date: '2001-07-20',
+      vote_average: 8.6,
+      vote_count: 12000,
+      popularity: 80
+    }
+  ],
+  ANIMATION_ADULT: [
+    {
+      id: 101,
+      title: 'Akira',
+      original_language: 'ja',  // Japanese anime - BLOCK
+      genre_ids: [16, 878, 28],  // Animation, Sci-Fi, Action
+      release_date: '1988-07-16',
+      vote_average: 8.0,
+      vote_count: 6000,
+      popularity: 60
     }
   ],
 
@@ -141,14 +164,24 @@ dramaResult.forEach((m, i) => {
 });
 console.log('');
 
-// Test 1: Animation blocking
-console.log('Test 1: Animation Blocking');
+// Test 1: Japanese anime blocking (keep Western animation)
+console.log('Test 1: Japanese Anime Blocking (Keep Western Animation)');
 console.log('-'.repeat(60));
-const animationKidsCount = (result.ANIMATION_KIDS || []).length;
-const animationAdultCount = (result.ANIMATION_ADULT || []).length;
+const animationKidsMovies = result.ANIMATION_KIDS || [];
+const animationAdultMovies = result.ANIMATION_ADULT || [];
+const animationKidsCount = animationKidsMovies.length;
+const animationAdultCount = animationAdultMovies.length;
+const hasJapaneseAnime = [...animationKidsMovies, ...animationAdultMovies].some(m => m.original_language === 'ja');
+const hasToyStory = animationKidsMovies.some(m => m.title === 'Toy Story');
 console.log(`Animation (Kids) movies: ${animationKidsCount}`);
 console.log(`Animation (Adult) movies: ${animationAdultCount}`);
-console.log(`✅ PASS: All animation blocked` + (animationKidsCount === 0 && animationAdultCount === 0 ? '' : ' ❌ FAIL'));
+console.log(`Has Japanese anime: ${hasJapaneseAnime ? '❌ YES (BUG!)' : '✅ NO (CORRECT)'}`);
+console.log(`Has Toy Story (Western): ${hasToyStory ? '✅ YES (CORRECT)' : '❌ NO (BUG!)'}`);
+if (!hasJapaneseAnime && hasToyStory) {
+  console.log('✅ PASS: Japanese anime blocked, Western animation kept');
+} else {
+  console.log('❌ FAIL: Either Japanese anime not blocked OR Western animation not kept');
+}
 
 // Test 2: LOTR in Fantasy (not Action)
 console.log('\nTest 2: LOTR Genre Assignment (Fantasy vs Action)');
