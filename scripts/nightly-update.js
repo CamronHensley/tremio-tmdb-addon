@@ -59,14 +59,16 @@ async function runUpdate() {
   }
 
   // Get recent movie IDs for historical penalty
+  // TEMPORARILY DISABLED: Clear recent movies to allow catalog to build up to 100 per genre
   let recentMovieIds = [];
-  try {
-    const recentData = await store.get('recent-movies', { type: 'json' });
-    recentMovieIds = recentData?.ids || [];
-    console.log(`📜 Loaded ${recentMovieIds.length} recent movie IDs for diversity`);
-  } catch (e) {
-    console.log('📜 No recent movie history found (first run?)');
-  }
+  console.log('📜 Recent movie penalty temporarily disabled (building up catalog)');
+  // try {
+  //   const recentData = await store.get('recent-movies', { type: 'json' });
+  //   recentMovieIds = recentData?.ids || [];
+  //   console.log(`📜 Loaded ${recentMovieIds.length} recent movie IDs for diversity`);
+  // } catch (e) {
+  //   console.log('📜 No recent movie history found (first run?)');
+  // }
 
   // Adaptive fetching: Start with 2 pages, fetch more if needed
   const moviesByGenre = {};
