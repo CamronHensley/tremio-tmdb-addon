@@ -97,7 +97,7 @@ async function handleManifest(config) {
   return jsonResponse(manifest);
 }
 
-async function handleCatalog(config, catalogId) {
+async function handleCatalog(config, catalogId, skip = 0) {
   const match = catalogId.match(/^tmdb-(.+)$/);
   if (!match) return errorResponse('Invalid catalog ID', 400);
 
@@ -112,13 +112,17 @@ async function handleCatalog(config, catalogId) {
     return errorResponse('Catalog data not available', 503);
   }
 
-  const movies = catalogData.genres[genreCode] || [];
+  const allMovies = catalogData.genres[genreCode] || [];
+
+  // Implement pagination with skip parameter
+  // Stremio typically requests in chunks of 100
+  const movies = allMovies.slice(skip, skip + 100);
 
   // Add cache-busting headers based on catalog update time
   const catalogAge = catalogData.updatedAt ? new Date(catalogData.updatedAt).getTime() : Date.now();
 
   // Generate ETag from catalog version and genre - forces Stremio to recognize changes
-  const etag = `"${catalogAge}-${genreCode}"`;
+  const etag = `"${catalogAge}-${genreCode}-${skip}"`;
 
   const customHeaders = {
     ...catalogCacheHeaders,
@@ -214,7 +218,7 @@ exports.handler = async function(request, context) {
   });
 
   // Support both query params (from redirects) and path parsing (direct access)
-  let resource, config, type, id;
+  let resource, config, type, id, skip;
 
   if (queryParams.resource) {
     // Using query parameters from netlify.toml redirects
@@ -222,7 +226,8 @@ exports.handler = async function(request, context) {
     config = queryParams.config || 'default';
     type = queryParams.type;
     id = queryParams.id;
-    console.log('Using query params:', { resource, config, type, id });
+    skip = parseInt(queryParams.skip || '0', 10);
+    console.log('Using query params:', { resource, config, type, id, skip });
   } else {
     // Fallback to path parsing for direct access
     const path = request.path.replace('/.netlify/functions/addon', '');
@@ -239,6 +244,7 @@ exports.handler = async function(request, context) {
       config = match[1] || 'default';
       type = 'movie';
       id = match[2];
+      skip = parseInt(queryParams.skip || '0', 10);
     }
 
     match = path.match(/^\/([A-Z\.]*)\/?meta\/movie\/([^\/]+)\.json$/);
@@ -248,17 +254,17 @@ exports.handler = async function(request, context) {
       type = 'movie';
       id = match[2];
     }
-    console.log('Using path parsing:', { resource, config, type, id });
+    console.log('Using path parsing:', { resource, config, type, id, skip });
   }
 
-  console.log('Final params:', { resource, config, type, id });
+  console.log('Final params:', { resource, config, type, id, skip });
 
   try {
     switch (resource) {
       case 'manifest':
         return await handleManifest(config);
       case 'catalog':
-        return await handleCatalog(config, id);
+        return await handleCatalog(config, id, skip);
       case 'meta':
         console.log('Handling meta request for:', id);
         return await handleMeta(id);
