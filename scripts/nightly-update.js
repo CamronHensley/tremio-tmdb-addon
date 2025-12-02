@@ -79,10 +79,10 @@ async function runUpdate() {
   const TARGET_NEW_MOVIES = 30; // Minimum new movies we want per genre
   const MAX_PAGES = 10;  // Increased to get enough unique movies for deduplication
 
-  // Fetch 5 pages with quality filters enabled
-  // Hybrid cache will fill gaps to reach 100 per genre
-  currentPages = [1, 2, 3, 4, 5];
-  console.log('🚀 Quality mode: fetching 5 pages with quality filters, hybrid cache fills rest');
+  // Fetch 10 pages to get enough unique recognizable movies
+  // With strict deduplication + popularity filter (20+), we need more pages
+  currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  console.log('🚀 Fetching 10 pages with popularity filter (20+), deduplication ensures no duplicates');
 
   console.log('\n🔍 Fetching from TMDB...');
   console.log(`📄 Pages: ${currentPages.join(', ')}`);
