@@ -186,7 +186,9 @@ async function runUpdate() {
 
   for (const genreCode of allGenreCodes) {
     const movies = mergedMovies[genreCode] || [];
-    const movieIds = movies.map(m => m.id);
+    // Extract TMDB numeric IDs for API calls
+    // Fresh movies have numeric id, cached movies have tmdbId field
+    const movieIds = movies.map(m => m.tmdbId || m.id);
 
     // Check for duplicates BEFORE fetching details
     const uniqueIds = new Set(movieIds);
