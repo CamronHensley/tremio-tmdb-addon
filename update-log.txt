@@ -1,0 +1,25 @@
+🎬 Starting nightly TMDB catalog update...
+📅 Date: 2025-12-02T04:05:41.553Z
+
+❌ Update failed: Error: Missing required environment variables: TMDB_API_KEY, NETLIFY_ACCESS_TOKEN, NETLIFY_SITE_ID
+    at validateEnv (C:\Users\olnys\Downloads\stremio-tmdb-addon\stremio-tmdb-addon\scripts\nightly-update.js:23:11)
+    at runUpdate (C:\Users\olnys\Downloads\stremio-tmdb-addon\stremio-tmdb-addon\scripts\nightly-update.js:32:3)
+    at Object.<anonymous> (C:\Users\olnys\Downloads\stremio-tmdb-addon\stremio-tmdb-addon\scripts\nightly-update.js:294:1)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+Error: Missing required environment variables: TMDB_API_KEY, NETLIFY_ACCESS_TOKEN, NETLIFY_SITE_ID
+    at validateEnv (C:\Users\olnys\Downloads\stremio-tmdb-addon\stremio-tmdb-addon\scripts\nightly-update.js:23:11)
+    at runUpdate (C:\Users\olnys\Downloads\stremio-tmdb-addon\stremio-tmdb-addon\scripts\nightly-update.js:32:3)
+    at Object.<anonymous> (C:\Users\olnys\Downloads\stremio-tmdb-addon\stremio-tmdb-addon\scripts\nightly-update.js:294:1)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
