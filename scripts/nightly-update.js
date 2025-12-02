@@ -168,11 +168,16 @@ async function runUpdate() {
   const stats = deduplicator.getStats();
   console.log(`  ✓ Assigned ${stats.totalUniqueMovies} unique movies`);
 
-  // TEMPORARILY DISABLED: Skip hybrid caching to use 100% fresh deduplicated movies
-  // Once catalog is fully populated at 100 per genre, re-enable hybrid caching
-  console.log('\n🔀 Hybrid caching temporarily disabled - using 100% fresh deduplicated data');
-  const mergedMovies = deduplicatedMovies;  // Use deduplicated movies directly
-  console.log(`  ✓ Using ${stats.totalUniqueMovies} fresh unique movies (no cache merge)`);
+  // Merge with previous catalog (hybrid caching)
+  console.log('\n🔀 Merging with previous catalog (hybrid cache)...');
+  const mergedMovies = HybridCache.mergeWithPrevious(
+    deduplicatedMovies,
+    previousCatalog,
+    100  // All 100 slots from fresh quality movies, cache only fills if we're short
+  );
+
+  const mergeStats = HybridCache.getMergeStats(mergedMovies, deduplicatedMovies);
+  console.log(`  ✓ Merged: ${mergeStats.freshMovies} fresh (${mergeStats.freshPercentage}%) + ${mergeStats.cachedMovies} cached (${mergeStats.cachedPercentage}%)`);
 
   // Fetch detailed info for selected movies
   console.log('\n📥 Fetching movie details...');
