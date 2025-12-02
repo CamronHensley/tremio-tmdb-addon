@@ -77,12 +77,12 @@ async function runUpdate() {
   const sortBy = scoringEngine.getSortParameter();
   const strategyParams = scoringEngine.getStrategyParams();
   const TARGET_NEW_MOVIES = 30; // Minimum new movies we want per genre
-  const MAX_PAGES = 10;  // Increased to get enough unique movies for deduplication
+  const MAX_PAGES = 20;  // Fetch ALL the famous movies
 
-  // Fetch 10 pages to get enough unique recognizable movies
-  // With strict deduplication + popularity filter (20+), we need more pages
-  currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  console.log('🚀 Fetching 10 pages with popularity filter (20+), deduplication ensures no duplicates');
+  // Fetch 20 pages to build a catalog of the most popular/famous movies
+  // With strict deduplication + high quality filter (pop: 50+), we cast a wide net
+  currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  console.log('🚀 Fetching 20 pages to get ALL famous movies (popularity 50+), deduplication assigns to best genre');
 
   console.log('\n🔍 Fetching from TMDB...');
   console.log(`📄 Pages: ${currentPages.join(', ')}`);
