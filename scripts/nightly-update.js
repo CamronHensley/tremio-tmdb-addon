@@ -79,8 +79,13 @@ async function runUpdate() {
   const TARGET_NEW_MOVIES = 30; // Minimum new movies we want per genre
   const MAX_PAGES = 5;
 
-  console.log('\n🔍 Adaptive fetching from TMDB...');
-  console.log(`📄 Starting with pages: ${currentPages.join(', ')}`);
+  // TEMPORARILY: Fetch all 5 pages to build up catalog to 100 per genre
+  // Once catalog is full, can revert to adaptive 2-page fetching
+  currentPages = [1, 2, 3, 4, 5];
+  console.log('🚀 Full catalog build mode: fetching all 5 pages to reach 100 per genre');
+
+  console.log('\n🔍 Fetching from TMDB...');
+  console.log(`📄 Pages: ${currentPages.join(', ')}`);
 
   // Initial fetch
   for (const genreCode of allGenreCodes) {
