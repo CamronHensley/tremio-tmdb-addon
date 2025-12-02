@@ -180,18 +180,44 @@ async function runUpdate() {
   for (const genreCode of allGenreCodes) {
     const movies = mergedMovies[genreCode] || [];
     const movieIds = movies.map(m => m.id);
+
+    // Check for duplicates BEFORE fetching details
+    const uniqueIds = new Set(movieIds);
+    if (movieIds.length !== uniqueIds.size) {
+      console.log(`  ⚠️  ${GENRES[genreCode].name} has ${movieIds.length - uniqueIds.size} duplicate IDs in merged movies!`);
+      console.log(`    Total: ${movieIds.length}, Unique: ${uniqueIds.size}`);
+    }
+
     allSelectedIds.push(...movieIds);
 
     console.log(`  → ${GENRES[genreCode].name}: ${movies.length} movies`);
 
+    // Deduplicate movieIds before fetching (in case hybrid cache had issues)
+    const uniqueMovieIds = [...new Set(movieIds)];
+    if (uniqueMovieIds.length !== movieIds.length) {
+      console.log(`    ⚠️  Removed ${movieIds.length - uniqueMovieIds.length} duplicate IDs before fetch`);
+    }
+
     // Fetch details in batches
-    const details = await tmdb.fetchMovieDetailsBatch(movieIds);
+    const details = await tmdb.fetchMovieDetailsBatch(uniqueMovieIds);
 
     // Convert to Stremio format
-    genresWithDetails[genreCode] = details
+    const moviesWithMeta = details
       .map(movie => TMDBClient.toStremioMeta(movie))
-      .filter(meta => meta !== null)
-      .slice(0, MOVIES_PER_GENRE);
+      .filter(meta => meta !== null);
+
+    // Deduplicate by Stremio ID (shouldn't be needed, but just in case)
+    const seenIds = new Set();
+    const uniqueMovies = moviesWithMeta.filter(meta => {
+      if (seenIds.has(meta.id)) {
+        console.log(`    ⚠️  Duplicate Stremio ID found: ${meta.id} (${meta.name})`);
+        return false;
+      }
+      seenIds.add(meta.id);
+      return true;
+    });
+
+    genresWithDetails[genreCode] = uniqueMovies.slice(0, MOVIES_PER_GENRE);
 
     console.log(`    ✓ Got details for ${genresWithDetails[genreCode].length} movies`);
   }
