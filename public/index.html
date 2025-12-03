@@ -437,7 +437,7 @@
       <div class="strategy-badge" id="strategyBadge">Today's Theme: Loading...</div>
     </header>
 
-    <section>
+    <section style="display: none;">
       <h2 class="section-title">Quick Presets</h2>
       <div class="presets">
         <button class="preset-btn active" data-preset="all">All Genres</button>
@@ -449,9 +449,21 @@
       </div>
     </section>
 
-    <section>
+    <section style="display: none;">
       <h2 class="section-title">Select Your Genres</h2>
       <div class="genre-grid" id="genreGrid"></div>
+    </section>
+
+    <section style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px; padding: 24px; margin-bottom: 40px;">
+      <h2 class="section-title">AI-Powered Classification Coming Soon</h2>
+      <p style="color: var(--text-dim); line-height: 1.6; margin-bottom: 12px;">
+        This addon currently includes <strong style="color: var(--gold);">all 22 genres</strong> with movies automatically
+        categorized using a sophisticated 5-tier deduplication system.
+      </p>
+      <p style="color: var(--text-dim); line-height: 1.6;">
+        We're working on integrating <strong style="color: var(--gold);">local AI classification</strong> (Qwen2.5-7B)
+        to improve genre accuracy and enable more nuanced categorization.
+      </p>
     </section>
 
     <section class="install-section">
@@ -470,11 +482,11 @@
       </div>
       <div class="stats">
         <div class="stat">
-          <div class="stat-value" id="genreCount">19</div>
+          <div class="stat-value" id="genreCount">22</div>
           <div class="stat-label">Genres</div>
         </div>
         <div class="stat">
-          <div class="stat-value" id="movieCount">570</div>
+          <div class="stat-value" id="movieCount">2200</div>
           <div class="stat-label">Movies</div>
         </div>
         <div class="stat">
@@ -499,6 +511,14 @@
   </div>
 
   <script>
+    // All 22 genres including backend special categories
+    const ALL_BACKEND_GENRES = [
+      'ACTION', 'ACTION_CLASSIC', 'ADVENTURE', 'ANIMATION_KIDS', 'ANIMATION_ADULT',
+      'COMEDY', 'CRIME', 'DOCUMENTARY', 'DRAMA', 'FAMILY', 'FANTASY',
+      'HISTORY', 'HORROR', 'MUSIC', 'MYSTERY', 'ROMANCE', 'SCIFI',
+      'SUPERHEROES', 'THRILLER', 'TVMOVIE', 'WAR', 'WESTERN'
+    ];
+
     const GENRES = [
       { code: 'ACTION', name: 'Action', icon: '💥' },
       { code: 'ADVENTURE', name: 'Adventure', icon: '🗺️' },
@@ -540,7 +560,8 @@
       'Timeless Classics'
     ];
 
-    let selectedGenres = new Set(GENRES.map(g => g.code));
+    // LOCKED: Always use all 22 backend genres (no user selection)
+    let selectedGenres = new Set(ALL_BACKEND_GENRES);
     const baseUrl = window.location.origin;
 
     function showError(message) {
@@ -587,17 +608,17 @@
     }
 
     function updateUrl() {
-      const codes = Array.from(selectedGenres);
-      const config = codes.length === GENRES.length ? '' : codes.join('.');
-      const manifestPath = config ? '/' + config + '/manifest.json' : '/manifest.json';
+      // Always use all 22 genres - no config parameter needed (defaults to all)
+      const manifestPath = '/manifest.json';
       const fullUrl = baseUrl + manifestPath;
-      
+
       document.getElementById('installUrl').textContent = fullUrl;
       document.getElementById('installBtn').href = 'stremio://' + fullUrl.replace(/^https?:\/\//, '');
       document.getElementById('webBtn').href = 'https://web.stremio.com/#/addons?addon=' + encodeURIComponent(fullUrl);
-      
-      document.getElementById('genreCount').textContent = codes.length;
-      document.getElementById('movieCount').textContent = codes.length * 30;
+
+      // Fixed: Always show 22 genres, 2200 movies (100 per genre)
+      document.getElementById('genreCount').textContent = 22;
+      document.getElementById('movieCount').textContent = 2200;
     }
 
     function updateStrategy() {

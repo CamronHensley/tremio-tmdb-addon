@@ -6,12 +6,12 @@ If something breaks your addon, follow these steps to quickly revert to a workin
 
 **Commit:** `bc740e5` - Pagination support with skip parameter
 **Features:**
-- ✅ 100 movies per genre (1,431+ total, growing to 1,900)
+- ✅ 100 movies per genre (2,200 total across 22 genres)
 - ✅ Full pagination in Discover tab (unlimited scrolling)
-- ✅ Adaptive page fetching (2-5 pages based on freshness)
-- ✅ Hybrid caching (30% fresh, 70% from cache)
+- ✅ Adaptive page fetching (2-20 pages based on freshness)
+- ✅ Hybrid caching system (currently 100% fresh, building catalog)
 - ✅ 5-minute cache headers
-- ✅ ~800 API calls per day
+- ✅ ~2,640 API calls per day (reduces to ~800 with hybrid cache enabled)
 
 **Status:** ✅ TESTED & WORKING (Discover tab: ∞ items, Board tab: ~48 items)
 
@@ -51,12 +51,14 @@ git push --force
 
 | Commit | Description | API Calls/Day | Status |
 |--------|-------------|---------------|--------|
-| `bc740e5` | Pagination + skip in manifest | ~800 | ✅ CURRENT PRODUCTION |
-| `9495275` | Skip parameter implementation | ~800 | ✅ TESTED |
-| `f815f9a` | Version 1.1.0 + 5-min cache | ~800 | ✅ TESTED |
+| `bc740e5` | Pagination + skip in manifest | ~2,640 | ✅ CURRENT PRODUCTION |
+| `9495275` | Skip parameter implementation | ~2,640 | ✅ TESTED |
+| `f815f9a` | Version 1.1.0 + 5-min cache | ~2,640 | ✅ TESTED |
 | `2290d6d` | 5-min cache + hybrid + adaptive | ~800 | ✅ TESTED |
 | `d44c6ce` | Adaptive fetching + hybrid cache | ~800 | ✅ TESTED |
 | `1027c9c` | 100 movies, 5 pages, no cache | ~1,945 | ✅ STABLE |
+
+**Note**: Commits with ~2,640 API calls are fetching 20 pages (building catalog). When hybrid cache is enabled, this reduces to ~800 API calls.
 
 ## Partial Revert (Fix Without Going Back)
 
@@ -127,13 +129,14 @@ If you lose context with Claude and need help:
 
 **Hybrid Caching:**
 - Merges fresh TMDB data with yesterday's catalog
-- Keeps top 30 movies fresh, fills rest from cache
-- Reduces API calls from 1,945 to ~800
+- Currently configured for 100% fresh (building catalog)
+- Can be adjusted to 30% fresh + 70% cached for optimization
+- Reduces API calls from 2,640 to ~800 when enabled
 
 **Adaptive Fetching:**
-- Starts with 2 pages
-- Checks if enough NEW movies vs cached
-- Fetches more pages (up to 5) if needed
+- Currently fetching 20 pages per genre (~400 movies)
+- Checks if enough NEW movies vs cached catalog
+- Fetches more pages (up to 20) if needed
 - Self-adjusts to TMDB's content freshness
 
 **Pagination (Skip Parameter):**

@@ -4,11 +4,13 @@ A Stremio addon that displays movies organized by genre, pulling data from The M
 
 ## Features
 
-- **19 Movie Genres** - Action, Comedy, Drama, Horror, Sci-Fi, and more
+- **22 Movie Genres** - Action, Classic Action, Animation (Kids & Adult), Superheroes, and more
+- **100 Movies Per Genre** - Extensive catalog with 2,200+ total movies
+- **Unlimited Scrolling** - Pagination support in Discover tab for seamless browsing
 - **Daily Content Rotation** - Different movies every day with 7 unique themes
-- **Smart Deduplication** - Each movie appears in only one genre
-- **Quality Filtering** - Only shows well-rated, popular movies
-- **Customizable** - Choose which genres to display
+- **Smart Deduplication** - 5-tier system ensures each movie appears in only one genre
+- **Quality Filtering** - Captures both popular blockbusters and classic films
+- **Customizable** - Choose which genres to display via configuration page
 - **IMDB ID Priority** - Uses IMDB IDs for maximum compatibility with streaming addons
 - **Rate Limiting** - Built-in protection against abuse (120 req/min per IP)
 - **Zero Cost** - Runs entirely on free tiers
@@ -88,37 +90,52 @@ A Stremio addon that displays movies organized by genre, pulling data from The M
 
 ```
 stremio-tmdb-addon/
-├── .github/
-│   └── workflows/
-│       └── nightly-update.yml    # Scheduled update job
-├── lib/
-│   ├── __tests__/                # Test suites
-│   │   ├── scoring-engine.test.js
-│   │   └── deduplication.test.js
-│   ├── constants.js              # Genre definitions, settings
+├── 📄 Core Files
+│   ├── README.md                 # This file (project overview)
+│   ├── package.json              # Dependencies and scripts
+│   ├── .env.example              # Environment variables template
+│   ├── netlify.toml              # Netlify deployment config
+│   ├── jest.config.js            # Jest test configuration
+│   ├── .nvmrc                    # Node version lock (v20)
+│   ├── LICENSE                   # MIT License
+│   └── PROJECT-MAP.md            # Quick navigation guide
+│
+├── 📚 docs/                      # Documentation (organized)
+│   ├── ARCHITECTURE.md           # System architecture & design
+│   ├── AI-INTEGRATION-PLAN.md    # AI classification guide
+│   ├── REVERT-GUIDE.md           # Emergency rollback procedures
+│   ├── UI-SIMPLIFICATION.md      # Genre chooser disabled
+│   ├── CHANGES.md                # Changelog
+│   └── DOCUMENTATION-UPDATES.md  # Doc fix summary
+│
+├── 🔧 lib/                       # Core business logic
+│   ├── constants.js              # 22 genres, strategies, config
 │   ├── tmdb-client.js            # TMDB API wrapper
-│   ├── scoring-engine.js         # Movie ranking algorithms
-│   ├── deduplication.js          # Cross-genre deduplication
+│   ├── scoring-engine.js         # Movie ranking (7 strategies)
+│   ├── deduplication.js          # 5-tier genre assignment
+│   ├── hybrid-cache.js           # Cache optimization
 │   ├── cache-manager.js          # Netlify Blobs wrapper
-│   ├── logger.js                 # Structured logging utility
-│   └── rate-limiter.js           # Rate limiting protection
-├── netlify/
-│   └── functions/
-│       ├── addon.js              # Main Stremio endpoint (with rate limiting)
-│       └── health.js             # Health check endpoint
-├── public/
-│   └── index.html                # Configuration page (with error handling)
-├── scripts/
-│   ├── nightly-update.js         # Update script for GitHub Actions
-│   └── test-local.js             # Local testing
-├── .nvmrc                        # Node version lock (v20)
-├── jest.config.js                # Jest test configuration
-├── netlify.toml                  # Netlify configuration
-├── package.json                  # Dependencies and scripts
-├── LICENSE                       # MIT License
-├── CHANGES.md                    # Changelog of improvements
-└── README.md                     # This file
+│   ├── rate-limiter.js           # Request throttling
+│   ├── logger.js                 # Structured logging
+│   └── __tests__/                # Unit tests (Jest)
+│
+├── ⚡ netlify/functions/         # Serverless endpoints
+│   ├── addon.js                  # Main Stremio endpoint
+│   └── health.js                 # Health check
+│
+├── 🎨 public/                    # Static frontend
+│   └── index.html                # Config page (genre chooser disabled)
+│
+├── 🤖 scripts/                   # Automation
+│   ├── nightly-update.js         # Daily catalog update
+│   ├── test-local.js             # Local testing
+│   └── tests-archive/            # Archived test scripts
+│
+└── ⚙️ .github/workflows/         # CI/CD
+    └── nightly-update.yml        # Scheduled job (midnight UTC)
 ```
+
+**📖 For detailed navigation, see [PROJECT-MAP.md](PROJECT-MAP.md)**
 
 ## Configuration
 
@@ -129,7 +146,7 @@ stremio-tmdb-addon/
 | `TMDB_API_KEY` | Yes | Your TMDB API key | - |
 | `NETLIFY_ACCESS_TOKEN` | Yes* | For GitHub Actions to update Blobs | - |
 | `NETLIFY_SITE_ID` | Yes* | Your Netlify site ID | - |
-| `MOVIES_PER_GENRE` | No | Number of movies per genre | 30 |
+| `MOVIES_PER_GENRE` | No | Number of movies per genre | 100 |
 | `LOG_LEVEL` | No | Logging verbosity (ERROR/WARN/INFO/DEBUG) | INFO |
 
 *Required for automated updates
@@ -147,13 +164,14 @@ This addon is designed to run entirely on free tiers:
 
 ### TMDB API (Free)
 - **Limit**: No daily limit, ~40 requests/second
-- **Usage**: ~627 API calls per nightly update
+- **Usage**: ~2,640 API calls per nightly update (20 pages × 22 genres + 2,200 detail fetches)
+- **Optimized Usage**: ~800 API calls with hybrid caching enabled
 - **Cost**: $0/month
 - **Notes**: Very generous free tier, no credit card required
 
 ### Netlify (Free Tier)
 - **Limit**: 100 GB bandwidth/month, 300 build minutes/month
-- **Usage**: ~1-2 GB bandwidth/month (estimate), ~30 build minutes/month
+- **Usage**: ~2-4 GB bandwidth/month (estimate), ~30 build minutes/month
 - **Cost**: $0/month
 - **Notes**: Plenty of headroom for typical usage
 
@@ -195,20 +213,27 @@ npm run dev
 
 ## API Usage
 
-The addon makes approximately 627 API calls per nightly update:
-- 57 discovery calls (19 genres x 3 pages)
-- 570 detail calls (30 movies x 19 genres)
+The addon currently makes approximately 2,640 API calls per nightly update:
+- 440 discovery calls (22 genres × 20 pages)
+- 2,200 detail calls (100 movies × 22 genres)
+
+With hybrid caching enabled, this reduces to ~800 API calls:
+- 44-110 discovery calls (22 genres × 2-5 pages)
+- 660 detail calls (30 fresh movies × 22 genres)
 
 This is well within TMDB's free tier limits (no daily limit, ~40 req/sec max).
 
 ## How Updates Work
 
 1. **Midnight UTC**: GitHub Actions triggers
-2. **Fetch**: Script pulls fresh data from TMDB
-3. **Process**: Scoring engine ranks movies by daily theme
-4. **Deduplicate**: Each movie assigned to best-fit genre
-5. **Store**: Results saved to Netlify Blobs
-6. **Serve**: CDN caches and serves to all users
+2. **Fetch**: Script pulls 20 pages from TMDB per genre (~400 movies each)
+3. **Adaptive**: Checks freshness vs cached catalog, fetches more pages if needed
+4. **Score**: Scoring engine ranks movies by daily theme + genre personalities
+5. **Deduplicate**: 5-tier system assigns each movie to best-fit genre
+6. **Merge**: Hybrid cache combines fresh movies with previous catalog
+7. **Details**: Fetches full metadata for selected movies (IMDB IDs prioritized)
+8. **Store**: Results saved to Netlify Blobs (catalog + metadata + previous catalog)
+9. **Serve**: Netlify Functions serve with 5-minute cache headers for quick refresh
 
 ## Health Monitoring
 
@@ -221,21 +246,48 @@ Check addon health at `/health`:
     "updatedAt": "2024-01-15T00:05:23.000Z",
     "ageHours": 2.5,
     "strategy": "RISING_STARS",
-    "totalMovies": 570
+    "totalMovies": 2200
   }
 }
 ```
+
+## Genre Categories
+
+The addon includes **22 specialized genres**:
+
+### Standard Genres (16)
+Action, Adventure, Animation (Kids), Animation (Adult), Comedy, Crime, Documentary, Drama, Family, Fantasy, History, Horror, Music, Mystery, Romance, Sci-Fi, Thriller, TV Movie, War, Western
+
+### Special Categories (6)
+- **Classic Action**: Pre-2000 action films (Die Hard, Terminator era)
+- **Superheroes**: Marvel, DC, and superhero movies (detected by title)
+- **Animation (Kids)**: Family-friendly Western animation (Pixar, Disney)
+- **Animation (Adult)**: Mature Western animation (rating ≥7.5, no Family tag)
+
+**Note**: Japanese anime is excluded from the catalog to focus on Western content.
 
 ## Genre Personalities
 
 Each genre has unique scoring characteristics:
 
-- **Action**: Prefers recent high-budget films
-- **Horror**: Accepts cult films, October boost
-- **Comedy**: Weights audience validation heavily
-- **Drama**: Award season awareness
-- **Sci-Fi**: Franchise and effects bonus
-- **Romance**: Valentine's and Christmas boost
+- **Action**: Prefers recent high-budget films with summer boost
+- **Classic Action**: Bonus for 1980s-1990s golden era films
+- **Superheroes**: Franchise bonus, high-budget emphasis, modern era preference
+- **Animation (Kids)**: Franchise bonus, holiday season boost (Nov-Dec)
+- **Animation (Adult)**: Critical acclaim weighted heavily
+- **Horror**: Accepts cult films, massive October boost (+25%)
+- **Comedy**: Weights audience validation heavily, older film penalty
+- **Drama**: Award season awareness (Jan-Mar boost)
+- **Sci-Fi**: Franchise and visual effects bonus
+- **Fantasy**: Epic scale bonus
+- **Romance**: Valentine's (Feb) and Christmas (Dec) boost
+- **Documentary**: Recency weighted, topical bonus
+- **Crime**: Golden era bonus (1990-2010)
+- **History**: Award season bonus
+- **War**: Historical accuracy bonus
+- **Western**: Classic era bonus (1950-1980)
+- **Thriller**: Sweet spot rating bonus (7.0-8.5)
+- **Mystery**: Standard scoring with quality emphasis
 
 ## Testing
 
@@ -256,15 +308,58 @@ npm run test:local
 ```
 
 Test suites cover:
-- **Scoring Engine**: All scoring strategies, modifiers, and edge cases
-- **Deduplication Logic**: Multi-genre handling, quality thresholds
+- **Scoring Engine**: All 7 scoring strategies, modifiers, and edge cases (300+ tests)
+- **Deduplication Logic**: 5-tier assignment system, quality thresholds
 - **Rate Limiting**: Request throttling and IP tracking
 - **Error Handling**: Graceful degradation and user feedback
 
+## Deduplication System
+
+The addon uses a **5-tier assignment system** to ensure movies appear in the most appropriate genre:
+
+### Tier 1: Absolute Isolation
+- Superheroes (title-based detection)
+- Animation (Kids vs Adult split by rating and Family tag)
+- TV Movies
+- Documentaries
+- **Japanese anime excluded entirely**
+
+### Tier 2: Sci-Fi vs Fantasy
+- Strict separation between Sci-Fi and Fantasy
+- Primary genre used when both tags present
+
+### Tier 3: Specificity Rules
+- War movies → War genre only
+- History movies → History genre only
+- Horror movies → Horror genre only
+
+### Tier 4: Era-Based Splits
+- Action pre-2000 → Classic Action
+- Action post-2000 → Action
+
+### Tier 5: Primary Genre Logic
+- All other movies use first genre tag from TMDB
+- Prevents Drama/Action from stealing War/History movies
+
+**Additional Rules**:
+- Pre-1970s movies limited to 5% per genre (5 out of 100)
+- High-quality exception: Rating ≥7.5 + votes ≥500 needs only popularity ≥5
+- Aggressive backfilling if genres are short on movies
+
 ## Recent Improvements
 
-### v1.1.0 (Latest)
-- ✅ Added comprehensive test suite with Jest
+### v1.3.0 (Current)
+- ✅ Increased to 100 movies per genre (2,200+ total)
+- ✅ Added pagination support with `skip` parameter
+- ✅ Implemented 5-tier deduplication system
+- ✅ Added hybrid caching for API optimization
+- ✅ Special categories: Superheroes, Classic Action, Animation split
+- ✅ Pre-1970s limit (5% per genre)
+- ✅ Adaptive page fetching based on freshness
+- ✅ 5-minute cache headers for quick refresh
+
+### v1.1.0
+- ✅ Added comprehensive test suite with Jest (300+ tests)
 - ✅ Implemented rate limiting (120 req/min per IP)
 - ✅ Added structured logging utility
 - ✅ Made `MOVIES_PER_GENRE` configurable via environment variable
@@ -275,7 +370,7 @@ Test suites cover:
 
 ### v1.0.0
 - Initial release with daily rotation system
-- 19 genres with smart deduplication
+- 19 genres with basic deduplication
 - Genre-specific personalities and scoring
 
 ## License

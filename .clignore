@@ -1,0 +1,48 @@
+# Claude Code Ignore File
+# Files and directories to skip during codebase analysis
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Git
+.git/
+.gitignore
+
+# Archived/Deprecated
+scripts/tests-archive/
+docs/archive/
+
+# Documentation (read README.md and PROJECT-MAP.md first)
+docs/DOCUMENTATION-UPDATES.md
+docs/UI-SIMPLIFICATION.md
+
+# Build artifacts
+dist/
+build/
+.netlify/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+.nyc_output/
