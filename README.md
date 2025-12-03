@@ -6,9 +6,10 @@ A Stremio addon that displays movies organized by genre, pulling data from The M
 
 - **22 Movie Genres** - Action, Classic Action, Animation (Kids & Adult), Superheroes, and more
 - **100 Movies Per Genre** - Extensive catalog with 2,200+ total movies
+- **AI-Powered Classification** ⭐ NEW - Optional local AI (Qwen2.5-7B) for improved accuracy on ambiguous genres
 - **Unlimited Scrolling** - Pagination support in Discover tab for seamless browsing
 - **Daily Content Rotation** - Different movies every day with 7 unique themes
-- **Smart Deduplication** - 5-tier system ensures each movie appears in only one genre
+- **Smart Deduplication** - 5-tier hybrid system (rule-based + AI) ensures each movie appears in only one genre
 - **Quality Filtering** - Captures both popular blockbusters and classic films
 - **Customizable** - Choose which genres to display via configuration page
 - **IMDB ID Priority** - Uses IMDB IDs for maximum compatibility with streaming addons
@@ -148,8 +149,40 @@ stremio-tmdb-addon/
 | `NETLIFY_SITE_ID` | Yes* | Your Netlify site ID | - |
 | `MOVIES_PER_GENRE` | No | Number of movies per genre | 100 |
 | `LOG_LEVEL` | No | Logging verbosity (ERROR/WARN/INFO/DEBUG) | INFO |
+| `AI_ENABLED` | No | Enable AI classification (requires Ollama) | false |
+| `AI_ENDPOINT` | No | Ollama API endpoint | http://127.0.0.1:11434/api/generate |
+| `AI_MODEL` | No | AI model to use | qwen2.5:7b-instruct |
+| `AI_CONFIDENCE_THRESHOLD` | No | Minimum confidence for AI classification | 0.7 |
 
 *Required for automated updates
+
+### AI Classification (Optional)
+
+**NEW:** The addon now supports optional AI-powered genre classification using a local LLM (Qwen2.5-7B) via Ollama.
+
+**Benefits:**
+- Improved accuracy for ambiguous movies (Sci-Fi vs Fantasy, era-based Action, etc.)
+- Smart hybrid system: Rule-based for definitive cases (90%), AI for ambiguous cases (10%)
+- Fast: Only adds ~30 seconds to update time
+- Private: Runs entirely on your local machine
+
+**Setup:**
+```bash
+# 1. Install Ollama (https://ollama.ai/)
+# 2. Pull the model
+ollama pull qwen2.5:7b-instruct
+
+# 3. Start Ollama server
+ollama serve
+
+# 4. Enable in .env
+AI_ENABLED=true
+
+# 5. Run update
+npm run update
+```
+
+**See [docs/AI-USAGE-GUIDE.md](docs/AI-USAGE-GUIDE.md) for complete setup and usage instructions.**
 
 ### User Configuration
 

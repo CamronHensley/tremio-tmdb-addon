@@ -21,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "@netlify/blobs": "^8.1.0",
+    "axios": "^1.6.0",
     "node-fetch": "^2.7.0"
   },
   "devDependencies": {

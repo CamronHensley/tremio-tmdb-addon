@@ -161,9 +161,18 @@ async function runUpdate() {
 
   console.log(`\n📊 Total API requests for discovery: ${tmdb.getRequestCount()}`);
 
-  // Process and deduplicate
+  // Process and deduplicate (with optional AI enhancement)
   console.log('\n🔄 Processing and deduplicating movies...');
-  const deduplicatedMovies = deduplicator.processAllGenres(moviesByGenre, recentMovieIds);
+  const aiEnabled = process.env.AI_ENABLED === 'true';
+
+  let deduplicatedMovies;
+  if (aiEnabled) {
+    console.log('  🤖 AI classification enabled');
+    deduplicatedMovies = await deduplicator.processAllGenresWithAI(moviesByGenre, recentMovieIds);
+  } else {
+    console.log('  📏 Using rule-based classification only');
+    deduplicatedMovies = deduplicator.processAllGenres(moviesByGenre, recentMovieIds);
+  }
 
   const stats = deduplicator.getStats();
   console.log(`  ✓ Assigned ${stats.totalUniqueMovies} unique movies`);
