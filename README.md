@@ -2,6 +2,14 @@
 
 A Stremio addon that displays movies organized by genre, pulling data from The Movie Database (TMDB). Features intelligent daily content rotation to ensure fresh discoveries every day.
 
+---
+
+**📑 For Developers:** See [INDEX.md](INDEX.md) or [README-FILES-GUIDE.md](README-FILES-GUIDE.md) for documentation navigation.
+
+**🚀 Next Session:** Start at [START-NEXT-SESSION.md](START-NEXT-SESSION.md)
+
+---
+
 ## Features
 
 - **22 Movie Genres** - Action, Classic Action, Animation (Kids & Adult), Superheroes, and more
