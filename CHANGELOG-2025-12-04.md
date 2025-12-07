@@ -1,13 +1,21 @@
-# Comprehensive Change Report - December 4, 2025
+# Comprehensive Change Report - December 4-7, 2025
 
 ## 🎯 Summary
 
 Major genre classification system overhaul with:
 - **6 new genres added** (MARTIAL_ARTS, CARS, SPORTS, STAND_UP_COMEDY, DISASTER, PARODY)
-- **AI caching system implemented** (3 hours → 5 minutes for incremental updates)
+- **AI classification DISABLED** (was causing misclassifications, code preserved)
+- **Pure rule-based classification** (Tier 1-5 regex + TMDB tags)
 - **Indian content filtering** (Western audience focus)
 - **Fixed superhero/western/animation classification issues**
 - **Total genres: 28** (was 22)
+
+## ⚠️ IMPORTANT: AI Disabled (Dec 7, 2025)
+AI classification has been **disabled** due to serious misclassifications:
+- Non-superhero movies in SUPERHEROES
+- Martial arts scattered across wrong genres
+- 19 superhero movies leaked into ACTION
+- System now uses 100% rule-based classification
 
 ---
 
@@ -337,6 +345,15 @@ STAND_UP_COMEDY: { id: 35, name: 'Stand-Up Comedy', code: 'STAND_UP_COMEDY', isC
 
 ---
 
-**Generated**: 2025-12-04
-**Author**: AI Classification System Overhaul
-**Status**: Ready for testing
+**Generated**: 2025-12-04 (Updated: 2025-12-07)
+**Author**: Genre System Overhaul + AI Disable
+**Status**: Production (AI disabled, using rule-based classification)
+
+## 📝 Update Log
+
+### December 7, 2025
+- **AI Classification DISABLED**: System was causing too many misclassifications
+- All AI code preserved (can re-enable with AI_ENABLED=true)
+- Now using 100% rule-based Tier 1-5 classification
+- Cleared all Netlify Blobs cache (catalog, AI cache, previous catalog)
+- Updated documentation to reflect AI disabled status

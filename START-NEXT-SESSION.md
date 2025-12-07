@@ -15,7 +15,7 @@
 - **28 Genres** (6 added Dec 2025: MARTIAL_ARTS, CARS, SPORTS, STAND_UP_COMEDY, DISASTER, PARODY)
 - **~100 movies per genre** (configurable via MOVIES_PER_GENRE env var)
 - **~2,600 total movies** in active catalog
-- **AI Classification**: Ollama-powered genre detection with caching (3h → 5min updates)
+- **Classification**: Pure rule-based Tier 1-5 system (AI disabled due to misclassifications)
 - **Indian Content**: Completely filtered (Western audience focus)
 
 ---
@@ -26,20 +26,21 @@
 
 **1. Data Flow**
 ```
-TMDB API → Fetcher → Deduplication → AI Classification → Catalog → Netlify Blobs
+TMDB API → Fetcher → Deduplication (Rule-Based) → Catalog → Netlify Blobs
 ```
 
 **2. Key Files**
 - **lib/constants.js** - 28 genre definitions, quality thresholds, personalities
-- **lib/deduplication.js** - Tier-based genre routing + AI integration
-- **lib/ai-classifier.js** - Ollama integration + smart prompt
-- **lib/ai-cache.js** - Classification cache (v3, force re-classify on genre changes)
+- **lib/deduplication.js** - Tier-based genre routing (pure rule-based)
+- **lib/ai-classifier.js** - AI integration (DISABLED, code preserved)
+- **lib/ai-cache.js** - AI cache (DISABLED, code preserved)
 - **scripts/nightly-update.js** - Main update orchestrator
 - **netlify/functions/addon.js** - Stremio API endpoint
 
 **3. Storage**
-- Netlify Blobs: Catalog JSON + AI cache
-- Environment: TMDB_API_KEY, NETLIFY_SITE_ID, NETLIFY_ACCESS_TOKEN, OLLAMA_ENDPOINT
+- Netlify Blobs: Catalog JSON
+- Environment: TMDB_API_KEY, NETLIFY_SITE_ID, NETLIFY_ACCESS_TOKEN
+- Optional (AI disabled): OLLAMA_ENDPOINT, AI_ENABLED=true
 
 ---
 
@@ -67,9 +68,10 @@ TMDB API → Fetcher → Deduplication → AI Classification → Catalog → Net
 **TIER 3: Specificity**
 - WAR, HISTORY (loses to WESTERN), HORROR
 
-**TIER 4-5: AI-Enhanced**
-- SCIFI vs FANTASY, multi-genre primary selection
-- Remaining: ADVENTURE, COMEDY, CRIME, DRAMA, FAMILY, MYSTERY, ROMANCE, THRILLER, MUSIC
+**TIER 4-5: TMDB Tag-Based**
+- SCIFI vs FANTASY (uses TMDB genre IDs)
+- Remaining genres route by primary TMDB tag: ADVENTURE, COMEDY, CRIME, DRAMA, FAMILY, MYSTERY, ROMANCE, THRILLER, MUSIC
+- Note: AI classification disabled - uses pure TMDB tag routing
 
 ### Content Filtering
 - **Indian Language Block**: Hindi, Telugu, Tamil, Malayalam, Kannada, Bengali, Punjabi, Marathi
@@ -77,23 +79,26 @@ TMDB API → Fetcher → Deduplication → AI Classification → Catalog → Net
 
 ---
 
-## 🤖 AI Classification System
+## 🤖 AI Classification System (DISABLED)
 
-### How It Works
-1. **Rule-Based First** (Tier 1-3): ~90% of movies classified by regex/TMDB tags
-2. **AI for Ambiguous** (Tier 4-5): Ollama analyzes title + overview + keywords
-3. **Smart Caching**: Classifications cached in Netlify Blobs (version-aware)
+**Status**: AI classification is **DISABLED** due to misclassifications
 
-### Cache Version Strategy
-- **v1**: Unreleased (dev only)
-- **v2**: Original 22 genres
-- **v3**: Current - 28 genres + all Dec 2025 fixes
+### Why Disabled
+- AI was causing incorrect genre assignments:
+  - Non-superhero movies in SUPERHEROES (Sympathy for Mr. Vengeance, Sanjuro)
+  - Martial arts movies scattered across wrong genres
+  - Animation leaking into ACTION/DRAMA
+  - 19 superhero movies leaked into ACTION
 
-**Cache Invalidation**: Bumping version forces full re-classification (e.g., when adding genres)
+### Current Classification Method
+- **100% Rule-Based**: Uses Tier 1-5 regex and TMDB tag routing
+- **Tier 1-3**: Regex patterns + TMDB genre IDs (~90% of movies)
+- **Tier 4-5**: Primary TMDB genre tag (no AI inference)
 
-### Performance
-- **Without Cache**: ~3 hours (3,447 movies × ~3 sec each)
-- **With Cache**: ~5 minutes (only new movies classified)
+### Re-enabling AI (Future)
+- All AI code is **preserved** (lib/ai-classifier.js, lib/ai-cache.js)
+- To re-enable: Set `AI_ENABLED=true` environment variable
+- Requires fixing AI classification logic or better prompt engineering
 
 ---
 
@@ -118,9 +123,12 @@ NETLIFY_SITE_ID=your_site
 NETLIFY_ACCESS_TOKEN=your_token
 
 # Optional
-OLLAMA_ENDPOINT=http://localhost:11434  # AI classification
-OLLAMA_MODEL=llama3.2:3b  # AI model
 MOVIES_PER_GENRE=100  # Default 100
+
+# AI Classification (DISABLED by default)
+AI_ENABLED=true  # Set to enable AI (not recommended)
+OLLAMA_ENDPOINT=http://localhost:11434  # Only if AI enabled
+OLLAMA_MODEL=llama3.2:3b  # Only if AI enabled
 ```
 
 ### Deploy to Netlify
