@@ -163,6 +163,8 @@ async function runUpdate() {
 
   // Process and deduplicate (with optional AI enhancement)
   console.log('\n🔄 Processing and deduplicating movies...');
+  // AI classification DISABLED (was causing misclassifications)
+  // To re-enable: set AI_ENABLED=true environment variable
   const aiEnabled = process.env.AI_ENABLED === 'true';
 
   let deduplicatedMovies;
@@ -170,7 +172,7 @@ async function runUpdate() {
     console.log('  🤖 AI classification enabled');
     deduplicatedMovies = await deduplicator.processAllGenresWithAI(moviesByGenre, recentMovieIds);
   } else {
-    console.log('  📏 Using rule-based classification only');
+    console.log('  📏 Using rule-based classification only (AI disabled)');
     deduplicatedMovies = deduplicator.processAllGenres(moviesByGenre, recentMovieIds);
   }
 
