@@ -354,6 +354,12 @@ STAND_UP_COMEDY: { id: 35, name: 'Stand-Up Comedy', code: 'STAND_UP_COMEDY', isC
 ### December 7, 2025
 - **AI Classification DISABLED**: System was causing too many misclassifications
 - All AI code preserved (can re-enable with AI_ENABLED=true)
+- **AI Code Made Model-Agnostic**: Removed hardcoded model references
+  - Changed AI_ENDPOINT → OLLAMA_ENDPOINT (environment variable)
+  - Changed AI_MODEL → OLLAMA_MODEL (environment variable)
+  - Removed default model (qwen2.5:7b-instruct), now must be specified
+  - Supports any Ollama-compatible model (Llama, Qwen, Mistral, etc.)
+  - Added validation to ensure OLLAMA_MODEL is set when AI enabled
 - Now using 100% rule-based Tier 1-5 classification
 - Cleared all Netlify Blobs cache (catalog, AI cache, previous catalog)
-- Updated documentation to reflect AI disabled status
+- Updated documentation to reflect AI disabled status and model flexibility

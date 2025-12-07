@@ -97,7 +97,8 @@ TMDB API → Fetcher → Deduplication (Rule-Based) → Catalog → Netlify Blob
 
 ### Re-enabling AI (Future)
 - All AI code is **preserved** (lib/ai-classifier.js, lib/ai-cache.js)
-- To re-enable: Set `AI_ENABLED=true` environment variable
+- **Model-agnostic design**: Supports any Ollama-compatible model (Llama, Qwen, Mistral, etc.)
+- To re-enable: Set `AI_ENABLED=true` and `OLLAMA_MODEL=your_model_name`
 - Requires fixing AI classification logic or better prompt engineering
 
 ---
@@ -126,9 +127,9 @@ NETLIFY_ACCESS_TOKEN=your_token
 MOVIES_PER_GENRE=100  # Default 100
 
 # AI Classification (DISABLED by default)
-AI_ENABLED=true  # Set to enable AI (not recommended)
-OLLAMA_ENDPOINT=http://localhost:11434  # Only if AI enabled
-OLLAMA_MODEL=llama3.2:3b  # Only if AI enabled
+AI_ENABLED=true  # Set to enable AI (not recommended until classification improved)
+OLLAMA_ENDPOINT=http://localhost:11434  # Default: http://127.0.0.1:11434
+OLLAMA_MODEL=your_model_name  # REQUIRED if AI enabled (e.g., llama3.2:3b, qwen2.5:7b, mistral:latest)
 ```
 
 ### Deploy to Netlify
@@ -246,9 +247,11 @@ netlify blobs:list tmdb-catalog
 
 ## 🎓 AI System Details
 
-### Ollama Model Used
-- **Default**: `llama3.2:3b` (fast, good quality)
-- **Alternative**: `llama3.2:1b` (faster, lower quality)
+### Supported Ollama Models
+- **Any Ollama-compatible model** can be used via `OLLAMA_MODEL` env var
+- **Recommended**: `llama3.2:3b` (fast, good quality)
+- **Alternatives**: `qwen2.5:7b-instruct`, `mistral:latest`, `llama3.2:1b`, etc.
+- **No default model**: Must be explicitly specified when AI is enabled
 
 ### Classification Prompt Structure
 1. **Available Genres List** - All 28 with descriptions
