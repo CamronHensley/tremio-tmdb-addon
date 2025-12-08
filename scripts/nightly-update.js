@@ -237,7 +237,8 @@ async function runUpdate() {
       return true;
     });
 
-    genresWithDetails[genreCode] = uniqueMovies.slice(0, MOVIES_PER_GENRE);
+    // Don't force slice to MOVIES_PER_GENRE - keep natural genre sizes from deduplication
+    genresWithDetails[genreCode] = uniqueMovies;
 
     console.log(`    ✓ Got details for ${genresWithDetails[genreCode].length} movies`);
   }
