@@ -204,23 +204,35 @@ async function runUpdate() {
     const persistentCache = OMDbClient.loadPersistentCache(cachedRatings);
     omdb = new OMDbClient(omdbApiKey, persistentCache);
 
-    // Collect all IMDb IDs from movies
-    const imdbIds = [];
+    // Collect IMDb IDs - PRIORITIZE top movies per genre first
+    // This ensures we fetch ratings for movies that will actually be displayed
+    const priorityImdbIds = [];
+    const otherImdbIds = [];
+
     for (const genreCode of allGenreCodes) {
       const movies = genresWithDetails[genreCode] || [];
-      for (const movie of movies) {
-        // Extract IMDb ID from links object (not array)
+
+      movies.forEach((movie, index) => {
         const imdbUrl = movie.links?.imdb;
         if (imdbUrl) {
           const match = imdbUrl.match(/tt\d+/);
           if (match) {
-            imdbIds.push(match[0]);
+            const imdbId = match[0];
+            // Top 100 movies per genre get priority (will be in display catalog)
+            if (index < MOVIES_PER_GENRE) {
+              priorityImdbIds.push(imdbId);
+            } else {
+              otherImdbIds.push(imdbId);
+            }
           }
         }
-      }
+      });
     }
 
-    console.log(`  → Found ${imdbIds.length} movies with IMDb IDs`);
+    // Fetch priority movies first, then others (so we don't waste API calls on low-priority movies)
+    const imdbIds = [...priorityImdbIds, ...otherImdbIds];
+
+    console.log(`  → Found ${imdbIds.length} total movies (${priorityImdbIds.length} priority, ${otherImdbIds.length} overflow)`);
 
     if (imdbIds.length > 0) {
       // Fetch ratings in batch (will use cache for existing movies)
@@ -301,9 +313,27 @@ async function runUpdate() {
     const persistentPosterCache = FanartClient.loadPersistentCache(cachedPosters);
     const fanart = new FanartClient(fanartApiKey, persistentPosterCache);
 
-    // Collect all TMDB IDs that have posters
-    const tmdbIdsWithPosters = Array.from(usedMovieIds);
-    console.log(`  → Checking ${tmdbIdsWithPosters.length} movies for Fanart.tv posters`);
+    // Collect TMDB IDs - PRIORITIZE top movies per genre first
+    const priorityTmdbIds = [];
+    const otherTmdbIds = [];
+
+    for (const genreCode of allGenreCodes) {
+      const movies = genresWithDetails[genreCode] || [];
+      movies.forEach((movie, index) => {
+        const tmdbId = movie.tmdbId;
+        if (tmdbId) {
+          if (index < MOVIES_PER_GENRE) {
+            priorityTmdbIds.push(tmdbId);
+          } else {
+            otherTmdbIds.push(tmdbId);
+          }
+        }
+      });
+    }
+
+    // Fetch priority movies first, then others
+    const tmdbIdsWithPosters = [...priorityTmdbIds, ...otherTmdbIds];
+    console.log(`  → Checking ${tmdbIdsWithPosters.length} movies (${priorityTmdbIds.length} priority, ${otherTmdbIds.length} overflow)`);
 
     // Fetch in smaller batches to avoid long waits
     const batchSize = 50;
@@ -379,9 +409,27 @@ async function runUpdate() {
   const persistentStreamingCache = WikidataClient.loadPersistentCache(cachedStreamingOriginals);
   const wikidata = new WikidataClient(persistentStreamingCache);
 
-  // Collect all unique TMDB IDs
-  const allTmdbIds = Array.from(usedMovieIds);
-  console.log(`  → Checking ${allTmdbIds.length} movies for streaming originals`);
+  // Collect TMDB IDs - PRIORITIZE top movies per genre first
+  const priorityWikidataTmdbIds = [];
+  const otherWikidataTmdbIds = [];
+
+  for (const genreCode of allGenreCodes) {
+    const movies = genresWithDetails[genreCode] || [];
+    movies.forEach((movie, index) => {
+      const tmdbId = movie.tmdbId;
+      if (tmdbId) {
+        if (index < MOVIES_PER_GENRE) {
+          priorityWikidataTmdbIds.push(tmdbId);
+        } else {
+          otherWikidataTmdbIds.push(tmdbId);
+        }
+      }
+    });
+  }
+
+  // Fetch priority movies first, then others
+  const allTmdbIds = [...priorityWikidataTmdbIds, ...otherWikidataTmdbIds];
+  console.log(`  → Checking ${allTmdbIds.length} movies (${priorityWikidataTmdbIds.length} priority, ${otherWikidataTmdbIds.length} overflow)`);
 
   // Batch queries (50 IDs per query to stay under URL limits)
   const batchSize = 50;
