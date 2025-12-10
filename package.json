@@ -7,8 +7,7 @@
     "dev": "netlify dev",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "test:local": "node scripts/test-local.js"
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "stremio",
@@ -21,8 +20,8 @@
   "license": "MIT",
   "dependencies": {
     "@netlify/blobs": "^8.1.0",
-    "axios": "^1.6.0",
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^2.7.0",
+    "sharp": "^0.33.0"
   },
   "devDependencies": {
     "netlify-cli": "^17.0.0",

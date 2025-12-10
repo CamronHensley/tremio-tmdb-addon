@@ -1,42 +1,42 @@
 /**
- * Nightly Update Script
- * 
+ * Nightly Update Script (SIMPLIFIED)
+ *
  * Runs via GitHub Actions at midnight UTC
- * Fetches fresh data from TMDB, processes it, and stores in Netlify Blobs
+ * Fetches fresh data from TMDB and stores in Netlify Blobs
  */
 
 require('dotenv').config();
 
 const { getStore } = require('@netlify/blobs');
 const TMDBClient = require('../lib/tmdb-client');
-const ScoringEngine = require('../lib/scoring-engine');
-const DeduplicationProcessor = require('../lib/deduplication');
-const HybridCache = require('../lib/hybrid-cache');
-const { GENRES, MOVIES_PER_GENRE } = require('../lib/constants');
+const WikidataClient = require('../lib/wikidata-client');
+const FanartClient = require('../lib/fanart-client');
+const OMDbClient = require('../lib/omdb-client');
+const { GENRES, MOVIES_PER_GENRE, STREAMING_SERVICES, getCurrentSeason, SEASONAL_HOLIDAYS } = require('../lib/constants');
 
 // Validate environment variables
 function validateEnv() {
   const required = ['TMDB_API_KEY', 'NETLIFY_ACCESS_TOKEN', 'NETLIFY_SITE_ID'];
   const missing = required.filter(key => !process.env[key]);
-  
+
   if (missing.length > 0) {
     throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
   }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // Main update function
 async function runUpdate() {
   console.log('🎬 Starting nightly TMDB catalog update...');
   console.log(`📅 Date: ${new Date().toISOString()}`);
-  
+
   validateEnv();
 
   const tmdb = new TMDBClient(process.env.TMDB_API_KEY);
-  const scoringEngine = new ScoringEngine();
-  const deduplicator = new DeduplicationProcessor();
-
-  console.log(`\n📊 Strategy for today: ${scoringEngine.getStrategyName()}`);
-  console.log(`📄 Fetching from pages: ${scoringEngine.getRotationPages().join(', ')}`);
+  const allGenreCodes = Object.keys(GENRES);
 
   // Get store for Netlify Blobs
   const store = getStore({
@@ -45,263 +45,514 @@ async function runUpdate() {
     token: process.env.NETLIFY_ACCESS_TOKEN
   });
 
-  // Get previous catalog for hybrid caching
-  let previousCatalog = null;
-  try {
-    previousCatalog = await store.get('catalog-previous', { type: 'json' });
-    if (previousCatalog && previousCatalog.genres) {
-      const prevMovieCount = Object.values(previousCatalog.genres)
-        .reduce((sum, movies) => sum + movies.length, 0);
-      console.log(`📦 Loaded previous catalog (${prevMovieCount} movies for hybrid merge)`);
-    }
-  } catch (e) {
-    console.log('📦 No previous catalog found (first run or error)');
-  }
-
-  // Get recent movie IDs for historical penalty
-  // TEMPORARILY DISABLED: Clear recent movies to allow catalog to build up to 100 per genre
-  let recentMovieIds = [];
-  console.log('📜 Recent movie penalty temporarily disabled (building up catalog)');
-  // try {
-  //   const recentData = await store.get('recent-movies', { type: 'json' });
-  //   recentMovieIds = recentData?.ids || [];
-  //   console.log(`📜 Loaded ${recentMovieIds.length} recent movie IDs for diversity`);
-  // } catch (e) {
-  //   console.log('📜 No recent movie history found (first run?)');
-  // }
-
-  // Adaptive fetching: Start with 2 pages, fetch more if needed
-  const moviesByGenre = {};
-  const allGenreCodes = Object.keys(GENRES);
-  let currentPages = scoringEngine.getRotationPages();
-  const sortBy = scoringEngine.getSortParameter();
-  const strategyParams = scoringEngine.getStrategyParams();
-  const TARGET_NEW_MOVIES = 30; // Minimum new movies we want per genre
-  const MAX_PAGES = 20;  // Fetch ALL the famous movies
-
-  // Fetch 20 pages to build a catalog of the most popular/famous movies
-  // With strict deduplication + high quality filter (pop: 50+), we cast a wide net
-  currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-  console.log('🚀 Fetching 20 pages to get ALL famous movies (popularity 50+), deduplication assigns to best genre');
-
+  // STEP 1: Fetch movies from TMDB
   console.log('\n🔍 Fetching from TMDB...');
-  console.log(`📄 Pages: ${currentPages.join(', ')}`);
+  console.log(`📄 Fetching from BOTH top_rated (all-time classics) AND popular (recent hits)`);
+  console.log(`📄 15 pages each = ~600 movies per genre to overcome recency bias`);
 
-  // Initial fetch
+  const moviesByGenre = {};
+  const usedMovieIds = new Set(); // Global deduplication
+
   for (const genreCode of allGenreCodes) {
     const genre = GENRES[genreCode];
     console.log(`  → ${genre.name}...`);
 
     try {
-      const movies = await tmdb.fetchGenreMovies(
-        genre.id,
-        currentPages,
-        sortBy,
-        strategyParams
-      );
-      moviesByGenre[genreCode] = movies;
-      console.log(`    ✓ Found ${movies.length} movies`);
+      let movies = [];
+
+      // Handle seasonal genre differently
+      if (genre.isSeasonal) {
+        const currentSeason = getCurrentSeason();
+        const seasonalHoliday = SEASONAL_HOLIDAYS[currentSeason.key];
+
+        console.log(`    → Current season: ${seasonalHoliday.name}`);
+
+        // Fetch seasonal movies using keywords - expanded to 15 pages
+        const seasonalMovies = [];
+        for (let page = 1; page <= 15; page++) {
+          const response = await tmdb.discoverSeasonalMovies(
+            seasonalHoliday.tmdbKeywordIds,
+            {
+              page,
+              sortBy: 'popularity.desc',
+              minVotes: 100,
+              excludeGenres: seasonalHoliday.excludeGenres || []
+            }
+          );
+          if (response.results && response.results.length > 0) {
+            seasonalMovies.push(...response.results);
+          }
+          await sleep(200);
+        }
+        movies = seasonalMovies;
+
+      } else {
+        // DUAL FETCH STRATEGY: Top-rated (classics) + Popular (recent)
+        console.log(`    → Fetching top-rated (all-time classics)...`);
+        const topRated = await tmdb.fetchGenreMovies(
+          genre.id,
+          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+          'vote_average.desc',
+          { minVotes: 500 } // Higher threshold for classics
+        );
+
+        console.log(`    → Fetching popular (recent hits)...`);
+        const popular = await tmdb.fetchGenreMovies(
+          genre.id,
+          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+          'popularity.desc',
+          { minVotes: 100 }
+        );
+
+        // Merge and deduplicate by TMDB ID
+        const movieMap = new Map();
+        [...topRated, ...popular].forEach(movie => {
+          if (!movieMap.has(movie.id)) {
+            movieMap.set(movie.id, movie);
+          }
+        });
+        movies = Array.from(movieMap.values());
+
+        console.log(`    → Combined: ${topRated.length} top-rated + ${popular.length} popular = ${movies.length} unique`);
+      }
+
+      // Filter: basic quality filter + not already used
+      const filtered = movies.filter(movie => {
+        // Skip if already used in another genre
+        if (usedMovieIds.has(movie.id)) return false;
+
+        // Quality filter (for all-time popular movies)
+        return (
+          movie.vote_count >= 100 &&
+          movie.popularity >= 5
+        );
+      });
+
+      // Sort by popularity (will cache ALL, not just top 100)
+      const sorted = filtered.sort((a, b) => b.popularity - a.popularity);
+
+      // Mark these IDs as used for caching
+      sorted.forEach(movie => usedMovieIds.add(movie.id));
+
+      moviesByGenre[genreCode] = sorted;
+      console.log(`    ✓ Selected ${sorted.length} movies (from ${movies.length} fetched, ${filtered.length} after filter)`);
+
     } catch (error) {
       console.error(`    ✗ Failed: ${error.message}`);
       moviesByGenre[genreCode] = [];
     }
 
-    await sleep(200);
-  }
-
-  // Check if we need more pages (only if we have a previous catalog)
-  if (previousCatalog && previousCatalog.genres) {
-    console.log('\n🔬 Analyzing freshness...');
-
-    let totalNewMovies = 0;
-    let totalGenres = 0;
-
-    for (const genreCode of allGenreCodes) {
-      const freshMovies = moviesByGenre[genreCode] || [];
-      const cachedMovies = previousCatalog.genres[genreCode] || [];
-      const cachedIds = new Set(cachedMovies.map(m => m.id));
-      const newCount = freshMovies.filter(m => !cachedIds.has(m.id)).length;
-
-      totalNewMovies += newCount;
-      totalGenres++;
-    }
-
-    const avgNewPerGenre = totalNewMovies / totalGenres;
-    console.log(`  → Average new movies per genre: ${avgNewPerGenre.toFixed(1)}`);
-
-    // If we don't have enough new content, fetch more pages
-    if (avgNewPerGenre < TARGET_NEW_MOVIES && currentPages.length < MAX_PAGES) {
-      const nextPage = Math.max(...currentPages) + 1;
-      if (nextPage <= MAX_PAGES) {
-        console.log(`  ⚠️  Not enough fresh content, fetching page ${nextPage}...`);
-
-        for (const genreCode of allGenreCodes) {
-          const genre = GENRES[genreCode];
-
-          try {
-            const moreMovies = await tmdb.fetchGenreMovies(
-              genre.id,
-              [nextPage],
-              sortBy,
-              strategyParams
-            );
-            moviesByGenre[genreCode] = [...moviesByGenre[genreCode], ...moreMovies];
-            console.log(`    → ${genre.name}: +${moreMovies.length} (total: ${moviesByGenre[genreCode].length})`);
-          } catch (error) {
-            console.error(`    ✗ ${genre.name} failed: ${error.message}`);
-          }
-
-          await sleep(200);
-        }
-      }
-    } else {
-      console.log(`  ✓ Sufficient fresh content found`);
-    }
+    await sleep(200); // Rate limit courtesy delay
   }
 
   console.log(`\n📊 Total API requests for discovery: ${tmdb.getRequestCount()}`);
+  console.log(`🎯 Total unique movies selected: ${usedMovieIds.size}`);
 
-  // Process and deduplicate (with optional AI enhancement)
-  console.log('\n🔄 Processing and deduplicating movies...');
-  // AI classification DISABLED (was causing misclassifications)
-  // To re-enable: set AI_ENABLED=true environment variable
-  const aiEnabled = process.env.AI_ENABLED === 'true';
-
-  let deduplicatedMovies;
-  if (aiEnabled) {
-    console.log('  🤖 AI classification enabled');
-    deduplicatedMovies = await deduplicator.processAllGenresWithAI(moviesByGenre, recentMovieIds);
-  } else {
-    console.log('  📏 Using rule-based classification only (AI disabled)');
-    deduplicatedMovies = deduplicator.processAllGenres(moviesByGenre, recentMovieIds);
-  }
-
-  const stats = deduplicator.getStats();
-  console.log(`  ✓ Assigned ${stats.totalUniqueMovies} unique movies`);
-
-  // Merge with previous catalog (hybrid caching)
-  console.log('\n🔀 Merging with previous catalog (hybrid cache)...');
-  const mergedMovies = HybridCache.mergeWithPrevious(
-    deduplicatedMovies,
-    previousCatalog,
-    100  // All 100 slots from fresh quality movies, cache only fills if we're short
-  );
-
-  const mergeStats = HybridCache.getMergeStats(mergedMovies, deduplicatedMovies);
-  console.log(`  ✓ Merged: ${mergeStats.freshMovies} fresh (${mergeStats.freshPercentage}%) + ${mergeStats.cachedMovies} cached (${mergeStats.cachedPercentage}%)`);
-
-  // Fetch detailed info for selected movies
+  // STEP 2: Fetch full details for all selected movies
   console.log('\n📥 Fetching movie details...');
-  const allSelectedIds = [];
   const genresWithDetails = {};
 
   for (const genreCode of allGenreCodes) {
-    const movies = mergedMovies[genreCode] || [];
-    // Extract TMDB numeric IDs for API calls
-    // Fresh movies have numeric id, cached movies have tmdbId field
-    const movieIds = movies.map(m => m.tmdbId || m.id);
-
-    // Check for duplicates BEFORE fetching details
-    const uniqueIds = new Set(movieIds);
-    if (movieIds.length !== uniqueIds.size) {
-      console.log(`  ⚠️  ${GENRES[genreCode].name} has ${movieIds.length - uniqueIds.size} duplicate IDs in merged movies!`);
-      console.log(`    Total: ${movieIds.length}, Unique: ${uniqueIds.size}`);
-    }
-
-    allSelectedIds.push(...movieIds);
+    const movies = moviesByGenre[genreCode] || [];
+    const movieIds = movies.map(m => m.id);
 
     console.log(`  → ${GENRES[genreCode].name}: ${movies.length} movies`);
 
-    // Deduplicate movieIds before fetching (in case hybrid cache had issues)
-    const uniqueMovieIds = [...new Set(movieIds)];
-    if (uniqueMovieIds.length !== movieIds.length) {
-      console.log(`    ⚠️  Removed ${movieIds.length - uniqueMovieIds.length} duplicate IDs before fetch`);
+    if (movieIds.length === 0) {
+      genresWithDetails[genreCode] = [];
+      continue;
     }
 
     // Fetch details in batches
-    const details = await tmdb.fetchMovieDetailsBatch(uniqueMovieIds);
+    const details = await tmdb.fetchMovieDetailsBatch(movieIds);
 
     // Convert to Stremio format
     const moviesWithMeta = details
       .map(movie => TMDBClient.toStremioMeta(movie))
       .filter(meta => meta !== null);
 
-    // Deduplicate by Stremio ID (shouldn't be needed, but just in case)
-    const seenIds = new Set();
-    const uniqueMovies = moviesWithMeta.filter(meta => {
-      if (seenIds.has(meta.id)) {
-        console.log(`    ⚠️  Duplicate Stremio ID found: ${meta.id} (${meta.name})`);
-        return false;
-      }
-      seenIds.add(meta.id);
-      return true;
-    });
-
-    // Don't force slice to MOVIES_PER_GENRE - keep natural genre sizes from deduplication
-    genresWithDetails[genreCode] = uniqueMovies;
+    genresWithDetails[genreCode] = moviesWithMeta;
 
     console.log(`    ✓ Got details for ${genresWithDetails[genreCode].length} movies`);
   }
 
   console.log(`\n📊 Total API requests: ${tmdb.getRequestCount()}`);
 
-  // Prepare catalog data
-  const catalogData = {
+  // STEP 3: Fetch IMDb ratings from OMDb (optional, with persistent caching)
+  console.log('\n⭐ Fetching IMDb ratings from OMDb...');
+  const omdbApiKey = process.env.OMDB_API_KEY;
+  let imdbRatingsMap = new Map();
+  let omdb = null;
+
+  if (omdbApiKey) {
+    // Load existing IMDb ratings cache from Netlify Blobs
+    console.log('  → Loading cached IMDb ratings from Netlify Blobs...');
+    let cachedRatings = null;
+    try {
+      cachedRatings = await store.get('imdb-ratings', { type: 'json' });
+      if (cachedRatings) {
+        const cacheSize = Object.keys(cachedRatings).length;
+        console.log(`  ✓ Loaded ${cacheSize} cached IMDb ratings`);
+      } else {
+        console.log('  → No cached ratings found, starting fresh');
+      }
+    } catch (error) {
+      console.log('  → No cached ratings found, starting fresh');
+    }
+
+    // Initialize OMDb client with persistent cache
+    const persistentCache = OMDbClient.loadPersistentCache(cachedRatings);
+    omdb = new OMDbClient(omdbApiKey, persistentCache);
+
+    // Collect all IMDb IDs from movies
+    const imdbIds = [];
+    for (const genreCode of allGenreCodes) {
+      const movies = genresWithDetails[genreCode] || [];
+      for (const movie of movies) {
+        // Extract IMDb ID from links
+        const imdbLink = movie.links?.find(link => link.category === 'imdb');
+        if (imdbLink && imdbLink.url) {
+          const match = imdbLink.url.match(/tt\d+/);
+          if (match) {
+            imdbIds.push(match[0]);
+          }
+        }
+      }
+    }
+
+    console.log(`  → Found ${imdbIds.length} movies with IMDb IDs`);
+
+    if (imdbIds.length > 0) {
+      // Fetch ratings in batch (will use cache for existing movies)
+      imdbRatingsMap = await omdb.getMovieRatingsBatch(imdbIds);
+
+      console.log(`\n🎯 OMDb results: ${imdbRatingsMap.size} movies with IMDb ratings`);
+      console.log(`📊 OMDb API requests (new only): ${omdb.getRequestCount()}`);
+      console.log(`💾 Cached ratings used: ${imdbRatingsMap.size - omdb.getRequestCount()}`);
+
+      // Save updated cache back to Netlify Blobs
+      if (omdb.getNewRatings().size > 0) {
+        console.log(`\n💾 Saving ${omdb.getNewRatings().size} new IMDb ratings to cache...`);
+        const mergedCache = OMDbClient.mergeCaches(persistentCache, omdb.getNewRatings());
+        await store.setJSON('imdb-ratings', mergedCache);
+        console.log(`  ✓ IMDb ratings cache updated (total: ${Object.keys(mergedCache).length} movies)`);
+      } else {
+        console.log('\n💾 No new IMDb ratings to save (all loaded from cache)');
+      }
+
+      // Calculate weighted scores and re-sort each genre
+      console.log('\n🔢 Calculating weighted scores and re-sorting by all-time popularity...');
+      for (const genreCode of allGenreCodes) {
+        const movies = genresWithDetails[genreCode] || [];
+
+        // Add weighted scores to movies
+        for (const movie of movies) {
+          const imdbLink = movie.links?.find(link => link.category === 'imdb');
+          if (imdbLink && imdbLink.url) {
+            const match = imdbLink.url.match(/tt\d+/);
+            if (match) {
+              const imdbId = match[0];
+              const ratingData = imdbRatingsMap.get(imdbId);
+
+              if (ratingData) {
+                movie.imdbRating = ratingData.rating;
+                movie.imdbVotes = ratingData.votes;
+                movie.weightedScore = OMDbClient.calculateWeightedScore(ratingData.rating, ratingData.votes);
+              } else {
+                movie.weightedScore = 0; // No rating available
+              }
+            }
+          } else {
+            movie.weightedScore = 0; // No IMDb ID
+          }
+        }
+
+        // Re-sort by weighted score (descending)
+        movies.sort((a, b) => b.weightedScore - a.weightedScore);
+
+        const withRatings = movies.filter(m => m.weightedScore > 0).length;
+        console.log(`  → ${GENRES[genreCode].name}: ${withRatings}/${movies.length} movies with IMDb ratings`);
+      }
+    }
+  } else {
+    console.log('  ⊘ OMDb API key not provided, using TMDB popularity sorting');
+  }
+
+  // STEP 4: Fetch high-quality posters from Fanart.tv (optional)
+  console.log('\n🎨 Fetching high-quality posters from Fanart.tv...');
+  const fanartApiKey = process.env.FANART_API_KEY;
+  let fanartPosterMap = new Map();
+
+  if (fanartApiKey) {
+    // Load existing Fanart.tv posters cache from Netlify Blobs
+    console.log('  → Loading cached Fanart.tv posters from Netlify Blobs...');
+    let cachedPosters = null;
+    try {
+      cachedPosters = await store.get('fanart-posters', { type: 'json' });
+      if (cachedPosters) {
+        const cacheSize = Object.keys(cachedPosters).length;
+        console.log(`  ✓ Loaded ${cacheSize} cached Fanart.tv posters`);
+      }
+    } catch (error) {
+      console.log('  → No cached posters found, starting fresh');
+    }
+
+    // Initialize Fanart client with persistent cache
+    const persistentPosterCache = FanartClient.loadPersistentCache(cachedPosters);
+    const fanart = new FanartClient(fanartApiKey, persistentPosterCache);
+
+    // Collect all TMDB IDs that have posters
+    const tmdbIdsWithPosters = Array.from(usedMovieIds);
+    console.log(`  → Checking ${tmdbIdsWithPosters.length} movies for Fanart.tv posters`);
+
+    // Fetch in smaller batches to avoid long waits
+    const batchSize = 50;
+    for (let i = 0; i < tmdbIdsWithPosters.length; i += batchSize) {
+      const batch = tmdbIdsWithPosters.slice(i, i + batchSize);
+      console.log(`  → Batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(tmdbIdsWithPosters.length / batchSize)}: ${batch.length} movies`);
+
+      const batchResults = await fanart.getMovieArtworkBatch(batch);
+
+      // Merge results
+      for (const [tmdbId, posterUrl] of batchResults.entries()) {
+        fanartPosterMap.set(tmdbId, posterUrl);
+      }
+
+      console.log(`    ✓ Found ${batchResults.size} Fanart.tv posters in this batch`);
+    }
+
+    console.log(`\n🎯 Fanart.tv results: ${fanartPosterMap.size} high-quality posters found`);
+    console.log(`📊 Fanart.tv API requests: ${fanart.getRequestCount()}`);
+
+    // Replace TMDB posters with Fanart.tv posters where available
+    console.log('\n🖼️  Replacing posters with Fanart.tv versions...');
+    let replacedCount = 0;
+    for (const genreCode of allGenreCodes) {
+      const movies = genresWithDetails[genreCode] || [];
+      for (const movie of movies) {
+        // Extract TMDB ID
+        let tmdbId = null;
+        if (movie.id.startsWith('tmdb:')) {
+          tmdbId = parseInt(movie.id.replace('tmdb:', ''), 10);
+        }
+
+        if (tmdbId && fanartPosterMap.has(tmdbId)) {
+          // Store original TMDB poster as backup
+          movie.posterTmdb = movie.poster;
+          movie.poster = fanartPosterMap.get(tmdbId);
+          replacedCount++;
+        }
+      }
+    }
+    console.log(`  ✓ Replaced ${replacedCount} posters with Fanart.tv versions`);
+
+    // Save updated Fanart.tv cache back to Netlify Blobs
+    if (fanart.getNewPosters().size > 0) {
+      console.log(`\n💾 Saving ${fanart.getNewPosters().size} new Fanart.tv posters to cache...`);
+      const mergedPosterCache = FanartClient.mergeCaches(persistentPosterCache, fanart.getNewPosters());
+      await store.setJSON('fanart-posters', mergedPosterCache);
+      console.log(`  ✓ Fanart.tv posters cache updated (total: ${Object.keys(mergedPosterCache).length} movies)`);
+    } else {
+      console.log('\n💾 No new Fanart.tv posters to save (all from cache)');
+    }
+  } else {
+    console.log('  ⊘ Fanart.tv API key not provided, using TMDB posters');
+  }
+
+  // STEP 5: Query Wikidata for streaming originals
+  console.log('\n🌐 Querying Wikidata for streaming originals...');
+
+  // Load existing Wikidata cache from Netlify Blobs
+  console.log('  → Loading cached streaming originals from Netlify Blobs...');
+  let cachedStreamingOriginals = null;
+  try {
+    cachedStreamingOriginals = await store.get('wikidata-streaming', { type: 'json' });
+    if (cachedStreamingOriginals) {
+      const cacheSize = Object.keys(cachedStreamingOriginals).length;
+      console.log(`  ✓ Loaded ${cacheSize} cached streaming originals`);
+    }
+  } catch (error) {
+    console.log('  → No cached streaming originals found, starting fresh');
+  }
+
+  // Initialize Wikidata client with persistent cache
+  const persistentStreamingCache = WikidataClient.loadPersistentCache(cachedStreamingOriginals);
+  const wikidata = new WikidataClient(persistentStreamingCache);
+
+  // Collect all unique TMDB IDs
+  const allTmdbIds = Array.from(usedMovieIds);
+  console.log(`  → Checking ${allTmdbIds.length} movies for streaming originals`);
+
+  // Batch queries (50 IDs per query to stay under URL limits)
+  const batchSize = 50;
+  const streamingOriginalsMap = new Map();
+
+  for (let i = 0; i < allTmdbIds.length; i += batchSize) {
+    const batch = allTmdbIds.slice(i, i + batchSize);
+    console.log(`  → Batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(allTmdbIds.length / batchSize)}: ${batch.length} movies`);
+
+    try {
+      const results = await wikidata.getStreamingOriginalsBatch(batch);
+
+      // Merge results
+      for (const [tmdbId, serviceCode] of results.entries()) {
+        streamingOriginalsMap.set(tmdbId, serviceCode);
+      }
+
+      console.log(`    ✓ Found ${results.size} streaming originals in this batch`);
+
+      // Rate limit: 1 second between queries
+      if (i + batchSize < allTmdbIds.length) {
+        await WikidataClient.rateLimit();
+      }
+
+    } catch (error) {
+      console.error(`    ✗ Batch failed: ${error.message}`);
+    }
+  }
+
+  console.log(`\n🎯 Wikidata results: ${streamingOriginalsMap.size} streaming originals found`);
+  console.log(`📊 Wikidata API requests: ${wikidata.getRequestCount()}`);
+
+  // Show breakdown by service
+  const serviceCounts = {};
+  for (const serviceCode of streamingOriginalsMap.values()) {
+    serviceCounts[serviceCode] = (serviceCounts[serviceCode] || 0) + 1;
+  }
+  console.log('\n📊 Streaming Originals Breakdown:');
+  for (const [serviceCode, count] of Object.entries(serviceCounts).sort((a, b) => b[1] - a[1])) {
+    const serviceName = STREAMING_SERVICES[serviceCode]?.name || serviceCode;
+    console.log(`  ${serviceName}: ${count} movies`);
+  }
+
+  // Save updated Wikidata cache back to Netlify Blobs
+  if (wikidata.getNewStreamingOriginals().size > 0) {
+    console.log(`\n💾 Saving ${wikidata.getNewStreamingOriginals().size} new streaming originals to cache...`);
+    const mergedStreamingCache = WikidataClient.mergeCaches(persistentStreamingCache, wikidata.getNewStreamingOriginals());
+    await store.setJSON('wikidata-streaming', mergedStreamingCache);
+    console.log(`  ✓ Wikidata streaming originals cache updated (total: ${Object.keys(mergedStreamingCache).length} movies)`);
+  } else {
+    console.log('\n💾 No new streaming originals to save (all from cache)');
+  }
+
+  // STEP 6: Add streaming originals badges to poster URLs
+  console.log('\n🏷️  Adding streaming original badges to posters...');
+
+  // Get Netlify site URL from environment (defaults to placeholder for local dev)
+  const siteUrl = process.env.URL || process.env.DEPLOY_URL || 'https://your-addon.netlify.app';
+
+  for (const genreCode of allGenreCodes) {
+    const movies = genresWithDetails[genreCode] || [];
+
+    for (const movie of movies) {
+      // Extract TMDB ID from movie.id (format: "tmdb:12345" or "tt1234567")
+      let tmdbId = null;
+      if (movie.id.startsWith('tmdb:')) {
+        tmdbId = parseInt(movie.id.replace('tmdb:', ''), 10);
+      }
+      // If it's an IMDB ID, we need to look it up in our original data
+      // For now, we'll skip IMDB IDs since we have TMDB IDs from the fetch
+
+      if (tmdbId && streamingOriginalsMap.has(tmdbId)) {
+        const serviceCode = streamingOriginalsMap.get(tmdbId);
+        const serviceName = STREAMING_SERVICES[serviceCode]?.name || serviceCode;
+
+        // Store streaming original info (for reference/debugging)
+        movie.streamingOriginal = {
+          service: serviceCode,
+          serviceName: serviceName
+        };
+
+        // Modify poster URL to use our badge overlay function
+        // Works with both TMDB and Fanart.tv URLs
+        if (movie.poster) {
+          const posterUrl = encodeURIComponent(movie.poster);
+          movie.poster = `${siteUrl}/.netlify/functions/poster?url=${posterUrl}&badge=${serviceCode}`;
+        }
+      }
+    }
+  }
+
+  const moviesWithBadges = Object.values(genresWithDetails)
+    .flat()
+    .filter(m => m.streamingOriginal).length;
+  console.log(`  ✓ Added badges to ${moviesWithBadges} streaming original posters`);
+
+  // STEP 7: Store in Netlify Blobs
+
+  // Save FULL CACHE (all fetched movies for rotation pool)
+  const fullCacheData = {
     genres: genresWithDetails,
-    strategy: scoringEngine.getStrategyName(),
-    debug: scoringEngine.getDebugInfo(),
+    strategy: 'SIMPLE_POPULAR',
     updatedAt: new Date().toISOString()
   };
 
-  // Calculate totals
   const totalMovies = Object.values(genresWithDetails)
     .reduce((sum, movies) => sum + movies.length, 0);
 
-  // Store in Netlify Blobs
   console.log('\n💾 Storing catalog data...');
-  
-  await store.setJSON('catalog', catalogData);
-  console.log('  ✓ Catalog saved');
 
-  // Store metadata for health checks
+  await store.setJSON('catalog-full-cache', fullCacheData);
+  console.log(`  ✓ Full cache saved (${totalMovies} total movies across all genres)`);
+
+  // Create DISPLAY CATALOG (top 100 per genre for Stremio)
+  const displayGenres = {};
+  for (const genreCode of allGenreCodes) {
+    const allMovies = genresWithDetails[genreCode] || [];
+    // Take top 100 by weighted score (already sorted)
+    displayGenres[genreCode] = allMovies.slice(0, MOVIES_PER_GENRE);
+  }
+
+  const catalogData = {
+    genres: displayGenres,
+    strategy: 'SIMPLE_POPULAR',
+    updatedAt: new Date().toISOString()
+  };
+
+  const displayTotal = Object.values(displayGenres)
+    .reduce((sum, movies) => sum + movies.length, 0);
+
+  await store.setJSON('catalog', catalogData);
+  console.log(`  ✓ Display catalog saved (${displayTotal} movies = top ${MOVIES_PER_GENRE} per genre)`);
+
   const metadata = {
     updatedAt: new Date().toISOString(),
-    strategy: scoringEngine.getStrategyName(),
+    strategy: omdb ? 'IMDB_WEIGHTED' : 'SIMPLE_POPULAR',
     genreCount: Object.keys(genresWithDetails).length,
     totalMovies,
-    apiRequests: tmdb.getRequestCount()
+    streamingOriginals: streamingOriginalsMap.size,
+    imdbRatings: imdbRatingsMap.size,
+    apiRequests: tmdb.getRequestCount(),
+    wikidataRequests: wikidata.getRequestCount(),
+    omdbRequests: omdb ? omdb.getRequestCount() : 0
   };
-  
+
   await store.setJSON('metadata', metadata);
   console.log('  ✓ Metadata saved');
-
-  // Store current catalog as previous for next run (hybrid caching)
-  await store.setJSON('catalog-previous', catalogData);
-  console.log('  ✓ Saved current catalog for tomorrow\'s hybrid merge');
-
-  // Update recent movie IDs for next run
-  const uniqueSelectedIds = [...new Set(allSelectedIds)];
-  const updatedRecentIds = [...new Set([...uniqueSelectedIds, ...recentMovieIds])].slice(0, 4000);
-
-  await store.setJSON('recent-movies', {
-    ids: updatedRecentIds,
-    updatedAt: new Date().toISOString()
-  });
-  console.log(`  ✓ Updated recent movies (${updatedRecentIds.length} total)`);
 
   // Summary
   console.log('\n✅ Update complete!');
   console.log('━'.repeat(50));
   console.log(`📅 Date: ${new Date().toISOString()}`);
-  console.log(`🎯 Strategy: ${scoringEngine.getStrategyName()}`);
-  console.log(`🎬 Total movies: ${totalMovies}`);
+  console.log(`🎯 Strategy: ${omdb ? 'IMDB_WEIGHTED (all-time popular by IMDb ratings)' : 'SIMPLE_POPULAR (by TMDB popularity)'}`);
+  console.log(`🎬 Total movies in cache: ${totalMovies}`);
+  console.log(`🎬 Total movies in display catalog: ${displayTotal} (top ${MOVIES_PER_GENRE} per genre)`);
+  console.log(`⭐ IMDb ratings: ${imdbRatingsMap.size}`);
+  console.log(`🌐 Streaming originals: ${streamingOriginalsMap.size}`);
   console.log(`📁 Genres: ${Object.keys(genresWithDetails).length}`);
-  console.log(`🔗 API requests: ${tmdb.getRequestCount()}`);
+  console.log(`🔗 TMDB API requests: ${tmdb.getRequestCount()}`);
+  if (omdb) console.log(`🔗 OMDb API requests: ${omdb.getRequestCount()}`);
+  console.log(`🔗 Wikidata API requests: ${wikidata.getRequestCount()}`);
   console.log('━'.repeat(50));
-}
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  // Show genre breakdown
+  console.log('\n📊 Genre Breakdown (Full Cache):');
+  for (const genreCode of allGenreCodes) {
+    const cacheCount = genresWithDetails[genreCode].length;
+    const displayCount = displayGenres[genreCode].length;
+    const status = cacheCount >= MOVIES_PER_GENRE ? '✅' : cacheCount >= 50 ? '⚠️ ' : '❌';
+    console.log(`  ${status} ${GENRES[genreCode].name}: ${cacheCount} cached / ${displayCount} displayed`);
+  }
 }
 
 // Run the update
