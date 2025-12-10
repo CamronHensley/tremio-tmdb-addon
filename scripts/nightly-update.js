@@ -209,10 +209,10 @@ async function runUpdate() {
     for (const genreCode of allGenreCodes) {
       const movies = genresWithDetails[genreCode] || [];
       for (const movie of movies) {
-        // Extract IMDb ID from links
-        const imdbLink = movie.links?.find(link => link.category === 'imdb');
-        if (imdbLink && imdbLink.url) {
-          const match = imdbLink.url.match(/tt\d+/);
+        // Extract IMDb ID from links object (not array)
+        const imdbUrl = movie.links?.imdb;
+        if (imdbUrl) {
+          const match = imdbUrl.match(/tt\d+/);
           if (match) {
             imdbIds.push(match[0]);
           }
