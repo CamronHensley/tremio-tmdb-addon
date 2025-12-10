@@ -6,6 +6,9 @@
 
 This document defines the rules for classifying movies into genres when a movie matches multiple genre criteria. Each movie can only be assigned to **ONE** genre in the catalog.
 
+**IMPORTANT NOTE:**
+These rules are for **manual classification** that will be performed in batches. The current catalog uses TMDB's default genre assignments as a temporary foundation. Manual classification will ensure accurate genre placement according to these priority rules.
+
 ## Target Audience
 
 **Western Audience Focus:**
@@ -294,6 +297,43 @@ Example:
 3. **First match wins** - Assign to the first genre that matches
 4. **No duplicates** - Each movie appears in exactly ONE genre
 5. **When in doubt** - Choose the higher priority genre
+
+---
+
+## Manual Classification Workflow
+
+### Current Implementation Status
+
+**Automated (Temporary):**
+- Catalog currently uses TMDB's default genre assignments
+- Movies are fetched based on TMDB genre IDs mapped to our custom codes
+- Custom genres (True Crime, Cars & Racing, etc.) start with TMDB base genre IDs
+- This provides a functional catalog but doesn't perfectly match our priority rules
+
+**Manual Classification (Planned):**
+- Will be performed in batches when tokens are available
+- Each movie will be reviewed and assigned to the correct genre based on priority rules
+- Ensures accurate placement for custom genres and edge cases
+- Guarantees no misclassification (e.g., romcoms in Comedy instead of Romance)
+
+### When Manual Classification Happens
+
+Manual classification will be performed for:
+- **Custom genres** without TMDB equivalents (True Crime, Cars & Racing, Martial Arts, Parody, etc.)
+- **Multi-genre films** where TMDB assigns multiple genres (use priority hierarchy to choose ONE)
+- **Edge cases** like animated superhero films, disaster movies, etc.
+- **Quality control** to ensure all movies are in their best-fit genre
+
+### Classification Batch Process
+
+When performing manual classification in batches:
+1. Review a set of movies (e.g., 50-100 at a time)
+2. Check each movie's TMDB genres, plot, and keywords
+3. Apply priority hierarchy to determine correct genre
+4. Update movie metadata with correct genre assignment
+5. Move to next batch
+
+This ensures the highest quality categorization while remaining manageable.
 
 ---
 

@@ -1,6 +1,6 @@
 # TMDB Genre Explorer - Stremio Addon
 
-Movie catalog addon for Stremio. 28 genres, 100 movies each, updated nightly.
+Movie catalog addon for Stremio. 30 genres, 100 movies each, updated nightly.
 
 ---
 
@@ -180,6 +180,31 @@ MOVIES_PER_GENRE=100  # Optional, defaults to 100
 ## Genres (30 Total)
 
 **Seasonal** (dynamic based on date), Action, Classic Action, Adventure, Animation (Kids), Animation (Adult), Cars & Racing, Comedy, Crime, Disaster, Documentary, Drama, Family, Fantasy, History, Horror, Martial Arts, Music, Mystery, Parody, Romance, Sci-Fi, Sports, Stand-Up Comedy, Superheroes, Thriller, True Crime, TV Movie, War, Western
+
+### Genre Classification Approach
+
+**Current State (Automated):**
+- Movies are currently classified using TMDB's default genre assignments
+- This provides a functional foundation but may not match our custom genre rules perfectly
+- Custom genres (True Crime, Cars & Racing, Martial Arts, etc.) use TMDB's base genre IDs as starting points
+
+**Future State (Manual Classification):**
+- Movies will be manually classified in batches to ensure accurate genre placement
+- Each movie will be assigned to exactly ONE genre based on the priority rules in [GENRE_CLASSIFICATION_RULES.md](GENRE_CLASSIFICATION_RULES.md)
+- Manual classification ensures:
+  - True Crime documentaries don't mix with general Documentaries
+  - Romcoms go to Romance, not Comedy
+  - Martial Arts films separate from general Action
+  - Animated superhero films go to Superheroes, not Animation
+  - All other genre-specific rules are properly applied
+
+**Why Manual Classification?**
+- TMDB allows movies to have multiple genres, but our addon shows each movie in only ONE genre
+- Some genres (True Crime, Cars & Racing, Parody, etc.) don't have TMDB equivalents
+- Manual review is the most accurate way to honor the priority hierarchy and placement rules
+- Ensures consistent, high-quality categorization that matches user expectations
+
+See [GENRE_CLASSIFICATION_RULES.md](GENRE_CLASSIFICATION_RULES.md) for the complete priority hierarchy and classification guidelines.
 
 ---
 
