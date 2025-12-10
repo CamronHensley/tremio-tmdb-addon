@@ -247,9 +247,9 @@ async function runUpdate() {
 
         // Add weighted scores to movies
         for (const movie of movies) {
-          const imdbLink = movie.links?.find(link => link.category === 'imdb');
-          if (imdbLink && imdbLink.url) {
-            const match = imdbLink.url.match(/tt\d+/);
+          const imdbUrl = movie.links?.imdb;
+          if (imdbUrl) {
+            const match = imdbUrl.match(/tt\d+/);
             if (match) {
               const imdbId = match[0];
               const ratingData = imdbRatingsMap.get(imdbId);
