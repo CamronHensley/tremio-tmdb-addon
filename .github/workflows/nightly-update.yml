@@ -26,12 +26,37 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Run nightly update
+      - name: Fetch movies and build catalog
         run: node scripts/nightly-update.js
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Cache OMDb ratings
+        run: node scripts/cache-omdb.js
+        env:
           OMDB_API_KEY: ${{ secrets.OMDB_API_KEY }}
+          NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Cache Fanart.tv posters
+        run: node scripts/cache-fanart.js
+        env:
           FANART_API_KEY: ${{ secrets.FANART_API_KEY }}
+          NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Cache Wikidata streaming data
+        run: node scripts/cache-wikidata.js
+        env:
+          NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Rebuild catalog with all cached data
+        run: node scripts/nightly-update.js
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       
