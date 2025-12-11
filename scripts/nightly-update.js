@@ -184,7 +184,8 @@ async function runUpdate() {
   let imdbRatingsMap = new Map();
   let omdb = null;
 
-  if (omdbApiKey) {
+  // TEMPORARILY DISABLED: Skip OMDb to let Fanart/Wikidata caches build
+  if (false && omdbApiKey) {
     // Load existing IMDb ratings cache from Netlify Blobs
     console.log('  → Loading cached IMDb ratings from Netlify Blobs...');
     let cachedRatings = null;
