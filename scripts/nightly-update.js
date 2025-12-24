@@ -12,7 +12,7 @@ const TMDBClient = require('../lib/tmdb-client');
 const ScoringEngine = require('../lib/scoring-engine');
 const DeduplicationProcessor = require('../lib/deduplication');
 const HybridCache = require('../lib/hybrid-cache');
-const { GENRES, MOVIES_PER_GENRE } = require('../lib/constants');
+const { GENRES, MOVIES_PER_GENRE, getCurrentSeason, SEASONAL_HOLIDAYS } = require('../lib/constants');
 
 // Validate environment variables
 function validateEnv() {
@@ -93,7 +93,25 @@ async function runUpdate() {
     console.log(`  → ${genre.name}...`);
 
     try {
-      // Skip genres without TMDB ID (seasonal, custom genres - will be manually sorted later)
+      // Handle SEASONAL genre - switches movies based on current date
+      if (genre.isSeasonal) {
+        const currentSeason = getCurrentSeason();
+        const seasonalHoliday = SEASONAL_HOLIDAYS[currentSeason.key];
+        console.log(`    → Current season: ${seasonalHoliday.name}`);
+
+        if (seasonalHoliday.movieIds && seasonalHoliday.movieIds.length > 0) {
+          // Fetch details for manually curated movie IDs
+          const movieDetails = await tmdb.fetchMovieDetailsBatch(seasonalHoliday.movieIds);
+          moviesByGenre[genreCode] = movieDetails;
+          console.log(`    ✓ Using ${movieDetails.length} manually curated ${seasonalHoliday.name} movies`);
+        } else {
+          console.log(`    ⊘ No movies configured for ${seasonalHoliday.name} yet`);
+          moviesByGenre[genreCode] = [];
+        }
+        continue;
+      }
+
+      // Skip custom genres without TMDB ID (will be manually sorted later)
       if (!genre.id) {
         console.log(`    ⊘ Skipping (no TMDB ID - manual sorting required)`);
         moviesByGenre[genreCode] = [];
