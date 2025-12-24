@@ -189,18 +189,18 @@ async function runUpdate() {
 
   console.log(`\n📊 Total API requests for discovery: ${tmdb.getRequestCount()}`);
 
-  // Process and deduplicate
-  console.log('\n🔄 Processing and deduplicating movies...');
-  const deduplicatedMovies = deduplicator.processAllGenres(moviesByGenre, recentMovieIds);
+  // Process and score movies
+  console.log('\n🔄 Scoring movies...');
+  const scoredMovies = deduplicator.processAllGenres(moviesByGenre, recentMovieIds);
 
-  const stats = deduplicator.getStats();
-  console.log(`  ✓ Assigned ${stats.totalUniqueMovies} unique movies`);
+  // Merge with previous catalog for rotation
+  console.log('\n🔀 Merging with previous catalog for rotation...');
+  const mergedMovies = HybridCache.mergeWithPrevious(scoredMovies, previousCatalog, 30);
 
-  // TEMPORARILY DISABLED: Skip hybrid caching to use 100% fresh deduplicated movies
-  // Once catalog is fully populated at 100 per genre, re-enable hybrid caching
-  console.log('\n🔀 Hybrid caching temporarily disabled - using 100% fresh deduplicated data');
-  const mergedMovies = deduplicatedMovies;  // Use deduplicated movies directly
-  console.log(`  ✓ Using ${stats.totalUniqueMovies} fresh unique movies (no cache merge)`);
+  const mergeStats = HybridCache.getMergeStats(mergedMovies, scoredMovies);
+  console.log(`  ✓ Total: ${mergeStats.totalMovies} movies`);
+  console.log(`  ✓ Fresh: ${mergeStats.freshMovies} (${mergeStats.freshPercentage}%)`);
+  console.log(`  ✓ Cached: ${mergeStats.cachedMovies} (${mergeStats.cachedPercentage}%)`);
 
   // Fetch detailed info for selected movies
   console.log('\n📥 Fetching movie details...');
