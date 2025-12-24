@@ -12,7 +12,7 @@ const TMDBClient = require('../lib/tmdb-client');
 const ScoringEngine = require('../lib/scoring-engine');
 const DeduplicationProcessor = require('../lib/deduplication');
 const HybridCache = require('../lib/hybrid-cache');
-const { GENRES, MOVIES_PER_GENRE } = require('../lib/constants');
+const { GENRES, MOVIES_PER_GENRE, getCurrentSeason, SEASONAL_HOLIDAYS } = require('../lib/constants');
 
 // Validate environment variables
 function validateEnv() {
@@ -93,12 +93,41 @@ async function runUpdate() {
     console.log(`  → ${genre.name}...`);
 
     try {
-      const movies = await tmdb.fetchGenreMovies(
-        genre.id,
-        currentPages,
-        sortBy,
-        strategyParams
-      );
+      let movies = [];
+
+      if (genre.isSeasonal) {
+        // Handle seasonal genre
+        const currentSeason = getCurrentSeason();
+        const seasonalHoliday = SEASONAL_HOLIDAYS[currentSeason.key];
+        console.log(`    → Current season: ${seasonalHoliday.name}`);
+
+        const seasonalMovies = [];
+        for (const page of currentPages) {
+          const response = await tmdb.discoverSeasonalMovies(
+            seasonalHoliday.tmdbKeywordIds,
+            {
+              page,
+              sortBy: 'popularity.desc',
+              minVotes: 100,
+              excludeGenres: seasonalHoliday.excludeGenres || []
+            }
+          );
+          if (response.results && response.results.length > 0) {
+            seasonalMovies.push(...response.results);
+          }
+          await sleep(200);
+        }
+        movies = seasonalMovies;
+      } else {
+        // Regular genre fetch
+        movies = await tmdb.fetchGenreMovies(
+          genre.id,
+          currentPages,
+          sortBy,
+          strategyParams
+        );
+      }
+
       moviesByGenre[genreCode] = movies;
       console.log(`    ✓ Found ${movies.length} movies`);
     } catch (error) {
@@ -106,7 +135,9 @@ async function runUpdate() {
       moviesByGenre[genreCode] = [];
     }
 
-    await sleep(200);
+    if (!genre.isSeasonal) {
+      await sleep(200);
+    }
   }
 
   // Check if we need more pages (only if we have a previous catalog)
@@ -139,12 +170,31 @@ async function runUpdate() {
           const genre = GENRES[genreCode];
 
           try {
-            const moreMovies = await tmdb.fetchGenreMovies(
-              genre.id,
-              [nextPage],
-              sortBy,
-              strategyParams
-            );
+            let moreMovies = [];
+
+            if (genre.isSeasonal) {
+              const currentSeason = getCurrentSeason();
+              const seasonalHoliday = SEASONAL_HOLIDAYS[currentSeason.key];
+
+              const response = await tmdb.discoverSeasonalMovies(
+                seasonalHoliday.tmdbKeywordIds,
+                {
+                  page: nextPage,
+                  sortBy: 'popularity.desc',
+                  minVotes: 100,
+                  excludeGenres: seasonalHoliday.excludeGenres || []
+                }
+              );
+              moreMovies = response.results || [];
+            } else {
+              moreMovies = await tmdb.fetchGenreMovies(
+                genre.id,
+                [nextPage],
+                sortBy,
+                strategyParams
+              );
+            }
+
             moviesByGenre[genreCode] = [...moviesByGenre[genreCode], ...moreMovies];
             console.log(`    → ${genre.name}: +${moreMovies.length} (total: ${moviesByGenre[genreCode].length})`);
           } catch (error) {
