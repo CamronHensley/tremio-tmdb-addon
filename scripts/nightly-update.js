@@ -12,7 +12,7 @@ const TMDBClient = require('../lib/tmdb-client');
 const ScoringEngine = require('../lib/scoring-engine');
 const DeduplicationProcessor = require('../lib/deduplication');
 const HybridCache = require('../lib/hybrid-cache');
-const { GENRES, MOVIES_PER_GENRE, getCurrentSeason, SEASONAL_HOLIDAYS } = require('../lib/constants');
+const { GENRES, MOVIES_PER_GENRE, TARGET_NEW_MOVIES, MAX_PAGES, getCurrentSeason, SEASONAL_HOLIDAYS } = require('../lib/constants');
 
 // Validate environment variables
 function validateEnv() {
