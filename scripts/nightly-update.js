@@ -176,9 +176,9 @@ async function runUpdate() {
 
   console.log(`\n📊 Total API requests for discovery: ${tmdb.getRequestCount()}`);
 
-  // Process and score movies (initial quality-based ranking)
-  console.log('\n🔄 Scoring movies (quality-based)...');
-  const scoredMovies = deduplicator.processAllGenres(moviesByGenre);
+  // Process and score movies (initial quality-based ranking, exclude cached)
+  console.log('\n🔄 Scoring movies (quality-based, deduplicating against cache)...');
+  const scoredMovies = deduplicator.processAllGenres(moviesByGenre, previousCatalog);
 
   // Merge with previous catalog using intelligent cache selection
   console.log('\n🔀 Merging with cache (applying daily strategy)...');
