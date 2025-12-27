@@ -32,11 +32,7 @@ async function runUpdate() {
   validateEnv();
 
   const tmdb = new TMDBClient(process.env.TMDB_API_KEY);
-  const scoringEngine = new ScoringEngine();
   const deduplicator = new DeduplicationProcessor();
-
-  console.log(`\n📊 Strategy for today: ${scoringEngine.getStrategyName()}`);
-  console.log(`📄 Fetching from pages: ${scoringEngine.getRotationPages().join(', ')}`);
 
   // Get store for Netlify Blobs
   const store = getStore({
@@ -58,31 +54,22 @@ async function runUpdate() {
     console.log('📦 No previous catalog found (first run or error)');
   }
 
-  // Get recent movie IDs for historical penalty
-  // TEMPORARILY DISABLED: Clear recent movies to allow catalog to build up to 100 per genre
+  // Get recent movie IDs for historical penalty (used by hybrid cache)
   let recentMovieIds = [];
-  console.log('📜 Recent movie penalty temporarily disabled (building up catalog)');
-  // try {
-  //   const recentData = await store.get('recent-movies', { type: 'json' });
-  //   recentMovieIds = recentData?.ids || [];
-  //   console.log(`📜 Loaded ${recentMovieIds.length} recent movie IDs for diversity`);
-  // } catch (e) {
-  //   console.log('📜 No recent movie history found (first run?)');
-  // }
+  try {
+    const recentData = await store.get('recent-movies', { type: 'json' });
+    recentMovieIds = recentData?.ids || [];
+    console.log(`📜 Loaded ${recentMovieIds.length} recent movie IDs for diversity`);
+  } catch (e) {
+    console.log('📜 No recent movie history found (first run?)');
+  }
 
-  // Adaptive fetching: Start with 2 pages, fetch more if needed
+  // Fetch from TMDB with consistent parameters (no strategy-based variation)
   const moviesByGenre = {};
   const allGenreCodes = Object.keys(GENRES);
-  let currentPages = scoringEngine.getRotationPages();
-  const sortBy = scoringEngine.getSortParameter();
-  const strategyParams = scoringEngine.getStrategyParams();
-  const TARGET_NEW_MOVIES = 30; // Minimum new movies we want per genre
-  const MAX_PAGES = 10;  // Increased to get enough unique movies for deduplication
-
-  // TEMPORARILY: Fetch all 10 pages to build up catalog to 100 per genre
-  // With strict deduplication, need more pages to get enough unique movies
-  currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  console.log('🚀 Full catalog build mode: fetching all 10 pages to reach 100 per genre');
+  const currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Fetch 10 pages for variety
+  const sortBy = 'popularity.desc'; // Consistent sorting
+  const strategyParams = {}; // No date filters
 
   console.log('\n🔍 Fetching from TMDB...');
   console.log(`📄 Pages: ${currentPages.join(', ')}`);
@@ -189,13 +176,13 @@ async function runUpdate() {
 
   console.log(`\n📊 Total API requests for discovery: ${tmdb.getRequestCount()}`);
 
-  // Process and score movies
-  console.log('\n🔄 Scoring movies...');
-  const scoredMovies = deduplicator.processAllGenres(moviesByGenre, recentMovieIds);
+  // Process and score movies (initial quality-based ranking)
+  console.log('\n🔄 Scoring movies (quality-based)...');
+  const scoredMovies = deduplicator.processAllGenres(moviesByGenre);
 
-  // Merge with previous catalog for rotation
-  console.log('\n🔀 Merging with previous catalog for rotation...');
-  const mergedMovies = HybridCache.mergeWithPrevious(scoredMovies, previousCatalog, 30);
+  // Merge with previous catalog using intelligent cache selection
+  console.log('\n🔀 Merging with cache (applying daily strategy)...');
+  const mergedMovies = HybridCache.mergeWithPrevious(scoredMovies, previousCatalog, recentMovieIds, 20);
 
   const mergeStats = HybridCache.getMergeStats(mergedMovies, scoredMovies);
   console.log(`  ✓ Total: ${mergeStats.totalMovies} movies`);
@@ -255,10 +242,12 @@ async function runUpdate() {
   console.log(`\n📊 Total API requests: ${tmdb.getRequestCount()}`);
 
   // Prepare catalog data
+  const today = new Date();
+  const dayOfWeek = today.getUTCDay();
+  const { DAY_STRATEGIES } = require('../lib/constants');
+
   const catalogData = {
     genres: genresWithDetails,
-    strategy: scoringEngine.getStrategyName(),
-    debug: scoringEngine.getDebugInfo(),
     updatedAt: new Date().toISOString()
   };
 
@@ -268,14 +257,14 @@ async function runUpdate() {
 
   // Store in Netlify Blobs
   console.log('\n💾 Storing catalog data...');
-  
+
   await store.setJSON('catalog', catalogData);
   console.log('  ✓ Catalog saved');
 
   // Store metadata for health checks
   const metadata = {
     updatedAt: new Date().toISOString(),
-    strategy: scoringEngine.getStrategyName(),
+    strategy: DAY_STRATEGIES[dayOfWeek],
     genreCount: Object.keys(genresWithDetails).length,
     totalMovies,
     apiRequests: tmdb.getRequestCount()
@@ -302,7 +291,7 @@ async function runUpdate() {
   console.log('\n✅ Update complete!');
   console.log('━'.repeat(50));
   console.log(`📅 Date: ${new Date().toISOString()}`);
-  console.log(`🎯 Strategy: ${scoringEngine.getStrategyName()}`);
+  console.log(`🎯 Daily Strategy: ${DAY_STRATEGIES[dayOfWeek]}`);
   console.log(`🎬 Total movies: ${totalMovies}`);
   console.log(`📁 Genres: ${Object.keys(genresWithDetails).length}`);
   console.log(`🔗 API requests: ${tmdb.getRequestCount()}`);
