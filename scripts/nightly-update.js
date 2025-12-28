@@ -9,8 +9,6 @@ require('dotenv').config();
 
 const { getStore } = require('@netlify/blobs');
 const TMDBClient = require('../lib/tmdb-client');
-const ScoringEngine = require('../lib/scoring-engine');
-const DeduplicationProcessor = require('../lib/deduplication');
 const HybridCache = require('../lib/hybrid-cache');
 const { GENRES, MOVIES_PER_GENRE, TARGET_NEW_MOVIES, MAX_PAGES, getCurrentSeason, SEASONAL_HOLIDAYS } = require('../lib/constants');
 
@@ -176,15 +174,35 @@ async function runUpdate() {
 
   console.log(`\n📊 Total API requests for discovery: ${tmdb.getRequestCount()}`);
 
-  // Process and score movies (initial quality-based ranking, exclude cached)
-  console.log('\n🔄 Scoring movies (quality-based, deduplicating against cache)...');
-  const scoredMovies = deduplicator.processAllGenres(moviesByGenre, previousCatalog);
+  // Filter out movies that are already in cache
+  console.log('\n🔄 Filtering fresh movies (excluding cached)...');
+  const freshMoviesByGenre = {};
+
+  for (const genreCode of allGenreCodes) {
+    const movies = moviesByGenre[genreCode] || [];
+
+    // Get cached movie IDs to exclude
+    const cachedIds = new Set();
+    if (previousCatalog && previousCatalog.genres && previousCatalog.genres[genreCode]) {
+      previousCatalog.genres[genreCode].forEach(m => {
+        if (m.tmdbId) {
+          cachedIds.add(m.tmdbId);
+        } else if (m.id && typeof m.id === 'string' && m.id.startsWith('tmdb:')) {
+          cachedIds.add(parseInt(m.id.replace('tmdb:', ''), 10));
+        }
+      });
+    }
+
+    // Filter out cached movies
+    freshMoviesByGenre[genreCode] = movies.filter(movie => !cachedIds.has(movie.id));
+    console.log(`  ${GENRES[genreCode].name}: ${freshMoviesByGenre[genreCode].length} fresh movies`);
+  }
 
   // Merge with previous catalog using intelligent cache selection
   console.log('\n🔀 Merging with cache (applying daily strategy)...');
-  const mergedMovies = HybridCache.mergeWithPrevious(scoredMovies, previousCatalog, recentMovieIds, 20);
+  const mergedMovies = HybridCache.mergeWithPrevious(freshMoviesByGenre, previousCatalog, recentMovieIds, 20);
 
-  const mergeStats = HybridCache.getMergeStats(mergedMovies, scoredMovies);
+  const mergeStats = HybridCache.getMergeStats(mergedMovies, freshMoviesByGenre);
   console.log(`  ✓ Total: ${mergeStats.totalMovies} movies`);
   console.log(`  ✓ Fresh: ${mergeStats.freshMovies} (${mergeStats.freshPercentage}%)`);
   console.log(`  ✓ Cached: ${mergeStats.cachedMovies} (${mergeStats.cachedPercentage}%)`);
