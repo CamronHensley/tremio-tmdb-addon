@@ -10,7 +10,7 @@ require('dotenv').config();
 const { getStore } = require('@netlify/blobs');
 const TMDBClient = require('../lib/tmdb-client');
 const HybridCache = require('../lib/hybrid-cache');
-const { GENRES, MOVIES_PER_GENRE, TARGET_NEW_MOVIES, MAX_PAGES, getCurrentSeason, SEASONAL_HOLIDAYS, MAJOR_STUDIOS, THEATRICAL_CERTIFICATIONS } = require('../lib/constants');
+const { GENRES, MOVIES_PER_GENRE, TARGET_NEW_MOVIES, MAX_PAGES, getCurrentSeason, SEASONAL_HOLIDAYS, MAJOR_STUDIOS } = require('../lib/constants');
 
 // Validate environment variables
 function validateEnv() {
@@ -85,16 +85,15 @@ async function runUpdate() {
   const allGenreCodes = Object.keys(GENRES);
   const currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Fetch 10 pages for variety
 
-  // Multi-signal approach: major studios + theatrical certifications + revenue/rating sort
+  // Multi-signal approach: major studios/platforms only (filters direct-to-video garbage)
   const strategyParams = {
-    withCompanies: MAJOR_STUDIOS,           // Only major studio productions (filters direct-to-video)
-    certification: THEATRICAL_CERTIFICATIONS, // Only theatrical releases (filters TV movies)
-    sortBy: 'revenue.desc'                   // Sort by box office success (works for all eras)
+    withCompanies: MAJOR_STUDIOS,  // Only major studio/platform productions
+    sortBy: 'revenue.desc'         // Sort by box office/platform success (works for all eras)
   };
 
   console.log('\n🔍 Fetching from TMDB...');
   console.log(`📄 Pages: ${currentPages.join(', ')}`);
-  console.log(`🎬 Filters: Major studios + Theatrical certifications + Revenue sort`);
+  console.log(`🎬 Filters: Major studios/platforms + Revenue sort`);
 
   // Initial fetch
   for (const genreCode of allGenreCodes) {
