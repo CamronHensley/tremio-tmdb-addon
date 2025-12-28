@@ -37,7 +37,6 @@ async function runUpdate() {
   validateEnv();
 
   const tmdb = new TMDBClient(process.env.TMDB_API_KEY);
-  const deduplicator = new DeduplicationProcessor();
 
   // Get store for Netlify Blobs
   const store = getStore({

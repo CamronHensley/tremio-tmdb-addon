@@ -34,7 +34,10 @@ async function resetCache() {
   }
 
   console.log('\n✅ Cache reset complete!');
-  console.log('Next nightly update will fetch completely fresh data.');
+  console.log('⚠️  Note: Netlify function has 5-minute in-memory cache.');
+  console.log('Wait 5 minutes OR redeploy the site for immediate effect.');
+  console.log('\nTo redeploy immediately, run:');
+  console.log('  git commit --allow-empty -m "Clear function cache" && git push');
 }
 
 resetCache()
