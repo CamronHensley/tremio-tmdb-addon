@@ -16,10 +16,17 @@ const { GENRES, MOVIES_PER_GENRE, TARGET_NEW_MOVIES, MAX_PAGES, getCurrentSeason
 function validateEnv() {
   const required = ['TMDB_API_KEY', 'NETLIFY_ACCESS_TOKEN', 'NETLIFY_SITE_ID'];
   const missing = required.filter(key => !process.env[key]);
-  
+
   if (missing.length > 0) {
-    throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
+    throw new Error(`❌ Missing required environment variables: ${missing.join(', ')}`);
   }
+
+  // Validate API key format (basic check)
+  if (process.env.TMDB_API_KEY && process.env.TMDB_API_KEY.length < 20) {
+    console.warn('⚠️  TMDB_API_KEY seems too short, it may be invalid');
+  }
+
+  console.log('✓ Environment variables validated');
 }
 
 // Main update function
@@ -47,9 +54,15 @@ async function runUpdate() {
       const prevMovieCount = Object.values(previousCatalog.genres)
         .reduce((sum, movies) => sum + movies.length, 0);
       console.log(`📦 Loaded previous catalog (${prevMovieCount} movies for hybrid merge)`);
+
+      // Validate catalog structure
+      if (typeof previousCatalog.genres !== 'object') {
+        console.warn('⚠️  Previous catalog has invalid structure, ignoring');
+        previousCatalog = null;
+      }
     }
   } catch (e) {
-    console.log('📦 No previous catalog found (first run or error)');
+    console.log('📦 No previous catalog found (first run or error):', e.message);
   }
 
   // Get recent movie IDs for historical penalty (used by hybrid cache)
@@ -57,9 +70,14 @@ async function runUpdate() {
   try {
     const recentData = await store.get('recent-movies', { type: 'json' });
     recentMovieIds = recentData?.ids || [];
-    console.log(`📜 Loaded ${recentMovieIds.length} recent movie IDs for diversity`);
+    if (Array.isArray(recentMovieIds)) {
+      console.log(`📜 Loaded ${recentMovieIds.length} recent movie IDs for diversity`);
+    } else {
+      console.warn('⚠️  Recent movie IDs has invalid format, ignoring');
+      recentMovieIds = [];
+    }
   } catch (e) {
-    console.log('📜 No recent movie history found (first run?)');
+    console.log('📜 No recent movie history found (first run?):', e.message);
   }
 
   // Fetch from TMDB with consistent parameters (no strategy-based variation)
@@ -273,11 +291,16 @@ async function runUpdate() {
   const totalMovies = Object.values(genresWithDetails)
     .reduce((sum, movies) => sum + movies.length, 0);
 
-  // Store in Netlify Blobs
+  // Store in Netlify Blobs with error handling
   console.log('\n💾 Storing catalog data...');
 
-  await store.setJSON('catalog', catalogData);
-  console.log('  ✓ Catalog saved');
+  try {
+    await store.setJSON('catalog', catalogData);
+    console.log('  ✓ Catalog saved');
+  } catch (error) {
+    console.error('  ✗ Failed to save catalog:', error.message);
+    throw error; // Fatal error
+  }
 
   // Store metadata for health checks
   const metadata = {
@@ -287,23 +310,38 @@ async function runUpdate() {
     totalMovies,
     apiRequests: tmdb.getRequestCount()
   };
-  
-  await store.setJSON('metadata', metadata);
-  console.log('  ✓ Metadata saved');
+
+  try {
+    await store.setJSON('metadata', metadata);
+    console.log('  ✓ Metadata saved');
+  } catch (error) {
+    console.error('  ✗ Failed to save metadata:', error.message);
+    // Non-fatal, continue
+  }
 
   // Store current catalog as previous for next run (hybrid caching)
-  await store.setJSON('catalog-previous', catalogData);
-  console.log('  ✓ Saved current catalog for tomorrow\'s hybrid merge');
+  try {
+    await store.setJSON('catalog-previous', catalogData);
+    console.log('  ✓ Saved current catalog for tomorrow\'s hybrid merge');
+  } catch (error) {
+    console.error('  ✗ Failed to save previous catalog:', error.message);
+    // Non-fatal, continue
+  }
 
   // Update recent movie IDs for next run
   const uniqueSelectedIds = [...new Set(allSelectedIds)];
   const updatedRecentIds = [...new Set([...uniqueSelectedIds, ...recentMovieIds])].slice(0, 4000);
 
-  await store.setJSON('recent-movies', {
-    ids: updatedRecentIds,
-    updatedAt: new Date().toISOString()
-  });
-  console.log(`  ✓ Updated recent movies (${updatedRecentIds.length} total)`);
+  try {
+    await store.setJSON('recent-movies', {
+      ids: updatedRecentIds,
+      updatedAt: new Date().toISOString()
+    });
+    console.log(`  ✓ Updated recent movies (${updatedRecentIds.length} total)`);
+  } catch (error) {
+    console.error('  ✗ Failed to save recent movies:', error.message);
+    // Non-fatal, continue
+  }
 
   // Summary
   console.log('\n✅ Update complete!');

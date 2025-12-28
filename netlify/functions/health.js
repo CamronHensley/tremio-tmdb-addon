@@ -2,6 +2,14 @@
  * Health Check Endpoint
  */
 const { getStore } = require('@netlify/blobs');
+const { randomUUID } = require('crypto');
+
+// Validate required environment variables on startup
+const requiredEnvVars = ['NETLIFY_SITE_ID', 'NETLIFY_ACCESS_TOKEN'];
+const missingEnvVars = requiredEnvVars.filter(key => !process.env[key]);
+if (missingEnvVars.length > 0) {
+  console.error(`❌ Health endpoint missing env vars: ${missingEnvVars.join(', ')}`);
+}
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -10,6 +18,8 @@ const corsHeaders = {
 };
 
 exports.handler = async function(request, context) {
+  const requestId = randomUUID().substring(0, 8);
+
   if (request.method === 'OPTIONS') {
     return {
       statusCode: 204,
@@ -17,8 +27,25 @@ exports.handler = async function(request, context) {
       body: ''
     };
   }
-  
+
   try {
+    // Validate environment before attempting to connect
+    if (missingEnvVars.length > 0) {
+      return {
+        statusCode: 500,
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Request-ID': requestId,
+          ...corsHeaders
+        },
+        body: JSON.stringify({
+          status: 'error',
+          message: `Missing environment variables: ${missingEnvVars.join(', ')}`,
+          requestId
+        })
+      };
+    }
+
     const store = getStore({
       name: 'tmdb-catalog',
       siteID: process.env.NETLIFY_SITE_ID,
@@ -29,8 +56,16 @@ exports.handler = async function(request, context) {
     if (!metadata) {
       return {
         statusCode: 503,
-        headers: { 'Content-Type': 'application/json', ...corsHeaders },
-        body: JSON.stringify({ status: 'degraded', message: 'No catalog data available' })
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Request-ID': requestId,
+          ...corsHeaders
+        },
+        body: JSON.stringify({
+          status: 'degraded',
+          message: 'No catalog data available',
+          requestId
+        })
       };
     }
 
@@ -43,11 +78,13 @@ exports.handler = async function(request, context) {
       statusCode: 200,
       headers: {
         'Content-Type': 'application/json',
+        'X-Request-ID': requestId,
         ...corsHeaders,
-        'Cache-Control': 'no-cache'
+        'Cache-Control': 'no-cache, no-store, must-revalidate'
       },
       body: JSON.stringify({
         status: isHealthy ? 'healthy' : 'stale',
+        requestId,
         cache: {
           updatedAt: metadata.updatedAt,
           ageHours,
@@ -56,11 +93,19 @@ exports.handler = async function(request, context) {
       })
     };
   } catch (error) {
-    console.error('Health check error:', error);
+    console.error(`[${requestId}] Health check error:`, error);
     return {
       statusCode: 500,
-      headers: { 'Content-Type': 'application/json', ...corsHeaders },
-      body: JSON.stringify({ status: 'error', message: error.message })
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Request-ID': requestId,
+        ...corsHeaders
+      },
+      body: JSON.stringify({
+        status: 'error',
+        message: error.message,
+        requestId
+      })
     };
   }
 };
