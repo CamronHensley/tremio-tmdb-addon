@@ -4,6 +4,7 @@
   "description": "Stremio addon displaying movies by genre from TMDB with intelligent daily rotation",
   "scripts": {
     "update": "node scripts/nightly-update.js",
+    "reset-cache": "node scripts/reset-cache.js",
     "dev": "netlify dev",
     "test": "jest",
     "test:watch": "jest --watch",
