@@ -10,7 +10,7 @@ require('dotenv').config();
 const { getStore } = require('@netlify/blobs');
 const TMDBClient = require('../lib/tmdb-client');
 const HybridCache = require('../lib/hybrid-cache');
-const { GENRES, MOVIES_PER_GENRE, TARGET_NEW_MOVIES, MAX_PAGES, getCurrentSeason, SEASONAL_HOLIDAYS } = require('../lib/constants');
+const { GENRES, MOVIES_PER_GENRE, TARGET_NEW_MOVIES, MAX_PAGES, getCurrentSeason, SEASONAL_HOLIDAYS, MAJOR_STUDIOS, THEATRICAL_CERTIFICATIONS } = require('../lib/constants');
 
 // Validate environment variables
 function validateEnv() {
@@ -80,15 +80,21 @@ async function runUpdate() {
     console.log('📜 No recent movie history found (first run?):', e.message);
   }
 
-  // Fetch from TMDB with consistent parameters (no strategy-based variation)
+  // Fetch from TMDB using multi-signal quality filtering
   const moviesByGenre = {};
   const allGenreCodes = Object.keys(GENRES);
   const currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Fetch 10 pages for variety
-  const sortBy = 'vote_average.desc'; // Sort by rating to get quality across all eras
-  const strategyParams = {}; // No date filters
+
+  // Multi-signal approach: major studios + theatrical certifications + revenue/rating sort
+  const strategyParams = {
+    withCompanies: MAJOR_STUDIOS,           // Only major studio productions (filters direct-to-video)
+    certification: THEATRICAL_CERTIFICATIONS, // Only theatrical releases (filters TV movies)
+    sortBy: 'revenue.desc'                   // Sort by box office success (works for all eras)
+  };
 
   console.log('\n🔍 Fetching from TMDB...');
   console.log(`📄 Pages: ${currentPages.join(', ')}`);
+  console.log(`🎬 Filters: Major studios + Theatrical certifications + Revenue sort`);
 
   // Initial fetch
   for (const genreCode of allGenreCodes) {
@@ -124,7 +130,7 @@ async function runUpdate() {
       const movies = await tmdb.fetchGenreMovies(
         genre.id,
         currentPages,
-        sortBy,
+        strategyParams.sortBy,
         strategyParams
       );
       moviesByGenre[genreCode] = movies;
@@ -173,7 +179,7 @@ async function runUpdate() {
             const moreMovies = await tmdb.fetchGenreMovies(
               genre.id,
               [nextPage],
-              sortBy,
+              strategyParams.sortBy,
               strategyParams
             );
             moviesByGenre[genreCode] = [...moviesByGenre[genreCode], ...moreMovies];
