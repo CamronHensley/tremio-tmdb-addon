@@ -84,14 +84,26 @@ function buildManifest(genreCodes) {
   return { ...ADDON_META, catalogs };
 }
 
+// Cache catalog data for 5 minutes to reduce blob reads
+let catalogCache = null;
+let catalogCacheTime = 0;
+const CATALOG_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
 async function getCatalogData() {
+  const now = Date.now();
+  if (catalogCache && (now - catalogCacheTime) < CATALOG_CACHE_TTL) {
+    return catalogCache;
+  }
+
   try {
     const store = getStore({
       name: 'tmdb-catalog',
       siteID: process.env.NETLIFY_SITE_ID,
       token: process.env.NETLIFY_ACCESS_TOKEN
     });
-    return await store.get('catalog', { type: 'json' });
+    catalogCache = await store.get('catalog', { type: 'json' });
+    catalogCacheTime = now;
+    return catalogCache;
   } catch (error) {
     console.error('Failed to get catalog data:', error);
     return null;
@@ -149,47 +161,26 @@ async function handleCatalog(config, catalogId, skip = 0) {
 }
 
 async function handleMeta(movieId) {
-  console.log('handleMeta called with:', movieId);
-
-  // Decode URL-encoded movie ID (Stremio encodes the colon as %3A)
   const decodedId = decodeURIComponent(movieId);
-  console.log('Decoded ID:', decodedId);
 
-  // Accept both IMDB IDs (tt1234567) and TMDB IDs (tmdb:123)
-  const isIMDB = decodedId.startsWith('tt');
-  const isTMDB = decodedId.startsWith('tmdb:');
-
-  if (!isIMDB && !isTMDB) {
-    console.log('ERROR: Invalid movie ID format:', decodedId);
+  // Validate ID format
+  if (!decodedId.startsWith('tt') && !decodedId.startsWith('tmdb:')) {
     return errorResponse('Invalid movie ID format', 400);
   }
 
   const catalogData = await getCatalogData();
-  console.log('Catalog data loaded:', {
-    hasData: !!catalogData,
-    hasGenres: !!catalogData?.genres,
-    genreCount: catalogData?.genres ? Object.keys(catalogData.genres).length : 0
-  });
-
-  if (!catalogData || !catalogData.genres) {
-    console.log('ERROR: Catalog data not available');
+  if (!catalogData?.genres) {
     return errorResponse('Catalog data not available', 503);
   }
 
+  // Search all genres for the movie
   for (const genreCode of Object.keys(catalogData.genres)) {
     const movie = catalogData.genres[genreCode].find(m => m.id === decodedId);
     if (movie) {
-      console.log('Movie found in genre:', genreCode, 'Movie:', movie.name);
-      const response = jsonResponse({ meta: movie }, 200, true);  // Use meta cache headers
-      console.log('Returning response:', JSON.stringify(response).substring(0, 200));
-      return response;
+      return jsonResponse({ meta: movie }, 200, true);
     }
   }
 
-  console.log('ERROR: Movie not found:', decodedId);
-  console.log('Available movies:', Object.keys(catalogData.genres).map(code =>
-    catalogData.genres[code].slice(0, 2).map(m => m.id)
-  ));
   return errorResponse('Movie not found', 404);
 }
 
@@ -215,26 +206,15 @@ exports.handler = async function(request, context) {
   const url = new URL(request.url || `https://dummy${request.path}`);
   const queryParams = Object.fromEntries(url.searchParams);
 
-  // Log incoming request for debugging
-  console.log('Request:', {
-    path: request.path,
-    url: request.url,
-    queryParams,
-    clientId,
-    rateLimitRemaining: rateLimit.remaining
-  });
-
   // Support both query params (from redirects) and path parsing (direct access)
-  let resource, config, type, id, skip;
+  let resource, config, id, skip;
 
   if (queryParams.resource) {
     // Using query parameters from netlify.toml redirects
     resource = queryParams.resource;
     config = queryParams.config || 'default';
-    type = queryParams.type;
     id = queryParams.id;
     skip = parseInt(queryParams.skip || '0', 10);
-    console.log('Using query params:', { resource, config, type, id, skip });
   } else {
     // Fallback to path parsing for direct access
     const path = request.path.replace('/.netlify/functions/addon', '');
@@ -249,7 +229,6 @@ exports.handler = async function(request, context) {
     if (match && !resource) {
       resource = 'catalog';
       config = match[1] || 'default';
-      type = 'movie';
       id = match[2];
       skip = parseInt(queryParams.skip || '0', 10);
     }
@@ -258,13 +237,9 @@ exports.handler = async function(request, context) {
     if (match && !resource) {
       resource = 'meta';
       config = match[1] || 'default';
-      type = 'movie';
       id = match[2];
     }
-    console.log('Using path parsing:', { resource, config, type, id, skip });
   }
-
-  console.log('Final params:', { resource, config, type, id, skip });
 
   try {
     switch (resource) {
@@ -273,7 +248,6 @@ exports.handler = async function(request, context) {
       case 'catalog':
         return await handleCatalog(config, id, skip);
       case 'meta':
-        console.log('Handling meta request for:', id);
         return await handleMeta(id);
       default:
         return errorResponse('Unknown resource', 404);
