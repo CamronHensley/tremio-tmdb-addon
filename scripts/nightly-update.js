@@ -82,7 +82,7 @@ async function runUpdate() {
   // Fetch from TMDB using multi-signal quality filtering
   const moviesByGenre = {};
   const allGenreCodes = Object.keys(GENRES);
-  const currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Fetch 10 pages for variety
+  const currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]; // Fetch 20 pages for variety
 
   // Multi-signal approach: major studios/platforms only (filters direct-to-video garbage)
   const strategyParams = {
@@ -130,12 +130,25 @@ async function runUpdate() {
           return { genreCode, movies: [] };
         }
 
-        const movies = await tmdb.fetchGenreMovies(
-          genre.id,
-          currentPages,
-          strategyParams.sortBy,
-          strategyParams
-        );
+        // Use keyword-based fetching for documentary-style genres
+        let movies;
+        if (genre.useKeywords && genre.keywords) {
+          console.log(`    → Using keyword-based discovery: ${genre.keywords}`);
+          movies = await tmdb.fetchGenreMoviesByKeywords(
+            genre.id,
+            genre.keywords,
+            currentPages,
+            strategyParams.sortBy,
+            strategyParams
+          );
+        } else {
+          movies = await tmdb.fetchGenreMovies(
+            genre.id,
+            currentPages,
+            strategyParams.sortBy,
+            strategyParams
+          );
+        }
         console.log(`    ✓ Found ${movies.length} movies`);
         return { genreCode, movies };
       } catch (error) {
@@ -184,12 +197,23 @@ async function runUpdate() {
           .map(async (genreCode) => {
             const genre = GENRES[genreCode];
             try {
-              const moreMovies = await tmdb.fetchGenreMovies(
-                genre.id,
-                [nextPage],
-                strategyParams.sortBy,
-                strategyParams
-              );
+              let moreMovies;
+              if (genre.useKeywords && genre.keywords) {
+                moreMovies = await tmdb.fetchGenreMoviesByKeywords(
+                  genre.id,
+                  genre.keywords,
+                  [nextPage],
+                  strategyParams.sortBy,
+                  strategyParams
+                );
+              } else {
+                moreMovies = await tmdb.fetchGenreMovies(
+                  genre.id,
+                  [nextPage],
+                  strategyParams.sortBy,
+                  strategyParams
+                );
+              }
               console.log(`    → ${genre.name}: +${moreMovies.length}`);
               return { genreCode, moreMovies };
             } catch (error) {
