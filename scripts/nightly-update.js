@@ -90,55 +90,66 @@ async function runUpdate() {
     sortBy: 'popularity.desc'      // Popularity works for both theatrical AND streaming
   };
 
-  console.log('\n🔍 Fetching from TMDB...');
+  console.log('\n🔍 Fetching from TMDB (parallel batches)...');
   console.log(`📄 Pages: ${currentPages.join(', ')}`);
   console.log(`🎬 Filters: Major studios/platforms + Popularity sort`);
 
-  // Initial fetch
-  for (const genreCode of allGenreCodes) {
-    const genre = GENRES[genreCode];
-    console.log(`  → ${genre.name}...`);
+  // Parallel fetch - process 5 genres concurrently for 5x speedup
+  const CONCURRENT_GENRES = 5;
+  const genreBatches = [];
+  for (let i = 0; i < allGenreCodes.length; i += CONCURRENT_GENRES) {
+    genreBatches.push(allGenreCodes.slice(i, i + CONCURRENT_GENRES));
+  }
 
-    try {
-      // Handle SEASONAL genre - switches movies based on current date
-      if (genre.isSeasonal) {
-        const currentSeason = getCurrentSeason();
-        const seasonalHoliday = SEASONAL_HOLIDAYS[currentSeason.key];
-        console.log(`    → Current season: ${seasonalHoliday.name}`);
+  for (const genreBatch of genreBatches) {
+    const batchPromises = genreBatch.map(async (genreCode) => {
+      const genre = GENRES[genreCode];
+      console.log(`  → ${genre.name}...`);
 
-        if (seasonalHoliday.movieIds && seasonalHoliday.movieIds.length > 0) {
-          // Fetch details for manually curated movie IDs
-          const movieDetails = await tmdb.fetchMovieDetailsBatch(seasonalHoliday.movieIds);
-          moviesByGenre[genreCode] = movieDetails;
-          console.log(`    ✓ Using ${movieDetails.length} manually curated ${seasonalHoliday.name} movies`);
-        } else {
-          console.log(`    ⊘ No movies configured for ${seasonalHoliday.name} yet`);
-          moviesByGenre[genreCode] = [];
+      try {
+        // Handle SEASONAL genre - switches movies based on current date
+        if (genre.isSeasonal) {
+          const currentSeason = getCurrentSeason();
+          const seasonalHoliday = SEASONAL_HOLIDAYS[currentSeason.key];
+          console.log(`    → Current season: ${seasonalHoliday.name}`);
+
+          if (seasonalHoliday.movieIds && seasonalHoliday.movieIds.length > 0) {
+            // Fetch details for manually curated movie IDs
+            const movieDetails = await tmdb.fetchMovieDetailsBatch(seasonalHoliday.movieIds);
+            console.log(`    ✓ Using ${movieDetails.length} manually curated ${seasonalHoliday.name} movies`);
+            return { genreCode, movies: movieDetails };
+          } else {
+            console.log(`    ⊘ No movies configured for ${seasonalHoliday.name} yet`);
+            return { genreCode, movies: [] };
+          }
         }
-        continue;
-      }
 
-      // Skip custom genres without TMDB ID (will be manually sorted later)
-      if (!genre.id) {
-        console.log(`    ⊘ Skipping (no TMDB ID - manual sorting required)`);
-        moviesByGenre[genreCode] = [];
-        continue;
-      }
+        // Skip custom genres without TMDB ID (will be manually sorted later)
+        if (!genre.id) {
+          console.log(`    ⊘ Skipping (no TMDB ID - manual sorting required)`);
+          return { genreCode, movies: [] };
+        }
 
-      const movies = await tmdb.fetchGenreMovies(
-        genre.id,
-        currentPages,
-        strategyParams.sortBy,
-        strategyParams
-      );
+        const movies = await tmdb.fetchGenreMovies(
+          genre.id,
+          currentPages,
+          strategyParams.sortBy,
+          strategyParams
+        );
+        console.log(`    ✓ Found ${movies.length} movies`);
+        return { genreCode, movies };
+      } catch (error) {
+        console.error(`    ✗ Failed: ${error.message}`);
+        return { genreCode, movies: [] };
+      }
+    });
+
+    const batchResults = await Promise.all(batchPromises);
+
+    // Store results
+    batchResults.forEach(({ genreCode, movies }) => {
       moviesByGenre[genreCode] = movies;
-      console.log(`    ✓ Found ${movies.length} movies`);
-    } catch (error) {
-      console.error(`    ✗ Failed: ${error.message}`);
-      moviesByGenre[genreCode] = [];
-    }
-
-    await sleep(200);
+    });
   }
 
   // Check if we need more pages (only if we have a previous catalog)
@@ -165,29 +176,36 @@ async function runUpdate() {
     if (avgNewPerGenre < TARGET_NEW_MOVIES && currentPages.length < MAX_PAGES) {
       const nextPage = Math.max(...currentPages) + 1;
       if (nextPage <= MAX_PAGES) {
-        console.log(`  ⚠️  Not enough fresh content, fetching page ${nextPage}...`);
+        console.log(`  ⚠️  Not enough fresh content, fetching page ${nextPage} (parallel)...`);
 
-        for (const genreCode of allGenreCodes) {
-          const genre = GENRES[genreCode];
+        // Parallel fetch for additional pages
+        const additionalPromises = allGenreCodes
+          .filter(genreCode => GENRES[genreCode].id) // Only genres with TMDB ID
+          .map(async (genreCode) => {
+            const genre = GENRES[genreCode];
+            try {
+              const moreMovies = await tmdb.fetchGenreMovies(
+                genre.id,
+                [nextPage],
+                strategyParams.sortBy,
+                strategyParams
+              );
+              console.log(`    → ${genre.name}: +${moreMovies.length}`);
+              return { genreCode, moreMovies };
+            } catch (error) {
+              console.error(`    ✗ ${genre.name} failed: ${error.message}`);
+              return { genreCode, moreMovies: [] };
+            }
+          });
 
-          // Skip genres without TMDB ID
-          if (!genre.id) continue;
+        const additionalResults = await Promise.all(additionalPromises);
 
-          try {
-            const moreMovies = await tmdb.fetchGenreMovies(
-              genre.id,
-              [nextPage],
-              strategyParams.sortBy,
-              strategyParams
-            );
+        // Merge additional movies
+        additionalResults.forEach(({ genreCode, moreMovies }) => {
+          if (moreMovies.length > 0) {
             moviesByGenre[genreCode] = [...moviesByGenre[genreCode], ...moreMovies];
-            console.log(`    → ${genre.name}: +${moreMovies.length} (total: ${moviesByGenre[genreCode].length})`);
-          } catch (error) {
-            console.error(`    ✗ ${genre.name} failed: ${error.message}`);
           }
-
-          await sleep(200);
-        }
+        });
       }
     } else {
       console.log(`  ✓ Sufficient fresh content found`);
@@ -356,10 +374,6 @@ async function runUpdate() {
   console.log(`📁 Genres: ${Object.keys(genresWithDetails).length}`);
   console.log(`🔗 API requests: ${tmdb.getRequestCount()}`);
   console.log('━'.repeat(50));
-}
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // Run the update
