@@ -84,7 +84,7 @@ async function runUpdate() {
   const moviesByGenre = {};
   const allGenreCodes = Object.keys(GENRES);
   const currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Fetch 10 pages for variety
-  const sortBy = 'popularity.desc'; // Consistent sorting
+  const sortBy = 'vote_average.desc'; // Sort by rating to get quality across all eras
   const strategyParams = {}; // No date filters
 
   console.log('\n🔍 Fetching from TMDB...');
