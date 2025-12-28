@@ -88,12 +88,12 @@ async function runUpdate() {
   // Multi-signal approach: major studios/platforms only (filters direct-to-video garbage)
   const strategyParams = {
     withCompanies: MAJOR_STUDIOS,  // Only major studio/platform productions
-    sortBy: 'revenue.desc'         // Sort by box office/platform success (works for all eras)
+    sortBy: 'popularity.desc'      // Popularity works for both theatrical AND streaming
   };
 
   console.log('\n🔍 Fetching from TMDB...');
   console.log(`📄 Pages: ${currentPages.join(', ')}`);
-  console.log(`🎬 Filters: Major studios/platforms + Revenue sort`);
+  console.log(`🎬 Filters: Major studios/platforms + Popularity sort`);
 
   // Initial fetch
   for (const genreCode of allGenreCodes) {
