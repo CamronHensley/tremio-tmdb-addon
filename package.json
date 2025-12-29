@@ -5,6 +5,7 @@
   "scripts": {
     "update": "node scripts/nightly-update.js",
     "reset-cache": "node scripts/reset-cache.js",
+    "classify": "node scripts/classify-movies.js",
     "dev": "netlify dev",
     "test": "jest",
     "test:watch": "jest --watch",

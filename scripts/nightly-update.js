@@ -271,13 +271,65 @@ async function runUpdate() {
   console.log(`  ✓ Fresh: ${mergeStats.freshMovies} (${mergeStats.freshPercentage}%)`);
   console.log(`  ✓ Cached: ${mergeStats.cachedMovies} (${mergeStats.cachedPercentage}%)`);
 
+  // Load custom genre assignments (manually classified movies)
+  console.log('\n🏷️  Loading custom genre assignments...');
+  let customAssignments = null;
+  try {
+    customAssignments = await store.get('custom-genre-assignments', { type: 'json' });
+    if (customAssignments && customAssignments.genres) {
+      const totalAssigned = Object.values(customAssignments.genres)
+        .reduce((sum, ids) => sum + ids.length, 0);
+      console.log(`  ✓ Loaded ${totalAssigned} custom classifications`);
+
+      // Show breakdown
+      for (const [genreCode, movieIds] of Object.entries(customAssignments.genres)) {
+        if (movieIds.length > 0) {
+          console.log(`    → ${genreCode}: ${movieIds.length} movies`);
+        }
+      }
+    } else {
+      console.log('  ⊘ No custom assignments found');
+    }
+  } catch (e) {
+    console.log('  ⊘ No custom assignments found (first run)');
+  }
+
   // Fetch detailed info for selected movies
   console.log('\n📥 Fetching movie details...');
   const allSelectedIds = [];
   const genresWithDetails = {};
 
   for (const genreCode of allGenreCodes) {
-    const movies = mergedMovies[genreCode] || [];
+    const genre = GENRES[genreCode];
+    let movies = mergedMovies[genreCode] || [];
+
+    // For custom genres: ONLY include manually classified movies
+    if (genre.isCustom || !genre.id) {
+      if (customAssignments && customAssignments.genres && customAssignments.genres[genreCode]) {
+        const classifiedIds = customAssignments.genres[genreCode];
+        console.log(`  → ${genre.name}: Using ${classifiedIds.length} classified movies (custom genre)`);
+
+        // Fetch details for classified movies
+        const uniqueMovieIds = [...new Set(classifiedIds)];
+        const details = await tmdb.fetchMovieDetailsBatch(uniqueMovieIds);
+
+        const moviesWithMeta = details
+          .map(movie => TMDBClient.toStremioMeta(movie))
+          .filter(meta => meta !== null);
+
+        genresWithDetails[genreCode] = moviesWithMeta.slice(0, MOVIES_PER_GENRE);
+        allSelectedIds.push(...classifiedIds);
+
+        console.log(`    ✓ Got details for ${genresWithDetails[genreCode].length} movies`);
+      } else {
+        // No classified movies for this custom genre yet
+        console.log(`  → ${genre.name}: No classified movies yet (custom genre)`);
+        genresWithDetails[genreCode] = [];
+      }
+      continue;
+    }
+
+    // Regular genres: use merged movies as usual
     const movieIds = movies.map(m => m.id);
 
     // Check for duplicates BEFORE fetching details
