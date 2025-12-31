@@ -29,3 +29,6 @@ coverage/
 # Build artifacts
 dist/
 build/
+
+# Archive (temporary development files)
+archive/
