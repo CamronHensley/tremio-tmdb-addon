@@ -1,0 +1,334 @@
+Found 68 movies classified as COMEDY
+
+1. 17 Again (2009)
+   ID: 16996
+   Genres: Comedy, Fantasy, Drama, Romance
+   Plot: On the brink of a midlife crisis, 30-something Mike O'Donnell wishes he could have a "do-over." And that's exactly what he gets when he wakes up one m
+
+2. 21 Jump Street (2012)
+   ID: 64688
+   Genres: Action, Comedy, Crime
+   Plot: When cops Schmidt and Jenko join the secret Jump Street unit, they use their youthful appearances to go undercover as high school students. They trade
+
+3. 22 Jump Street (2014)
+   ID: 187017
+   Genres: Crime, Comedy, Action
+   Plot: After making their way through high school (twice), big changes are in store for officers Schmidt and Jenko when they go deep undercover at a local co
+
+4. Addams Family Values (1993)
+   ID: 2758
+   Genres: Comedy, Family, Fantasy
+   Plot: Siblings Wednesday and Pugsley Addams will stop at nothing to get rid of Pubert, the new baby boy adored by parents Gomez and Morticia. Things go from
+
+5. Airplane! (1980)
+   ID: 813
+   Genres: Comedy
+   Plot: An ex-fighter pilot forced to take over the controls of an airliner when the flight crew succumbs to food poisoning.
+
+6. Austin Powers: International Man of Mystery (1997)
+   ID: 816
+   Genres: Science Fiction, Comedy, Crime
+   Plot: As a swinging fashion photographer by day and a groovy British superagent by night, Austin Powers is the '60s' most shagadelic spy. But can he stop me
+
+7. Bad Santa (2003)
+   ID: 10147
+   Genres: Drama, Comedy, Crime
+   Plot: You'd better watch out - Santa Claus Willie T. Soke is coming to town, and he doesn't care if you've been naughty or nice. Wille's favorite holiday tr
+
+8. Baywatch (2017)
+   ID: 339846
+   Genres: Comedy, Action, Crime
+   Plot: Devoted lifeguard Mitch Buchannon butts heads with a brash new recruit. Together, they uncover a local criminal plot that threatens the future of the
+
+9. Beetlejuice (1988)
+   ID: 4011
+   Genres: Fantasy, Comedy
+   Plot: A newly dead New England couple seeks help from a deranged demon exorcist to scare an affluent New York family out of their home.
+
+10. Beetlejuice Beetlejuice (2024)
+   ID: 917496
+   Genres: Comedy, Fantasy, Horror
+   Plot: After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Betelgeuse, Lydia's life is turned upside
+
+11. Beverly Hills Cop (1984)
+   ID: 90
+   Genres: Comedy, Crime, Action
+   Plot: Fast-talking, quick-thinking Detroit street cop Axel Foley has bent more than a few rules and regs in his time, but when his best friend is murdered,
+
+12. Big (1988)
+   ID: 2280
+   Genres: Fantasy, Drama, Comedy
+   Plot: When a young boy makes a wish at a carnival machine to be big—he wakes up the following morning to find that it has been granted and his body has grow
+
+13. Blast from the Past (1999)
+   ID: 11622
+   Genres: Drama, Romance, Comedy
+   Plot: Following a bomb scare in the 1960s that locked the Webers into their bomb shelter for 35 years, Adam now ventures forth into Los Angeles to obtain fo
+
+14. Bottle Rocket (1996)
+   ID: 13685
+   Genres: Comedy, Crime, Drama
+   Plot: Upon his release from a mental hospital following a nervous breakdown, the directionless Anthony joins his friend Dignan, who seems far less sane than
+
+15. Bruce Almighty (2003)
+   ID: 310
+   Genres: Fantasy, Comedy
+   Plot: Bruce Nolan toils as a "human interest" television reporter in Buffalo, NY, but despite his high ratings and the love of his beautiful girlfriend, Bru
+
+16. Coming to America (1988)
+   ID: 9602
+   Genres: Comedy, Romance
+   Plot: An African prince decides it’s time for him to find a princess... and his mission leads him and his most loyal friend to Queens, New York. In disguise
+
+17. Cruella (2021)
+   ID: 337404
+   Genres: Comedy, Crime, Adventure
+   Plot: In 1970s London amidst the punk rock revolution, a young grifter named Estella is determined to make a name for herself with her designs. She befriend
+
+18. Duck Soup (1933)
+   ID: 3063
+   Genres: Comedy, War
+   Plot: Rufus T. Firefly is named president/dictator of bankrupt Freedonia and declares war on neighboring Sylvania over the love of wealthy Mrs. Teasdale.
+
+19. Flashback (1990)
+   ID: 12719
+   Genres: Action, Comedy, Crime
+   Plot: A hippie radical, Huey Walker has been a fugitive for decades, accused of a crime that he may not have committed. Finally apprehended, Walker is escor
+
+20. Game Night (2018)
+   ID: 445571
+   Genres: Mystery, Comedy, Crime
+   Plot: Max and Annie's weekly game night gets kicked up a notch when Max's brother Brooks arranges a murder mystery party -- complete with fake thugs and fed
+
+21. Ghostbusters (1984)
+   ID: 620
+   Genres: Comedy, Fantasy
+   Plot: After losing their academic posts at a prestigious university, a team of parapsychologists goes into business as proton-pack-toting "ghostbusters" who
+
+22. Ghostbusters: Frozen Empire (2024)
+   ID: 967847
+   Genres: Fantasy, Adventure, Comedy
+   Plot: When the discovery of an ancient artifact unleashes an evil force, Ghostbusters new and old must join forces to protect their home and save the world
+
+23. Girls Trip (2017)
+   ID: 417870
+   Genres: Comedy, Romance, Adventure
+   Plot: Four girlfriends take a trip to New Orleans for an annual festival and, along the way, rediscover their wild sides and strengthen the bonds of sisterh
+
+24. Hail, Caesar! (2016)
+   ID: 270487
+   Genres: Comedy, Crime, Drama, Mystery, History
+   Plot: When a Hollywood star mysteriously disappears in the middle of filming, the studio sends their fixer to get him back.
+
+25. Horrible Bosses (2011)
+   ID: 51540
+   Genres: Comedy, Crime
+   Plot: For Nick, Kurt and Dale, the only thing that would make the daily grind more tolerable would be to grind their intolerable bosses into dust. Quitting
+
+26. Hot Fuzz (2007)
+   ID: 4638
+   Genres: Crime, Action, Comedy
+   Plot: Former London constable Nicholas Angel finds it difficult to adapt to his new assignment in the sleepy British village of Sandford. Not only does he m
+
+27. I Feel Pretty (2018)
+   ID: 460668
+   Genres: Comedy, Romance
+   Plot: A head injury causes a woman to develop an extraordinary amount of confidence and believe she's drop dead gorgeous.
+
+28. I Was a Male War Bride (1949)
+   ID: 23567
+   Genres: Comedy, Romance, War
+   Plot: After marrying an American lieutenant with whom he was assigned to work in post-war Germany, a French captain attempts to find a way to accompany her
+
+29. Instant Family (2018)
+   ID: 491418
+   Genres: Comedy, Drama
+   Plot: When Pete and Ellie decide to start a family, they stumble into the world of foster care adoption. They hope to take in one small child but when they
+
+30. Juno (2007)
+   ID: 7326
+   Genres: Comedy, Drama, Romance
+   Plot: Faced with an unplanned pregnancy, sixteen year old high-schooler, Juno MacGuff, makes an unusual decision regarding her unborn child.
+
+31. Just Go with It (2011)
+   ID: 50546
+   Genres: Comedy, Romance
+   Plot: While romancing Palmer, a much younger schoolteacher, plastic surgeon Danny Maccabee enlists his loyal assistant Katherine to pretend to be his soon t
+
+32. Last Holiday (2006)
+   ID: 17379
+   Genres: Adventure, Comedy, Drama
+   Plot: The discovery that she has a terminal illness prompts introverted department store saleswoman Georgia Byrd to reflect on what she realizes has been an
+
+33. Legally Blonde (2001)
+   ID: 8835
+   Genres: Comedy, Romance
+   Plot: Fashionable sorority queen Elle Woods has it all, but, she wants nothing more than to be Mrs. Warner Huntington III. But he dumps her before heading t
+
+34. Love and Death (1975)
+   ID: 11686
+   Genres: Comedy, History
+   Plot: In czarist Russia, a neurotic soldier and his distant cousin formulate a plot to assassinate Napoleon.
+
+35. Mars Attacks! (1996)
+   ID: 75
+   Genres: Comedy, Fantasy, Science Fiction
+   Plot: A fleet of Martian spacecraft surrounds the world's major cities and all of humanity waits to see if the extraterrestrial visitors have, as they claim
+
+36. Mean Girls (2004)
+   ID: 10625
+   Genres: Drama, Comedy
+   Plot: Cady Heron is a hit with The Plastics, the A-list girl clique at her new school, until she makes the mistake of falling for Aaron Samuels, the ex-boyf
+
+37. Meet the Parents (2000)
+   ID: 1597
+   Genres: Comedy, Romance
+   Plot: Greg Focker is ready to marry his girlfriend, Pam, but before he pops the question, he must win over her formidable father, humorless former CIA agent
+
+38. Monster-in-Law (2005)
+   ID: 4379
+   Genres: Romance, Comedy
+   Plot: Office temp Charlotte Cantilini thinks she's found Mr. Right when she starts dating gorgeous surgeon Dr. Kevin Fields. But there's a problem standing
+
+39. Mrs. Doubtfire (1993)
+   ID: 788
+   Genres: Comedy, Drama, Family
+   Plot: Loving but irresponsible dad Daniel Hillard, estranged from his exasperated spouse, is crushed by a court order allowing only weekly visits with his k
+
+40. Nacho Libre (2006)
+   ID: 9353
+   Genres: Comedy
+   Plot: Ignacio, a disrespected cook at a Mexican monastery, can barely afford to feed the orphans who live there. Inspired by a local wrestling hero, he deci
+
+41. O Brother, Where Art Thou? (2000)
+   ID: 134
+   Genres: Adventure, Comedy, Crime
+   Plot: In the deep south during the 1930s, three escaped convicts search for hidden treasure while a relentless lawman pursues them.
+
+42. Oh, God! (1977)
+   ID: 24032
+   Genres: Fantasy, Comedy
+   Plot: When God appears to an assistant grocery manager as a good natured old man, the Almighty selects him as his messenger for the modern world.
+
+43. Secondhand Lions (2003)
+   ID: 13156
+   Genres: Family, Comedy
+   Plot: The comedic adventures of an introverted boy left on the doorstep of a pair of reluctant, eccentric great-uncles, whose exotic remembrances stir the b
+
+44. Sideways (2004)
+   ID: 9675
+   Genres: Comedy, Drama, Romance
+   Plot: Two middle-aged men embark on a spiritual journey through Californian wine country. One is an unpublished novelist suffering from depression, and the
+
+45. Spy (2015)
+   ID: 238713
+   Genres: Action, Comedy, Crime
+   Plot: A desk-bound CIA analyst volunteers to go undercover to infiltrate the world of a deadly arms dealer, and prevent diabolical global disaster.
+
+46. Superbad (2007)
+   ID: 8363
+   Genres: Comedy
+   Plot: Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-soaked party goes awry.
+
+47. Ted (2012)
+   ID: 72105
+   Genres: Comedy, Fantasy
+   Plot: John Bennett, a man whose childhood wish of bringing his teddy bear to life came true, now must decide between keeping the relationship with the bear
+
+48. Ted 2 (2015)
+   ID: 214756
+   Genres: Comedy, Fantasy
+   Plot: Newlywed couple Ted and Tami-Lynn want to have a baby, but in order to qualify to be a parent, Ted will have to prove he's a person in a court of law.
+
+49. The Addams Family (1991)
+   ID: 2907
+   Genres: Comedy, Fantasy
+   Plot: When a man claiming to be long-lost Uncle Fester reappears after 25 years lost, the family plans a celebration to wake the dead. But the kids barely h
+
+50. The Big Lebowski (1998)
+   ID: 115
+   Genres: Comedy, Crime
+   Plot: Jeffrey 'The Dude' Lebowski, a Los Angeles slacker who only wants to bowl and drink White Russians, is mistaken for another Jeffrey Lebowski, a wheelc
+
+51. The Grand Budapest Hotel (2014)
+   ID: 120467
+   Genres: Comedy, Drama
+   Plot: The Grand Budapest Hotel tells of a legendary concierge at a famous European hotel between the wars and his friendship with a young employee who becom
+
+52. The Hangover Part II (2011)
+   ID: 45243
+   Genres: Comedy
+   Plot: The Hangover crew heads to Thailand for Stu's wedding. After the disaster of a bachelor party in Las Vegas last year, Stu is playing it safe with a me
+
+53. The Heat (2013)
+   ID: 136795
+   Genres: Action, Comedy, Crime
+   Plot: Uptight and straight-laced, FBI Special Agent Sarah Ashburn is a methodical investigator with a reputation for excellence--and hyper-arrogance. Shanno
+
+54. The Intern (2015)
+   ID: 257211
+   Genres: Comedy
+   Plot: 70-year-old widower Ben Whittaker has discovered that retirement isn't all it's cracked up to be. Seizing an opportunity to get back in the game, he b
+
+55. The Miracle of Morgan’s Creek (1944)
+   ID: 42879
+   Genres: Comedy, Romance, War
+   Plot: A small-town girl with a soft spot for American soldiers wakes up the morning after a wild farewell party for the troops to find that she married some
+
+56. The Naked Gun (2025)
+   ID: 1035259
+   Genres: Action, Comedy, Crime
+   Plot: Only one man has the particular set of skills... to lead Police Squad and save the world: Lt. Frank Drebin Jr. Following in his father's footsteps, he
+
+57. The Naked Gun: From the Files of Police Squad! (1988)
+   ID: 37136
+   Genres: Comedy, Crime
+   Plot: When the bumbling Lieutenant Frank Drebin investigates events following the shooting of his partner, he stumbles upon an attempt to assassinate Queen
+
+58. The Rocky Horror Picture Show (1975)
+   ID: 36685
+   Genres: Comedy, Science Fiction, Fantasy, Horror
+   Plot: After getting a flat tire in the middle of nowhere, newly engaged couple Brad and Janet encounter the eerie mansion of the flamboyant, seductive Dr. F
+
+59. The Terminal (2004)
+   ID: 594
+   Genres: Comedy, Drama
+   Plot: An Eastern European tourist unexpectedly finds himself stranded in JFK airport, and must take up temporary residence there.
+
+60. Tootsie (1982)
+   ID: 9576
+   Genres: Comedy, Romance
+   Plot: When struggling, out of work actor Michael Dorsey secretly adopts a female alter ego – Dorothy Michaels – in order to land a part in a daytime drama,
+
+61. Tropic Thunder (2008)
+   ID: 7446
+   Genres: Action, Comedy, Adventure, War
+   Plot: A group of self-absorbed actors set out to make the most expensive war film ever. After ballooning costs force the studio to cancel the movie, the fru
+
+62. We're the Millers (2013)
+   ID: 138832
+   Genres: Comedy, Crime
+   Plot: A veteran pot dealer creates a fake family as part of his plan to move a huge shipment of weed into the U.S. from Mexico.
+
+63. Wedding Crashers (2005)
+   ID: 9522
+   Genres: Comedy, Romance
+   Plot: John and his buddy, Jeremy are emotional criminals who know how to use a woman's hopes and dreams for their own carnal gain. Their modus operandi: cra
+
+64. What Women Want (2000)
+   ID: 3981
+   Genres: Comedy, Romance
+   Plot: Advertising executive Nick Marshall is as cocky as they come, but what happens to a chauvinistic guy when he can suddenly hear what women are thinking
+
+65. Wild Child (2008)
+   ID: 13971
+   Genres: Comedy, Drama, Romance
+   Plot: Sixteen-year-old Poppy has everything her unlimited credit cards can buy, and a spoiled attitude to match. After a final thoughtless prank, her exaspe
+
+66. Yes Man (2008)
+   ID: 10201
+   Genres: Comedy, Romance
+   Plot: Carl Allen, a guy whose life is going nowhere, signs up for a self-help program based on one simple covenant: say yes to everything…and anything.
+
+
+✅ Saved 66 COMEDY movies to comedy_movies.json

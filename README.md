@@ -81,6 +81,19 @@ Done! Your addon will auto-update nightly with fresh content.
 ### Standard Genres (Auto-Populated)
 Action, Adventure, Animation (Kids), Animation (Adult), Comedy, Crime, Documentary, Drama, Family, Fantasy, History, Horror, Mystery, Romance, Sci-Fi, Thriller, War, Western
 
+### Special Genres
+
+**Seasonal** - Holiday movies that automatically rotate based on the calendar:
+- 🎃 Halloween (Oct 1 - Nov 2): Frankenweenie, Trick or Treat Scooby-Doo!, horror-comedies
+- 🎄 Christmas (Nov 20 - Dec 25): Home Alone, Elf, The Grinch, A Christmas Story
+- 🎆 New Year's (Dec 26 - Jan 5): Family celebration movies
+- ❤️ Valentine's Day (Feb 1 - 20): Romance-themed holiday films
+- 🐰 Easter (Mar 15 - Apr 30): Spring holiday movies
+- 🎆 Independence Day (Jun 25 - Jul 10): Patriotic films
+- 🦃 Thanksgiving (Nov 3 - 19): Thanksgiving-themed movies
+
+The addon automatically shows only movies for the current season!
+
 ### Custom Genres (Manual Classification)
 Cars & Racing, Disaster, Martial Arts, Nature & Wildlife, Parody, Sports, Stand-Up Comedy, True Crime
 

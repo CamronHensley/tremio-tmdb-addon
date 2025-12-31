@@ -1,0 +1,18 @@
+[
+  {
+    "movieId": 38,
+    "name": "Eternal Sunshine of the Spotless Mind",
+    "year": 2004,
+    "currentGenre": "SCIFI",
+    "correctGenre": "ROMANCE",
+    "reason": "Primarily a romance/drama film with sci-fi elements - user requested to move out of SCIFI"
+  },
+  {
+    "movieId": 62214,
+    "name": "Frankenweenie",
+    "year": 2012,
+    "currentGenre": "SCIFI",
+    "correctGenre": "SEASONAL",
+    "reason": "Halloween movie - SEASONAL (Tier 1 #1) priority over all other genres"
+  }
+]

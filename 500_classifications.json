@@ -1,0 +1,2502 @@
+[
+  {
+    "movieId": 845781,
+    "movieName": "Red One",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 899112,
+    "movieName": "Violent Night",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 360920,
+    "movieName": "The Grinch",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 17979,
+    "movieName": "A Christmas Carol",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 10258,
+    "movieName": "The Madagascar Penguins in a Christmas Caper",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 5255,
+    "movieName": "The Polar Express",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 88096,
+    "movieName": "Prep & Landing: Naughty vs. Nice",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 376867,
+    "movieName": "Moonlight",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 39254,
+    "movieName": "Real Steel",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 83533,
+    "movieName": "Avatar: Fire and Ash",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 696506,
+    "movieName": "Mickey 17",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 772,
+    "movieName": "Home Alone 2: Lost in New York",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 1573,
+    "movieName": "Die Hard 2",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 17379,
+    "movieName": "Last Holiday",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 927,
+    "movieName": "Gremlins",
+    "genreCode": "HORROR"
+  },
+  {
+    "movieId": 850,
+    "movieName": "A Christmas Story",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 80278,
+    "movieName": "The Impossible",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 771,
+    "movieName": "Home Alone",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 10719,
+    "movieName": "Elf",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 5994,
+    "movieName": "The Family Man",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 454467,
+    "movieName": "Noelle",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 287903,
+    "movieName": "Krampus",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 631843,
+    "movieName": "Old",
+    "genreCode": "HORROR"
+  },
+  {
+    "movieId": 747349,
+    "movieName": "Dolly Parton's Christmas on the Square",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 240820,
+    "movieName": "Christmas in Conway",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 30298,
+    "movieName": "The Secret of Santa Vittoria",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 530915,
+    "movieName": "1917",
+    "genreCode": "WAR"
+  },
+  {
+    "movieId": 359724,
+    "movieName": "Ford v Ferrari",
+    "genreCode": "SPORTS"
+  },
+  {
+    "movieId": 399566,
+    "movieName": "Godzilla vs. Kong",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 82702,
+    "movieName": "How to Train Your Dragon 2",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 324552,
+    "movieName": "John Wick: Chapter 2",
+    "genreCode": "MARTIAL_ARTS"
+  },
+  {
+    "movieId": 1891,
+    "movieName": "The Empire Strikes Back",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 458156,
+    "movieName": "John Wick: Chapter 3 - Parabellum",
+    "genreCode": "MARTIAL_ARTS"
+  },
+  {
+    "movieId": 273481,
+    "movieName": "Sicario",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 118340,
+    "movieName": "Guardians of the Galaxy",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 374720,
+    "movieName": "Dunkirk",
+    "genreCode": "WAR"
+  },
+  {
+    "movieId": 330459,
+    "movieName": "Rogue One: A Star Wars Story",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 207703,
+    "movieName": "Kingsman: The Secret Service",
+    "genreCode": "PARODY"
+  },
+  {
+    "movieId": 190859,
+    "movieName": "American Sniper",
+    "genreCode": "WAR"
+  },
+  {
+    "movieId": 718930,
+    "movieName": "Bullet Train",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 752,
+    "movieName": "V for Vendetta",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 980489,
+    "movieName": "Gran Turismo",
+    "genreCode": "CARS"
+  },
+  {
+    "movieId": 454626,
+    "movieName": "Sonic the Hedgehog",
+    "genreCode": "FAMILY"
+  },
+  {
+    "movieId": 37724,
+    "movieName": "Skyfall",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 137113,
+    "movieName": "Edge of Tomorrow",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 61791,
+    "movieName": "Rise of the Planet of the Apes",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 1892,
+    "movieName": "Return of the Jedi",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 629542,
+    "movieName": "The Bad Guys",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 4638,
+    "movieName": "Hot Fuzz",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 70160,
+    "movieName": "The Hunger Games",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 577922,
+    "movieName": "Tenet",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 312221,
+    "movieName": "Creed",
+    "genreCode": "SPORTS"
+  },
+  {
+    "movieId": 181808,
+    "movieName": "Star Wars: The Last Jedi",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 38700,
+    "movieName": "Bad Boys for Life",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 1271,
+    "movieName": "300",
+    "genreCode": "HISTORY"
+  },
+  {
+    "movieId": 62177,
+    "movieName": "Brave",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 337339,
+    "movieName": "The Fate of the Furious",
+    "genreCode": "CARS"
+  },
+  {
+    "movieId": 1495,
+    "movieName": "Kingdom of Heaven",
+    "genreCode": "HISTORY"
+  },
+  {
+    "movieId": 1372,
+    "movieName": "Blood Diamond",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 675353,
+    "movieName": "Sonic the Hedgehog 2",
+    "genreCode": "FAMILY"
+  },
+  {
+    "movieId": 96721,
+    "movieName": "Rush",
+    "genreCode": "SPORTS"
+  },
+  {
+    "movieId": 177677,
+    "movieName": "Mission: Impossible - Rogue Nation",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 59440,
+    "movieName": "Warrior",
+    "genreCode": "MARTIAL_ARTS"
+  },
+  {
+    "movieId": 616,
+    "movieName": "The Last Samurai",
+    "genreCode": "HISTORY"
+  },
+  {
+    "movieId": 929590,
+    "movieName": "Civil War",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 9693,
+    "movieName": "Children of Men",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 68726,
+    "movieName": "Pacific Rim",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 2501,
+    "movieName": "The Bourne Identity",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 254,
+    "movieName": "King Kong",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 639933,
+    "movieName": "The Northman",
+    "genreCode": "HISTORY"
+  },
+  {
+    "movieId": 13183,
+    "movieName": "Watchmen",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 335787,
+    "movieName": "Uncharted",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 1572,
+    "movieName": "Die Hard: With a Vengeance",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 89,
+    "movieName": "Indiana Jones and the Last Crusade",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 64688,
+    "movieName": "21 Jump Street",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 294254,
+    "movieName": "Maze Runner: The Scorch Trials",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 460465,
+    "movieName": "Mortal Kombat",
+    "genreCode": "MARTIAL_ARTS"
+  },
+  {
+    "movieId": 677179,
+    "movieName": "Creed III",
+    "genreCode": "SPORTS"
+  },
+  {
+    "movieId": 480530,
+    "movieName": "Creed II",
+    "genreCode": "SPORTS"
+  },
+  {
+    "movieId": 72190,
+    "movieName": "World War Z",
+    "genreCode": "HORROR"
+  },
+  {
+    "movieId": 385128,
+    "movieName": "F9",
+    "genreCode": "CARS"
+  },
+  {
+    "movieId": 336843,
+    "movieName": "Maze Runner: The Death Cure",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 203801,
+    "movieName": "The Man from U.N.C.L.E.",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 131634,
+    "movieName": "The Hunger Games: Mockingjay - Part 2",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 353486,
+    "movieName": "Jumanji: Welcome to the Jungle",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 12244,
+    "movieName": "9",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 5503,
+    "movieName": "The Fugitive",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 7446,
+    "movieName": "Tropic Thunder",
+    "genreCode": "PARODY"
+  },
+  {
+    "movieId": 166426,
+    "movieName": "Pirates of the Caribbean: Dead Men Tell No Tales",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 56292,
+    "movieName": "Mission: Impossible - Ghost Protocol",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 5548,
+    "movieName": "RoboCop",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 337170,
+    "movieName": "American Made",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 180,
+    "movieName": "Minority Report",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 9509,
+    "movieName": "Man on Fire",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 774370,
+    "movieName": "Dog Man",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 476669,
+    "movieName": "The King's Man",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 718821,
+    "movieName": "Twisters",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 181812,
+    "movieName": "Star Wars: The Rise of Skywalker",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 604,
+    "movieName": "The Matrix Reloaded",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 2034,
+    "movieName": "Training Day",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 75780,
+    "movieName": "Jack Reacher",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 10027,
+    "movieName": "Unleashed",
+    "genreCode": "MARTIAL_ARTS"
+  },
+  {
+    "movieId": 2502,
+    "movieName": "The Bourne Supremacy",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 2109,
+    "movieName": "Rush Hour",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 20504,
+    "movieName": "The Book of Eli",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 343668,
+    "movieName": "Kingsman: The Golden Circle",
+    "genreCode": "PARODY"
+  },
+  {
+    "movieId": 140300,
+    "movieName": "Kung Fu Panda 3",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 954,
+    "movieName": "Mission: Impossible",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 746036,
+    "movieName": "The Fall Guy",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 8909,
+    "movieName": "Wanted",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 16320,
+    "movieName": "Serenity",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 324852,
+    "movieName": "Despicable Me 3",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 615656,
+    "movieName": "Meg 2: The Trench",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 484641,
+    "movieName": "Anna",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 87,
+    "movieName": "Indiana Jones and the Temple of Doom",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 400535,
+    "movieName": "Sicario: Day of the Soldado",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 238713,
+    "movieName": "Spy",
+    "genreCode": "PARODY"
+  },
+  {
+    "movieId": 695721,
+    "movieName": "The Hunger Games: The Ballad of Songbirds & Snakes",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 1571,
+    "movieName": "Live Free or Die Hard",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 424783,
+    "movieName": "Bumblebee",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 787,
+    "movieName": "Mr. & Mrs. Smith",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 262500,
+    "movieName": "Insurgent",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 1885,
+    "movieName": "The Karate Kid",
+    "genreCode": "MARTIAL_ARTS"
+  },
+  {
+    "movieId": 10764,
+    "movieName": "Quantum of Solace",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 949,
+    "movieName": "Heat",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 101299,
+    "movieName": "The Hunger Games: Catching Fire",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 140607,
+    "movieName": "Star Wars: The Force Awakens",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 1895,
+    "movieName": "Star Wars: Episode III - Revenge of the Sith",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 679,
+    "movieName": "Aliens",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 652,
+    "movieName": "Troy",
+    "genreCode": "HISTORY"
+  },
+  {
+    "movieId": 13475,
+    "movieName": "Star Trek",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 10528,
+    "movieName": "Sherlock Holmes",
+    "genreCode": "MYSTERY"
+  },
+  {
+    "movieId": 119450,
+    "movieName": "Dawn of the Planet of the Apes",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 7485,
+    "movieName": "Shooter",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 2503,
+    "movieName": "The Bourne Ultimatum",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 187017,
+    "movieName": "22 Jump Street",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 345887,
+    "movieName": "The Equalizer 2",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 754,
+    "movieName": "Face/Off",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 293167,
+    "movieName": "Kong: Skull Island",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 399402,
+    "movieName": "Hunter Killer",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 602,
+    "movieName": "Independence Day",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 384018,
+    "movieName": "Fast & Furious Presents: Hobbs & Shaw",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 335977,
+    "movieName": "Indiana Jones and the Dial of Destiny",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 956,
+    "movieName": "Mission: Impossible III",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 941,
+    "movieName": "Lethal Weapon",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 204082,
+    "movieName": "Homefront",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 274857,
+    "movieName": "King Arthur: Legend of the Sword",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 605,
+    "movieName": "The Matrix Revolutions",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 38575,
+    "movieName": "The Karate Kid",
+    "genreCode": "MARTIAL_ARTS"
+  },
+  {
+    "movieId": 48138,
+    "movieName": "Unknown",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 1893,
+    "movieName": "Star Wars: Episode I - The Phantom Menace",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 1234731,
+    "movieName": "Anaconda",
+    "genreCode": "HORROR"
+  },
+  {
+    "movieId": 508943,
+    "movieName": "Luca",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 337404,
+    "movieName": "Cruella",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 57158,
+    "movieName": "The Hobbit: The Desolation of Smaug",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 333339,
+    "movieName": "Ready Player One",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 522402,
+    "movieName": "Finch",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 259316,
+    "movieName": "Fantastic Beasts and Where to Find Them",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 606856,
+    "movieName": "Togo",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 353081,
+    "movieName": "Mission: Impossible - Fallout",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 85,
+    "movieName": "Raiders of the Lost Ark",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 10674,
+    "movieName": "Mulan",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 550988,
+    "movieName": "Free Guy",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 587,
+    "movieName": "Big Fish",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 329,
+    "movieName": "Jurassic Park",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 493529,
+    "movieName": "Dungeons & Dragons: Honor Among Thieves",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 809,
+    "movieName": "Shrek 2",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 9444,
+    "movieName": "Anastasia",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 8358,
+    "movieName": "Cast Away",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 400160,
+    "movieName": "The SpongeBob Movie: Sponge on the Run",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 346648,
+    "movieName": "Paddington 2",
+    "genreCode": "FAMILY"
+  },
+  {
+    "movieId": 11688,
+    "movieName": "The Emperor's New Groove",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 87827,
+    "movieName": "Life of Pi",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 529203,
+    "movieName": "The Croods: A New Age",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 420818,
+    "movieName": "The Lion King",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 481848,
+    "movieName": "The Call of the Wild",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 585083,
+    "movieName": "Hotel Transylvania: Transformania",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 438148,
+    "movieName": "Minions: The Rise of Gru",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 420817,
+    "movieName": "Aladdin",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 675445,
+    "movieName": "PAW Patrol: The Movie",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 425909,
+    "movieName": "Ghostbusters: Afterlife",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 497582,
+    "movieName": "Enola Holmes",
+    "genreCode": "MYSTERY"
+  },
+  {
+    "movieId": 1265,
+    "movieName": "Bridge to Terabithia",
+    "genreCode": "FAMILY"
+  },
+  {
+    "movieId": 420809,
+    "movieName": "Maleficent: Mistress of Evil",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 165,
+    "movieName": "Back to the Future Part II",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 512200,
+    "movieName": "Jumanji: The Next Level",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 196,
+    "movieName": "Back to the Future Part III",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 283366,
+    "movieName": "Miss Peregrine's Home for Peculiar Children",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 412117,
+    "movieName": "The Secret Life of Pets 2",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 920,
+    "movieName": "Cars",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 451048,
+    "movieName": "Jungle Cruise",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 44264,
+    "movieName": "True Grit",
+    "genreCode": "WESTERN"
+  },
+  {
+    "movieId": 102651,
+    "movieName": "Maleficent",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 9016,
+    "movieName": "Treasure Planet",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 2270,
+    "movieName": "Stardust",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 431580,
+    "movieName": "Abominable",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 9023,
+    "movieName": "Spirit: Stallion of the Cimarron",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 37135,
+    "movieName": "Tarzan",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 9487,
+    "movieName": "A Bug's Life",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 653346,
+    "movieName": "Kingdom of the Planet of the Apes",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 10192,
+    "movieName": "Shrek Forever After",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 206647,
+    "movieName": "Spectre",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 131631,
+    "movieName": "The Hunger Games: Mockingjay - Part 1",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 57212,
+    "movieName": "War Horse",
+    "genreCode": "WAR"
+  },
+  {
+    "movieId": 135397,
+    "movieName": "Jurassic World",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 351286,
+    "movieName": "Jurassic World: Fallen Kingdom",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 44896,
+    "movieName": "Rango",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 116149,
+    "movieName": "Paddington",
+    "genreCode": "FAMILY"
+  },
+  {
+    "movieId": 9340,
+    "movieName": "The Goonies",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 49519,
+    "movieName": "The Croods",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 559907,
+    "movieName": "The Green Knight",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 9837,
+    "movieName": "The Prince of Egypt",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 507086,
+    "movieName": "Jurassic World Dominion",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 8587,
+    "movieName": "The Lion King",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 863,
+    "movieName": "Toy Story 2",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 1139087,
+    "movieName": "Once Upon a Studio",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 10020,
+    "movieName": "Beauty and the Beast",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 183011,
+    "movieName": "Justice League: The Flashpoint Paradox",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 431693,
+    "movieName": "Spies in Disguise",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 664767,
+    "movieName": "Mortal Kombat Legends: Scorpion's Revenge",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 11544,
+    "movieName": "Lilo & Stitch",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 140420,
+    "movieName": "Paperman",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 123025,
+    "movieName": "Batman: The Dark Knight Returns, Part 1",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 400155,
+    "movieName": "Hotel Transylvania 3: Summer Vacation",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 779047,
+    "movieName": "Us Again",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 76492,
+    "movieName": "Hotel Transylvania",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 297102,
+    "movieName": "Scooby-Doo! Ghastly Goals",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 514754,
+    "movieName": "Bao",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 841755,
+    "movieName": "Mortal Kombat Legends: Battle of the Realms",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 293299,
+    "movieName": "Feast",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 11836,
+    "movieName": "The SpongeBob SquarePants Movie",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 45752,
+    "movieName": "Scooby-Doo! Camp Scare",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 142061,
+    "movieName": "Batman: The Dark Knight Returns, Part 2",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 589739,
+    "movieName": "Hair Love",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 72720,
+    "movieName": "Hot Wheels AcceleRacers: Ignition",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 1076364,
+    "movieName": "Carl's Date",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 574074,
+    "movieName": "Kitbull",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 831827,
+    "movieName": "Far from the Tree",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 49444,
+    "movieName": "Kung Fu Panda 2",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 210769,
+    "movieName": "Scooby-Doo! Adventures: The Mystery Map",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 46195,
+    "movieName": "Rio",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 539517,
+    "movieName": "Constantine: City of Demons - The Movie",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 136799,
+    "movieName": "Trolls",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 355338,
+    "movieName": "Riley's First Date?",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 528644,
+    "movieName": "Bilby",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 876716,
+    "movieName": "Ciao Alberto",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 454640,
+    "movieName": "The Angry Birds Movie 2",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 228161,
+    "movieName": "Home",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 13042,
+    "movieName": "Presto",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 533,
+    "movieName": "Wallace & Gromit: The Curse of the Were-Rabbit",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 16237,
+    "movieName": "Teen Titans: Trouble in Tokyo",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 10501,
+    "movieName": "The Road to El Dorado",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 245881,
+    "movieName": "Scooby-Doo! Haunted Holidays",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 10545,
+    "movieName": "The Hunchback of Notre Dame",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 13929,
+    "movieName": "Geri's Game",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 1010823,
+    "movieName": "Magnum Opus",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 284995,
+    "movieName": "Scooby-Doo! Frankencreepy",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 587807,
+    "movieName": "Tom & Jerry",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 22794,
+    "movieName": "Cloudy with a Chance of Meatballs",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 1155058,
+    "movieName": "Watchmen: Chapter I",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 17578,
+    "movieName": "The Adventures of Tintin",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 810,
+    "movieName": "Shrek the Third",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 1007401,
+    "movieName": "Mortal Kombat Legends: Snow Blind",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 721656,
+    "movieName": "Happy Halloween, Scooby-Doo!",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 10865,
+    "movieName": "Atlantis: The Lost Empire",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 227973,
+    "movieName": "The Peanuts Movie",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 1040148,
+    "movieName": "Ruby Gillman, Teenage Kraken",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 9928,
+    "movieName": "Robots",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 449406,
+    "movieName": "Vivo",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 40619,
+    "movieName": "Day & Night",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 433471,
+    "movieName": "Lou",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 1267,
+    "movieName": "Meet the Robinsons",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 105864,
+    "movieName": "The Good Dinosaur",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 706860,
+    "movieName": "Out",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 10527,
+    "movieName": "Madagascar: Escape 2 Africa",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 813258,
+    "movieName": "Monster Pets: A Hotel Transylvania Short",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 263109,
+    "movieName": "Shaun the Sheep Movie",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 15789,
+    "movieName": "A Goofy Movie",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 332210,
+    "movieName": "Storks",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 381719,
+    "movieName": "Peter Rabbit",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 302429,
+    "movieName": "Strange Magic",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 9473,
+    "movieName": "South Park: Bigger, Longer & Uncut",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 14411,
+    "movieName": "Sinbad: Legend of the Seven Seas",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 774825,
+    "movieName": "The Ice Age Adventures of Buck Wild",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 119321,
+    "movieName": "Big Top Scooby-Doo!",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 1299652,
+    "movieName": "Watchmen: Chapter II",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 950,
+    "movieName": "Ice Age: The Meltdown",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 9297,
+    "movieName": "Monster House",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 13060,
+    "movieName": "Lifted",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 82703,
+    "movieName": "Mr. Peabody & Sherman",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 14813,
+    "movieName": "Mickey's Christmas Carol",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 594530,
+    "movieName": "Lamp Life",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 217993,
+    "movieName": "Justice League: War",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 297556,
+    "movieName": "Justice League: Throne of Atlantis",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 153518,
+    "movieName": "The Angry Birds Movie",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 127380,
+    "movieName": "Finding Dory",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 102382,
+    "movieName": "The Amazing Spider-Man 2",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 453405,
+    "movieName": "Gemini Man",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 458253,
+    "movieName": "The Commuter",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 1116490,
+    "movieName": "Cash Out",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 507241,
+    "movieName": "The Killer's Game",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 891699,
+    "movieName": "Silent Night",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 617653,
+    "movieName": "The Last Duel",
+    "genreCode": "HISTORY"
+  },
+  {
+    "movieId": 514847,
+    "movieName": "The Hunt",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 474392,
+    "movieName": "Samson",
+    "genreCode": "HISTORY"
+  },
+  {
+    "movieId": 413846,
+    "movieName": "1992",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 147441,
+    "movieName": "Exodus: Gods and Kings",
+    "genreCode": "HISTORY"
+  },
+  {
+    "movieId": 634492,
+    "movieName": "Madame Web",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 619,
+    "movieName": "The Bodyguard",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 299054,
+    "movieName": "Expend4bles",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 341013,
+    "movieName": "Atomic Blonde",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 156022,
+    "movieName": "The Equalizer",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 228150,
+    "movieName": "Fury",
+    "genreCode": "WAR"
+  },
+  {
+    "movieId": 562,
+    "movieName": "Die Hard",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 98,
+    "movieName": "Gladiator",
+    "genreCode": "HISTORY"
+  },
+  {
+    "movieId": 198663,
+    "movieName": "The Maze Runner",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 1106289,
+    "movieName": "The Pickup",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 127182,
+    "movieName": "The Twilight Saga: Breaking Dawn - Part 2",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 62214,
+    "movieName": "Riddick",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 211672,
+    "movieName": "Minions",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 329865,
+    "movieName": "Arrival",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 188927,
+    "movieName": "300: Rise of an Empire",
+    "genreCode": "HISTORY"
+  },
+  {
+    "movieId": 335988,
+    "movieName": "Transformers: The Last Knight",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 206487,
+    "movieName": "Predators",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 47964,
+    "movieName": "A Good Day to Die Hard",
+    "genreCode": "ACTION_CLASSIC"
+  },
+  {
+    "movieId": 12155,
+    "movieName": "Alice in Wonderland",
+    "genreCode": "FANTASY"
+  },
+  {
+    "movieId": 209112,
+    "movieName": "Batman v Superman: Dawn of Justice",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 245891,
+    "movieName": "John Wick",
+    "genreCode": "MARTIAL_ARTS"
+  },
+  {
+    "movieId": 637693,
+    "movieName": "Spirit Untamed",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 49013,
+    "movieName": "Cars 2",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 508442,
+    "movieName": "Soul",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 508947,
+    "movieName": "Turning Red",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 976573,
+    "movieName": "Elemental",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 936108,
+    "movieName": "Smurfs",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 2062,
+    "movieName": "Ratatouille",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 24914,
+    "movieName": "Kid's Story",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 197725,
+    "movieName": "John Henry",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 35,
+    "movieName": "The Simpsons Movie",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 17710,
+    "movieName": "Hey Arnold! The Movie",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 57718,
+    "movieName": "Megamind: The Button of Doom",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 2114,
+    "movieName": "Final Fantasy: The Spirits Within",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 560044,
+    "movieName": "The Willoughbys",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 51256,
+    "movieName": "Donkey's Christmas Shrektacular",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 13647,
+    "movieName": "The Invincible Iron Man",
+    "genreCode": "ANIMATION_ADULT"
+  },
+  {
+    "movieId": 11690,
+    "movieName": "Bloodsport",
+    "genreCode": "MARTIAL_ARTS"
+  },
+  {
+    "movieId": 1151334,
+    "movieName": "Eenie Meanie",
+    "genreCode": "HORROR"
+  },
+  {
+    "movieId": 111,
+    "movieName": "Scarface",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 198184,
+    "movieName": "Chappie",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 168259,
+    "movieName": "Furious 7",
+    "genreCode": "CARS"
+  },
+  {
+    "movieId": 36557,
+    "movieName": "Casino Royale",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 285,
+    "movieName": "Pirates of the Caribbean: At World's End",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 1865,
+    "movieName": "Pirates of the Caribbean: On Stranger Tides",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 1226406,
+    "movieName": "Love Hurts",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 402900,
+    "movieName": "Ocean's Eight",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 605722,
+    "movieName": "Long Distance",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 106,
+    "movieName": "Predator",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 58,
+    "movieName": "Pirates of the Caribbean: Dead Man's Chest",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 22,
+    "movieName": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 373571,
+    "movieName": "Godzilla: King of the Monsters",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 406759,
+    "movieName": "Moonfall",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 157350,
+    "movieName": "Divergent",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 427641,
+    "movieName": "Rampage",
+    "genreCode": "DISASTER"
+  },
+  {
+    "movieId": 152760,
+    "movieName": "The Monuments Men",
+    "genreCode": "WAR"
+  },
+  {
+    "movieId": 7443,
+    "movieName": "Chicken Run",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 9836,
+    "movieName": "Happy Feet",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 51052,
+    "movieName": "Arthur Christmas",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 639721,
+    "movieName": "The Addams Family 2",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 896221,
+    "movieName": "Trolls Holiday in Harmony",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 508439,
+    "movieName": "Onward",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 638507,
+    "movieName": "How to Train Your Dragon: Homecoming",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 425,
+    "movieName": "Ice Age",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 718789,
+    "movieName": "Lightyear",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 420821,
+    "movieName": "Chip 'n Dale: Rescue Rangers",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 32916,
+    "movieName": "Scooby-Doo! Abracadabra-Doo",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 574093,
+    "movieName": "Float",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 364689,
+    "movieName": "Ferdinand",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 481084,
+    "movieName": "The Addams Family",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 80321,
+    "movieName": "Madagascar 3: Europe's Most Wanted",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 82881,
+    "movieName": "Tangled Ever After",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 57800,
+    "movieName": "Ice Age: Continental Drift",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 21032,
+    "movieName": "Balto",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 298115,
+    "movieName": "Dragons: Dawn of the Dragon Racers",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 256835,
+    "movieName": "Toy Story That Time Forgot",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 13053,
+    "movieName": "Bolt",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 91417,
+    "movieName": "Dragons: Gift of the Night Fury",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 12610,
+    "movieName": "Osmosis Jones",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 460793,
+    "movieName": "Olaf's Frozen Adventure",
+    "genreCode": "SEASONAL"
+  },
+  {
+    "movieId": 47626,
+    "movieName": "Legend of the BoneKnapper Dragon",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 598331,
+    "movieName": "Rumble",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 229408,
+    "movieName": "Training Wheels",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 12144,
+    "movieName": "The Land Before Time",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 385687,
+    "movieName": "Fast X",
+    "genreCode": "CARS"
+  },
+  {
+    "movieId": 786892,
+    "movieName": "Furiosa: A Mad Max Saga",
+    "genreCode": "CARS"
+  },
+  {
+    "movieId": 76341,
+    "movieName": "Mad Max: Fury Road",
+    "genreCode": "CARS"
+  },
+  {
+    "movieId": 313369,
+    "movieName": "La La Land",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 490132,
+    "movieName": "Green Book",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 10193,
+    "movieName": "Toy Story 3",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 120467,
+    "movieName": "The Grand Budapest Hotel",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 466272,
+    "movieName": "Once Upon a Time... in Hollywood",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 301528,
+    "movieName": "Toy Story 4",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 318846,
+    "movieName": "The Big Short",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 115,
+    "movieName": "The Big Lebowski",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 8363,
+    "movieName": "Superbad",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 491418,
+    "movieName": "Instant Family",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 116745,
+    "movieName": "The Secret Life of Walter Mitty",
+    "genreCode": "ADVENTURE"
+  },
+  {
+    "movieId": 257211,
+    "movieName": "The Intern",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 594,
+    "movieName": "The Terminal",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 19913,
+    "movieName": "(500) Days of Summer",
+    "genreCode": "ROMANCE"
+  },
+  {
+    "movieId": 615777,
+    "movieName": "Babylon",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 7326,
+    "movieName": "Juno",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 10625,
+    "movieName": "Mean Girls",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 843527,
+    "movieName": "The Idea of You",
+    "genreCode": "ROMANCE"
+  },
+  {
+    "movieId": 19908,
+    "movieName": "Zombieland",
+    "genreCode": "HORROR"
+  },
+  {
+    "movieId": 2108,
+    "movieName": "The Breakfast Club",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 901362,
+    "movieName": "Trolls Band Together",
+    "genreCode": "ANIMATION_KIDS"
+  },
+  {
+    "movieId": 509,
+    "movieName": "Notting Hill",
+    "genreCode": "ROMANCE"
+  },
+  {
+    "movieId": 621,
+    "movieName": "Grease",
+    "genreCode": "ROMANCE"
+  },
+  {
+    "movieId": 1072790,
+    "movieName": "Anyone But You",
+    "genreCode": "ROMANCE"
+  },
+  {
+    "movieId": 639720,
+    "movieName": "IF",
+    "genreCode": "FAMILY"
+  },
+  {
+    "movieId": 43347,
+    "movieName": "Love & Other Drugs",
+    "genreCode": "ROMANCE"
+  },
+  {
+    "movieId": 50546,
+    "movieName": "Just Go with It",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 813,
+    "movieName": "Airplane!",
+    "genreCode": "PARODY"
+  },
+  {
+    "movieId": 9880,
+    "movieName": "The Princess Diaries",
+    "genreCode": "FAMILY"
+  },
+  {
+    "movieId": 11528,
+    "movieName": "The Sandlot",
+    "genreCode": "FAMILY"
+  },
+  {
+    "movieId": 4011,
+    "movieName": "Beetlejuice",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 917496,
+    "movieName": "Beetlejuice Beetlejuice",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 567609,
+    "movieName": "Ready or Not",
+    "genreCode": "HORROR"
+  },
+  {
+    "movieId": 1824,
+    "movieName": "50 First Dates",
+    "genreCode": "ROMANCE"
+  },
+  {
+    "movieId": 138832,
+    "movieName": "We're the Millers",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 134,
+    "movieName": "O Brother, Where Art Thou?",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 2280,
+    "movieName": "Big",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 8961,
+    "movieName": "Bad Boys II",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 8835,
+    "movieName": "Legally Blonde",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 1245993,
+    "movieName": "Caught Stealing",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 1593,
+    "movieName": "Night at the Museum",
+    "genreCode": "FAMILY"
+  },
+  {
+    "movieId": 214756,
+    "movieName": "Ted 2",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 37056,
+    "movieName": "Letters to Juliet",
+    "genreCode": "ROMANCE"
+  },
+  {
+    "movieId": 45243,
+    "movieName": "The Hangover Part II",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 486131,
+    "movieName": "Shaft",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 36685,
+    "movieName": "The Rocky Horror Picture Show",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 41154,
+    "movieName": "Men in Black 3",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 9353,
+    "movieName": "Nacho Libre",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 864,
+    "movieName": "Cool Runnings",
+    "genreCode": "SPORTS"
+  },
+  {
+    "movieId": 649609,
+    "movieName": "Renfield",
+    "genreCode": "HORROR"
+  },
+  {
+    "movieId": 359940,
+    "movieName": "Three Billboards Outside Ebbing, Missouri",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 398978,
+    "movieName": "The Irishman",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 1949,
+    "movieName": "Zodiac",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 185,
+    "movieName": "A Clockwork Orange",
+    "genreCode": "SCIFI"
+  },
+  {
+    "movieId": 819,
+    "movieName": "Sleepers",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 8321,
+    "movieName": "In Bruges",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 392044,
+    "movieName": "Murder on the Orient Express",
+    "genreCode": "MYSTERY"
+  },
+  {
+    "movieId": 242,
+    "movieName": "The Godfather Part III",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 117,
+    "movieName": "The Untouchables",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 256591,
+    "movieName": "Focus",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 290250,
+    "movieName": "The Nice Guys",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 433498,
+    "movieName": "Papillon",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 934433,
+    "movieName": "Scream VI",
+    "genreCode": "HORROR"
+  },
+  {
+    "movieId": 536743,
+    "movieName": "Queen & Slim",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 5236,
+    "movieName": "Kiss Kiss Bang Bang",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 1592,
+    "movieName": "Primal Fear",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 1645,
+    "movieName": "A Time to Kill",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 559969,
+    "movieName": "El Camino: A Breaking Bad Movie",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 37136,
+    "movieName": "The Naked Gun: From the Files of Police Squad!",
+    "genreCode": "PARODY"
+  },
+  {
+    "movieId": 445571,
+    "movieName": "Game Night",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 308266,
+    "movieName": "War Dogs",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 504172,
+    "movieName": "The Mule",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 50348,
+    "movieName": "The Lincoln Lawyer",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 829280,
+    "movieName": "Enola Holmes 2",
+    "genreCode": "MYSTERY"
+  },
+  {
+    "movieId": 298,
+    "movieName": "Ocean's Thirteen",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 4133,
+    "movieName": "Blow",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 390043,
+    "movieName": "The Hitman's Bodyguard",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 6075,
+    "movieName": "Carlito's Way",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 1538,
+    "movieName": "Collateral",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 8195,
+    "movieName": "Ronin",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 1541,
+    "movieName": "Thelma & Louise",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 336845,
+    "movieName": "Cleveland Abduction",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 16995,
+    "movieName": "State of Play",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 146216,
+    "movieName": "RED 2",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 9303,
+    "movieName": "Bound",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 7270,
+    "movieName": "Matchstick Men",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 15196,
+    "movieName": "Clue",
+    "genreCode": "MYSTERY"
+  },
+  {
+    "movieId": 9654,
+    "movieName": "The Italian Job",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 241554,
+    "movieName": "Run All Night",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 34544,
+    "movieName": "The A-Team",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 9481,
+    "movieName": "The Bone Collector",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 90,
+    "movieName": "Beverly Hills Cop",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 7304,
+    "movieName": "Running Scared",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 650,
+    "movieName": "Boyz n the Hood",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 763285,
+    "movieName": "Ambulance",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 241,
+    "movieName": "Natural Born Killers",
+    "genreCode": "CRIME"
+  },
+  {
+    "movieId": 136795,
+    "movieName": "The Heat",
+    "genreCode": "COMEDY"
+  },
+  {
+    "movieId": 4547,
+    "movieName": "Panic Room",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 1948,
+    "movieName": "Crank",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 604685,
+    "movieName": "Den of Thieves 2: Pantera",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 12201,
+    "movieName": "Edge of Darkness",
+    "genreCode": "THRILLER"
+  },
+  {
+    "movieId": 816,
+    "movieName": "Austin Powers: International Man of Mystery",
+    "genreCode": "PARODY"
+  },
+  {
+    "movieId": 10476,
+    "movieName": "Hustle & Flow",
+    "genreCode": "DRAMA"
+  },
+  {
+    "movieId": 9762,
+    "movieName": "Step Up",
+    "genreCode": "ROMANCE"
+  },
+  {
+    "movieId": 136400,
+    "movieName": "2 Guns",
+    "genreCode": "ACTION"
+  },
+  {
+    "movieId": 8848,
+    "movieName": "The Bank Job",
+    "genreCode": "CRIME"
+  }
+]

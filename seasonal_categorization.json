@@ -1,0 +1,44 @@
+{
+  "HALLOWEEN": {
+    "movieIds": [62214, 1015724, 53985],
+    "movies": [
+      { "id": 62214, "name": "Frankenweenie", "year": 2012 },
+      { "id": 1015724, "name": "Trick or Treat Scooby-Doo!", "year": 2022 },
+      { "id": 53985, "name": "Mutant Pumpkins from Outer Space", "year": 2009 }
+    ]
+  },
+  "CHRISTMAS": {
+    "movieIds": [
+      845781, 772, 899112, 771, 360920, 14813, 896221, 850, 17979, 5255,
+      51052, 287903, 10719, 26540, 460793, 50393, 454467, 5994, 732670,
+      88096, 10258, 51256, 240820, 74849, 30298
+    ],
+    "movies": [
+      { "id": 845781, "name": "Red One", "year": 2024 },
+      { "id": 772, "name": "Home Alone 2: Lost in New York", "year": 1992 },
+      { "id": 899112, "name": "Violent Night", "year": 2022 },
+      { "id": 771, "name": "Home Alone", "year": 1990 },
+      { "id": 360920, "name": "The Grinch", "year": 2018 },
+      { "id": 14813, "name": "Mickey's Christmas Carol", "year": 1983 },
+      { "id": 896221, "name": "Trolls Holiday in Harmony", "year": 2021 },
+      { "id": 850, "name": "A Christmas Story", "year": 1983 },
+      { "id": 17979, "name": "A Christmas Carol", "year": 2009 },
+      { "id": 5255, "name": "The Polar Express", "year": 2004 },
+      { "id": 51052, "name": "Arthur Christmas", "year": 2011 },
+      { "id": 287903, "name": "Krampus", "year": 2015 },
+      { "id": 10719, "name": "Elf", "year": 2003 },
+      { "id": 26540, "name": "Bugs Bunny's Looney Christmas Tales", "year": 1979 },
+      { "id": 460793, "name": "Olaf's Frozen Adventure", "year": 2017 },
+      { "id": 50393, "name": "Kung Fu Panda Holiday", "year": 2010 },
+      { "id": 454467, "name": "Noelle", "year": 2019 },
+      { "id": 5994, "name": "The Family Man", "year": 2000 },
+      { "id": 732670, "name": "LEGO Star Wars Holiday Special", "year": 2020 },
+      { "id": 88096, "name": "Prep & Landing: Naughty vs. Nice", "year": 2011 },
+      { "id": 10258, "name": "The Madagascar Penguins in a Christmas Caper", "year": 2005 },
+      { "id": 51256, "name": "Donkey's Christmas Shrektacular", "year": 2010 },
+      { "id": 240820, "name": "Christmas in Conway", "year": 2013 },
+      { "id": 74849, "name": "The Star Wars Holiday Special", "year": 1978 },
+      { "id": 30298, "name": "The Secret of Santa Vittoria", "year": 1970 }
+    ]
+  }
+}

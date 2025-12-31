@@ -1,0 +1,2397 @@
+[
+  {
+    "index": 1018,
+    "name": "The Score",
+    "year": 2001,
+    "movieId": 11371,
+    "rating": 6.7,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller",
+      "Mystery",
+      "Drama"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "An aging thief hopes to retire and live off his ill-gotten wealth when a young kid convinces him into doing one last heist."
+  },
+  {
+    "index": 1019,
+    "name": "The Fourth Kind",
+    "year": 2009,
+    "movieId": 22824,
+    "rating": 6.3,
+    "genres": [
+      "Mystery",
+      "Science Fiction",
+      "Thriller"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "Since the 1960s, a disproportionate number of the population in and around Nome, Alaska, have gone missing. Despite FBI investigations, the disappeara"
+  },
+  {
+    "index": 1020,
+    "name": "Cracks",
+    "year": 2009,
+    "movieId": 35052,
+    "rating": 6.6,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "Jealousy flares after the headmistress of an elite boarding school for girls becomes obsessed with a new student."
+  },
+  {
+    "index": 1021,
+    "name": "Conspiracy Theory",
+    "year": 1997,
+    "movieId": 8834,
+    "rating": 6.6,
+    "genres": [
+      "Action",
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "A man obsessed with conspiracy theories becomes a target after one of his theories turns out to be true. Unfortunately, in order to save himself, he h"
+  },
+  {
+    "index": 1022,
+    "name": "The Commuter",
+    "year": 2018,
+    "movieId": 399035,
+    "rating": 6.4,
+    "genres": [
+      "Action",
+      "Thriller",
+      "Mystery"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "A businessman, on his daily commute home, gets unwittingly caught up in a criminal conspiracy that threatens not only his life but the lives of those"
+  },
+  {
+    "index": 1023,
+    "name": "8MM",
+    "year": 1999,
+    "movieId": 8224,
+    "rating": 6.5,
+    "genres": [
+      "Thriller",
+      "Crime",
+      "Mystery"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "A small, seemingly innocuous plastic reel of film leads surveillance specialist Tom Welles down an increasingly dark and frightening path. With the he"
+  },
+  {
+    "index": 1024,
+    "name": "G20",
+    "year": 2025,
+    "movieId": 1045938,
+    "rating": 6.4,
+    "genres": [
+      "Action",
+      "Mystery",
+      "Drama"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "After the G20 Summit is overtaken by terrorists, President Danielle Sutton must bring all her statecraft and military experience to defend her family"
+  },
+  {
+    "index": 1025,
+    "name": "Trick or Treat Scooby-Doo!",
+    "year": 2022,
+    "movieId": 1015724,
+    "rating": 7,
+    "genres": [
+      "Adventure",
+      "Mystery",
+      "Comedy",
+      "Animation",
+      "Family"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "Mystery Inc. has cracked the case to top all cases! They’ve tracked down Coco Diablo, the head of a notorious costume crime syndicate. With Coco and h"
+  },
+  {
+    "index": 1026,
+    "name": "Basic",
+    "year": 2003,
+    "movieId": 10782,
+    "rating": 6.5,
+    "genres": [
+      "Action",
+      "Drama",
+      "Mystery",
+      "Thriller",
+      "Crime"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "When a hurricane hits a US Army base on the edge of the Panama Canal, an elite covert operations team of US Army Rangers recruits are on a routine jun"
+  },
+  {
+    "index": 1027,
+    "name": "It Comes at Night",
+    "year": 2017,
+    "movieId": 418078,
+    "rating": 5.9,
+    "genres": [
+      "Drama",
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "Secure within a desolate home as an unnatural threat terrorizes the world, a man has established a tenuous domestic order with his wife and son, but t"
+  },
+  {
+    "index": 1028,
+    "name": "Jesse Stone: Thin Ice",
+    "year": 2009,
+    "movieId": 22555,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "Crime",
+      "TV Movie",
+      "Mystery",
+      "Thriller"
+    ],
+    "foundIn": [
+      "MYSTERY",
+      "TVMOVIE"
+    ],
+    "plot": "Jesse Stone and Captain Healy are shot during an unauthorized stake-out in Boston. Meanwhile, a cryptic letter sent from Paradise leads the mother of"
+  },
+  {
+    "index": 1029,
+    "name": "The Manchurian Candidate",
+    "year": 2004,
+    "movieId": 14462,
+    "rating": 6.5,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "Mystery"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "Years after his squad was ambushed during the Gulf War, Major Ben Marco finds himself having terrible nightmares. He begins to doubt that his fellow s"
+  },
+  {
+    "index": 1030,
+    "name": "Equus",
+    "year": 1977,
+    "movieId": 37258,
+    "rating": 7,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "A psychiatrist, Martin Dysart, investigates the savage blinding of six horses with a metal spike in a stable in Hampshire, England. The atrocity was c"
+  },
+  {
+    "index": 1031,
+    "name": "Jade",
+    "year": 1995,
+    "movieId": 11863,
+    "rating": 5.5,
+    "genres": [
+      "Mystery",
+      "Thriller"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "When a prominent art dealer is found murdered, the man's death leads to an intriguing investigation steeped in sex, corruption and crime. District Att"
+  },
+  {
+    "index": 1032,
+    "name": "Scooby-Doo",
+    "year": 2002,
+    "movieId": 9637,
+    "rating": 6.1,
+    "genres": [
+      "Mystery",
+      "Adventure",
+      "Comedy"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "When the Mystery Inc. gang is invited to Spooky Island, a popular amusement park, they soon discover that the attractions aren't the only things that"
+  },
+  {
+    "index": 1033,
+    "name": "The General's Daughter",
+    "year": 1999,
+    "movieId": 2275,
+    "rating": 6.4,
+    "genres": [
+      "Thriller",
+      "Mystery",
+      "Crime"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "When the body of Army Capt. Elisabeth Campbell is found on a Georgia military base, two investigators, Warrant Officers Paul Brenner and Sara Sunhill,"
+  },
+  {
+    "index": 1034,
+    "name": "The Final Destination",
+    "year": 2009,
+    "movieId": 19912,
+    "rating": 5.6,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "A horrifying premonition saves a young man and his friends from death during a racetrack accident but terrible fates await them nonetheless."
+  },
+  {
+    "index": 1035,
+    "name": "Courage Under Fire",
+    "year": 1996,
+    "movieId": 10684,
+    "rating": 6.5,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "Mystery",
+      "War"
+    ],
+    "foundIn": [
+      "MYSTERY",
+      "WAR"
+    ],
+    "plot": "A US Army officer, who made a \"friendly fire\" mistake that was covered up, has been reassigned to a desk job. He is tasked to investigate a female cho"
+  },
+  {
+    "index": 1036,
+    "name": "The Firm",
+    "year": 1993,
+    "movieId": 37233,
+    "rating": 6.7,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "foundIn": [
+      "MYSTERY"
+    ],
+    "plot": "Mitch McDeere is a young man with a promising future in Law. About to sit his Bar exam, he is approached by 'The Firm' and made an offer he doesn't re"
+  },
+  {
+    "index": 1037,
+    "name": "The Naked Gun",
+    "year": 2025,
+    "movieId": 1035259,
+    "rating": 6.4,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Crime"
+    ],
+    "foundIn": [
+      "PARODY"
+    ],
+    "plot": "Only one man has the particular set of skills... to lead Police Squad and save the world: Lt. Frank Drebin Jr. Following in his father's footsteps, he"
+  },
+  {
+    "index": 1038,
+    "name": "Deadpool 2",
+    "year": 2018,
+    "movieId": 383498,
+    "rating": 7.5,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Adventure"
+    ],
+    "foundIn": [
+      "PARODY"
+    ],
+    "plot": "Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life."
+  },
+  {
+    "index": 1039,
+    "name": "Baywatch",
+    "year": 2017,
+    "movieId": 339846,
+    "rating": 6.1,
+    "genres": [
+      "Comedy",
+      "Action",
+      "Crime"
+    ],
+    "foundIn": [
+      "PARODY"
+    ],
+    "plot": "Devoted lifeguard Mitch Buchannon butts heads with a brash new recruit. Together, they uncover a local criminal plot that threatens the future of the"
+  },
+  {
+    "index": 1040,
+    "name": "Deadpool",
+    "year": 2016,
+    "movieId": 293660,
+    "rating": 7.6,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "foundIn": [
+      "PARODY"
+    ],
+    "plot": "The origin story of former Special Forces operative turned mercenary Wade Wilson, who, after being subjected to a rogue experiment that leaves him wit"
+  },
+  {
+    "index": 1041,
+    "name": "Deadpool & Wolverine",
+    "year": 2024,
+    "movieId": 533535,
+    "rating": 7.6,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "PARODY"
+    ],
+    "plot": "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces"
+  },
+  {
+    "index": 1042,
+    "name": "A Star Is Born",
+    "year": 2018,
+    "movieId": 332562,
+    "rating": 7.5,
+    "genres": [
+      "Music",
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Seasoned musician Jackson Maine discovers — and falls in love with — struggling artist Ally. She has just about given up on her dream to make it big a"
+  },
+  {
+    "index": 1043,
+    "name": "Cinderella Man",
+    "year": 2005,
+    "movieId": 921,
+    "rating": 7.6,
+    "genres": [
+      "Romance",
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "The true story of boxer Jim Braddock who, following his retirement in the 1930s, makes a surprise comeback in order to lift his family out of poverty."
+  },
+  {
+    "index": 1044,
+    "name": "The Fault in Our Stars",
+    "year": 2014,
+    "movieId": 222935,
+    "rating": 7.6,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed u"
+  },
+  {
+    "index": 1045,
+    "name": "The Great Gatsby",
+    "year": 2013,
+    "movieId": 64682,
+    "rating": 7.4,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "An adaptation of F. Scott Fitzgerald's Long Island-set novel, where Midwesterner Nick Carraway is lured into the lavish world of his neighbor, Jay Gat"
+  },
+  {
+    "index": 1046,
+    "name": "Passengers",
+    "year": 2016,
+    "movieId": 274870,
+    "rating": 7,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "ROMANCE",
+      "SCIFI"
+    ],
+    "plot": "A spacecraft traveling to a distant colony planet and transporting thousands of people has a malfunction in its sleep chambers. As a result, two passe"
+  },
+  {
+    "index": 1047,
+    "name": "Memoirs of a Geisha",
+    "year": 2005,
+    "movieId": 1904,
+    "rating": 7.6,
+    "genres": [
+      "Drama",
+      "Romance",
+      "History"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "In the years before World War II, a penniless Japanese child is torn from her family to work as a maid in a geisha house."
+  },
+  {
+    "index": 1048,
+    "name": "The Shape of Water",
+    "year": 2017,
+    "movieId": 399055,
+    "rating": 7.2,
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphi"
+  },
+  {
+    "index": 1049,
+    "name": "Barry Lyndon",
+    "year": 1975,
+    "movieId": 3175,
+    "rating": 8,
+    "genres": [
+      "Drama",
+      "Romance",
+      "War",
+      "History"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "An Irish rogue uses his cunning and wit to work his way up the social classes of 18th century England, transforming himself from the humble Redmond Ba"
+  },
+  {
+    "index": 1050,
+    "name": "One Day",
+    "year": 2011,
+    "movieId": 51828,
+    "rating": 7.4,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "A romantic comedy centered on Dexter and Emma, who first meet during their graduation in 1988 and proceed to keep in touch regularly. The film follows"
+  },
+  {
+    "index": 1051,
+    "name": "What's Eating Gilbert Grape",
+    "year": 1993,
+    "movieId": 1587,
+    "rating": 7.7,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Gilbert Grape is a small-town young man with a lot of responsibility. Chief among his concerns are his mother, who is so overweight that she can't lea"
+  },
+  {
+    "index": 1052,
+    "name": "Enemy at the Gates",
+    "year": 2001,
+    "movieId": 853,
+    "rating": 7.4,
+    "genres": [
+      "Drama",
+      "War",
+      "History",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "A Russian and a German sniper play a game of cat-and-mouse during the Battle of Stalingrad in WWII."
+  },
+  {
+    "index": 1053,
+    "name": "It Ends with Us",
+    "year": 2024,
+    "movieId": 1079091,
+    "rating": 7,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "When a woman's first love suddenly reenters her life, her relationship with a charming, but abusive neurosurgeon is upended, and she realizes she must"
+  },
+  {
+    "index": 1054,
+    "name": "Revolutionary Road",
+    "year": 2008,
+    "movieId": 4148,
+    "rating": 7,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "A young couple living in a Connecticut suburb during the mid-1950s struggle to come to terms with their personal problems while trying to raise their"
+  },
+  {
+    "index": 1055,
+    "name": "The Dreamers",
+    "year": 2003,
+    "movieId": 1278,
+    "rating": 7.2,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "When Isabelle and Theo invite Matthew to stay with them, what begins as a casual friendship ripens into a sensual voyage of discovery and desire in wh"
+  },
+  {
+    "index": 1056,
+    "name": "Girls Trip",
+    "year": 2017,
+    "movieId": 417870,
+    "rating": 6.8,
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Adventure"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Four girlfriends take a trip to New Orleans for an annual festival and, along the way, rediscover their wild sides and strengthen the bonds of sisterh"
+  },
+  {
+    "index": 1057,
+    "name": "Yes Man",
+    "year": 2008,
+    "movieId": 10201,
+    "rating": 6.7,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Carl Allen, a guy whose life is going nowhere, signs up for a self-help program based on one simple covenant: say yes to everything…and anything."
+  },
+  {
+    "index": 1058,
+    "name": "A Walk in the Clouds",
+    "year": 1995,
+    "movieId": 9560,
+    "rating": 7.4,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "World War II vet Paul Sutton falls for a pregnant and unwed woman who persuades him -- during their first encounter -- to pose as her husband so she c"
+  },
+  {
+    "index": 1059,
+    "name": "Punch-Drunk Love",
+    "year": 2002,
+    "movieId": 8051,
+    "rating": 7.1,
+    "genres": [
+      "Romance",
+      "Drama",
+      "Comedy"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "A socially awkward and volatile small business owner meets the love of his life after being threatened by a gang of scammers."
+  },
+  {
+    "index": 1060,
+    "name": "Clueless",
+    "year": 1995,
+    "movieId": 9603,
+    "rating": 7.3,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Shallow, rich and socially successful Cher is at the top of her Beverly Hills high school's pecking scale. Seeing herself as a matchmaker, Cher first"
+  },
+  {
+    "index": 1061,
+    "name": "Downton Abbey: A New Era",
+    "year": 2022,
+    "movieId": 820446,
+    "rating": 7.2,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "The Crawley family goes on a grand journey to the south of France to uncover the mystery of the dowager countess's newly inherited villa. Meanwhile, a"
+  },
+  {
+    "index": 1062,
+    "name": "Romeo + Juliet",
+    "year": 1996,
+    "movieId": 454,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "In director Baz Luhrmann's contemporary take on William Shakespeare's classic tragedy, the Montagues and Capulets have moved their ongoing feud to the"
+  },
+  {
+    "index": 1063,
+    "name": "Stepmom",
+    "year": 1998,
+    "movieId": 9441,
+    "rating": 7.2,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Comedy"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Jackie is a divorced mother of two. Isabel is the career minded girlfriend of Jackie’s ex-husband Luke, forced into the role of unwelcome stepmother t"
+  },
+  {
+    "index": 1064,
+    "name": "Tootsie",
+    "year": 1982,
+    "movieId": 9576,
+    "rating": 7.2,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "When struggling, out of work actor Michael Dorsey secretly adopts a female alter ego – Dorothy Michaels – in order to land a part in a daytime drama,"
+  },
+  {
+    "index": 1065,
+    "name": "Penelope",
+    "year": 2007,
+    "movieId": 7985,
+    "rating": 6.7,
+    "genres": [
+      "Fantasy",
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Forlorn heiress Penelope Wilhern is cursed, and the only way out is to fall in love with someone of suitable stock. But how can she find her soulmate"
+  },
+  {
+    "index": 1066,
+    "name": "Wedding Crashers",
+    "year": 2005,
+    "movieId": 9522,
+    "rating": 6.5,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "John and his buddy, Jeremy are emotional criminals who know how to use a woman's hopes and dreams for their own carnal gain. Their modus operandi: cra"
+  },
+  {
+    "index": 1067,
+    "name": "Little Children",
+    "year": 2006,
+    "movieId": 1440,
+    "rating": 7.1,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "The lives of two lovelorn spouses from separate marriages, a registered sex offender, and a disgraced ex-police officer intersect as they struggle to"
+  },
+  {
+    "index": 1068,
+    "name": "Australia",
+    "year": 2008,
+    "movieId": 6972,
+    "rating": 6.6,
+    "genres": [
+      "Adventure",
+      "Romance",
+      "Drama"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Set in northern Australia before World War II, an English aristocrat who inherits a sprawling ranch reluctantly pacts with a stock-man in order to pro"
+  },
+  {
+    "index": 1069,
+    "name": "Monte Carlo",
+    "year": 2011,
+    "movieId": 59860,
+    "rating": 6.8,
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Three young women vacationing in Paris find themselves whisked away to Monte Carlo after one of the girls is mistaken for a British heiress."
+  },
+  {
+    "index": 1070,
+    "name": "Witness",
+    "year": 1985,
+    "movieId": 9281,
+    "rating": 7.1,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Romance",
+      "Thriller"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "While protecting an Amish boy – the sole witness to a brutal murder – and his mother, a detective is forced to seek refuge within their community when"
+  },
+  {
+    "index": 1071,
+    "name": "The Other Boleyn Girl",
+    "year": 2008,
+    "movieId": 12184,
+    "rating": 6.7,
+    "genres": [
+      "Drama",
+      "Romance",
+      "History"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "A sumptuous and sensual tale of intrigue, romance and betrayal set against the backdrop of a defining moment in European history: two beautiful sister"
+  },
+  {
+    "index": 1072,
+    "name": "A Knight's Tale",
+    "year": 2001,
+    "movieId": 9476,
+    "rating": 6.9,
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Romance",
+      "Action"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "William Thatcher, a knight's peasant apprentice, gets a chance at glory when the knight dies suddenly mid-tournament. Posing as a knight himself, Will"
+  },
+  {
+    "index": 1073,
+    "name": "Bridget Jones's Diary",
+    "year": 2001,
+    "movieId": 634,
+    "rating": 6.7,
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Bridget Jones is an average woman struggling against expectations. As a New Year's resolution, Bridget decides to take control of her life, starting b"
+  },
+  {
+    "index": 1074,
+    "name": "Meet the Parents",
+    "year": 2000,
+    "movieId": 1597,
+    "rating": 6.7,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Greg Focker is ready to marry his girlfriend, Pam, but before he pops the question, he must win over her formidable father, humorless former CIA agent"
+  },
+  {
+    "index": 1075,
+    "name": "How to Lose a Guy in 10 Days",
+    "year": 2003,
+    "movieId": 9919,
+    "rating": 6.9,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "It's the battle of wills, as Andie needs to prove she can dump a guy in 10 days, whereas Ben needs to prove he can win a girl in 10 days. Now, the clo"
+  },
+  {
+    "index": 1076,
+    "name": "Trouble with the Curve",
+    "year": 2012,
+    "movieId": 87825,
+    "rating": 7,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Slowed by age and failing eyesight, crack baseball scout Gus Lobel takes his grown daughter along as he checks out the final prospect of his career. A"
+  },
+  {
+    "index": 1077,
+    "name": "Wild Child",
+    "year": 2008,
+    "movieId": 13971,
+    "rating": 6.7,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Sixteen-year-old Poppy has everything her unlimited credit cards can buy, and a spoiled attitude to match. After a final thoughtless prank, her exaspe"
+  },
+  {
+    "index": 1078,
+    "name": "Hitch",
+    "year": 2005,
+    "movieId": 8488,
+    "rating": 6.6,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Dating coach Alex 'Hitch' Hitchens mentors a bumbling client, Albert, who hopes to win the heart of the glamorous Allegra Cole. While Albert makes pro"
+  },
+  {
+    "index": 1079,
+    "name": "I Feel Pretty",
+    "year": 2018,
+    "movieId": 460668,
+    "rating": 6.4,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "A head injury causes a woman to develop an extraordinary amount of confidence and believe she's drop dead gorgeous."
+  },
+  {
+    "index": 1080,
+    "name": "He's Just Not That Into You",
+    "year": 2009,
+    "movieId": 10184,
+    "rating": 6.6,
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Have you ever sat by the phone wondering why he said he would call, but didn't, or you can't figure out why she doesn't want to sleep with you anymore"
+  },
+  {
+    "index": 1081,
+    "name": "Dangerous Liaisons",
+    "year": 1988,
+    "movieId": 859,
+    "rating": 7.2,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "In 18th century France, Marquise de Merteuil asks her ex-lover Vicomte de Valmont to seduce the future wife of another ex-lover of hers in return for"
+  },
+  {
+    "index": 1082,
+    "name": "Unfaithful",
+    "year": 2002,
+    "movieId": 2251,
+    "rating": 6.7,
+    "genres": [
+      "Thriller",
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Connie is a wife and mother whose 11-year marriage to Edward has lost its sexual spark. When Connie literally runs into handsome book collector Paul,"
+  },
+  {
+    "index": 1083,
+    "name": "The Twilight Saga: Breaking Dawn - Part 1",
+    "year": 2011,
+    "movieId": 50619,
+    "rating": 6.2,
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Bella Swan and Edward Cullen's honeymoon phase is abruptly disrupted by betrayals and unforeseen tragedies that endanger their world."
+  },
+  {
+    "index": 1084,
+    "name": "The Princess Diaries 2: Royal Engagement",
+    "year": 2004,
+    "movieId": 11130,
+    "rating": 6.7,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Family",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Mia Thermopolis is now a college graduate and on her way to Genovia to take up her duties as princess. Accompanied by her friend Lilly, Mia continues"
+  },
+  {
+    "index": 1085,
+    "name": "Gia",
+    "year": 1998,
+    "movieId": 14533,
+    "rating": 7.1,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Gia Carangi meteorically rises to modeling fame in the late 1970s but becomes overconsumed by persistent loneliness and drug addiction."
+  },
+  {
+    "index": 1086,
+    "name": "Little",
+    "year": 2019,
+    "movieId": 526050,
+    "rating": 6.9,
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Jordan Sanders, a take-no-prisoners tech mogul, wakes up one morning in the body of her 13-year-old self right before a do-or-die presentation. Her be"
+  },
+  {
+    "index": 1087,
+    "name": "Coming to America",
+    "year": 1988,
+    "movieId": 9602,
+    "rating": 6.9,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "An African prince decides it’s time for him to find a princess... and his mission leads him and his most loyal friend to Queens, New York. In disguise"
+  },
+  {
+    "index": 1088,
+    "name": "27 Dresses",
+    "year": 2008,
+    "movieId": 6557,
+    "rating": 6.4,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Altruistic Jane finds herself facing her worst nightmare as her younger sister announces her engagement to the man Jane secretly adores."
+  },
+  {
+    "index": 1089,
+    "name": "Love & Basketball",
+    "year": 2000,
+    "movieId": 14736,
+    "rating": 7.3,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Monica Wright and Quincy McCall grew up in the same neighborhood and have known each other since childhood. As they grow into adulthood, they fall in"
+  },
+  {
+    "index": 1090,
+    "name": "Puppy Love",
+    "year": 2023,
+    "movieId": 1143319,
+    "rating": 7,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "After a disastrous first date, wild-child Nicole and socially-anxious Max vow to lose each other’s numbers until they learn that their dogs found a lo"
+  },
+  {
+    "index": 1091,
+    "name": "Blue Lagoon: The Awakening",
+    "year": 2012,
+    "movieId": 115290,
+    "rating": 6.4,
+    "genres": [
+      "Drama",
+      "Adventure",
+      "Romance",
+      "TV Movie"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Two high school students become stranded on a tropical island and must rely on each other for survival. They learn more about themselves and each othe"
+  },
+  {
+    "index": 1092,
+    "name": "Something's Gotta Give",
+    "year": 2003,
+    "movieId": 6964,
+    "rating": 6.6,
+    "genres": [
+      "Drama",
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "When perpetually single, aging music industry exec Harry Sanborn, and his latest trophy girlfriend, Marin, arrive at her mother's beach house in the H"
+  },
+  {
+    "index": 1093,
+    "name": "You've Got Mail",
+    "year": 1998,
+    "movieId": 9489,
+    "rating": 6.7,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Book superstore magnate Joe Fox and independent book shop owner Kathleen Kelly fall in love in the anonymity of the Internet—both blissfully unaware t"
+  },
+  {
+    "index": 1094,
+    "name": "Hairspray",
+    "year": 2007,
+    "movieId": 2976,
+    "rating": 6.7,
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Pleasantly plump teenager Tracy Turnblad auditions to be on Baltimore's most popular dance show - The Corny Collins Show - and lands a prime spot. Thr"
+  },
+  {
+    "index": 1095,
+    "name": "Downton Abbey: The Grand Finale",
+    "year": 2025,
+    "movieId": 1289936,
+    "rating": 7.1,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "When Mary finds herself at the center of a public scandal and the family faces financial strife, the entire household grapples with the threat of soci"
+  },
+  {
+    "index": 1097,
+    "name": "Victor/Victoria",
+    "year": 1982,
+    "movieId": 12614,
+    "rating": 7.3,
+    "genres": [
+      "Music",
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "A struggling female soprano finds work playing a male female impersonator, but it complicates her personal life."
+  },
+  {
+    "index": 1098,
+    "name": "There's Something About Mary",
+    "year": 1998,
+    "movieId": 544,
+    "rating": 6.6,
+    "genres": [
+      "Romance",
+      "Comedy"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "For Ted, prom night went about as bad as it’s possible for any night to go. Thirteen years later, he finally gets another chance with his old prom dat"
+  },
+  {
+    "index": 1099,
+    "name": "Miss Potter",
+    "year": 2006,
+    "movieId": 13967,
+    "rating": 6.6,
+    "genres": [
+      "Drama",
+      "Family",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Beatrix Potter, the author of the beloved children's book \"The Tale of Peter Rabbit\", struggles for love, happiness and success."
+  },
+  {
+    "index": 1100,
+    "name": "Bedtime Stories",
+    "year": 2008,
+    "movieId": 10202,
+    "rating": 6.2,
+    "genres": [
+      "Fantasy",
+      "Comedy",
+      "Family",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Skeeter Bronson is a down-on-his-luck guy who's always telling bedtime stories to his niece and nephew. But his life is turned upside down when the fa"
+  },
+  {
+    "index": 1101,
+    "name": "Just Wright",
+    "year": 2010,
+    "movieId": 38093,
+    "rating": 6.5,
+    "genres": [
+      "Romance",
+      "Comedy"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Physical therapist Leslie Wright lands the dream job of working with basketball superstar Scott McKnight, helping him recover from a career-threatenin"
+  },
+  {
+    "index": 1102,
+    "name": "Sex and the City",
+    "year": 2008,
+    "movieId": 4564,
+    "rating": 6.6,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "A New York writer on sex and love is finally getting married to her Mr. Big. But her three best girlfriends must console her after one of them inadver"
+  },
+  {
+    "index": 1103,
+    "name": "Waitress",
+    "year": 2007,
+    "movieId": 10758,
+    "rating": 6.7,
+    "genres": [
+      "Drama",
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "A small town waitress stuck in a lousy marriage finds love when an exciting out-of-towner enters her life."
+  },
+  {
+    "index": 1104,
+    "name": "What Women Want",
+    "year": 2000,
+    "movieId": 3981,
+    "rating": 6.4,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Advertising executive Nick Marshall is as cocky as they come, but what happens to a chauvinistic guy when he can suddenly hear what women are thinking"
+  },
+  {
+    "index": 1105,
+    "name": "Freaky Friday",
+    "year": 2003,
+    "movieId": 10330,
+    "rating": 6.6,
+    "genres": [
+      "Family",
+      "Fantasy",
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Mother and daughter bicker over everything -- what Anna wears, whom she likes and what she wants to do when she's older. In turn, Anna detests Tess's"
+  },
+  {
+    "index": 1106,
+    "name": "Baby Boy",
+    "year": 2001,
+    "movieId": 16161,
+    "rating": 7.1,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Romance",
+      "Thriller"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "The story of Jody, a misguided, 20-year-old African-American who is really just a baby boy finally forced-kicking and screaming to face the commitment"
+  },
+  {
+    "index": 1107,
+    "name": "The Wedding Singer",
+    "year": 1998,
+    "movieId": 11003,
+    "rating": 6.8,
+    "genres": [
+      "Romance",
+      "Comedy"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Robbie, a local rock star turned wedding singer, is dumped on the day of his wedding. Meanwhile, waitress Julia finally sets a wedding date with her f"
+  },
+  {
+    "index": 1108,
+    "name": "Tuck Everlasting",
+    "year": 2002,
+    "movieId": 13768,
+    "rating": 6.7,
+    "genres": [
+      "Drama",
+      "Family",
+      "Fantasy",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Teenager Winnie Foster is growing up in a small rural town in 1914 with her loving but overprotective parents, but Winnie longs for a life of greater"
+  },
+  {
+    "index": 1109,
+    "name": "She's Out of My League",
+    "year": 2010,
+    "movieId": 34016,
+    "rating": 6.5,
+    "genres": [
+      "Romance",
+      "Comedy"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "When he starts dating drop-dead gorgeous Molly, insecure airport security agent Kirk can't believe it. As his friends and family share their doubts ab"
+  },
+  {
+    "index": 1110,
+    "name": "Blast from the Past",
+    "year": 1999,
+    "movieId": 11622,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Comedy"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Following a bomb scare in the 1960s that locked the Webers into their bomb shelter for 35 years, Adam now ventures forth into Los Angeles to obtain fo"
+  },
+  {
+    "index": 1111,
+    "name": "Monster's Ball",
+    "year": 2001,
+    "movieId": 1365,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "A prison guard begins a tentative romance with the unsuspecting widow of a man whose execution he presided over."
+  },
+  {
+    "index": 1112,
+    "name": "Monster-in-Law",
+    "year": 2005,
+    "movieId": 4379,
+    "rating": 6.2,
+    "genres": [
+      "Romance",
+      "Comedy"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Office temp Charlotte Cantilini thinks she's found Mr. Right when she starts dating gorgeous surgeon Dr. Kevin Fields. But there's a problem standing"
+  },
+  {
+    "index": 1113,
+    "name": "Wicker Park",
+    "year": 2004,
+    "movieId": 11208,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Romance",
+      "Thriller"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Matthew, a young advertising executive in Chicago, puts his life and a business trip to China on hold when he thinks he sees Lisa, the love of his lif"
+  },
+  {
+    "index": 1114,
+    "name": "Float",
+    "year": 2024,
+    "movieId": 895959,
+    "rating": 6.7,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Waverly thought she had her future figured out: she’d start her medical residency in Toronto after a summer visit to her parents in Taipei. When her p"
+  },
+  {
+    "index": 1115,
+    "name": "Eat Pray Love",
+    "year": 2010,
+    "movieId": 38167,
+    "rating": 6.2,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Liz Gilbert had everything a modern woman is supposed to dream of having – a husband, a house and a successful career – yet like so many others, she f"
+  },
+  {
+    "index": 1116,
+    "name": "Killers",
+    "year": 2010,
+    "movieId": 37821,
+    "rating": 6,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Thriller",
+      "Romance"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "When an elite assassin marries a beautiful computer whiz after a whirlwind romance, he gives up the gun and settles down with his new bride. That is,"
+  },
+  {
+    "index": 1117,
+    "name": "Breathless",
+    "year": 1983,
+    "movieId": 1058,
+    "rating": 5.8,
+    "genres": [
+      "Romance",
+      "Drama",
+      "Action"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Jesse, a small-time criminal, high-tails it to Los Angeles to rendezvous with a French exchange student. Stealing a car and accidentally killing a hig"
+  },
+  {
+    "index": 1118,
+    "name": "Maintenance Required",
+    "year": 2025,
+    "movieId": 1352755,
+    "rating": 5.9,
+    "genres": [
+      "Romance",
+      "Comedy"
+    ],
+    "foundIn": [
+      "ROMANCE"
+    ],
+    "plot": "Charlie, the fiercely independent owner of an all-female mechanic shop, is forced to reevaluate her future when a flashy corporate competitor moves in"
+  },
+  {
+    "index": 1119,
+    "name": "Eternal Sunshine of the Spotless Mind",
+    "year": 2004,
+    "movieId": 38,
+    "rating": 8.1,
+    "genres": [
+      "Science Fiction",
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Joel Barish, heartbroken that his girlfriend underwent a procedure to erase him from her memory, decides to do the same. However, as he watches his me"
+  },
+  {
+    "index": 1120,
+    "name": "Blade Runner",
+    "year": 1982,
+    "movieId": 78,
+    "rating": 7.9,
+    "genres": [
+      "Science Fiction",
+      "Drama",
+      "Thriller"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "In the smog-choked dystopian Los Angeles of 2019, blade runner Rick Deckard is called out of retirement to terminate a quartet of replicants who have"
+  },
+  {
+    "index": 1121,
+    "name": "Despicable Me",
+    "year": 2010,
+    "movieId": 20352,
+    "rating": 7.3,
+    "genres": [
+      "Family",
+      "Comedy",
+      "Animation",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Villainous Gru lives up to his reputation as a despicable, deplorable and downright unlikable guy when he hatches a plan to steal the moon from the sk"
+  },
+  {
+    "index": 1122,
+    "name": "2001: A Space Odyssey",
+    "year": 1968,
+    "movieId": 62,
+    "rating": 8.1,
+    "genres": [
+      "Science Fiction",
+      "Mystery",
+      "Adventure"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Humanity finds a mysterious object buried beneath the lunar surface and sets off to find its origins with the help of HAL 9000, the world's most advan"
+  },
+  {
+    "index": 1123,
+    "name": "Twelve Monkeys",
+    "year": 1995,
+    "movieId": 63,
+    "rating": 7.6,
+    "genres": [
+      "Science Fiction",
+      "Thriller",
+      "Mystery"
+    ],
+    "foundIn": [
+      "SCIFI",
+      "THRILLER"
+    ],
+    "plot": "In the year 2035, convict James Cole reluctantly volunteers to be sent back in time to discover the origin of a deadly virus that wiped out nearly all"
+  },
+  {
+    "index": 1124,
+    "name": "District 9",
+    "year": 2009,
+    "movieId": 17654,
+    "rating": 7.5,
+    "genres": [
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Thirty years ago, aliens arrive on Earth. Not to conquer or give aid, but to find refuge from their dying planet. Separated from humans in a South Afr"
+  },
+  {
+    "index": 1125,
+    "name": "Star Trek Into Darkness",
+    "year": 2013,
+    "movieId": 54138,
+    "rating": 7.3,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "When the crew of the Enterprise is called back home, they find an unstoppable force of terror from within their own organization has detonated the fle"
+  },
+  {
+    "index": 1126,
+    "name": "Limitless",
+    "year": 2011,
+    "movieId": 51876,
+    "rating": 7.2,
+    "genres": [
+      "Thriller",
+      "Mystery",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI",
+      "THRILLER"
+    ],
+    "plot": "The life of an unsuccessful writer is transformed by a top-secret 'smart drug' that allows him to use 100% of his brain and become a perfect version o"
+  },
+  {
+    "index": 1127,
+    "name": "The Butterfly Effect",
+    "year": 2004,
+    "movieId": 1954,
+    "rating": 7.6,
+    "genres": [
+      "Science Fiction",
+      "Thriller"
+    ],
+    "foundIn": [
+      "SCIFI",
+      "THRILLER"
+    ],
+    "plot": "A young man struggles to access sublimated childhood memories. He finds a technique that allows him to travel back into the past, to occupy his childh"
+  },
+  {
+    "index": 1128,
+    "name": "Looper",
+    "year": 2012,
+    "movieId": 59967,
+    "rating": 6.9,
+    "genres": [
+      "Action",
+      "Thriller",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "In the year 2044, time travel has not yet been invented but in 30 years it will have been. When the mob wants to get rid of someone, they will send th"
+  },
+  {
+    "index": 1130,
+    "name": "Source Code",
+    "year": 2011,
+    "movieId": 45612,
+    "rating": 7.3,
+    "genres": [
+      "Thriller",
+      "Science Fiction",
+      "Mystery"
+    ],
+    "foundIn": [
+      "SCIFI",
+      "THRILLER"
+    ],
+    "plot": "When decorated soldier Captain Colter Stevens wakes up in the body of an unknown man, he discovers he's part of a mission to find the bomber of a Chic"
+  },
+  {
+    "index": 1131,
+    "name": "Bicentennial Man",
+    "year": 1999,
+    "movieId": 2277,
+    "rating": 7.3,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Richard Martin buys a gift, a new NDR-114 robot. The product is named Andrew by the youngest of the family's children. \"Bicentennial Man\" follows the"
+  },
+  {
+    "index": 1132,
+    "name": "The Abyss",
+    "year": 1989,
+    "movieId": 2756,
+    "rating": 7.3,
+    "genres": [
+      "Adventure",
+      "Thriller",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI",
+      "THRILLER"
+    ],
+    "plot": "A civilian oil rig crew is recruited to conduct a search and rescue effort when a nuclear submarine mysteriously sinks. One diver soon finds himself o"
+  },
+  {
+    "index": 1133,
+    "name": "Transformers",
+    "year": 2007,
+    "movieId": 1858,
+    "rating": 6.8,
+    "genres": [
+      "Adventure",
+      "Science Fiction",
+      "Action"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Young teenager Sam Witwicky becomes involved in the ancient struggle between two extraterrestrial factions of transforming robots – the heroic Autobot"
+  },
+  {
+    "index": 1134,
+    "name": "Coherence",
+    "year": 2014,
+    "movieId": 220289,
+    "rating": 7.2,
+    "genres": [
+      "Thriller",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Four couples gather for dinner the night a mysterious and powerful comet passes overhead."
+  },
+  {
+    "index": 1135,
+    "name": "Paul",
+    "year": 2011,
+    "movieId": 39513,
+    "rating": 6.7,
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "For the past 60 years, a space-traveling smart-ass named Paul has been locked up in a top-secret military base, advising world leaders about his kind."
+  },
+  {
+    "index": 1136,
+    "name": "The Adjustment Bureau",
+    "year": 2011,
+    "movieId": 38050,
+    "rating": 6.8,
+    "genres": [
+      "Science Fiction",
+      "Thriller",
+      "Romance"
+    ],
+    "foundIn": [
+      "SCIFI",
+      "THRILLER"
+    ],
+    "plot": "A man glimpses the future Fate has planned for him – and chooses to fight for his own destiny. Battling the powerful Adjustment Bureau across, under a"
+  },
+  {
+    "index": 1137,
+    "name": "Super 8",
+    "year": 2011,
+    "movieId": 37686,
+    "rating": 6.8,
+    "genres": [
+      "Thriller",
+      "Science Fiction",
+      "Mystery"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "In late 1970s Ohio, a group of friends filming a homemade zombie movie witness a devastating train derailment. Soon after, their quiet town is gripped"
+  },
+  {
+    "index": 1138,
+    "name": "I, Robot",
+    "year": 2004,
+    "movieId": 2048,
+    "rating": 7,
+    "genres": [
+      "Action",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "In 2035, where robots are commonplace and abide by the three laws of robotics, a technophobic cop investigates an apparent suicide. Suspecting that a"
+  },
+  {
+    "index": 1139,
+    "name": "Frequency",
+    "year": 2000,
+    "movieId": 10559,
+    "rating": 7.3,
+    "genres": [
+      "Science Fiction",
+      "Thriller",
+      "Family",
+      "Crime"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "When a rare phenomenon gives police officer John Sullivan the chance to speak to his father, 30 years in the past, he takes the opportunity to prevent"
+  },
+  {
+    "index": 1140,
+    "name": "Annihilation",
+    "year": 2018,
+    "movieId": 300668,
+    "rating": 6.4,
+    "genres": [
+      "Science Fiction",
+      "Horror"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "A biologist signs up for a dangerous, secret expedition into a mysterious zone where the laws of nature don't apply."
+  },
+  {
+    "index": 1141,
+    "name": "War of the Worlds",
+    "year": 2005,
+    "movieId": 74,
+    "rating": 6.5,
+    "genres": [
+      "Adventure",
+      "Thriller",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Ray Ferrier is a divorced dockworker and less-than-perfect father. Soon after his ex-wife and her new husband drop off his teenage son and young daugh"
+  },
+  {
+    "index": 1142,
+    "name": "Chronicle",
+    "year": 2012,
+    "movieId": 76726,
+    "rating": 6.8,
+    "genres": [
+      "Science Fiction",
+      "Drama",
+      "Thriller"
+    ],
+    "foundIn": [
+      "SCIFI",
+      "THRILLER"
+    ],
+    "plot": "Three high school students make an incredible discovery, leading to their developing uncanny powers beyond their understanding. As they learn to contr"
+  },
+  {
+    "index": 1143,
+    "name": "Galaxy Quest",
+    "year": 1999,
+    "movieId": 926,
+    "rating": 7.1,
+    "genres": [
+      "Comedy",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "For four years, the courageous crew of the NSEA Protector —  Commander Peter Quincy Taggart, Lieutenant Tawny Madison, and Doctor Lazarus — set off on"
+  },
+  {
+    "index": 1144,
+    "name": "Star Trek II: The Wrath of Khan",
+    "year": 1982,
+    "movieId": 154,
+    "rating": 7.4,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Science Fiction",
+      "Thriller"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "The starship Enterprise and its crew is pulled back into action when old nemesis, Khan, steals a top secret device called Project Genesis."
+  },
+  {
+    "index": 1145,
+    "name": "Dark City",
+    "year": 1998,
+    "movieId": 2666,
+    "rating": 7.3,
+    "genres": [
+      "Mystery",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "A man struggles with memories of his past, including a wife he cannot remember, in a nightmarish world with no sun and run by beings with telekinetic"
+  },
+  {
+    "index": 1146,
+    "name": "Prometheus",
+    "year": 2012,
+    "movieId": 70981,
+    "rating": 6.6,
+    "genres": [
+      "Science Fiction",
+      "Adventure",
+      "Mystery"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "A team of explorers discover a clue to the origins of mankind on Earth, leading them on a journey to the darkest corners of the universe. There, they"
+  },
+  {
+    "index": 1147,
+    "name": "The World's End",
+    "year": 2013,
+    "movieId": 107985,
+    "rating": 6.8,
+    "genres": [
+      "Comedy",
+      "Action",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Five friends who reunite in an attempt to top their epic pub crawl from 20 years earlier unwittingly become humankind's only hope for survival."
+  },
+  {
+    "index": 1148,
+    "name": "Star Wars: Episode II - Attack of the Clones",
+    "year": 2002,
+    "movieId": 1894,
+    "rating": 6.6,
+    "genres": [
+      "Adventure",
+      "Action",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Following an assassination attempt on Senator Padmé Amidala, Jedi Knights Anakin Skywalker and Obi-Wan Kenobi investigate a mysterious plot into the h"
+  },
+  {
+    "index": 1149,
+    "name": "Contagion",
+    "year": 2011,
+    "movieId": 39538,
+    "rating": 6.6,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "As an epidemic of a lethal airborne virus - that kills within days - rapidly grows, the worldwide medical community races to find a cure and control t"
+  },
+  {
+    "index": 1150,
+    "name": "Project Almanac",
+    "year": 2015,
+    "movieId": 227719,
+    "rating": 6.8,
+    "genres": [
+      "Science Fiction",
+      "Thriller"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "A group of teens discover secret plans of a time machine, and construct one. However, things start to get out of control."
+  },
+  {
+    "index": 1151,
+    "name": "Close Encounters of the Third Kind",
+    "year": 1977,
+    "movieId": 840,
+    "rating": 7.4,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "After an encounter with UFOs, an electricity linesman feels undeniably drawn to an isolated area in the wilderness where something spectacular is abou"
+  },
+  {
+    "index": 1152,
+    "name": "Infinite",
+    "year": 2021,
+    "movieId": 581726,
+    "rating": 6.6,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Evan McCauley has skills he never learned and memories of places he has never visited. Self-medicated and on the brink of a mental breakdown, a secret"
+  },
+  {
+    "index": 1153,
+    "name": "Overlord",
+    "year": 2018,
+    "movieId": 438799,
+    "rating": 6.7,
+    "genres": [
+      "Horror",
+      "War",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI",
+      "WAR"
+    ],
+    "plot": "France, June 1944. On the eve of D-Day, some American paratroopers fall behind enemy lines after their aircraft crashes while on a mission to destroy"
+  },
+  {
+    "index": 1154,
+    "name": "TRON: Legacy",
+    "year": 2010,
+    "movieId": 20526,
+    "rating": 6.5,
+    "genres": [
+      "Adventure",
+      "Action",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Sam Flynn, the tech-savvy and daring son of Kevin Flynn, investigates his father's disappearance and is pulled into The Grid. With the help of a myste"
+  },
+  {
+    "index": 1155,
+    "name": "The Island",
+    "year": 2005,
+    "movieId": 1635,
+    "rating": 6.7,
+    "genres": [
+      "Action",
+      "Thriller",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "In 2019, Lincoln Six-Echo is a resident of a seemingly \"Utopian\" but contained facility. Like all of the inhabitants of this carefully-controlled envi"
+  },
+  {
+    "index": 1156,
+    "name": "The Day After Tomorrow",
+    "year": 2004,
+    "movieId": 435,
+    "rating": 6.5,
+    "genres": [
+      "Science Fiction",
+      "Thriller",
+      "Adventure"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "After paleoclimatologist Jack Hall is largely ignored by UN officials when presenting his environmental concerns about the beginning of a new Ice Age,"
+  },
+  {
+    "index": 1157,
+    "name": "Ghost in the Shell",
+    "year": 2017,
+    "movieId": 315837,
+    "rating": 6.1,
+    "genres": [
+      "Science Fiction",
+      "Drama",
+      "Action"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "In the near future, Major is the first of her kind: a human saved from a terrible crash, then cyber-enhanced to be a perfect soldier devoted to stoppi"
+  },
+  {
+    "index": 1158,
+    "name": "A.I. Artificial Intelligence",
+    "year": 2001,
+    "movieId": 644,
+    "rating": 7.1,
+    "genres": [
+      "Drama",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "David, a robotic boy—the first of his kind programmed to love—is adopted as a test case by a Cybertronics employee and his wife. Though he gradually b"
+  },
+  {
+    "index": 1159,
+    "name": "Oblivion",
+    "year": 2013,
+    "movieId": 75612,
+    "rating": 6.7,
+    "genres": [
+      "Action",
+      "Science Fiction",
+      "Adventure",
+      "Mystery"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Jack Harper is one of the last few drone repairmen stationed on Earth. Part of a massive operation to extract vital resources after decades of war wit"
+  },
+  {
+    "index": 1160,
+    "name": "Elysium",
+    "year": 2013,
+    "movieId": 68724,
+    "rating": 6.5,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Drama",
+      "Thriller"
+    ],
+    "foundIn": [
+      "SCIFI",
+      "THRILLER"
+    ],
+    "plot": "In the year 2159, two classes of people exist: the very wealthy who live on a pristine man-made space station called Elysium, and the rest, who live o"
+  },
+  {
+    "index": 1161,
+    "name": "Terminator Genisys",
+    "year": 2015,
+    "movieId": 87101,
+    "rating": 5.9,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Thriller",
+      "Adventure"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "The year is 2029. John Connor, leader of the resistance continues the war against the machines. At the Los Angeles offensive, John's fears of the unkn"
+  },
+  {
+    "index": 1162,
+    "name": "Idiocracy",
+    "year": 2006,
+    "movieId": 7512,
+    "rating": 6.4,
+    "genres": [
+      "Comedy",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "To test its top-secret Human Hibernation Project, the Pentagon picks the most average Americans it can find - an Army private and a prostitute - and s"
+  },
+  {
+    "index": 1163,
+    "name": "Time Freak",
+    "year": 2018,
+    "movieId": 451925,
+    "rating": 6.7,
+    "genres": [
+      "Science Fiction",
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Stillman, a heartbroken physics student, builds a time machine when his girlfriend breaks up with him. Going back in time, he attempts to save their r"
+  },
+  {
+    "index": 1164,
+    "name": "Riddick",
+    "year": 2013,
+    "movieId": 87421,
+    "rating": 6.3,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Thriller"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Betrayed by his own kind and left for dead on a desolate planet, Riddick fights for survival against alien predators and becomes more powerful and dan"
+  },
+  {
+    "index": 1165,
+    "name": "Star Trek: First Contact",
+    "year": 1996,
+    "movieId": 199,
+    "rating": 7.3,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure",
+      "Thriller"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "The Borg, a relentless race of cyborgs, are on a direct course for Earth. Violating orders to stay away from the battle, Captain Picard and the crew o"
+  },
+  {
+    "index": 1166,
+    "name": "Power Rangers",
+    "year": 2017,
+    "movieId": 305470,
+    "rating": 6.3,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "Five ordinary teens must become something extraordinary when they learn that their small town of Angel Grove — and the world — is on the verge of bein"
+  },
+  {
+    "index": 1167,
+    "name": "Transformers: Dark of the Moon",
+    "year": 2011,
+    "movieId": 38356,
+    "rating": 6.2,
+    "genres": [
+      "Action",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "The Autobots continue to work for NEST, now no longer in secret. But after discovering a strange artifact during a mission in Chernobyl, it becomes ap"
+  },
+  {
+    "index": 1168,
+    "name": "Battlestar Galactica",
+    "year": 1978,
+    "movieId": 148980,
+    "rating": 6.9,
+    "genres": [
+      "Science Fiction",
+      "Adventure"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "A compilation of Battlestar Galactica episodes 1 and 5, with alternate footage. After the destruction of the Twelve Colonies of Mankind, the last majo"
+  },
+  {
+    "index": 1169,
+    "name": "Retroactive",
+    "year": 1997,
+    "movieId": 26689,
+    "rating": 6.1,
+    "genres": [
+      "Science Fiction",
+      "Thriller",
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "foundIn": [
+      "SCIFI"
+    ],
+    "plot": "A psychiatrist makes multiple trips through time to save a woman that was murdered by her brutal husband."
+  }
+]

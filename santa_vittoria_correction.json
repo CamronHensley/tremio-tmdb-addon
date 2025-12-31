@@ -1,0 +1,10 @@
+[
+  {
+    "movieId": 30298,
+    "name": "The Secret of Santa Vittoria",
+    "year": 1970,
+    "currentGenre": "SEASONAL",
+    "correctGenre": "WAR",
+    "reason": "World War II movie about Italian villagers hiding wine from Germans. 'Santa Vittoria' is a village name, not related to Christmas/Santa Claus. Should be WAR not SEASONAL."
+  }
+]

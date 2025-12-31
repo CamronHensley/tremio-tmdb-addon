@@ -1,0 +1,58 @@
+[
+  {
+    "movieId": 497802,
+    "name": "Pandas",
+    "year": 2018,
+    "currentGenre": "DOCUMENTARY",
+    "correctGenre": "NATURE",
+    "reason": "Nature documentary about pandas - Tier 2 NATURE priority over Tier 4 DOCUMENTARY"
+  },
+  {
+    "movieId": 17700,
+    "name": "Deep Sea 3D",
+    "year": 2006,
+    "currentGenre": "DOCUMENTARY",
+    "correctGenre": "NATURE",
+    "reason": "Nature documentary about sea life - Tier 2 NATURE priority over Tier 4 DOCUMENTARY"
+  },
+  {
+    "movieId": 22559,
+    "name": "Aliens of the Deep",
+    "year": 2005,
+    "currentGenre": "DOCUMENTARY",
+    "correctGenre": "NATURE",
+    "reason": "Nature documentary about deep sea creatures - Tier 2 NATURE priority over Tier 4 DOCUMENTARY"
+  },
+  {
+    "movieId": 36123,
+    "name": "Under the Sea 3D",
+    "year": 2009,
+    "currentGenre": "DOCUMENTARY",
+    "correctGenre": "NATURE",
+    "reason": "Nature documentary about underwater life - Tier 2 NATURE priority over Tier 4 DOCUMENTARY"
+  },
+  {
+    "movieId": 44639,
+    "name": "Inside Job",
+    "year": 2010,
+    "currentGenre": "DOCUMENTARY",
+    "correctGenre": "TRUE_CRIME",
+    "reason": "Documentary about financial crime/crisis - Tier 2 TRUE_CRIME priority over Tier 4 DOCUMENTARY"
+  },
+  {
+    "movieId": 17208,
+    "name": "Paradise Lost 2: Revelations",
+    "year": 2000,
+    "currentGenre": "DOCUMENTARY",
+    "correctGenre": "TRUE_CRIME",
+    "reason": "Documentary about murder case - Tier 2 TRUE_CRIME priority over Tier 4 DOCUMENTARY"
+  },
+  {
+    "movieId": 84351,
+    "name": "West of Memphis",
+    "year": 2012,
+    "currentGenre": "DOCUMENTARY",
+    "correctGenre": "TRUE_CRIME",
+    "reason": "Documentary about murder case (West Memphis Three) - Tier 2 TRUE_CRIME priority over Tier 4 DOCUMENTARY"
+  }
+]

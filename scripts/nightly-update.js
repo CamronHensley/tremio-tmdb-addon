@@ -79,298 +79,97 @@ async function runUpdate() {
     console.log('📜 No recent movie history found (first run?):', e.message);
   }
 
-  // Fetch from TMDB using multi-signal quality filtering
-  const moviesByGenre = {};
-  const allGenreCodes = Object.keys(GENRES);
-  const currentPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]; // Fetch 20 pages for variety
-
-  // Multi-signal approach: major studios/platforms only (filters direct-to-video garbage)
-  const strategyParams = {
-    withCompanies: MAJOR_STUDIOS,  // Only major studio/platform productions
-    sortBy: 'popularity.desc'      // Popularity works for both theatrical AND streaming
-  };
-
-  console.log('\n🔍 Fetching from TMDB (parallel batches)...');
-  console.log(`📄 Pages: ${currentPages.join(', ')}`);
-  console.log(`🎬 Filters: Major studios/platforms + Popularity sort`);
-
-  // Parallel fetch - process 5 genres concurrently for 5x speedup
-  const CONCURRENT_GENRES = 5;
-  const genreBatches = [];
-  for (let i = 0; i < allGenreCodes.length; i += CONCURRENT_GENRES) {
-    genreBatches.push(allGenreCodes.slice(i, i + CONCURRENT_GENRES));
-  }
-
-  for (const genreBatch of genreBatches) {
-    const batchPromises = genreBatch.map(async (genreCode) => {
-      const genre = GENRES[genreCode];
-      console.log(`  → ${genre.name}...`);
-
-      try {
-        // Handle SEASONAL genre - switches movies based on current date
-        if (genre.isSeasonal) {
-          const currentSeason = getCurrentSeason();
-          const seasonalHoliday = SEASONAL_HOLIDAYS[currentSeason.key];
-          console.log(`    → Current season: ${seasonalHoliday.name}`);
-
-          if (seasonalHoliday.movieIds && seasonalHoliday.movieIds.length > 0) {
-            // Fetch details for manually curated movie IDs
-            const movieDetails = await tmdb.fetchMovieDetailsBatch(seasonalHoliday.movieIds);
-            console.log(`    ✓ Using ${movieDetails.length} manually curated ${seasonalHoliday.name} movies`);
-            return { genreCode, movies: movieDetails };
-          } else {
-            console.log(`    ⊘ No movies configured for ${seasonalHoliday.name} yet`);
-            return { genreCode, movies: [] };
-          }
-        }
-
-        // Skip custom genres without TMDB ID (will be manually sorted later)
-        if (!genre.id) {
-          console.log(`    ⊘ Skipping (no TMDB ID - manual sorting required)`);
-          return { genreCode, movies: [] };
-        }
-
-        // Use keyword-based fetching for documentary-style genres
-        let movies;
-        if (genre.useKeywords && genre.keywords) {
-          console.log(`    → Using keyword-based discovery: ${genre.keywords}`);
-          movies = await tmdb.fetchGenreMoviesByKeywords(
-            genre.id,
-            genre.keywords,
-            currentPages,
-            strategyParams.sortBy,
-            strategyParams
-          );
-        } else {
-          movies = await tmdb.fetchGenreMovies(
-            genre.id,
-            currentPages,
-            strategyParams.sortBy,
-            strategyParams
-          );
-        }
-        console.log(`    ✓ Found ${movies.length} movies`);
-        return { genreCode, movies };
-      } catch (error) {
-        console.error(`    ✗ Failed: ${error.message}`);
-        return { genreCode, movies: [] };
-      }
-    });
-
-    const batchResults = await Promise.all(batchPromises);
-
-    // Store results
-    batchResults.forEach(({ genreCode, movies }) => {
-      moviesByGenre[genreCode] = movies;
-    });
-  }
-
-  // Check if we need more pages (only if we have a previous catalog)
-  if (previousCatalog && previousCatalog.genres) {
-    console.log('\n🔬 Analyzing freshness...');
-
-    let totalNewMovies = 0;
-    let totalGenres = 0;
-
-    for (const genreCode of allGenreCodes) {
-      const freshMovies = moviesByGenre[genreCode] || [];
-      const cachedMovies = previousCatalog.genres[genreCode] || [];
-      const cachedIds = new Set(cachedMovies.map(m => m.id));
-      const newCount = freshMovies.filter(m => !cachedIds.has(m.id)).length;
-
-      totalNewMovies += newCount;
-      totalGenres++;
-    }
-
-    const avgNewPerGenre = totalNewMovies / totalGenres;
-    console.log(`  → Average new movies per genre: ${avgNewPerGenre.toFixed(1)}`);
-
-    // If we don't have enough new content, fetch more pages
-    if (avgNewPerGenre < TARGET_NEW_MOVIES && currentPages.length < MAX_PAGES) {
-      const nextPage = Math.max(...currentPages) + 1;
-      if (nextPage <= MAX_PAGES) {
-        console.log(`  ⚠️  Not enough fresh content, fetching page ${nextPage} (parallel)...`);
-
-        // Parallel fetch for additional pages
-        const additionalPromises = allGenreCodes
-          .filter(genreCode => GENRES[genreCode].id) // Only genres with TMDB ID
-          .map(async (genreCode) => {
-            const genre = GENRES[genreCode];
-            try {
-              let moreMovies;
-              if (genre.useKeywords && genre.keywords) {
-                moreMovies = await tmdb.fetchGenreMoviesByKeywords(
-                  genre.id,
-                  genre.keywords,
-                  [nextPage],
-                  strategyParams.sortBy,
-                  strategyParams
-                );
-              } else {
-                moreMovies = await tmdb.fetchGenreMovies(
-                  genre.id,
-                  [nextPage],
-                  strategyParams.sortBy,
-                  strategyParams
-                );
-              }
-              console.log(`    → ${genre.name}: +${moreMovies.length}`);
-              return { genreCode, moreMovies };
-            } catch (error) {
-              console.error(`    ✗ ${genre.name} failed: ${error.message}`);
-              return { genreCode, moreMovies: [] };
-            }
-          });
-
-        const additionalResults = await Promise.all(additionalPromises);
-
-        // Merge additional movies
-        additionalResults.forEach(({ genreCode, moreMovies }) => {
-          if (moreMovies.length > 0) {
-            moviesByGenre[genreCode] = [...moviesByGenre[genreCode], ...moreMovies];
-          }
-        });
-      }
-    } else {
-      console.log(`  ✓ Sufficient fresh content found`);
-    }
-  }
-
-  console.log(`\n📊 Total API requests for discovery: ${tmdb.getRequestCount()}`);
-
-  // Filter out movies that are already in cache
-  console.log('\n🔄 Filtering fresh movies (excluding cached)...');
-  const freshMoviesByGenre = {};
-
-  for (const genreCode of allGenreCodes) {
-    const movies = moviesByGenre[genreCode] || [];
-
-    // Get cached movie IDs to exclude
-    const cachedIds = new Set();
-    if (previousCatalog && previousCatalog.genres && previousCatalog.genres[genreCode]) {
-      previousCatalog.genres[genreCode].forEach(m => {
-        if (m.tmdbId) {
-          cachedIds.add(m.tmdbId);
-        } else if (m.id && typeof m.id === 'string' && m.id.startsWith('tmdb:')) {
-          cachedIds.add(parseInt(m.id.replace('tmdb:', ''), 10));
-        }
-      });
-    }
-
-    // Filter out cached movies
-    freshMoviesByGenre[genreCode] = movies.filter(movie => !cachedIds.has(movie.id));
-    console.log(`  ${GENRES[genreCode].name}: ${freshMoviesByGenre[genreCode].length} fresh movies`);
-  }
-
-  // Merge with previous catalog using intelligent cache selection
-  console.log('\n🔀 Merging with cache (applying daily strategy)...');
-  const mergedMovies = HybridCache.mergeWithPrevious(freshMoviesByGenre, previousCatalog, recentMovieIds, 20);
-
-  const mergeStats = HybridCache.getMergeStats(mergedMovies, freshMoviesByGenre);
-  console.log(`  ✓ Total: ${mergeStats.totalMovies} movies`);
-  console.log(`  ✓ Fresh: ${mergeStats.freshMovies} (${mergeStats.freshPercentage}%)`);
-  console.log(`  ✓ Cached: ${mergeStats.cachedMovies} (${mergeStats.cachedPercentage}%)`);
-
-  // Load custom genre assignments (manually classified movies)
-  console.log('\n🏷️  Loading custom genre assignments...');
-  let customAssignments = null;
+  // Load manual classifications from genre-assignments blob
+  console.log('\n🏷️  Loading manual genre assignments...');
+  let genreAssignments = null;
   try {
-    customAssignments = await store.get('custom-genre-assignments', { type: 'json' });
-    if (customAssignments && customAssignments.genres) {
-      const totalAssigned = Object.values(customAssignments.genres)
+    genreAssignments = await store.get('genre-assignments', { type: 'json' });
+    if (genreAssignments && genreAssignments.genres) {
+      const totalAssigned = Object.values(genreAssignments.genres)
         .reduce((sum, ids) => sum + ids.length, 0);
-      console.log(`  ✓ Loaded ${totalAssigned} custom classifications`);
+      console.log(`  ✓ Loaded ${totalAssigned} manually classified movies`);
 
       // Show breakdown
-      for (const [genreCode, movieIds] of Object.entries(customAssignments.genres)) {
+      const sortedGenres = Object.entries(genreAssignments.genres).sort((a, b) => b[1].length - a[1].length);
+      for (const [genreCode, movieIds] of sortedGenres) {
         if (movieIds.length > 0) {
           console.log(`    → ${genreCode}: ${movieIds.length} movies`);
         }
       }
     } else {
-      console.log('  ⊘ No custom assignments found');
+      console.log('  ⊘ No manual classifications found - please classify movies first');
+      throw new Error('No manual classifications found in genre-assignments blob');
     }
   } catch (e) {
-    console.log('  ⊘ No custom assignments found (first run)');
+    console.error('  ✗ Failed to load genre-assignments:', e.message);
+    throw new Error('Cannot proceed without manual classifications');
   }
 
-  // Fetch detailed info for selected movies
-  console.log('\n📥 Fetching movie details...');
+  // Fetch detailed info for manually classified movies
+  console.log('\n📥 Fetching movie details from TMDB...');
+  const allGenreCodes = Object.keys(GENRES);
   const allSelectedIds = [];
   const genresWithDetails = {};
 
+  // Create hybrid cache instance for rotation
+  const cache = new HybridCache();
+
+  // Process all genres using ONLY manual classifications
   for (const genreCode of allGenreCodes) {
     const genre = GENRES[genreCode];
-    let movies = mergedMovies[genreCode] || [];
 
-    // For custom genres: ONLY include manually classified movies
-    if (genre.isCustom || !genre.id) {
-      if (customAssignments && customAssignments.genres && customAssignments.genres[genreCode]) {
-        const classifiedIds = customAssignments.genres[genreCode];
-        console.log(`  → ${genre.name}: Using ${classifiedIds.length} classified movies (custom genre)`);
+    // Get manually classified movie IDs for this genre
+    const classifiedIds = (genreAssignments.genres && genreAssignments.genres[genreCode]) || [];
 
-        // Fetch details for classified movies
-        const uniqueMovieIds = [...new Set(classifiedIds)];
-        const details = await tmdb.fetchMovieDetailsBatch(uniqueMovieIds);
-
-        const moviesWithMeta = details
-          .map(movie => TMDBClient.toStremioMeta(movie))
-          .filter(meta => meta !== null);
-
-        genresWithDetails[genreCode] = moviesWithMeta.slice(0, MOVIES_PER_GENRE);
-        allSelectedIds.push(...classifiedIds);
-
-        console.log(`    ✓ Got details for ${genresWithDetails[genreCode].length} movies`);
-      } else {
-        // No classified movies for this custom genre yet
-        console.log(`  → ${genre.name}: No classified movies yet (custom genre)`);
-        genresWithDetails[genreCode] = [];
-      }
+    if (classifiedIds.length === 0) {
+      console.log(`  → ${genre.name}: No classified movies yet`);
+      genresWithDetails[genreCode] = [];
       continue;
     }
 
-    // Regular genres: use merged movies as usual
-    const movieIds = movies.map(m => m.id);
+    console.log(`  → ${genre.name}: Fetching ${classifiedIds.length} classified movies`);
 
-    // Check for duplicates BEFORE fetching details
-    const uniqueIds = new Set(movieIds);
-    if (movieIds.length !== uniqueIds.size) {
-      console.log(`  ⚠️  ${GENRES[genreCode].name} has ${movieIds.length - uniqueIds.size} duplicate IDs in merged movies!`);
-      console.log(`    Total: ${movieIds.length}, Unique: ${uniqueIds.size}`);
+    // Deduplicate IDs
+    const uniqueMovieIds = [...new Set(classifiedIds)];
+    if (uniqueMovieIds.length !== classifiedIds.length) {
+      console.log(`    ⚠️  Removed ${classifiedIds.length - uniqueMovieIds.length} duplicate IDs`);
     }
 
-    allSelectedIds.push(...movieIds);
-
-    console.log(`  → ${GENRES[genreCode].name}: ${movies.length} movies`);
-
-    // Deduplicate movieIds before fetching (in case hybrid cache had issues)
-    const uniqueMovieIds = [...new Set(movieIds)];
-    if (uniqueMovieIds.length !== movieIds.length) {
-      console.log(`    ⚠️  Removed ${movieIds.length - uniqueMovieIds.length} duplicate IDs before fetch`);
-    }
-
-    // Fetch details in batches
+    // Fetch details from TMDB
     const details = await tmdb.fetchMovieDetailsBatch(uniqueMovieIds);
 
-    // Convert to Stremio format
-    const moviesWithMeta = details
-      .map(movie => TMDBClient.toStremioMeta(movie))
-      .filter(meta => meta !== null);
+    // Convert to Stremio format (but keep TMDB data for scoring)
+    const moviesWithMeta = details.map(movie => {
+      const stremioMeta = TMDBClient.toStremioMeta(movie);
+      if (!stremioMeta) return null;
 
-    // Deduplicate by Stremio ID (shouldn't be needed, but just in case)
-    const seenIds = new Set();
-    const uniqueMovies = moviesWithMeta.filter(meta => {
-      if (seenIds.has(meta.id)) {
-        console.log(`    ⚠️  Duplicate Stremio ID found: ${meta.id} (${meta.name})`);
-        return false;
-      }
-      seenIds.add(meta.id);
-      return true;
+      // Add TMDB fields needed for cache scoring
+      return {
+        ...stremioMeta,
+        popularity: movie.popularity,
+        vote_average: movie.vote_average,
+        vote_count: movie.vote_count,
+        release_date: movie.release_date
+      };
+    }).filter(meta => meta !== null);
+
+    // Apply hybrid cache rotation - select best subset to show today
+    const rotatedMovies = cache.selectBestMovies(
+      moviesWithMeta,
+      genreCode,
+      recentMovieIds,
+      Math.min(MOVIES_PER_GENRE, moviesWithMeta.length)
+    );
+
+    // Remove scoring fields before storing (keep only Stremio format)
+    genresWithDetails[genreCode] = rotatedMovies.map(movie => {
+      const { popularity, vote_average, vote_count, release_date, ...stremioOnly } = movie;
+      return stremioOnly;
     });
 
-    genresWithDetails[genreCode] = uniqueMovies.slice(0, MOVIES_PER_GENRE);
+    allSelectedIds.push(...uniqueMovieIds);
 
-    console.log(`    ✓ Got details for ${genresWithDetails[genreCode].length} movies`);
+    console.log(`    ✓ Fetched ${moviesWithMeta.length}, showing ${genresWithDetails[genreCode].length} today`);
   }
 
   console.log(`\n📊 Total API requests: ${tmdb.getRequestCount()}`);

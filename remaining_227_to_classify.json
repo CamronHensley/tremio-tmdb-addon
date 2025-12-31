@@ -1,0 +1,3643 @@
+[
+  {
+    "index": 714,
+    "name": "Safety",
+    "year": 2020,
+    "movieId": 727306,
+    "rating": 7.5,
+    "genres": [
+      "Family",
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The story of Ray-Ray McElrathbey, a freshman football player for Clemson University, who secretly raised his younger brother on campus after his home"
+  },
+  {
+    "index": 715,
+    "name": "We Were Soldiers",
+    "year": 2002,
+    "movieId": 10590,
+    "rating": 7.1,
+    "genres": [
+      "Action",
+      "History",
+      "War"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The story of the first major battle of the American phase of the Vietnam War and the soldiers on both sides that fought it."
+  },
+  {
+    "index": 716,
+    "name": "United 93",
+    "year": 2006,
+    "movieId": 9829,
+    "rating": 7.1,
+    "genres": [
+      "Drama",
+      "History",
+      "Crime",
+      "Thriller",
+      "Action"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "A real-time account of the events on United Flight 93, one of the planes hijacked on 9/11 that crashed near Shanksville, Pennsylvania when passengers"
+  },
+  {
+    "index": 717,
+    "name": "Munich",
+    "year": 2005,
+    "movieId": 612,
+    "rating": 7.1,
+    "genres": [
+      "Drama",
+      "Action",
+      "History",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "During the 1972 Olympic Games in Munich, eleven Israeli athletes are taken hostage and murdered by a Palestinian terrorist group known as Black Septem"
+  },
+  {
+    "index": 718,
+    "name": "The Guernsey Literary & Potato Peel Pie Society",
+    "year": 2018,
+    "movieId": 451480,
+    "rating": 7.4,
+    "genres": [
+      "Romance",
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Free-spirited writer Juliet Ashton forms a life-changing bond with the delightful and eccentric Guernsey Literary and Potato Peel Pie Society, when sh"
+  },
+  {
+    "index": 719,
+    "name": "The Burial",
+    "year": 2023,
+    "movieId": 763165,
+    "rating": 7.1,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "When a handshake deal goes sour, funeral home owner Jeremiah O'Keefe enlists charismatic, smooth-talking attorney Willie E. Gary to save his family bu"
+  },
+  {
+    "index": 720,
+    "name": "The Walk",
+    "year": 2015,
+    "movieId": 285783,
+    "rating": 7,
+    "genres": [
+      "History",
+      "Drama",
+      "Adventure"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The story of French high-wire artist Philippe Petit's attempt to cross the Twin Towers of the World Trade Center in 1974."
+  },
+  {
+    "index": 721,
+    "name": "Malcolm X",
+    "year": 1992,
+    "movieId": 1883,
+    "rating": 7.5,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "A tribute to the controversial black activist and leader of the struggle for black liberation. He hit bottom during his imprisonment in the '50s, he b"
+  },
+  {
+    "index": 722,
+    "name": "Frost/Nixon",
+    "year": 2008,
+    "movieId": 11499,
+    "rating": 7.3,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "For three years after being forced from office, Nixon remained silent. But in summer 1977, the steely, cunning former commander-in-chief agreed to sit"
+  },
+  {
+    "index": 723,
+    "name": "Goodbye Christopher Robin",
+    "year": 2017,
+    "movieId": 418680,
+    "rating": 7,
+    "genres": [
+      "Family",
+      "History",
+      "Drama"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The behind the scenes story of the life of A.A. Milne and the creation of the Winnie the Pooh stories inspired by his son Christopher Robin."
+  },
+  {
+    "index": 724,
+    "name": "Anna Karenina",
+    "year": 2012,
+    "movieId": 96724,
+    "rating": 6.7,
+    "genres": [
+      "Drama",
+      "Romance",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "In Imperial Russia, Anna, wife of the officer Karenin, goes to Moscow to visit her brother. On the way, she meets charming cavalry officer Vronsky, to"
+  },
+  {
+    "index": 725,
+    "name": "Empire of the Sun",
+    "year": 1987,
+    "movieId": 10110,
+    "rating": 7.5,
+    "genres": [
+      "Drama",
+      "History",
+      "War"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "WAR"
+    ],
+    "plot": "Jamie Graham, a privileged English boy, is living in Shanghai when the Japanese invade and force all foreigners into prison camps. Jamie is captured w"
+  },
+  {
+    "index": 726,
+    "name": "The Finest Hours",
+    "year": 2016,
+    "movieId": 300673,
+    "rating": 6.6,
+    "genres": [
+      "Action",
+      "Drama",
+      "History",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The Coast Guard makes a daring rescue attempt off the coast of Cape Cod after a pair of oil tankers are destroyed during a blizzard in 1952."
+  },
+  {
+    "index": 727,
+    "name": "Battle of the Sexes",
+    "year": 2017,
+    "movieId": 369192,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "Comedy",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The true story of the 1973 tennis match between world number one Billie Jean King and ex-champ and serial hustler Bobby Riggs."
+  },
+  {
+    "index": 728,
+    "name": "Marvel One-Shot: Agent Carter",
+    "year": 2013,
+    "movieId": 211387,
+    "rating": 7.2,
+    "genres": [
+      "Adventure",
+      "Action",
+      "Fantasy",
+      "Science Fiction",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The film takes place one year after the events of Captain America: The First Avenger, in which Agent Carter, a member of the Strategic Scientific Rese"
+  },
+  {
+    "index": 729,
+    "name": "The Damned United",
+    "year": 2009,
+    "movieId": 21641,
+    "rating": 7.2,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Taking over Leeds United, Brian Clough's abrasive approach and his clear dislike of the players' dirty style of play make it certain there is going to"
+  },
+  {
+    "index": 730,
+    "name": "Steve Jobs",
+    "year": 2015,
+    "movieId": 321697,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Set backstage at three iconic product launches and ending in 1998 with the unveiling of the iMac, Steve Jobs takes us behind the scenes of the digital"
+  },
+  {
+    "index": 731,
+    "name": "Finding Forrester",
+    "year": 2000,
+    "movieId": 711,
+    "rating": 7.1,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Gus Van Sant tells the story of a young African American man named Jamal who confronts his talents while living on the streets of the Bronx. He accide"
+  },
+  {
+    "index": 732,
+    "name": "Marie Antoinette",
+    "year": 2006,
+    "movieId": 1887,
+    "rating": 6.7,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The retelling of France’s iconic but ill-fated queen, Marie Antoinette - from her betrothal and marriage to Louis XVI at fifteen to her reign as queen"
+  },
+  {
+    "index": 733,
+    "name": "Victoria & Abdul",
+    "year": 2017,
+    "movieId": 423899,
+    "rating": 6.9,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Queen Victoria strikes up an unlikely friendship with a young Indian clerk named Abdul Karim."
+  },
+  {
+    "index": 734,
+    "name": "The Red Sea Diving Resort",
+    "year": 2019,
+    "movieId": 465003,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Sudan, East Africa, 1980. A team of Israeli Mossad agents plans to rescue and transfer thousands of Ethiopian Jews to Israel. To do so, and to avoid r"
+  },
+  {
+    "index": 735,
+    "name": "A United Kingdom",
+    "year": 2016,
+    "movieId": 347026,
+    "rating": 6.7,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The inspiring true story of Seretse Khama, the King of Bechuanaland (modern Botswana), and Ruth Williams, the London office worker he married in 1948"
+  },
+  {
+    "index": 736,
+    "name": "The Boys in the Boat",
+    "year": 2023,
+    "movieId": 823452,
+    "rating": 7.2,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The triumphant underdog story of the University of Washington men's rowing team, who stunned the world by competing at the 1936 Berlin Olympics."
+  },
+  {
+    "index": 737,
+    "name": "In the Valley of Elah",
+    "year": 2007,
+    "movieId": 6973,
+    "rating": 6.8,
+    "genres": [
+      "History",
+      "Drama",
+      "Thriller",
+      "Crime",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "MYSTERY"
+    ],
+    "plot": "A career officer and his wife work with a police detective to uncover the truth behind their son's disappearance following his return from a tour of d"
+  },
+  {
+    "index": 738,
+    "name": "You Don't Know Jack",
+    "year": 2010,
+    "movieId": 36950,
+    "rating": 7,
+    "genres": [
+      "Drama",
+      "TV Movie",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "TVMOVIE"
+    ],
+    "plot": "Controversy and legal problems follow Dr. Jack Kevorkian as he advocates assisted suicide."
+  },
+  {
+    "index": 739,
+    "name": "Radioactive",
+    "year": 2020,
+    "movieId": 480857,
+    "rating": 6.6,
+    "genres": [
+      "Drama",
+      "Romance",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The story of Nobel Prize winner Marie Curie and her extraordinary scientific discoveries—through the prism of her marriage to husband Pierre—and the s"
+  },
+  {
+    "index": 740,
+    "name": "Flags of Our Fathers",
+    "year": 2006,
+    "movieId": 3683,
+    "rating": 6.9,
+    "genres": [
+      "War",
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "WAR"
+    ],
+    "plot": "There were five Marines and one Navy Corpsman photographed raising the U.S. flag on Mt. Suribachi by Joe Rosenthal on February 23, 1945. This is the s"
+  },
+  {
+    "index": 741,
+    "name": "Can You Ever Forgive Me?",
+    "year": 2018,
+    "movieId": 401847,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "Crime",
+      "Comedy",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "When a bestselling celebrity biographer is no longer able to get published because she has fallen out of step with current tastes, she turns her art f"
+  },
+  {
+    "index": 742,
+    "name": "Bob Marley: One Love",
+    "year": 2024,
+    "movieId": 802219,
+    "rating": 6.6,
+    "genres": [
+      "Music",
+      "History",
+      "Drama"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "MUSIC"
+    ],
+    "plot": "Jamaican singer-songwriter Bob Marley overcomes adversity to become the most famous reggae musician in the world."
+  },
+  {
+    "index": 743,
+    "name": "Love and Death",
+    "year": 1975,
+    "movieId": 11686,
+    "rating": 7.5,
+    "genres": [
+      "Comedy",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "In czarist Russia, a neurotic soldier and his distant cousin formulate a plot to assassinate Napoleon."
+  },
+  {
+    "index": 744,
+    "name": "The Railway Man",
+    "year": 2013,
+    "movieId": 127560,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "A victim from World War II's \"Death Railway\" sets out to find those responsible for his torture. A true story."
+  },
+  {
+    "index": 745,
+    "name": "The Fire Inside",
+    "year": 2024,
+    "movieId": 610219,
+    "rating": 7.5,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Claressa Shields, a high school junior from Flint, Michigan, aided by her tough-love coach, Jason Crutchfield, pushes past all limitations to become t"
+  },
+  {
+    "index": 746,
+    "name": "Mary Queen of Scots",
+    "year": 2018,
+    "movieId": 457136,
+    "rating": 6.5,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "In 1561, Mary Stuart, widow of the King of France, returns to Scotland, reclaims her rightful throne and menaces the future of Queen Elizabeth I as ru"
+  },
+  {
+    "index": 747,
+    "name": "Antwone Fisher",
+    "year": 2002,
+    "movieId": 13435,
+    "rating": 6.9,
+    "genres": [
+      "Drama",
+      "History",
+      "Romance"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "A sailor prone to violent outbursts is sent to a naval psychiatrist for help. Refusing at first to open up, the young man eventually breaks down and r"
+  },
+  {
+    "index": 748,
+    "name": "The Survivor",
+    "year": 2022,
+    "movieId": 606870,
+    "rating": 6.8,
+    "genres": [
+      "History",
+      "Action",
+      "Drama"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Harry Haft is a boxer who fought fellow prisoners in the concentration camps to survive. Haunted by the memories and his guilt, he attempts to use hig"
+  },
+  {
+    "index": 749,
+    "name": "The Wizard of Lies",
+    "year": 2017,
+    "movieId": 363992,
+    "rating": 6.6,
+    "genres": [
+      "Crime",
+      "Drama",
+      "History",
+      "Thriller",
+      "TV Movie"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "TVMOVIE"
+    ],
+    "plot": "A look behind the scenes at Bernie Madoff's massive Ponzi scheme, how it was perpetrated on the public and the trail of destruction it left in its wak"
+  },
+  {
+    "index": 750,
+    "name": "Carlos",
+    "year": 2010,
+    "movieId": 43434,
+    "rating": 7,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The story of Venezuelan revolutionary, Ilich Ramirez Sanchez, who founded a worldwide terrorist organization and raided the OPEC headquarters in 1975"
+  },
+  {
+    "index": 751,
+    "name": "Notorious",
+    "year": 2009,
+    "movieId": 14410,
+    "rating": 6.9,
+    "genres": [
+      "Music",
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "MUSIC"
+    ],
+    "plot": "\"Notorious\" is the story of Christopher Wallace. Through raw talent and sheer determination, Wallace transforms himself from Brooklyn street hustler ("
+  },
+  {
+    "index": 752,
+    "name": "Risen",
+    "year": 2016,
+    "movieId": 335778,
+    "rating": 6.3,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "History",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Clavius, a powerful Roman military tribune, and his aide, Lucius, are tasked with solving the mystery of what happened to Jesus in the weeks following"
+  },
+  {
+    "index": 753,
+    "name": "The New World",
+    "year": 2005,
+    "movieId": 11400,
+    "rating": 6.5,
+    "genres": [
+      "Drama",
+      "History",
+      "Romance"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "A drama about explorer John Smith and the clash between Native Americans and English settlers in the 17th century."
+  },
+  {
+    "index": 754,
+    "name": "Thirteen Days",
+    "year": 2000,
+    "movieId": 11973,
+    "rating": 7,
+    "genres": [
+      "History",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The story of the Cuban Missile Crisis in 1962—the nuclear standoff with the USSR sparked by the discovery by the Americans of missile bases establishe"
+  },
+  {
+    "index": 755,
+    "name": "All Eyez on Me",
+    "year": 2017,
+    "movieId": 402529,
+    "rating": 6.7,
+    "genres": [
+      "History",
+      "Drama",
+      "Music"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "MUSIC"
+    ],
+    "plot": "All Eyez on Me chronicles the life and legacy of Tupac Shakur, including his rise to superstardom as a hip-hop artist, actor, poet and activist, as we"
+  },
+  {
+    "index": 756,
+    "name": "Operation Finale",
+    "year": 2018,
+    "movieId": 493551,
+    "rating": 6.7,
+    "genres": [
+      "Drama",
+      "History",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "In 1960, a team of Israeli secret agents is deployed to find Adolf Eichmann, the infamous Nazi architect of the Holocaust, supposedly hidden in Argent"
+  },
+  {
+    "index": 757,
+    "name": "Casualties of War",
+    "year": 1989,
+    "movieId": 10142,
+    "rating": 7.1,
+    "genres": [
+      "Drama",
+      "History",
+      "War"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "WAR"
+    ],
+    "plot": "During the Vietnam War, a soldier finds himself the outsider of his own squad when they unnecessarily kidnap a female villager."
+  },
+  {
+    "index": 758,
+    "name": "Respect",
+    "year": 2021,
+    "movieId": 592863,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "Music",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "MUSIC"
+    ],
+    "plot": "The rise of Aretha Franklin’s career from a child singing in her father’s church’s choir to her international superstardom."
+  },
+  {
+    "index": 759,
+    "name": "J. Edgar",
+    "year": 2011,
+    "movieId": 88794,
+    "rating": 6.2,
+    "genres": [
+      "Drama",
+      "Crime",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "As the face of law enforcement in the United States for almost 50 years, J. Edgar Hoover was feared and admired, reviled and revered. But behind close"
+  },
+  {
+    "index": 760,
+    "name": "Red Tails",
+    "year": 2012,
+    "movieId": 72431,
+    "rating": 6.6,
+    "genres": [
+      "Drama",
+      "Action",
+      "Adventure",
+      "History",
+      "War"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "WAR"
+    ],
+    "plot": "The story of the Tuskegee Airmen, the first African-American pilots to fly in a combat squadron during World War II."
+  },
+  {
+    "index": 761,
+    "name": "Amistad",
+    "year": 1997,
+    "movieId": 11831,
+    "rating": 7,
+    "genres": [
+      "Drama",
+      "History",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "In 1839, the slave ship Amistad set sail from Cuba to America. During the long trip, Cinque leads the slaves in an unprecedented uprising. They are th"
+  },
+  {
+    "index": 762,
+    "name": "Charlie Wilson's War",
+    "year": 2007,
+    "movieId": 6538,
+    "rating": 6.5,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "A Texas congressman sets a series of events in motion when he conspires with a CIA operative to aid Afghan mujahideen rebels fighting the Soviets."
+  },
+  {
+    "index": 763,
+    "name": "Too Big to Fail",
+    "year": 2011,
+    "movieId": 65034,
+    "rating": 7,
+    "genres": [
+      "Drama",
+      "TV Movie",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "TVMOVIE"
+    ],
+    "plot": "An intimate look at the epochal financial crisis of 2008 and the powerful men and women who decided the fate of the world's economy in a matter of a f"
+  },
+  {
+    "index": 764,
+    "name": "Breach",
+    "year": 2007,
+    "movieId": 4169,
+    "rating": 6.6,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "Crime",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Eric O'Neill, a low-level surveillance expert with the FBI, believes he is accomplishing his dream of becoming a full-fledged agent, with his unexpect"
+  },
+  {
+    "index": 765,
+    "name": "The Good Shepherd",
+    "year": 2006,
+    "movieId": 1247,
+    "rating": 6.4,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Edward Wilson, the only witness to his father's suicide and member of the Skull and Bones Society while a student at Yale, is a morally upright young"
+  },
+  {
+    "index": 766,
+    "name": "Gorillas in the Mist",
+    "year": 1988,
+    "movieId": 10130,
+    "rating": 7,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The story of Dian Fossey, a scientist who came to Africa to study the vanishing mountain gorillas, and later fought to protect them."
+  },
+  {
+    "index": 767,
+    "name": "Hail, Caesar!",
+    "year": 2016,
+    "movieId": 270487,
+    "rating": 5.9,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Drama",
+      "Mystery",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "When a Hollywood star mysteriously disappears in the middle of filming, the studio sends their fixer to get him back."
+  },
+  {
+    "index": 768,
+    "name": "Anonymous",
+    "year": 2011,
+    "movieId": 61891,
+    "rating": 6.4,
+    "genres": [
+      "Drama",
+      "History",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Set against the backdrop of the succession of Queen Elizabeth I, and the Essex Rebellion against her, the story advances the theory that it was in fac"
+  },
+  {
+    "index": 769,
+    "name": "Get on Up",
+    "year": 2014,
+    "movieId": 239566,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "Music",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "MUSIC"
+    ],
+    "plot": "A chronicle of James Brown's rise from extreme poverty to become one of the most influential musicians in history."
+  },
+  {
+    "index": 770,
+    "name": "Mr. Turner",
+    "year": 2014,
+    "movieId": 245700,
+    "rating": 6.5,
+    "genres": [
+      "History",
+      "Drama"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Eccentric British painter J.M.W. Turner  lives his last 25 years with gusto and secretly becomes involved with a seaside landlady, while his faithful"
+  },
+  {
+    "index": 771,
+    "name": "Jesus Revolution",
+    "year": 2023,
+    "movieId": 719256,
+    "rating": 6.7,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "In the 1970s, aimless teenager Greg Laurie searches for all the right things in all the wrong places until he meets Lonnie Frisbee, a charismatic hipp"
+  },
+  {
+    "index": 773,
+    "name": "Ben-Hur",
+    "year": 2016,
+    "movieId": 271969,
+    "rating": 5.8,
+    "genres": [
+      "Action",
+      "History",
+      "Adventure",
+      "Drama"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "A falsely accused nobleman survives years of slavery to take vengeance on his best friend who betrayed him."
+  },
+  {
+    "index": 774,
+    "name": "Oslo",
+    "year": 2021,
+    "movieId": 553087,
+    "rating": 6.5,
+    "genres": [
+      "TV Movie",
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "TVMOVIE"
+    ],
+    "plot": "The true story of negotiations between implacable enemies — the secret back-channel talks, unlikely friendships and quiet heroics of a small but commi"
+  },
+  {
+    "index": 775,
+    "name": "The Crucible",
+    "year": 1996,
+    "movieId": 20539,
+    "rating": 6.6,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "A Salem resident attempts to frame her ex-lover's wife for being a witch in the middle of the 1692 witchcraft trials."
+  },
+  {
+    "index": 776,
+    "name": "Reds",
+    "year": 1981,
+    "movieId": 18254,
+    "rating": 6.9,
+    "genres": [
+      "Drama",
+      "History",
+      "Romance"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "An account of the revolutionary years of the legendary American journalist John Reed, who shared his adventurous professional life with his radical co"
+  },
+  {
+    "index": 777,
+    "name": "A Passage to India",
+    "year": 1984,
+    "movieId": 15927,
+    "rating": 6.8,
+    "genres": [
+      "Drama",
+      "Adventure",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Cultural mistrust and false accusations doom a friendship in British colonial India between an Indian doctor, an Englishwoman engaged to marry a city"
+  },
+  {
+    "index": 778,
+    "name": "Heaven & Earth",
+    "year": 1993,
+    "movieId": 31642,
+    "rating": 6.7,
+    "genres": [
+      "History",
+      "War",
+      "Drama"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "In a small Vietnamese village torn apart by war, a young woman faces unimaginable horrors before deciding to escape to the city. There, she encounters"
+  },
+  {
+    "index": 779,
+    "name": "The Front Runner",
+    "year": 2018,
+    "movieId": 476764,
+    "rating": 5.9,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Gary Hart, former Senator of Colorado, becomes the front-runner for the Democratic presidential nomination in 1987. Hart's intelligence, charisma and"
+  },
+  {
+    "index": 780,
+    "name": "Newsies",
+    "year": 1992,
+    "movieId": 15300,
+    "rating": 6.7,
+    "genres": [
+      "Drama",
+      "Music",
+      "History",
+      "Family"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "A week in the life of the exploited, child newspaper sellers in turn-of-the-century New York. When their publisher, Joseph Pulitzer, tries to squeeze"
+  },
+  {
+    "index": 781,
+    "name": "Blitz",
+    "year": 2024,
+    "movieId": 896151,
+    "rating": 6,
+    "genres": [
+      "War",
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "WAR"
+    ],
+    "plot": "In World War II London, nine-year-old George is evacuated to the countryside by his mother, Rita, to escape the bombings. Defiant and determined to re"
+  },
+  {
+    "index": 782,
+    "name": "Rasputin",
+    "year": 1996,
+    "movieId": 46827,
+    "rating": 6.5,
+    "genres": [
+      "History",
+      "Drama",
+      "TV Movie"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "TVMOVIE"
+    ],
+    "plot": "Into an era seething with war and revolution, a man comes with an incredible power to heal a nation...or destroy it. Based on the true story of one of"
+  },
+  {
+    "index": 783,
+    "name": "Lions for Lambs",
+    "year": 2007,
+    "movieId": 4515,
+    "rating": 6,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Three stories told simultaneously in ninety minutes of real time: a Republican Senator who's a presidential hopeful gives an hour-long interview to a"
+  },
+  {
+    "index": 784,
+    "name": "Mother Night",
+    "year": 1996,
+    "movieId": 20318,
+    "rating": 6.6,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "An American spy behind the lines during WWII serves as a Nazi propagandist, a role he cannot escape in his future life as he can never reveal his real"
+  },
+  {
+    "index": 785,
+    "name": "Maze",
+    "year": 2017,
+    "movieId": 464566,
+    "rating": 5.9,
+    "genres": [
+      "Drama",
+      "History",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Inspired by the true events of the infamous 1983 prison breakout of 38 IRA prisoners from HMP Maze, which was to become the biggest prison escape in E"
+  },
+  {
+    "index": 786,
+    "name": "Midway",
+    "year": 1976,
+    "movieId": 11422,
+    "rating": 6.6,
+    "genres": [
+      "Action",
+      "Drama",
+      "History",
+      "War"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "WAR"
+    ],
+    "plot": "This war drama depicts the U.S. and Japanese forces in the naval Battle of Midway, which became a turning point for Americans during World War II."
+  },
+  {
+    "index": 787,
+    "name": "Eight Men Out",
+    "year": 1988,
+    "movieId": 13554,
+    "rating": 6.9,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "Buck Weaver and Hap Felsch are young idealistic players on the Chicago White Sox, a pennant-winning team owned by Charles Comiskey -  a penny-pinching"
+  },
+  {
+    "index": 788,
+    "name": "Lady Jane",
+    "year": 1986,
+    "movieId": 21867,
+    "rating": 6.9,
+    "genres": [
+      "Drama",
+      "Romance",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "The death of King Henry VIII throws his kingdom into chaos because of succession disputes. His weak son, Edward, is on his deathbed. Anxious to keep E"
+  },
+  {
+    "index": 789,
+    "name": "American Pop",
+    "year": 1981,
+    "movieId": 29204,
+    "rating": 6.9,
+    "genres": [
+      "Animation",
+      "Music",
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "MUSIC"
+    ],
+    "plot": "The history of American popular music runs parallel with the history of a Russian Jewish immigrant family, with each male descendant possessing differ"
+  },
+  {
+    "index": 790,
+    "name": "Walker",
+    "year": 1987,
+    "movieId": 28448,
+    "rating": 6.4,
+    "genres": [
+      "Drama",
+      "History",
+      "Western"
+    ],
+    "foundIn": [
+      "HISTORY"
+    ],
+    "plot": "William Walker and his mercenary corps enter Nicaragua in the middle of the 19th century in order to install a new government by a coup d'etat."
+  },
+  {
+    "index": 791,
+    "name": "The Long Riders",
+    "year": 1980,
+    "movieId": 14729,
+    "rating": 6.6,
+    "genres": [
+      "Western",
+      "Action",
+      "Crime",
+      "Drama",
+      "History"
+    ],
+    "foundIn": [
+      "HISTORY",
+      "WESTERN"
+    ],
+    "plot": "The origins, exploits and the ultimate fate of the James gang is told in a sympathetic portrayal of the bank robbers made up of brothers who begin the"
+  },
+  {
+    "index": 792,
+    "name": "A Quiet Place Part II",
+    "year": 2021,
+    "movieId": 520763,
+    "rating": 7.4,
+    "genres": [
+      "Science Fiction",
+      "Thriller",
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR",
+      "SCIFI",
+      "THRILLER"
+    ],
+    "plot": "Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize that the c"
+  },
+  {
+    "index": 793,
+    "name": "Sweeney Todd: The Demon Barber of Fleet Street",
+    "year": 2007,
+    "movieId": 13885,
+    "rating": 7.2,
+    "genres": [
+      "Drama",
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "The infamous story of Benjamin Barker, a.k.a Sweeney Todd, who sets up a barber shop down in London which is the basis for a sinister partnership with"
+  },
+  {
+    "index": 794,
+    "name": "Pearl",
+    "year": 2022,
+    "movieId": 949423,
+    "rating": 7.2,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Trapped on her family’s isolated farm, Pearl must tend to her ailing father under the bitter and overbearing watch of her devout mother. Lusting for a"
+  },
+  {
+    "index": 795,
+    "name": "mother!",
+    "year": 2017,
+    "movieId": 381283,
+    "rating": 7,
+    "genres": [
+      "Drama",
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "A couple's relationship is tested when uninvited guests arrive at their home, disrupting their tranquil existence."
+  },
+  {
+    "index": 796,
+    "name": "Saw X",
+    "year": 2023,
+    "movieId": 951491,
+    "rating": 7.2,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "Between the events of 'Saw' and 'Saw II', a sick and desperate John Kramer travels to Mexico for a risky and experimental medical procedure in hopes o"
+  },
+  {
+    "index": 797,
+    "name": "Trick 'r Treat",
+    "year": 2007,
+    "movieId": 23202,
+    "rating": 7,
+    "genres": [
+      "Horror",
+      "Comedy"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Four interwoven stories that occur on Halloween: an everyday high school principal has a secret life as a serial killer; a college virgin might have j"
+  },
+  {
+    "index": 798,
+    "name": "Crimson Peak",
+    "year": 2015,
+    "movieId": 201085,
+    "rating": 6.7,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Romance"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "In the aftermath of a family tragedy, an aspiring author is torn between love for her childhood friend and the temptation of a mysterious outsider. Tr"
+  },
+  {
+    "index": 799,
+    "name": "Bram Stoker's Dracula",
+    "year": 1992,
+    "movieId": 6114,
+    "rating": 7.4,
+    "genres": [
+      "Romance",
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Centuries-old vampire Count Dracula travels to Victorian London, where he becomes obsessed with Mina Murray—the fiancée of his solicitor, Jonathan Har"
+  },
+  {
+    "index": 800,
+    "name": "Braindead",
+    "year": 1992,
+    "movieId": 763,
+    "rating": 7.4,
+    "genres": [
+      "Horror",
+      "Comedy"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "When a Sumatran rat-monkey bites Lionel Cosgrove's mother, she's transformed into a zombie and begins killing (and transforming) the entire town while"
+  },
+  {
+    "index": 801,
+    "name": "The Last Voyage of the Demeter",
+    "year": 2023,
+    "movieId": 635910,
+    "rating": 6.8,
+    "genres": [
+      "Horror",
+      "Fantasy"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "The crew of the merchant ship Demeter attempts to survive the ocean voyage from Carpathia to London as they are stalked each night by a merciless pres"
+  },
+  {
+    "index": 802,
+    "name": "Happy Death Day",
+    "year": 2017,
+    "movieId": 440021,
+    "rating": 6.7,
+    "genres": [
+      "Comedy",
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "Caught in a bizarre and terrifying time warp, college student Tree finds herself repeatedly reliving the day of her murder, ultimately realizing that"
+  },
+  {
+    "index": 803,
+    "name": "Carrie",
+    "year": 1976,
+    "movieId": 7340,
+    "rating": 7.3,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR",
+      "THRILLER"
+    ],
+    "plot": "Withdrawn and sensitive teenager Carrie White faces bullying from classmates and abuse from her fanatically pious mother. When she begins to suspect t"
+  },
+  {
+    "index": 804,
+    "name": "The Omen",
+    "year": 1976,
+    "movieId": 794,
+    "rating": 7.4,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Immediately after their miscarriage, the US diplomat Robert Thorn adopts the newborn Damien without the knowledge of his wife. Yet what he doesn’t kno"
+  },
+  {
+    "index": 805,
+    "name": "Scouts Guide to the Zombie Apocalypse",
+    "year": 2015,
+    "movieId": 273477,
+    "rating": 6.6,
+    "genres": [
+      "Comedy",
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Three scouts and lifelong friends join forces with one badass cocktail waitress to become the world’s most unlikely team of heroes.  When their peacef"
+  },
+  {
+    "index": 806,
+    "name": "As Above, So Below",
+    "year": 2014,
+    "movieId": 256274,
+    "rating": 6.7,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "When a team of explorers ventures into the uncharted maze of bones that lies beneath the streets of Paris, they embark on a journey into madness and t"
+  },
+  {
+    "index": 808,
+    "name": "Fresh",
+    "year": 2022,
+    "movieId": 787752,
+    "rating": 7,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Frustrated by scrolling dating apps only to end up on lame, tedious dates, Noa takes a chance by giving her number to the awkwardly charming Steve aft"
+  },
+  {
+    "index": 809,
+    "name": "The Forever Purge",
+    "year": 2021,
+    "movieId": 602223,
+    "rating": 6.9,
+    "genres": [
+      "Action",
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "All the rules are broken as a sect of lawless marauders decides that the annual Purge does not stop at daybreak and instead should never end as they c"
+  },
+  {
+    "index": 810,
+    "name": "The Shallows",
+    "year": 2016,
+    "movieId": 332567,
+    "rating": 6.3,
+    "genres": [
+      "Horror",
+      "Drama",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "While surfing on a secluded beach, Nancy finds herself in the feeding grounds of a great white shark. Though stranded only 200 yards from shore, survi"
+  },
+  {
+    "index": 811,
+    "name": "The Skeleton Key",
+    "year": 2005,
+    "movieId": 9913,
+    "rating": 6.6,
+    "genres": [
+      "Drama",
+      "Horror",
+      "Mystery",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "A hospice nurse working at a spooky New Orleans plantation home finds herself entangled in a mystery involving the house's dark past."
+  },
+  {
+    "index": 812,
+    "name": "Beast",
+    "year": 2022,
+    "movieId": 760741,
+    "rating": 6.5,
+    "genres": [
+      "Thriller",
+      "Action",
+      "Horror",
+      "Adventure"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "A recently widowed man and his two teenage daughters travel to a game reserve in South Africa. However, their journey of healing soon turns into a fig"
+  },
+  {
+    "index": 813,
+    "name": "Poltergeist",
+    "year": 1982,
+    "movieId": 609,
+    "rating": 7.2,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "The Freelings' suburban home becomes the center of paranormal activity that opens a portal to the 'other side'. With help, they must cross over to get"
+  },
+  {
+    "index": 814,
+    "name": "Dracula Untold",
+    "year": 2014,
+    "movieId": 49017,
+    "rating": 6.5,
+    "genres": [
+      "Horror",
+      "Action",
+      "Fantasy"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Vlad Tepes is a great hero, but when he learns the Sultan is preparing for battle and needs to form an army of 1,000 boys, he vows to find a way to pr"
+  },
+  {
+    "index": 815,
+    "name": "The Purge",
+    "year": 2013,
+    "movieId": 158015,
+    "rating": 6.2,
+    "genres": [
+      "Science Fiction",
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR",
+      "SCIFI"
+    ],
+    "plot": "Given the country's overcrowded prisons, the U.S. government begins to allow 12-hour periods of time in which all illegal activity is legal. During on"
+  },
+  {
+    "index": 816,
+    "name": "The Hills Have Eyes",
+    "year": 2006,
+    "movieId": 9792,
+    "rating": 6.5,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Based on Wes Craven's 1977 suspenseful cult classic, The Hills Have Eyes is the story of a family road trip that goes terrifyingly awry when the trave"
+  },
+  {
+    "index": 817,
+    "name": "Totally Killer",
+    "year": 2023,
+    "movieId": 974931,
+    "rating": 6.8,
+    "genres": [
+      "Horror",
+      "Comedy",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "HORROR",
+      "SCIFI"
+    ],
+    "plot": "When the infamous \"Sweet Sixteen Killer\" returns 35 years after his first murder spree to claim another victim, 17-year-old Jamie accidentally travels"
+  },
+  {
+    "index": 818,
+    "name": "Event Horizon",
+    "year": 1997,
+    "movieId": 8413,
+    "rating": 6.6,
+    "genres": [
+      "Horror",
+      "Science Fiction",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "In 2047, a group of astronauts are sent to investigate and salvage the starship Event Horizon which disappeared mysteriously seven years before on its"
+  },
+  {
+    "index": 819,
+    "name": "Goosebumps",
+    "year": 2015,
+    "movieId": 257445,
+    "rating": 6.3,
+    "genres": [
+      "Adventure",
+      "Horror",
+      "Comedy"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "After moving to a small town, Zach Cooper finds a silver lining when he meets next door neighbor Hannah, the daughter of bestselling Goosebumps series"
+  },
+  {
+    "index": 820,
+    "name": "Final Destination",
+    "year": 2000,
+    "movieId": 9532,
+    "rating": 6.6,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "After a teenager has a terrifying vision of him and his friends dying in a plane crash, he prevents the accident only to have Death hunt them down, on"
+  },
+  {
+    "index": 821,
+    "name": "Life",
+    "year": 2017,
+    "movieId": 395992,
+    "rating": 6.4,
+    "genres": [
+      "Horror",
+      "Science Fiction",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR",
+      "SCIFI"
+    ],
+    "plot": "The six-member crew of the International Space Station is tasked with studying a sample from Mars that may be the first proof of extra-terrestrial lif"
+  },
+  {
+    "index": 822,
+    "name": "Underwater",
+    "year": 2020,
+    "movieId": 443791,
+    "rating": 6.3,
+    "genres": [
+      "Horror",
+      "Science Fiction",
+      "Action",
+      "Adventure"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "After an earthquake destroys their underwater station, six researchers must navigate two miles along the dangerous, unknown depths of the ocean floor"
+  },
+  {
+    "index": 823,
+    "name": "Escape Room",
+    "year": 2019,
+    "movieId": 522681,
+    "rating": 6.5,
+    "genres": [
+      "Horror",
+      "Thriller",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Six strangers find themselves in circumstances beyond their control, and must use their wits to survive."
+  },
+  {
+    "index": 824,
+    "name": "No One Will Save You",
+    "year": 2023,
+    "movieId": 820609,
+    "rating": 6.7,
+    "genres": [
+      "Horror",
+      "Science Fiction"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "A lonely woman battles extraterrestrials who threaten her future while forcing her to face her past."
+  },
+  {
+    "index": 825,
+    "name": "The Lost Boys",
+    "year": 1987,
+    "movieId": 1547,
+    "rating": 7.1,
+    "genres": [
+      "Horror",
+      "Comedy",
+      "Thriller",
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "HORROR",
+      "ROMANCE"
+    ],
+    "plot": "When an unsuspecting town newcomer is drawn to local blood fiends, the Frog brothers and other unlikely heroes gear up to rescue him."
+  },
+  {
+    "index": 826,
+    "name": "Lights Out",
+    "year": 2016,
+    "movieId": 345911,
+    "rating": 6.4,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Rebecca must unlock the terror behind her little brother's experiences that once tested her sanity, bringing her face to face with a supernatural spir"
+  },
+  {
+    "index": 827,
+    "name": "In the Mouth of Madness",
+    "year": 1995,
+    "movieId": 2654,
+    "rating": 7.2,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "An insurance investigator visits a small town while looking into the strange disappearance of a popular horror novelist. He soon finds that the impact"
+  },
+  {
+    "index": 828,
+    "name": "Malignant",
+    "year": 2021,
+    "movieId": 619778,
+    "rating": 6.8,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "Madison is paralyzed by shocking visions of grisly murders, and her torment worsens as she discovers that these waking dreams are in fact terrifying r"
+  },
+  {
+    "index": 829,
+    "name": "The Nun",
+    "year": 2018,
+    "movieId": 439079,
+    "rating": 5.9,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "A priest with a dark past and a novice nearing her final vows are sent by the Vatican to Romania to investigate a nun's death and face a demonic force"
+  },
+  {
+    "index": 830,
+    "name": "Wrong Turn",
+    "year": 2003,
+    "movieId": 9902,
+    "rating": 6.4,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Chris crashes into a carload of other young people, and the group of stranded motorists is soon lost in the woods of West Virginia, where they're hunt"
+  },
+  {
+    "index": 831,
+    "name": "Pandorum",
+    "year": 2009,
+    "movieId": 19898,
+    "rating": 6.6,
+    "genres": [
+      "Action",
+      "Horror",
+      "Mystery",
+      "Science Fiction",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Two crew members wake up on an abandoned spacecraft with no idea who they are, how long they've been asleep, or what their mission is. The two soon di"
+  },
+  {
+    "index": 832,
+    "name": "Cobweb",
+    "year": 2023,
+    "movieId": 709631,
+    "rating": 6.5,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Eight year old Peter is plagued by a mysterious, constant tapping from inside his bedroom wall—one that his parents insist is all in his imagination."
+  },
+  {
+    "index": 833,
+    "name": "Saw VI",
+    "year": 2009,
+    "movieId": 22804,
+    "rating": 6.3,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Special Agent Strahm is dead, and Detective Hoffman has emerged as the unchallenged successor to Jigsaw's legacy. However, when the FBI draws closer t"
+  },
+  {
+    "index": 834,
+    "name": "The Strangers: Chapter 2",
+    "year": 2025,
+    "movieId": 1010756,
+    "rating": 6,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR",
+      "THRILLER"
+    ],
+    "plot": "When The Strangers learn that one of their victims, Maya, is still alive, they return to finish what they’ve started."
+  },
+  {
+    "index": 835,
+    "name": "The Purge: Election Year",
+    "year": 2016,
+    "movieId": 316727,
+    "rating": 6.4,
+    "genres": [
+      "Action",
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Two years after choosing not to kill the man who killed his son, former police sergeant Leo Barnes has become head of security for Senator Charlene Ro"
+  },
+  {
+    "index": 836,
+    "name": "Saw II",
+    "year": 2005,
+    "movieId": 215,
+    "rating": 6.6,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "The chilling and relentless Jigsaw killer returns to terrorize the city once again. When a gruesome murder victim emerges with unmistakable traces of"
+  },
+  {
+    "index": 837,
+    "name": "The Ring",
+    "year": 2002,
+    "movieId": 565,
+    "rating": 6.7,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "Rachel Keller is a journalist investigating a videotape that may have killed four teenagers. There is an urban legend about this tape: the viewer will"
+  },
+  {
+    "index": 838,
+    "name": "Countdown",
+    "year": 2019,
+    "movieId": 599975,
+    "rating": 6.2,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "A young nurse downloads an app that tells her she only has three days to live. With time ticking away and a mysterious figure haunting her, she must f"
+  },
+  {
+    "index": 839,
+    "name": "Invasion of the Body Snatchers",
+    "year": 1978,
+    "movieId": 11850,
+    "rating": 7.2,
+    "genres": [
+      "Science Fiction",
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "The residents of San Francisco are becoming drone-like shadows of their former selves, and as the phenomenon spreads, two Department of Health workers"
+  },
+  {
+    "index": 840,
+    "name": "Devil",
+    "year": 2010,
+    "movieId": 44040,
+    "rating": 6.1,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "A group of people are trapped in an elevator high above Philadelphia, and one of them is the devil."
+  },
+  {
+    "index": 841,
+    "name": "The Uninvited",
+    "year": 2009,
+    "movieId": 14254,
+    "rating": 6.5,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Anna returns home after spending time in a psychiatric facility following her mother's tragic death and discovers that her mother's former nurse, Rach"
+  },
+  {
+    "index": 842,
+    "name": "Final Destination 5",
+    "year": 2011,
+    "movieId": 55779,
+    "rating": 6.1,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "Death is just as omnipresent as ever, and is unleashed after one man’s premonition saves a group of coworkers from a terrifying suspension bridge coll"
+  },
+  {
+    "index": 843,
+    "name": "The Exorcist",
+    "year": 1973,
+    "movieId": 9552,
+    "rating": 7.7,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "When a mysterious entity possesses a young girl, her mother seeks the help of two Catholic priests to save her life."
+  },
+  {
+    "index": 844,
+    "name": "Drag Me to Hell",
+    "year": 2009,
+    "movieId": 16871,
+    "rating": 6.5,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "After denying a woman the extension she needs to keep her home, loan officer Christine Brown sees her once-promising life take a startling turn for th"
+  },
+  {
+    "index": 845,
+    "name": "The First Purge",
+    "year": 2018,
+    "movieId": 442249,
+    "rating": 6,
+    "genres": [
+      "Action",
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "To push the crime rate below one percent for the rest of the year, the New Founding Fathers of America test a sociological theory that vents aggressio"
+  },
+  {
+    "index": 846,
+    "name": "Case 39",
+    "year": 2009,
+    "movieId": 28355,
+    "rating": 6.3,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "In her many years as a social worker, Emily Jenkins believes she has seen it all, until she meets 10-year-old Lilith and the girl's cruel parents. Emi"
+  },
+  {
+    "index": 847,
+    "name": "The Taking of Deborah Logan",
+    "year": 2014,
+    "movieId": 297608,
+    "rating": 6.5,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "What starts as a poignant medical documentary about Deborah Logan's descent into Alzheimer's disease and her daughter's struggles as caregiver degener"
+  },
+  {
+    "index": 848,
+    "name": "Final Destination 3",
+    "year": 2006,
+    "movieId": 9286,
+    "rating": 6.1,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "High school senior Wendy's premonition of a deadly rollercoaster ride saves her life and a lucky few, but not from death itself — which seeks out thos"
+  },
+  {
+    "index": 849,
+    "name": "Warm Bodies",
+    "year": 2013,
+    "movieId": 82654,
+    "rating": 6.5,
+    "genres": [
+      "Horror",
+      "Comedy",
+      "Romance"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "After a zombie becomes involved with the girlfriend of one of his victims, their romance sets in motion a sequence of events that might transform the"
+  },
+  {
+    "index": 850,
+    "name": "Insidious: The Last Key",
+    "year": 2018,
+    "movieId": 406563,
+    "rating": 6.3,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Parapsychologist Elise Rainier and her team travel to Five Keys, NM, to investigate a man’s claim of a haunting. Terror soon strikes when Rainier real"
+  },
+  {
+    "index": 851,
+    "name": "The Poughkeepsie Tapes",
+    "year": 2007,
+    "movieId": 38410,
+    "rating": 6.6,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Crime",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "When hundreds of videotapes showing torture, murder and dismemberment are found in an abandoned house, they reveal a serial killer's decade-long reign"
+  },
+  {
+    "index": 852,
+    "name": "Saw III",
+    "year": 2006,
+    "movieId": 214,
+    "rating": 6.4,
+    "genres": [
+      "Horror",
+      "Thriller",
+      "Crime"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Jigsaw has disappeared. Along with his new apprentice Amanda, the puppet-master behind the cruel, intricate games that have terrified a community and"
+  },
+  {
+    "index": 853,
+    "name": "Dead Silence",
+    "year": 2007,
+    "movieId": 14001,
+    "rating": 6.4,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Jamie returns to his hometown in search of answers to his wife's murder, which occurred after receiving a weird package containing a ventriloquist dum"
+  },
+  {
+    "index": 855,
+    "name": "Christine",
+    "year": 1983,
+    "movieId": 8769,
+    "rating": 6.9,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Nerdy high schooler Arnie Cunningham falls for Christine, a rusty 1958 Plymouth Fury, and becomes obsessed with restoring the classic automobile to he"
+  },
+  {
+    "index": 856,
+    "name": "30 Days of Night",
+    "year": 2007,
+    "movieId": 4513,
+    "rating": 6.4,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "This is the story of an isolated Alaskan town that is plunged into darkness for a month each year when the sun sinks below the horizon. As the last ra"
+  },
+  {
+    "index": 857,
+    "name": "Saw 3D",
+    "year": 2010,
+    "movieId": 41439,
+    "rating": 6,
+    "genres": [
+      "Horror",
+      "Crime"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "As a deadly battle rages over Jigsaw's brutal legacy, a group of Jigsaw survivors gathers to seek the support of self-help guru and fellow survivor Bo"
+  },
+  {
+    "index": 858,
+    "name": "The Texas Chainsaw Massacre: The Beginning",
+    "year": 2006,
+    "movieId": 10781,
+    "rating": 6.2,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Chrissie and her friends set out on a road trip for a final fling before one is shipped off to Vietnam. Along the way, bikers harass the foursome and"
+  },
+  {
+    "index": 859,
+    "name": "Hellboy",
+    "year": 2019,
+    "movieId": 456740,
+    "rating": 5.6,
+    "genres": [
+      "Fantasy",
+      "Horror",
+      "Action",
+      "Adventure"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Hellboy comes to England, where he must defeat Nimue, Merlin's consort and the Blood Queen. But their battle will bring about the end of the world, a"
+  },
+  {
+    "index": 860,
+    "name": "Child's Play",
+    "year": 1988,
+    "movieId": 10585,
+    "rating": 6.7,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "After being shot in a toy store, a serial killer transfers his soul into a Good Guy doll. A mother then gifts it to her 6-year old son Andy, which unl"
+  },
+  {
+    "index": 861,
+    "name": "The Boogeyman",
+    "year": 2023,
+    "movieId": 532408,
+    "rating": 6.4,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Still reeling from the tragic death of their mother, a teenage girl and her younger sister find themselves plagued by a sadistic presence in their hou"
+  },
+  {
+    "index": 862,
+    "name": "Hide and Seek",
+    "year": 2005,
+    "movieId": 11096,
+    "rating": 6.3,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "David Callaway tries to piece together his life in the wake of his wife's suicide and has been left to raise his nine-year-old daughter, Emily on his"
+  },
+  {
+    "index": 863,
+    "name": "Saw IV",
+    "year": 2007,
+    "movieId": 663,
+    "rating": 6.2,
+    "genres": [
+      "Horror",
+      "Thriller",
+      "Crime"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Despite Jigsaw's death, and in order to save the lives of two of his colleagues, Lieutenant Rigg is forced to take part in a new game, which promises"
+  },
+  {
+    "index": 864,
+    "name": "Bride of Chucky",
+    "year": 1998,
+    "movieId": 11932,
+    "rating": 6.1,
+    "genres": [
+      "Horror",
+      "Comedy"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Chucky is reborn when his old flame, Tiffany, rescues his battered doll parts from a police impound."
+  },
+  {
+    "index": 865,
+    "name": "Jigsaw",
+    "year": 2017,
+    "movieId": 298250,
+    "rating": 6.2,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "Law enforcement finds itself chasing the ghost of a man dead for over a decade, embroiled in a diabolical new game that's only just begun."
+  },
+  {
+    "index": 866,
+    "name": "The Mummy",
+    "year": 2017,
+    "movieId": 282035,
+    "rating": 5.5,
+    "genres": [
+      "Fantasy",
+      "Thriller",
+      "Action",
+      "Adventure",
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Though safely entombed in a crypt deep beneath the unforgiving desert, an ancient queen whose destiny was unjustly taken from her is awakened in our c"
+  },
+  {
+    "index": 867,
+    "name": "Land of the Dead",
+    "year": 2005,
+    "movieId": 11683,
+    "rating": 6.2,
+    "genres": [
+      "Horror",
+      "Science Fiction",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "The living dead have taken over the world, and the remaining humans live in a walled city to protect themselves as they cope with the situation."
+  },
+  {
+    "index": 868,
+    "name": "Vicious",
+    "year": 2025,
+    "movieId": 1251717,
+    "rating": 6,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "When Polly receives a mysterious box, it comes with one rule: place inside something she needs, something she hates, and something she loves. If she d"
+  },
+  {
+    "index": 869,
+    "name": "The Cell",
+    "year": 2000,
+    "movieId": 8843,
+    "rating": 6.3,
+    "genres": [
+      "Horror",
+      "Science Fiction",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "A psychotherapist journeys inside a comatose serial killer in the hopes of saving his latest victim."
+  },
+  {
+    "index": 870,
+    "name": "Species III",
+    "year": 2005,
+    "movieId": 9711,
+    "rating": 5.2,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "After she delivers her child in an ambulance, alien Eve is killed by a half-breed. Fortunately, Dr. Abbot scoops up the baby alien and escapes. In tim"
+  },
+  {
+    "index": 871,
+    "name": "I Saw the TV Glow",
+    "year": 2024,
+    "movieId": 858017,
+    "rating": 6.1,
+    "genres": [
+      "Drama",
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Teenager Owen is just trying to make it through life in the suburbs when his classmate Maddy introduces him to a mysterious TV show — a vision of a su"
+  },
+  {
+    "index": 872,
+    "name": "Jeepers Creepers 2",
+    "year": 2003,
+    "movieId": 11351,
+    "rating": 6.2,
+    "genres": [
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "When their bus is crippled on the side of a deserted road, a team of high school athletes discover an opponent they cannot defeat – and may not surviv"
+  },
+  {
+    "index": 873,
+    "name": "Thir13en Ghosts",
+    "year": 2001,
+    "movieId": 9378,
+    "rating": 6.3,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Arthur and his two children inherit his uncle's estate: a glass house that serves as a prison to twelve ghosts. When the family, accompanied by a nann"
+  },
+  {
+    "index": 874,
+    "name": "Friday the 13th",
+    "year": 2009,
+    "movieId": 13207,
+    "rating": 5.8,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "A group of young adults visit a boarded up campsite named Crystal Lake where they soon encounter the mysterious Jason Voorhees and his deadly intentio"
+  },
+  {
+    "index": 875,
+    "name": "Paranormal Activity",
+    "year": 2007,
+    "movieId": 23827,
+    "rating": 6,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "After a young, middle-class couple moves into what seems like a typical suburban house, they become increasingly disturbed by a presence that may or m"
+  },
+  {
+    "index": 876,
+    "name": "What Lies Beneath",
+    "year": 2000,
+    "movieId": 2655,
+    "rating": 6.4,
+    "genres": [
+      "Drama",
+      "Horror",
+      "Mystery",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR",
+      "MYSTERY"
+    ],
+    "plot": "When Claire Spencer starts hearing ghostly voices and seeing spooky images, she wonders if an otherworldly spirit is trying to contact her. All the wh"
+  },
+  {
+    "index": 877,
+    "name": "Fright Night",
+    "year": 2011,
+    "movieId": 58151,
+    "rating": 6.2,
+    "genres": [
+      "Horror",
+      "Comedy"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "A teenager suspects his new neighbour is a vampire. Unable to convince anyone, he tries to enlist the help of a self-proclaimed vampire hunter and mag"
+  },
+  {
+    "index": 878,
+    "name": "Spiral: From the Book of Saw",
+    "year": 2021,
+    "movieId": 602734,
+    "rating": 5.9,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Working in the shadow of an esteemed police veteran, brash Detective Ezekiel “Zeke” Banks and his rookie partner take charge of a grisly investigation"
+  },
+  {
+    "index": 879,
+    "name": "Vivarium",
+    "year": 2019,
+    "movieId": 458305,
+    "rating": 6,
+    "genres": [
+      "Science Fiction",
+      "Thriller",
+      "Mystery",
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "A young woman and her fiancé are in search of the perfect starter home. After following a mysterious real estate agent to a new housing development, t"
+  },
+  {
+    "index": 880,
+    "name": "Red Riding Hood",
+    "year": 2011,
+    "movieId": 49730,
+    "rating": 6,
+    "genres": [
+      "Thriller",
+      "Drama",
+      "Fantasy",
+      "Mystery",
+      "Horror",
+      "Romance"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Valerie is in love with a brooding outsider, Peter, but her parents have arranged for her to marry another man. Unwilling to lose each other, Valerie"
+  },
+  {
+    "index": 881,
+    "name": "A Nightmare on Elm Street: The Dream Child",
+    "year": 1989,
+    "movieId": 10160,
+    "rating": 5.4,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "The pregnant Alice finds Freddy Krueger striking through the sleeping mind of her unborn child, hoping to be reborn into the real world."
+  },
+  {
+    "index": 882,
+    "name": "AVP: Alien vs. Predator",
+    "year": 2004,
+    "movieId": 395,
+    "rating": 5.9,
+    "genres": [
+      "Adventure",
+      "Science Fiction",
+      "Action",
+      "Horror"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "When scientists discover something near Antarctica that appears to be a buried Pyramid, they send a research team out to investigate. Little do they k"
+  },
+  {
+    "index": 883,
+    "name": "The Hole",
+    "year": 2001,
+    "movieId": 467,
+    "rating": 6.2,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "Four teenagers at a British private school secretly uncover and explore the depths of a sealed underground hole created decades ago as a possible bomb"
+  },
+  {
+    "index": 884,
+    "name": "Burning Bright",
+    "year": 2010,
+    "movieId": 39957,
+    "rating": 6.3,
+    "genres": [
+      "Drama",
+      "Horror",
+      "Thriller"
+    ],
+    "foundIn": [
+      "HORROR"
+    ],
+    "plot": "After her lousy stepfather steals her savings to buy a vicious tiger, Kelly loses all hope of going to college. But Kelly's situation worsens when a h"
+  },
+  {
+    "index": 885,
+    "name": "Karate Kid: Legends",
+    "year": 2025,
+    "movieId": 1011477,
+    "rating": 7.1,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "foundIn": [
+      "MARTIAL_ARTS"
+    ],
+    "plot": "After a family tragedy, kung fu prodigy Li Fong is uprooted from his home in Beijing and forced to move to New York City with his mother. When a new f"
+  },
+  {
+    "index": 889,
+    "name": "Death Warrant",
+    "year": 1990,
+    "movieId": 17466,
+    "rating": 6.2,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller",
+      "Mystery"
+    ],
+    "foundIn": [
+      "MARTIAL_ARTS"
+    ],
+    "plot": "Canadian policeman Louis Burke is assigned in a jail to investigate the murders of prisoners and jailors. While there, Louis, using his outstanding ma"
+  },
+  {
+    "index": 890,
+    "name": "Walk the Line",
+    "year": 2005,
+    "movieId": 69,
+    "rating": 7.5,
+    "genres": [
+      "Drama",
+      "Music",
+      "Romance"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A chronicle of country music legend Johnny Cash's life, from his early days on an Arkansas cotton farm to his rise to fame with Sun Records in Memphis"
+  },
+  {
+    "index": 891,
+    "name": "Billy Elliot",
+    "year": 2000,
+    "movieId": 71,
+    "rating": 7.6,
+    "genres": [
+      "Drama",
+      "Comedy",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "County Durham, England, 1984. The miners' strike has started and the police have started coming up from Bethnal Green, starting a class war with the l"
+  },
+  {
+    "index": 892,
+    "name": "Moulin Rouge!",
+    "year": 2001,
+    "movieId": 824,
+    "rating": 7.5,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A celebration of love and creative inspiration takes place in the infamous, gaudy and glamorous Parisian nightclub, at the cusp of the 20th century. A"
+  },
+  {
+    "index": 893,
+    "name": "I Can Only Imagine",
+    "year": 2018,
+    "movieId": 470878,
+    "rating": 7.5,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Growing up in Greenville, Texas, Bart Millard suffers physical and emotional abuse at the hands of his father, Arthur. When Arthur becomes terminally"
+  },
+  {
+    "index": 894,
+    "name": "Rocketman",
+    "year": 2019,
+    "movieId": 504608,
+    "rating": 7.3,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "The story of Elton John's life, from his years as a prodigy at the Royal Academy of Music through his influential and enduring musical partnership wit"
+  },
+  {
+    "index": 895,
+    "name": "The Phantom of the Opera at the Royal Albert Hall",
+    "year": 2011,
+    "movieId": 76115,
+    "rating": 8.4,
+    "genres": [
+      "Music",
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A disfigured musical genius, hidden away in the Paris Opera House, terrorises the opera company for the unwitting benefit of a young protégée whom he"
+  },
+  {
+    "index": 896,
+    "name": "Pink Floyd: The Wall",
+    "year": 1982,
+    "movieId": 12104,
+    "rating": 7.9,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A troubled rock star descends into madness in the midst of his physical and social isolation from everyone."
+  },
+  {
+    "index": 897,
+    "name": "A Cinderella Story: If the Shoe Fits",
+    "year": 2016,
+    "movieId": 407655,
+    "rating": 7.2,
+    "genres": [
+      "Comedy",
+      "Family",
+      "Fantasy",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A contemporary musical version of the classic Cinderella story in which the servant step daughter hope to compete in a musical competition for a famou"
+  },
+  {
+    "index": 898,
+    "name": "Step Up Revolution",
+    "year": 2012,
+    "movieId": 85446,
+    "rating": 6.9,
+    "genres": [
+      "Music",
+      "Drama",
+      "Romance"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Emily arrives in Miami with aspirations to become a professional dancer. She sparks with Sean, the leader of a dance crew whose neighborhood is threat"
+  },
+  {
+    "index": 899,
+    "name": "Scooby-Doo! and the Goblin King",
+    "year": 2008,
+    "movieId": 12903,
+    "rating": 7.6,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Comedy",
+      "Family",
+      "Fantasy",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Scooby-Doo and Shaggy must go into the underworld ruled by The Goblin King in order to stop a mortal named The Amazing Krudsky who wants power and is"
+  },
+  {
+    "index": 900,
+    "name": "Michael Jackson: Live in Bucharest - The Dangerous Tour",
+    "year": 1992,
+    "movieId": 20227,
+    "rating": 8.6,
+    "genres": [
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Michael Jackson's \"Dangerous Tour\" still sets the bar high for every touring artist today. Outdoing himself with the \"Bad Tour\", which was already con"
+  },
+  {
+    "index": 901,
+    "name": "August Rush",
+    "year": 2007,
+    "movieId": 5123,
+    "rating": 7.4,
+    "genres": [
+      "Family",
+      "Drama",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Lyla and Louis, a singer and a musician, fall in love, but are soon compelled to separate. Lyla is forced to give up her newborn but unknown to her, h"
+  },
+  {
+    "index": 902,
+    "name": "One Man Band",
+    "year": 2005,
+    "movieId": 13933,
+    "rating": 7.2,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Family",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "With one coin to make a wish at the piazza fountain, a peasant girl encounters two competing street performers who'd prefer the coin find its way into"
+  },
+  {
+    "index": 903,
+    "name": "TÁR",
+    "year": 2022,
+    "movieId": 817758,
+    "rating": 7.1,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "As celebrated conductor Lydia Tár starts rehearsals for a career-defining symphony, the consequences of her past choices begin to echo in the present."
+  },
+  {
+    "index": 904,
+    "name": "High Fidelity",
+    "year": 2000,
+    "movieId": 243,
+    "rating": 7.1,
+    "genres": [
+      "Drama",
+      "Comedy",
+      "Romance",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "After his long-time girlfriend dumps him, a thirty-year-old record store owner seeks to understand why he is unlucky in love while recounting his \"top"
+  },
+  {
+    "index": 905,
+    "name": "Step Up All In",
+    "year": 2014,
+    "movieId": 243683,
+    "rating": 6.8,
+    "genres": [
+      "Romance",
+      "Drama",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "All-stars from previous installments convene in glittering Las Vegas, battling for a victory that could define their dreams and their careers."
+  },
+  {
+    "index": 906,
+    "name": "Fantasia 2000",
+    "year": 2000,
+    "movieId": 49948,
+    "rating": 7,
+    "genres": [
+      "Animation",
+      "Family",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Blending lively music and brilliant animation, this sequel to the original 'Fantasia' restores 'The Sorcerer's Apprentice' and adds seven new shorts."
+  },
+  {
+    "index": 907,
+    "name": "Marry Me",
+    "year": 2022,
+    "movieId": 615904,
+    "rating": 6.6,
+    "genres": [
+      "Romance",
+      "Comedy",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "After finding out about her fiancé's cheating ways, a pop superstar impulsively marries a total stranger. They must soon decide if two people from suc"
+  },
+  {
+    "index": 908,
+    "name": "The High Note",
+    "year": 2020,
+    "movieId": 606679,
+    "rating": 7,
+    "genres": [
+      "Romance",
+      "Comedy",
+      "Music",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Set in the dazzling world of the LA music scene comes the story of Grace Davis, a superstar whose talent, and ego, have reached unbelievable heights."
+  },
+  {
+    "index": 909,
+    "name": "John Mulaney & The Sack Lunch Bunch",
+    "year": 2019,
+    "movieId": 650073,
+    "rating": 7.1,
+    "genres": [
+      "Comedy",
+      "Family",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "John Mulaney and his kid pals tackle existential topics for all ages with catchy songs, comedy sketches and special guests in a nostalgic variety spec"
+  },
+  {
+    "index": 910,
+    "name": "Tenacious D in The Pick of Destiny",
+    "year": 2006,
+    "movieId": 2179,
+    "rating": 6.8,
+    "genres": [
+      "Comedy",
+      "Music",
+      "Fantasy",
+      "Adventure"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "In Venice Beach, naive Midwesterner JB bonds with local slacker KG and they form the rock band Tenacious D. Setting out to become the world's greatest"
+  },
+  {
+    "index": 911,
+    "name": "Hannah Montana: The Movie",
+    "year": 2009,
+    "movieId": 18126,
+    "rating": 6.6,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Family",
+      "Music",
+      "Romance"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "When Miley Stewart (aka pop-star Hannah Montana) gets too caught up in the superstar celebrity lifestyle, her dad decides it's time for a total change"
+  },
+  {
+    "index": 912,
+    "name": "Crossroads",
+    "year": 1986,
+    "movieId": 15392,
+    "rating": 7.4,
+    "genres": [
+      "Drama",
+      "Music",
+      "Mystery",
+      "Romance"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A wanna-be blues guitar virtuoso seeks a long-lost song by legendary musician, Robert Johnson."
+  },
+  {
+    "index": 913,
+    "name": "Hedwig and the Angry Inch",
+    "year": 2001,
+    "movieId": 13403,
+    "rating": 7.4,
+    "genres": [
+      "Comedy",
+      "Music",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Raised a boy in East Berlin, Hedwig undergoes a personal transformation in order to emigrate to the U.S., where she reinvents herself as an 'internati"
+  },
+  {
+    "index": 914,
+    "name": "Take the Lead",
+    "year": 2006,
+    "movieId": 12763,
+    "rating": 6.9,
+    "genres": [
+      "Drama",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A former professional dancer volunteers to teach dance in the New York public school system and, while his background first clashes with his students'"
+  },
+  {
+    "index": 915,
+    "name": "High School Musical 3: Senior Year",
+    "year": 2008,
+    "movieId": 11887,
+    "rating": 6.5,
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Drama",
+      "Family",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "As seniors in high school, Troy and Gabriella struggle with the idea of being separated from one another as college approaches. Along with the rest of"
+  },
+  {
+    "index": 916,
+    "name": "Honey: Rise Up and Dance",
+    "year": 2018,
+    "movieId": 515114,
+    "rating": 6.9,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Street dancer Skyler comes out of the shadow of her trained dancer sister, Tosha, & joins a dance competition with the Honey dance studio; the prize i"
+  },
+  {
+    "index": 917,
+    "name": "Scooby-Doo! and the Legend of the Vampire",
+    "year": 2003,
+    "movieId": 30074,
+    "rating": 7.1,
+    "genres": [
+      "Family",
+      "Animation",
+      "Comedy",
+      "Fantasy",
+      "Music",
+      "Mystery"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "The Yowie Yahoo starts kidnapping musicians at a concert attended by Scooby and the gang in Vampire Rock, Australia."
+  },
+  {
+    "index": 918,
+    "name": "Jersey Boys",
+    "year": 2014,
+    "movieId": 209451,
+    "rating": 6.8,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A musical biopic of the Four Seasons—the rise, the tough times and personal clashes, and the ultimate triumph of a group of friends whose music became"
+  },
+  {
+    "index": 919,
+    "name": "The Bob's Burgers Movie",
+    "year": 2022,
+    "movieId": 504827,
+    "rating": 7,
+    "genres": [
+      "Animation",
+      "Music",
+      "Comedy",
+      "Crime",
+      "Mystery"
+    ],
+    "foundIn": [
+      "MUSIC",
+      "MYSTERY"
+    ],
+    "plot": "When a ruptured water main creates an enormous sinkhole right in front of Bob's Burgers, it blocks the entrance indefinitely and ruins the Belchers’ p"
+  },
+  {
+    "index": 920,
+    "name": "Maestro",
+    "year": 2023,
+    "movieId": 523607,
+    "rating": 6.3,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A towering and fearless love story chronicling the lifelong relationship between Leonard Bernstein and Felicia Montealegre Cohn Bernstein. A love lett"
+  },
+  {
+    "index": 921,
+    "name": "Drumline",
+    "year": 2002,
+    "movieId": 13497,
+    "rating": 6.9,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Comedy",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A talented street drummer from Harlem enrolls in a Southern university, expecting to lead its marching band's drumline to victory. He initially flound"
+  },
+  {
+    "index": 922,
+    "name": "Black Is King",
+    "year": 2020,
+    "movieId": 719643,
+    "rating": 7.2,
+    "genres": [
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "This visual album from Beyoncé reimagines the lessons of \"The Lion King\" (2019) for today's young kings and queens in search of their own crowns."
+  },
+  {
+    "index": 923,
+    "name": "The Muppets",
+    "year": 2011,
+    "movieId": 64328,
+    "rating": 6.7,
+    "genres": [
+      "Family",
+      "Comedy",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "When Kermit the Frog and the Muppets learn that their beloved theater is slated for demolition, a sympathetic human, Gary, and his puppet brother, Wal"
+  },
+  {
+    "index": 924,
+    "name": "Hair",
+    "year": 1979,
+    "movieId": 10654,
+    "rating": 7.3,
+    "genres": [
+      "Music",
+      "Drama",
+      "Comedy"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Upon receiving his draft notice and leaving his family ranch in Oklahoma, Claude heads to New York and befriends a tribe of long-haired hippies on his"
+  },
+  {
+    "index": 925,
+    "name": "Walk Hard: The Dewey Cox Story",
+    "year": 2007,
+    "movieId": 6575,
+    "rating": 6.6,
+    "genres": [
+      "Comedy",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Following a childhood tragedy, Dewey Cox follows a long and winding road to music stardom. Dewey perseveres through changing musical styles, an addict"
+  },
+  {
+    "index": 926,
+    "name": "That Thing You Do!",
+    "year": 1996,
+    "movieId": 9591,
+    "rating": 6.9,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A Pennsylvania band scores a hit in 1964 and rides the star-making machinery as long as it can, with lots of help from its manager. But behind the sce"
+  },
+  {
+    "index": 927,
+    "name": "24 Hour Party People",
+    "year": 2002,
+    "movieId": 2750,
+    "rating": 6.9,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Manchester, 1976. Tony Wilson is an ambitious but frustrated local TV news reporter looking for a way to make his mark. After witnessing a life-changi"
+  },
+  {
+    "index": 928,
+    "name": "The Soloist",
+    "year": 2009,
+    "movieId": 17332,
+    "rating": 6.7,
+    "genres": [
+      "Drama",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A Los Angeles journalist befriends a homeless Juilliard-trained musician, while looking for a new article for the paper."
+  },
+  {
+    "index": 929,
+    "name": "Center Stage",
+    "year": 2000,
+    "movieId": 10560,
+    "rating": 6.9,
+    "genres": [
+      "Drama",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A group of 12 teenagers from various backgrounds enroll at the American Ballet Academy in New York to make it as ballet dancers and each one deals wit"
+  },
+  {
+    "index": 930,
+    "name": "Raise Your Voice",
+    "year": 2004,
+    "movieId": 14024,
+    "rating": 6.5,
+    "genres": [
+      "Music",
+      "Drama",
+      "Romance",
+      "Family"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A coming-of-age story centered around a small-town singer brokenhearted by the death of her brother in a car crash, who had secretly submitted her for"
+  },
+  {
+    "index": 931,
+    "name": "Praise This",
+    "year": 2023,
+    "movieId": 551806,
+    "rating": 7.1,
+    "genres": [
+      "Music",
+      "Romance",
+      "Comedy"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "When aspiring musical superstar Sam is forced to join her cousin's struggling, underdog praise team in the lead-up to a national championship competit"
+  },
+  {
+    "index": 932,
+    "name": "Pump Up the Volume",
+    "year": 1990,
+    "movieId": 8428,
+    "rating": 7.1,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Mark Hunter, a lonely high school student, uses his shortwave radio to moonlight as the popular pirate DJ \"Hard Harry.\" When his show gets blamed for"
+  },
+  {
+    "index": 933,
+    "name": "Love Never Dies",
+    "year": 2012,
+    "movieId": 88920,
+    "rating": 7,
+    "genres": [
+      "Drama",
+      "Music",
+      "Romance"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Set ten years after the events at the Paris Opera House, the Phantom has fled to New York, where he lives amongst the joyrides and freak shows of Cone"
+  },
+  {
+    "index": 934,
+    "name": "Beavis and Butt-Head Do America",
+    "year": 1996,
+    "movieId": 3179,
+    "rating": 6.7,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Adventure",
+      "Crime",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Slacker duo Beavis and Butt-Head wake to discover their TV has been stolen. Their search for a new one takes them on a clueless adventure across Ameri"
+  },
+  {
+    "index": 935,
+    "name": "Jesus Christ Superstar Live in Concert",
+    "year": 2018,
+    "movieId": 495029,
+    "rating": 7,
+    "genres": [
+      "Music",
+      "Drama",
+      "TV Movie"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "The award-winning show is re-imagined as a live concert event, featuring an all-star cast of recording artists, set during the last week of Jesus' lif"
+  },
+  {
+    "index": 936,
+    "name": "Detroit Rock City",
+    "year": 1999,
+    "movieId": 9781,
+    "rating": 6.7,
+    "genres": [
+      "Comedy",
+      "Music",
+      "Adventure"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "In 1978, a Kiss concert was an epoch-making event. For the four teen fans in Detroit Rock City getting tickets to the sold-out show becomes the focal"
+  },
+  {
+    "index": 937,
+    "name": "Honey 3: Dare to Dance",
+    "year": 2016,
+    "movieId": 412519,
+    "rating": 6.7,
+    "genres": [
+      "Music",
+      "Drama",
+      "Family",
+      "Romance"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "While attending college in Cape Town, Melea Martin feels constrained by the school's strict policies, and decides to set out on her own. Searching for"
+  },
+  {
+    "index": 938,
+    "name": "Better Nate Than Ever",
+    "year": 2022,
+    "movieId": 826953,
+    "rating": 6.4,
+    "genres": [
+      "Music",
+      "Family",
+      "Comedy"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "13-year-old Nate Foster has big Broadway dreams but there’s only one problem — he can’t even land a part in the school play. When his parents leave to"
+  },
+  {
+    "index": 939,
+    "name": "Honey 2",
+    "year": 2011,
+    "movieId": 63710,
+    "rating": 6.3,
+    "genres": [
+      "Music",
+      "Comedy",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "After a brush with the law, Maria has returned to her gritty Bronx roots to rebuild her life with nothing but a talent for street dance and a burning"
+  },
+  {
+    "index": 940,
+    "name": "Alvin and the Chipmunks Meet the Wolfman",
+    "year": 2000,
+    "movieId": 48246,
+    "rating": 6.8,
+    "genres": [
+      "Family",
+      "Fantasy",
+      "Comedy",
+      "Animation",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "As Alvin struggles with nightmares involving werewolves, the school play of Jekyll & Hyde is in jeopardy when the lead, Alvin, is suspended. In an att"
+  },
+  {
+    "index": 941,
+    "name": "Música",
+    "year": 2024,
+    "movieId": 968441,
+    "rating": 6.5,
+    "genres": [
+      "Romance",
+      "Comedy",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "A young man, plagued by the music in his head, has to come to terms with an uncertain future while balancing love, family and Brazilian culture in New"
+  },
+  {
+    "index": 942,
+    "name": "The Looney, Looney, Looney Bugs Bunny Movie",
+    "year": 1981,
+    "movieId": 41394,
+    "rating": 7.2,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Family",
+      "Crime",
+      "Music",
+      "Western"
+    ],
+    "foundIn": [
+      "MUSIC",
+      "WESTERN"
+    ],
+    "plot": "Bugs Bunny hosts an award show featuring several classic Looney Tunes shorts and characters."
+  },
+  {
+    "index": 943,
+    "name": "Coal Miner's Daughter",
+    "year": 1980,
+    "movieId": 16769,
+    "rating": 7.2,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Biography of Loretta Lynn, a country and western singer that came from poverty to fame."
+  },
+  {
+    "index": 944,
+    "name": "The Five Heartbeats",
+    "year": 1991,
+    "movieId": 29475,
+    "rating": 7.3,
+    "genres": [
+      "Drama",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "In the early 1960s, a quintet of hopeful, young African-American men form an amateur vocal group called The Five Heartbeats. After an initially rocky"
+  },
+  {
+    "index": 945,
+    "name": "Get Him to the Greek",
+    "year": 2010,
+    "movieId": 32823,
+    "rating": 6,
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Music"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Pinnacle records has the perfect plan to get their sinking company back on track: a comeback concert in LA featuring Aldous Snow, a fading rockstar wh"
+  },
+  {
+    "index": 946,
+    "name": "I Saw the Light",
+    "year": 2016,
+    "movieId": 297806,
+    "rating": 6.2,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "foundIn": [
+      "MUSIC"
+    ],
+    "plot": "Singer and songwriter Hank Williams rises to fame in the 1940s, but alcohol abuse and infidelity take a toll on his career and marriage to fellow musi"
+  }
+]

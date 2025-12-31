@@ -121,13 +121,12 @@ async function loadClassificationState() {
   console.log('   3. Approve classifications and Claude will save them');
   console.log('\n💡 Tip: Process movies in batches (e.g., 20-50 at a time)\n');
 
-  // Output unclassified movies in a format ready for Claude
+  // Output ALL unclassified movies in a format ready for Claude
   console.log('━'.repeat(60));
-  console.log('UNCLASSIFIED MOVIES (First 50):');
+  console.log(`UNCLASSIFIED MOVIES (All ${unclassified.length}):`);
   console.log('━'.repeat(60));
 
-  const batch = unclassified.slice(0, 50);
-  batch.forEach((movie, idx) => {
+  unclassified.forEach((movie, idx) => {
     console.log(`\n${idx + 1}. ${movie.name} (${movie.year || 'N/A'})`);
     console.log(`   ID: ${movie.id}`);
     console.log(`   Rating: ${movie.imdbRating || 'N/A'}`);
@@ -140,14 +139,14 @@ async function loadClassificationState() {
   });
 
   console.log('\n━'.repeat(60));
-  console.log(`Showing ${batch.length} of ${unclassified.length} unclassified movies`);
+  console.log(`Total: ${unclassified.length} unclassified movies`);
   console.log('━'.repeat(60));
 
   // Save current state for reference
   await store.setJSON('classification-session', {
     sessionStarted: new Date().toISOString(),
     totalUnclassified: unclassified.length,
-    currentBatch: batch.map(m => m.id),
+    allMovieIds: unclassified.map(m => m.id),
     customGenres: customGenres.map(g => g.code)
   });
 

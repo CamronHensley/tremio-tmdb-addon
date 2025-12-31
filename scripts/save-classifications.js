@@ -2,7 +2,7 @@
  * Save Movie Classifications
  *
  * Called by Claude to save genre assignments after manual classification.
- * Updates classification state and custom genre assignments.
+ * Each movie should appear in EXACTLY ONE genre (no duplicates).
  *
  * Usage: node scripts/save-classifications.js <json-file>
  */
@@ -45,13 +45,12 @@ async function saveClassifications(classificationsFile) {
 
   // Load existing state
   let classificationState = await store.get('classification-state', { type: 'json' }) || {
-    classified: {},
-    unclassified: [],
+    classified: {},      // { movieId: genreCode }  <- SINGLE genre per movie
     lastUpdated: null
   };
 
-  let customAssignments = await store.get('custom-genre-assignments', { type: 'json' }) || {
-    genres: {},
+  let genreAssignments = await store.get('genre-assignments', { type: 'json' }) || {
+    genres: {},          // { GENRE_CODE: [movieId1, movieId2, ...] }
     updatedAt: null
   };
 
@@ -60,38 +59,42 @@ async function saveClassifications(classificationsFile) {
   let skippedCount = 0;
 
   for (const item of classifications) {
-    const { movieId, genreCodes, movieName } = item;
+    const { movieId, genreCode, movieName } = item;
 
-    if (!movieId || !Array.isArray(genreCodes)) {
-      console.log(`⚠️  Skipping invalid entry: ${JSON.stringify(item)}`);
+    if (!movieId) {
+      console.log(`⚠️  Skipping invalid entry (no movieId): ${JSON.stringify(item)}`);
       skippedCount++;
       continue;
     }
 
-    // Mark as classified
-    classificationState.classified[movieId] = genreCodes;
-
-    // Add to custom genre assignments
-    for (const genreCode of genreCodes) {
-      if (!customAssignments.genres[genreCode]) {
-        customAssignments.genres[genreCode] = [];
-      }
-      if (!customAssignments.genres[genreCode].includes(movieId)) {
-        customAssignments.genres[genreCode].push(movieId);
-      }
+    if (!genreCode) {
+      console.log(`⚠️  Skipping invalid entry (no genreCode): ${JSON.stringify(item)}`);
+      skippedCount++;
+      continue;
     }
 
-    console.log(`✓ ${movieName || movieId}: ${genreCodes.join(', ')}`);
+    // Mark as classified with SINGLE genre
+    classificationState.classified[movieId] = genreCode;
+
+    // Add to genre assignments
+    if (!genreAssignments.genres[genreCode]) {
+      genreAssignments.genres[genreCode] = [];
+    }
+    if (!genreAssignments.genres[genreCode].includes(movieId)) {
+      genreAssignments.genres[genreCode].push(movieId);
+    }
+
+    console.log(`✓ ${movieName || movieId}: ${genreCode}`);
     addedCount++;
   }
 
   // Update timestamps
   classificationState.lastUpdated = new Date().toISOString();
-  customAssignments.updatedAt = new Date().toISOString();
+  genreAssignments.updatedAt = new Date().toISOString();
 
   // Save to blob storage
   await store.setJSON('classification-state', classificationState);
-  await store.setJSON('custom-genre-assignments', customAssignments);
+  await store.setJSON('genre-assignments', genreAssignments);
 
   console.log('\n━'.repeat(60));
   console.log('✅ Classifications saved!');
@@ -100,9 +103,10 @@ async function saveClassifications(classificationsFile) {
   console.log(`   Total classified: ${Object.keys(classificationState.classified).length}`);
   console.log('━'.repeat(60));
 
-  // Show custom genre stats
-  console.log('\n📁 Custom Genre Stats:');
-  for (const [genreCode, movieIds] of Object.entries(customAssignments.genres)) {
+  // Show genre stats
+  console.log('\n📁 Genre Breakdown:');
+  const sortedGenres = Object.entries(genreAssignments.genres).sort((a, b) => b[1].length - a[1].length);
+  for (const [genreCode, movieIds] of sortedGenres) {
     console.log(`   ${genreCode}: ${movieIds.length} movies`);
   }
 

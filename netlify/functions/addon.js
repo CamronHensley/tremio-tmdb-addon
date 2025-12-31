@@ -6,7 +6,9 @@ const { randomUUID } = require('crypto');
 const {
   GENRE_BY_CODE,
   ALL_GENRE_CODES,
-  ADDON_META
+  ADDON_META,
+  getCurrentSeason,
+  SEASONAL_HOLIDAYS
 } = require('../../lib/constants');
 const {
   RateLimiter,
@@ -172,7 +174,21 @@ async function handleCatalog(config, catalogId, skip = 0) {
     return errorResponse('Catalog data not available', 503);
   }
 
-  const allMovies = catalogData.genres[genreCode] || [];
+  let allMovies = catalogData.genres[genreCode] || [];
+
+  // Filter SEASONAL movies based on current date
+  if (genreCode === 'SEASONAL') {
+    const currentSeason = getCurrentSeason();
+    const seasonalMovieIds = currentSeason.movieIds || [];
+
+    if (seasonalMovieIds.length > 0) {
+      // Filter to only show movies for the current holiday season
+      allMovies = allMovies.filter(movie => {
+        const tmdbId = movie.tmdbId || parseInt(movie.id.replace('tmdb:', ''));
+        return seasonalMovieIds.includes(tmdbId);
+      });
+    }
+  }
 
   // Implement pagination with skip parameter
   // Stremio typically requests in chunks of 100
